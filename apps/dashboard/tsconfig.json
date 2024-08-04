@@ -7,7 +7,8 @@
       }
     ],
     "paths": {
-      "~/*": ["./*"]
+      "~/*": ["./*"],
+      "@components/*": ["../dashboard/src/components/*"]
     }
   },
   "include": [

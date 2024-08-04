@@ -68,6 +68,7 @@
     "zod": "^3.23.8"
   },
   "exports": {
+    ".": "./index.ts",
     "./globals.css": "./src/globals.css",
     "./postcss.config": "./postcss.config.mjs",
     "./tailwind.config": "./tailwind.config.ts",
