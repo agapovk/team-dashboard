@@ -1,0 +1,383 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+}
+
+model session {
+  id                                            Int               @id
+  athlete_sessions                              athlete_session[]
+  team_id                                       Int?
+  name                                          String?           @db.VarChar(255)
+  start_timestamp                               DateTime
+  end_timestamp                                 DateTime
+  category_name                                 String?           @db.VarChar(255)
+  notes                                         String?           @db.VarChar(255)
+  total_time                                    Int?
+  n_tracks                                      Int?
+  average_time                                  Float?
+  total_distance                                Float?
+  average_v                                     Float?
+  athletesessionspeedzone_distance_1            Float?
+  athletesessionspeedzone_distance_2            Float?
+  athletesessionspeedzone_distance_3            Float?
+  athletesessionspeedzone_distance_4            Float?
+  athletesessionspeedzone_distance_5            Float?
+  max_values_speed                              Float?
+  speed_events                                  Int?
+  tot_burst_events                              Int?
+  tot_brake_events                              Int?
+  eccentric_index                               Float?
+  athletesessionpowerzone_distance_1            Float?
+  athletesessionpowerzone_distance_2            Float?
+  athletesessionpowerzone_distance_3            Float?
+  average_p                                     Float?
+  max_values_power                              Float?
+  equivalent_distance_index                     Float?
+  equivalent_distance                           Float?
+  total_energy                                  Float?
+  anaerobic_energy                              Float?
+  anaerobic_index                               Float?
+  aerobic_ratio                                 Float?
+  average_power_aer                             Float?
+  power_events                                  Int?
+  power_events_avg_time                         Float?
+  power_events_avg_power                        Float?
+  recovery_average_time                         Float?
+  recovery_average_power                        Float?
+  athletesessionpowereventdurationzone_events_1 Int?
+  athletesessionpowereventdurationzone_events_2 Int?
+  athletesessionpowereventdurationzone_events_3 Int?
+  athletesessionpowereventdistancezone_events_1 Int?
+  athletesessionpowereventdistancezone_events_2 Int?
+  athletesessionpowereventdistancezone_events_3 Int?
+  athletesessionpowereventmaxspeedzone_events_1 Int?
+  athletesessionpowereventmaxspeedzone_events_2 Int?
+  athletesessionpowereventmaxspeedzone_events_3 Int?
+  external_work                                 Float?
+  ext_work_over                                 Float?
+  ext_work_over_neg                             Float?
+  average_external_power                        Float?
+  ext_work_over_zone0                           Float?
+  ext_work_over_zone1                           Float?
+  ext_work_over_zone2                           Float?
+  ext_work_over_zone0_neg                       Float?
+  ext_work_over_zone1_neg                       Float?
+  ext_work_over_zone2_neg                       Float?
+  average_hr                                    Float?
+  average_hr_percentual                         Float?
+  max_values_cardio                             Float?
+  max_values_cardio_percentual                  Float?
+  athletesessionheartratezone_time_2            Float?
+  athletesessionheartratezone_time_3            Float?
+  athletesessionheartratezone_time_4            Float?
+}
+
+model athlete_session {
+  id                                            Int     @id
+  athlete_id                                    Int
+  athlete                                       athlete @relation(fields: [athlete_id], references: [id])
+  session_id                                    Int
+  session                                       session @relation(fields: [session_id], references: [id])
+  average_time                                  Float?
+  total_distance                                Float?
+  average_v                                     Float?
+  athletesessionspeedzone_distance_1            Float?
+  athletesessionspeedzone_distance_2            Float?
+  athletesessionspeedzone_distance_3            Float?
+  athletesessionspeedzone_distance_4            Float?
+  athletesessionspeedzone_distance_5            Float?
+  max_values_speed                              Float?
+  speed_events                                  Int?
+  tot_burst_events                              Int?
+  tot_brake_events                              Int?
+  eccentric_index                               Float?
+  athletesessionpowerzone_distance_1            Float?
+  athletesessionpowerzone_distance_2            Float?
+  athletesessionpowerzone_distance_3            Float?
+  average_p                                     Float?
+  max_values_power                              Float?
+  equivalent_distance_index                     Float?
+  equivalent_distance                           Float?
+  total_energy                                  Float?
+  anaerobic_energy                              Float?
+  anaerobic_index                               Float?
+  aerobic_ratio                                 Float?
+  average_power_aer                             Float?
+  power_events                                  Int?
+  power_events_avg_time                         Float?
+  power_events_avg_power                        Float?
+  recovery_average_time                         Float?
+  recovery_average_power                        Float?
+  athletesessionpowereventdurationzone_events_1 Int?
+  athletesessionpowereventdurationzone_events_2 Int?
+  athletesessionpowereventdurationzone_events_3 Int?
+  athletesessionpowereventdistancezone_events_1 Int?
+  athletesessionpowereventdistancezone_events_2 Int?
+  athletesessionpowereventdistancezone_events_3 Int?
+  athletesessionpowereventmaxspeedzone_events_1 Int?
+  athletesessionpowereventmaxspeedzone_events_2 Int?
+  athletesessionpowereventmaxspeedzone_events_3 Int?
+  external_work                                 Float?
+  ext_work_over                                 Float?
+  ext_work_over_neg                             Float?
+  average_external_power                        Float?
+  ext_work_over_zone0                           Float?
+  ext_work_over_zone1                           Float?
+  ext_work_over_zone2                           Float?
+  ext_work_over_zone0_neg                       Float?
+  ext_work_over_zone1_neg                       Float?
+  ext_work_over_zone2_neg                       Float?
+  average_hr                                    Float?
+  average_hr_percentual                         Float?
+  max_values_cardio                             Float?
+  max_values_cardio_percentual                  Float?
+  athletesessionheartratezone_time_2            Float?
+  athletesessionheartratezone_time_3            Float?
+  athletesessionheartratezone_time_4            Float?
+}
+
+model athlete {
+  id                    Int                    @id
+  position_id           Int?
+  position              position?              @relation(fields: [position_id], references: [id])
+  athlete_sessions      athlete_session[]
+  athlete_games_fitness athlete_game_fitness[]
+  athlete_games_ttd     athlete_game_ttd[]
+  name                  String?
+  last_name             String?
+  first_name            String?
+  short_name            String?
+  birthday              DateTime?
+  height                Int?
+  isInTeam              Boolean                @default(false)
+  isInjured             Boolean                @default(false)
+  number                Int?                   
+  photo                 String?
+  weight                Float?
+  foot                  String?
+  // injury           injury[]
+}
+
+model position {
+  id       Int       @id @default(autoincrement())
+  title    String
+  athletes athlete[]
+}
+
+model game {
+  id                              String                 @id @default(uuid())
+  athlete_fitness                 athlete_game_fitness[]
+  athlete_ttd                     athlete_game_ttd[]
+  date                            DateTime?
+  vs                              String?
+  competition                     String?
+  result                          String?
+  home                            Boolean?
+  total_distance                  Float?
+  speedzone4_distance             Float?
+  speedzone5_distance             Float?
+  avg_speed                       Float?
+  minutesPlayed                   Int?
+  goals                           Int?
+  assists                         Int?
+  keyPasses                       Int?
+  keyPassesSuccess                Int?
+  keyPassesSuccess_pct            String?
+  shoots                          Int?
+  shoots_OnTarget                 Int?
+  shoots_OnTarget_pct             String?
+  xG                              Int?
+  fouls                           Int?
+  foulsOnPlayer                   Int?
+  offside                         Int?
+  yellowCards                     Int?
+  redCards                        Int?
+  actions                         Int?
+  actionsSuccess                  Int?
+  actionsSuccess_pct              String?
+  actionsInsideBox                Int?
+  chances                         Int?
+  chancesSuccess                  Int?
+  chancesSuccess_pct              String?
+  lostBalls                       Int?
+  lostBalls_OwnHalf               Int?
+  ballRecoveries                  Int?
+  ballRecoveries_OppositeHalf     Int?
+  badBallControl                  Int?
+  passes                          Int?
+  passesSuccess                   Int?
+  passesSuccess_pct               String?
+  passForward                     Int?
+  passForwardSuccess              Int?
+  passForwardSuccess_pct          String?
+  passBack                        Int?
+  passBackSuccess                 Int?
+  passBackSuccess_pct             String?
+  passLong                        Int?
+  passLongSuccess                 Int?
+  passLongSuccess_pct             String?
+  passShorMedium                  Int?
+  passShorMediumSuccess           Int?
+  passShorMediumSuccess_pct       String?
+  passInsideFinalThird            Int?
+  passInsideFinalThirdSuccess     Int?
+  passInsideFinalThirdSuccess_pct String?
+  passInsideBox                   Int?
+  passInsideBoxSuccess            Int?
+  passInsideBoxSuccess_pct        String?
+  crosses                         Int?
+  crossesSuccess                  Int?
+  crossesSuccess_pct              String?
+  shotAssists                     Int?
+  shotAssistsSuccess              Int?
+  shotAssistsSuccess_pct          String?
+  passesReceived                  Int?
+  passesReceivedInsideBox         Int?
+  challenges                      Int?
+  challengesSuccess               Int?
+  challengesSuccess_pct           String?
+  aerialDuels                     Int?
+  aerialDuelsSuccess              Int?
+  aerialDuelsSuccess_pct          String?
+  challengesInDefence             Int?
+  challengesInDefenceSuccess      Int?
+  challengesInDefenceSuccess_pct  String?
+  challengesInAttack              Int?
+  challengesInAttackSuccess       Int?
+  challengesInAttackSuccess_pct   String?
+  dribbles                        Int?
+  dribblesSuccess                 Int?
+  dribblesSuccess_pct             String?
+  tackles                         Int?
+  tacklesSuccess                  Int?
+  tacklesSuccess_pct              String?
+  interceptions                   Int?
+  freeKick                        Int?
+  freeKickShoots                  Int?
+  freeKickShootsOnTarget          Int?
+  freeKickShootsOnTarget_pct      String?
+  corners                         Int?
+  throwIns                        Int?
+  throwInSuccess                  Int?
+  throwInSuccess_pct              String?
+}
+
+model athlete_game_fitness {
+  id                  String   @id @default(uuid())
+  athlete_id          Int?
+  athlete             athlete? @relation(fields: [athlete_id], references: [id])
+  game_id             String
+  game                game     @relation(fields: [game_id], references: [id])
+  number              Int
+  minutes             Int
+  total_distance      Float?
+  speedzone4_distance Float?
+  speedzone5_distance Float?
+  avg_speed           Float?
+}
+
+model athlete_game_ttd {
+  id                              String   @id @default(uuid())
+  athlete_id                      Int?
+  athlete                         athlete? @relation(fields: [athlete_id], references: [id])
+  game_id                         String
+  game                            game     @relation(fields: [game_id], references: [id])
+  number                          Int?
+  minutesPlayed                   Int?
+  goals                           Int?
+  assists                         Int?
+  keyPasses                       Int?
+  keyPassesSuccess                Int?
+  keyPassesSuccess_pct            String?
+  shoots                          Int?
+  shoots_OnTarget                 Int?
+  shoots_OnTarget_pct             String?
+  xG                              Int?
+  fouls                           Int?
+  foulsOnPlayer                   Int?
+  offside                         Int?
+  yellowCards                     Int?
+  redCards                        Int?
+  actions                         Int?
+  actionsSuccess                  Int?
+  actionsSuccess_pct              String?
+  actionsInsideBox                Int?
+  chances                         Int?
+  chancesSuccess                  Int?
+  chancesSuccess_pct              String?
+  lostBalls                       Int?
+  lostBalls_OwnHalf               Int?
+  ballRecoveries                  Int?
+  ballRecoveries_OppositeHalf     Int?
+  badBallControl                  Int?
+  passes                          Int?
+  passesSuccess                   Int?
+  passesSuccess_pct               String?
+  passForward                     Int?
+  passForwardSuccess              Int?
+  passForwardSuccess_pct          String?
+  passBack                        Int?
+  passBackSuccess                 Int?
+  passBackSuccess_pct             String?
+  passLong                        Int?
+  passLongSuccess                 Int?
+  passLongSuccess_pct             String?
+  passShorMedium                  Int?
+  passShorMediumSuccess           Int?
+  passShorMediumSuccess_pct       String?
+  passInsideFinalThird            Int?
+  passInsideFinalThirdSuccess     Int?
+  passInsideFinalThirdSuccess_pct String?
+  passInsideBox                   Int?
+  passInsideBoxSuccess            Int?
+  passInsideBoxSuccess_pct        String?
+  crosses                         Int?
+  crossesSuccess                  Int?
+  crossesSuccess_pct              String?
+  shotAssists                     Int?
+  shotAssistsSuccess              Int?
+  shotAssistsSuccess_pct          String?
+  passesReceived                  Int?
+  passesReceivedInsideBox         Int?
+  challenges                      Int?
+  challengesSuccess               Int?
+  challengesSuccess_pct           String?
+  aerialDuels                     Int?
+  aerialDuelsSuccess              Int?
+  aerialDuelsSuccess_pct          String?
+  challengesInDefence             Int?
+  challengesInDefenceSuccess      Int?
+  challengesInDefenceSuccess_pct  String?
+  challengesInAttack              Int?
+  challengesInAttackSuccess       Int?
+  challengesInAttackSuccess_pct   String?
+  dribbles                        Int?
+  dribblesSuccess                 Int?
+  dribblesSuccess_pct             String?
+  tackles                         Int?
+  tacklesSuccess                  Int?
+  tacklesSuccess_pct              String?
+  interceptions                   Int?
+  freeKick                        Int?
+  freeKickShoots                  Int?
+  freeKickShootsOnTarget          Int?
+  freeKickShootsOnTarget_pct      String?
+  corners                         Int?
+  throwIns                        Int?
+  throwInSuccess                  Int?
+  throwInSuccess_pct              String?
+}
+
+// model injury {
+//   id                 Int      @id @default(autoincrement())
+//   date               DateTime
+//   diagnosis          String
+//   athleteId          Int
+//   estimated_recovery DateTime
+//   athlete            athlete  @relation(fields: [athleteId], references: [id])
+// }

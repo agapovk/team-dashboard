@@ -1,0 +1,23 @@
+{
+  "id": 79649,
+  "team": 608,
+  "category": 3410,
+  "category_name": "ИНДИВИДУАЛЬНАЯ ТРЕНИРОВКА",
+  "notes": "",
+  "start_timestamp": "2024-02-16T16:55:35.495000",
+  "end_timestamp": "2024-02-16T17:46:58.120000",
+  "union_duration": 3083,
+  "total_time": 3083,
+  "is_stats_valid": true,
+  "tags": [],
+  "drill_enabled": false,
+  "drills_count": 0,
+  "minStart": 1708101331.127,
+  "maxStop": 1708105969.7730005,
+  "drillTags": [],
+  "name": "[ИНДИВИДУАЛЬНАЯ ТРЕНИРОВКА] 16 FEB 2024: 16:55:35 - 17:46:58",
+  "created_on": "2024-02-16T17:17:48.765859",
+  "updated_on": "2024-02-16T17:17:54.204497",
+  "n_tracks": 1,
+  "submitted_by": "unknown"
+}

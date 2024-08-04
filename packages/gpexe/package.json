@@ -1,0 +1,23 @@
+{
+  "name": "@repo/gpexe",
+  "version": "0.0.0",
+  "scripts": {
+    "gpexe:fetch": "./index.ts fetch",
+    "gpexe:create": "./index.ts create",
+    "gpexe": "./index.ts fetch && ./index.ts create",
+    "game:fitness": "./index.ts game_fitness",
+    "game:ttd": "./index.ts game_ttd"
+  },
+  "dependencies": {
+    "@repo/db": "workspace:*",
+    "@types/node": "^22.0.2",
+    "commander": "^11.1.0",
+    "database": "*",
+    "date-fns": "^3.6.0",
+    "dotenv": "^16.4.5",
+    "google-spreadsheet": "^4.1.1"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*"
+  }
+}
