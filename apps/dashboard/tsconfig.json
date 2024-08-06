@@ -8,7 +8,8 @@
     ],
     "paths": {
       "~/*": ["./*"],
-      "@components/*": ["../dashboard/src/components/*"]
+      "@components/*": ["../dashboard/src/components/*"],
+      "@actions/*": ["../dashboard/src/app/actions/*"]
     }
   },
   "include": [

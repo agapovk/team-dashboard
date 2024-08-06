@@ -21,15 +21,28 @@ import {
   SelectTrigger,
   SelectValue,
   useToast,
+  DialogClose,
 } from "@repo/ui";
+import { updateAthlete } from "@actions/athlete";
 
 const formSchema = z.object({
   name: z.string().min(2).max(50),
-  number: z.number(),
-  birthday: z.string().optional(),
-  position_id: z.string(),
+  number: z.string(),
+  // birthday: z.string(),
+  day: z.string(),
+  month: z.string(),
+  year: z.string(),
+  position_id: z.string().optional(),
   isInjured: z.boolean(),
 });
+
+export type AthleteFormData = {
+  number?: number;
+  name?: string;
+  position_id?: number;
+  isInjured: boolean;
+  birthday?: Date | null;
+};
 
 type Props = {
   data: athlete;
@@ -40,8 +53,11 @@ export function AthleteForm({ data }: Props) {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: data.name ?? "",
-      number: data.number ?? undefined,
-      birthday: data.birthday ? data.birthday.toLocaleDateString() : undefined,
+      number: data.number ? data.number.toString() : undefined,
+      // birthday: data.birthday ? data.birthday.toLocaleDateString() : undefined,
+      day: data.birthday?.getDate().toString() ?? undefined,
+      month: data.birthday?.getMonth().toString() ?? undefined,
+      year: data.birthday?.getFullYear().toString() ?? undefined,
       position_id: data.position_id ? data.position_id.toString() : undefined,
       isInjured: data.isInjured,
     },
@@ -51,14 +67,46 @@ export function AthleteForm({ data }: Props) {
   const { toast } = useToast();
 
   function onSubmit(values: z.infer<typeof formSchema>) {
+    const newValues: AthleteFormData = {
+      number: Number(values.number) ?? null,
+      position_id: Number(values.position_id) ?? null,
+      birthday:
+        new Date(
+          `${values.year}-${values.month}-${values.day}`,
+          // Number(values.year),
+          // Number(values.month) - 1,
+          // Number(values.day) + 1,
+        ) ?? null,
+      isInjured: values.isInjured,
+    };
+
     toast({
-      title: "You submitted the following values:",
+      title: "OK",
       description: (
         <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-          <code className="text-white">{JSON.stringify(values, null, 2)}</code>
+          <code className="text-white">
+            {JSON.stringify(
+              new Date(`${values.year}-${values.month}-${values.day}`),
+              null,
+              2,
+            )}
+          </code>
         </pre>
       ),
     });
+
+    try {
+      updateAthlete(data.id, newValues);
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: (
+          <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+            <code className="text-white">{JSON.stringify(error, null, 2)}</code>
+          </pre>
+        ),
+      });
+    }
   }
 
   return (
@@ -90,19 +138,48 @@ export function AthleteForm({ data }: Props) {
             </FormItem>
           )}
         />
-        <FormField
-          control={form.control}
-          name="birthday"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Дата рождения</FormLabel>
-              <FormControl>
-                <Input placeholder="Дата рождения" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+        <FormLabel>Дата рождения</FormLabel>
+        <div className="flex gap-3">
+          <FormField
+            control={form.control}
+            name="day"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>День</FormLabel>
+                <FormControl>
+                  <Input placeholder="18" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="month"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Месяц</FormLabel>
+                <FormControl>
+                  <Input placeholder="12" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="year"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Год</FormLabel>
+                <FormControl>
+                  <Input placeholder="1990" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
         <FormField
           control={form.control}
           name="position_id"
@@ -143,7 +220,9 @@ export function AthleteForm({ data }: Props) {
           )}
         />
         <div className="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2">
+          {/* <DialogClose asChild> */}
           <Button type="submit">Сохранить</Button>
+          {/* </DialogClose> */}
         </div>
       </form>
     </Form>
