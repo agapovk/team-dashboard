@@ -11,7 +11,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
-} from "@repo/ui";
+} from '@repo/ui';
 
 export function UserNav() {
   return (
@@ -19,7 +19,7 @@ export function UserNav() {
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="relative h-8 w-8 rounded-full">
           <Avatar className="h-8 w-8">
-            {/* <AvatarImage src="/avatars/01.png" alt="@shadcn" /> */}
+            <AvatarImage src="/avatars/01.png" alt="@shadcn" />
             <AvatarFallback>АК</AvatarFallback>
           </Avatar>
         </Button>

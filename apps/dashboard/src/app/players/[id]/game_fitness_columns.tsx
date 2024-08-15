@@ -1,17 +1,17 @@
-"use client";
+'use client';
 
-import { ColumnDef } from "@tanstack/react-table";
-import { athlete_game_fitness, game } from "@repo/db";
-import Bar from "@components/bar";
-import { DataTableColumnHeader } from "../components/data-table-column-header";
-import Link from "next/link";
-import { cn } from "@repo/ui/lib/utils";
+import { ColumnDef } from '@tanstack/react-table';
+import { athlete_game_fitness, game } from '@repo/db';
+import Bar from '@components/bar';
+import { DataTableColumnHeader } from '../components/data-table-column-header';
+import Link from 'next/link';
+import { cn } from '@repo/ui/lib/utils';
 
 export type AthleteGameWithGame = athlete_game_fitness & { game: game };
 
 export const game_fitness_columns: ColumnDef<AthleteGameWithGame>[] = [
   {
-    accessorKey: "date",
+    accessorKey: 'date',
     header: () => <div className="text-center text-xs lg:text-sm">Дата</div>,
     cell: ({ row }) => {
       const game: game = row.original.game;
@@ -21,7 +21,7 @@ export const game_fitness_columns: ColumnDef<AthleteGameWithGame>[] = [
     },
   },
   {
-    accessorKey: "game_id",
+    accessorKey: 'game_id',
     header: () => (
       <div className="text-center text-xs lg:text-sm">Соперник</div>
     ),
@@ -31,7 +31,7 @@ export const game_fitness_columns: ColumnDef<AthleteGameWithGame>[] = [
       return (
         <Link
           href={`/games/${id}`}
-          className={cn("whitespace-nowrap underline")}
+          className={cn('whitespace-nowrap underline')}
         >
           {vs}
         </Link>
@@ -39,35 +39,35 @@ export const game_fitness_columns: ColumnDef<AthleteGameWithGame>[] = [
     },
   },
   {
-    accessorKey: "minutes",
+    accessorKey: 'minutes',
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Минут на поле" />
     ),
     cell: ({ row }) => {
-      const data: number = row.getValue("minutes");
+      const data: number = row.getValue('minutes');
       const value = data.toFixed(0);
       return <div className="text-center text-sm">{value}</div>;
     },
   },
   {
-    accessorKey: "avg_speed",
+    accessorKey: 'avg_speed',
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Средняя скорость" />
     ),
 
     cell: ({ row }) => {
-      const data: number = row.getValue("avg_speed");
+      const data: number = row.getValue('avg_speed');
       const value = data.toFixed(2);
       return <div className="text-center text-sm">{value}</div>;
     },
   },
   {
-    accessorKey: "total_distance",
+    accessorKey: 'total_distance',
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Общая дистанция" />
     ),
     cell: ({ row }) => {
-      const data: number = row.getValue("total_distance");
+      const data: number = row.getValue('total_distance');
       if (!data) return null;
       const value = data.toFixed(0);
       return (
@@ -79,17 +79,17 @@ export const game_fitness_columns: ColumnDef<AthleteGameWithGame>[] = [
     },
   },
   {
-    accessorKey: "speedzone4_distance",
+    accessorKey: 'speedzone4_distance',
     header: () => (
       <div className="text-center text-xs lg:text-sm">
-        {" "}
+        {' '}
         Дистанция
         <br />
         20-25 / &gt;25 км/ч
       </div>
     ),
     cell: ({ row }) => {
-      const data: number = row.getValue("speedzone4_distance");
+      const data: number = row.getValue('speedzone4_distance');
       const data2: number = row.original.speedzone5_distance || 0;
       const value = data.toFixed(0);
       const value2 = data2.toFixed(0);

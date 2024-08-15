@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { athlete } from "@repo/db";
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import { athlete } from '@repo/db';
 
 import {
   Button,
@@ -21,14 +21,12 @@ import {
   SelectTrigger,
   SelectValue,
   useToast,
-  DialogClose,
-} from "@repo/ui";
-import { updateAthlete } from "@actions/athlete";
+} from '@repo/ui';
+import { updateAthlete } from '@dashboard/actions/athlete';
 
 const formSchema = z.object({
   name: z.string().min(2).max(50),
   number: z.string(),
-  // birthday: z.string(),
   day: z.string(),
   month: z.string(),
   year: z.string(),
@@ -52,16 +50,15 @@ export function AthleteForm({ data }: Props) {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: data.name ?? "",
+      name: data.name ?? '',
       number: data.number ? data.number.toString() : undefined,
-      // birthday: data.birthday ? data.birthday.toLocaleDateString() : undefined,
       day: data.birthday?.getDate().toString() ?? undefined,
       month: data.birthday?.getMonth().toString() ?? undefined,
       year: data.birthday?.getFullYear().toString() ?? undefined,
       position_id: data.position_id ? data.position_id.toString() : undefined,
       isInjured: data.isInjured,
     },
-    mode: "onChange",
+    mode: 'onChange',
   });
 
   const { toast } = useToast();
@@ -71,35 +68,26 @@ export function AthleteForm({ data }: Props) {
       number: Number(values.number) ?? null,
       position_id: Number(values.position_id) ?? null,
       birthday:
-        new Date(
-          `${values.year}-${values.month}-${values.day}`,
-          // Number(values.year),
-          // Number(values.month) - 1,
-          // Number(values.day) + 1,
-        ) ?? null,
+        new Date(`${values.year}-${values.month}-${values.day}`) ?? null,
       isInjured: values.isInjured,
     };
 
-    toast({
-      title: "OK",
-      description: (
-        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-          <code className="text-white">
-            {JSON.stringify(
-              new Date(`${values.year}-${values.month}-${values.day}`),
-              null,
-              2,
-            )}
-          </code>
-        </pre>
-      ),
-    });
-
     try {
       updateAthlete(data.id, newValues);
+
+      toast({
+        title: 'OK',
+        description: (
+          <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+            <code className="text-white">
+              {JSON.stringify(newValues, null, 2)}
+            </code>
+          </pre>
+        ),
+      });
     } catch (error) {
       toast({
-        title: "Error",
+        title: 'Error',
         description: (
           <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
             <code className="text-white">{JSON.stringify(error, null, 2)}</code>
@@ -220,9 +208,7 @@ export function AthleteForm({ data }: Props) {
           )}
         />
         <div className="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2">
-          {/* <DialogClose asChild> */}
           <Button type="submit">Сохранить</Button>
-          {/* </DialogClose> */}
         </div>
       </form>
     </Form>

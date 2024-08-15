@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { Cross2Icon } from "@radix-ui/react-icons";
-import { Table } from "@tanstack/react-table";
-import { Button } from "@repo/ui";
-import { DataTableFacetedFilter } from "./data-table-faceted-filter";
+import { Cross2Icon } from '@radix-ui/react-icons';
+import { Table } from '@tanstack/react-table';
+import { Button } from '@repo/ui';
+import { DataTableFacetedFilter } from './data-table-faceted-filter';
 
 interface DataTableToolbarProps<TData> {
   table: Table<TData>;
@@ -15,37 +15,21 @@ export function DataTableToolbar<TData>({
   const isFiltered = table.getState().columnFilters.length > 0;
 
   const positions = [
-    { value: 1, label: "ЦЗЩ Центральный защитник" },
-    { value: 2, label: "ФЗЩ Фланговый защитник" },
-    { value: 3, label: "ЦПЗ Центральный полузащитник" },
-    { value: 4, label: "ФПЗ Фланговый полузащитник" },
-    { value: 5, label: "НАП Нападающий" },
-    { value: 6, label: "ВРА Вратарь" },
+    { value: 1, label: 'Защитники' },
+    { value: 2, label: 'Полузащитники' },
+    { value: 3, label: 'Нападающие' },
   ];
 
   return (
     <div className="flex items-center justify-between">
       <div className="flex flex-1 items-center space-x-2">
-        {/* <Input
-          placeholder="Фильтр игроков..."
-          value={(table.getColumn('name')?.getFilterValue() as string) ?? ''}
-          onChange={(event) => table.getColumn('name')?.setFilterValue(event.target.value)}
-          className="h-8 w-[150px] lg:w-[250px]"
-        /> */}
-        {table.getColumn("position_id") && (
+        {table.getColumn('position_id') && (
           <DataTableFacetedFilter
-            column={table.getColumn("position_id")}
+            column={table.getColumn('position_id')}
             title="Амплуа"
             options={positions}
           />
         )}
-        {/* {table.getColumn('priority') && (
-          <DataTableFacetedFilter
-            column={table.getColumn('priority')}
-            title="Priority"
-            options={priorities}
-          />
-        )} */}
         {isFiltered && (
           <Button
             variant="ghost"
@@ -57,7 +41,6 @@ export function DataTableToolbar<TData>({
           </Button>
         )}
       </div>
-      {/* <DataTableViewOptions table={table} /> */}
     </div>
   );
 }

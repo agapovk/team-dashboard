@@ -2,12 +2,11 @@ import {
   ArrowDownIcon,
   ArrowUpIcon,
   CaretSortIcon,
-  EyeNoneIcon,
-} from "@radix-ui/react-icons";
-import { Column } from "@tanstack/react-table";
+} from '@radix-ui/react-icons';
+import { Column } from '@tanstack/react-table';
 
-import { cn } from "@repo/ui/lib/utils";
-import { Button } from "@repo/ui";
+import { cn } from '@repo/ui/lib/utils';
+import { Button } from '@repo/ui';
 
 interface DataTableColumnHeaderProps<TData, TValue>
   extends React.HTMLAttributes<HTMLDivElement> {
@@ -26,7 +25,7 @@ export function DataTableColumnHeader<TData, TValue>({
 
   return (
     <div
-      className={cn("flex items-center justify-center space-x-2", className)}
+      className={cn('flex items-center justify-center space-x-2', className)}
     >
       <Button
         variant="ghost"
@@ -35,9 +34,9 @@ export function DataTableColumnHeader<TData, TValue>({
         onClick={() => column.toggleSorting()}
       >
         <span className="text-xs lg:text-sm">{title}</span>
-        {column.getIsSorted() === "desc" ? (
+        {column.getIsSorted() === 'desc' ? (
           <ArrowDownIcon className="ml-2 h-4 w-4" />
-        ) : column.getIsSorted() === "asc" ? (
+        ) : column.getIsSorted() === 'asc' ? (
           <ArrowUpIcon className="ml-2 h-4 w-4" />
         ) : (
           <CaretSortIcon className="ml-2 h-4 w-4" />

@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@repo/ui";
-import { DataTable } from "../data-table";
-import { game } from "@repo/db";
-import { useSearchParams } from "next/navigation";
-import { fitness_columns } from "../fitness-columns";
-import { ttd_columns } from "../ttd_columns";
-import { Suspense } from "react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@repo/ui';
+import { DataTable } from '../data-table';
+import { game } from '@repo/db';
+import { useSearchParams } from 'next/navigation';
+import { fitness_columns } from '../fitness-columns';
+import { ttd_columns } from '../ttd_columns';
+import { Suspense } from 'react';
 
 type Props = {
   games: game[];
@@ -14,11 +14,11 @@ type Props = {
 
 export default function GamesTabs({ games }: Props) {
   const searchParams = useSearchParams();
-  const defaultTab = searchParams.get("tab");
+  const defaultTab = searchParams.get('tab');
 
   return (
-    <Suspense>
-      <Tabs defaultValue={defaultTab || "fitness"}>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Tabs defaultValue={defaultTab || 'fitness'}>
         <div className="h-full flex-1 flex-col space-y-8 p-8 md:flex">
           <div className="flex items-center justify-between space-y-2">
             <div>

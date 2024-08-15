@@ -1,23 +1,25 @@
-import * as fs from "node:fs";
+import * as fs from 'node:fs';
 // import { Semaphore } from "../src/async/semaphore";
-import { athses, dbAth, dbSes } from "../src/mapper";
-import { PrismaClient, session } from "@repo/db";
+import { athses, dbAth, dbSes } from '../src/mapper';
+import { PrismaClient, session } from '@repo/db';
 
 const prisma = new PrismaClient();
 
 const create = async () => {
-  console.log("Creating...");
-
   // const semaphore = Semaphore(8);
 
   // Find all session-details
-  const files = await fs.promises.readdir(`./temp_data/details`);
-  console.log(`read details dir ${files.length}`);
+  const session = await fs.promises.readdir(`./temp_data/sessions`);
+  const details = await fs.promises.readdir(`./temp_data/details`);
 
-  files.forEach(async (file) => {
+  console.log(`Session folder has ${session.length} files`);
+  console.log(`Details folder has ${details.length} files`);
+  console.log('Check DB');
+
+  details.forEach(async (file) => {
     const data = await fs.promises.readFile(
       `./temp_data/details/${file}`,
-      "utf-8",
+      'utf-8',
     );
 
     // Get session details data
@@ -25,7 +27,7 @@ const create = async () => {
 
     const sessionData = await fs.promises.readFile(
       `./temp_data/sessions/session-${details.teamsession}.json`,
-      "utf-8",
+      'utf-8',
     );
 
     // Get session data
@@ -63,7 +65,7 @@ const create = async () => {
         });
         // If player not in db -> create
         if (a === null) {
-          console.log("creating athlete: " + oneAthSes.athlete.name);
+          console.log('creating athlete: ' + oneAthSes.athlete.name);
           await prisma.athlete.create({
             data: {
               ...dbAth(oneAthSes.athlete),
@@ -71,7 +73,7 @@ const create = async () => {
           });
         }
       } catch (error) {
-        console.log("ATHLETE ERROR");
+        console.log('ATHLETE ERROR');
       }
 
       // Find this player session in db
@@ -84,7 +86,7 @@ const create = async () => {
 
         //If player session not in db -> create
         if (as === null) {
-          console.log("creating athlete session " + mapped.id);
+          console.log('creating athlete session ' + mapped.id);
           await prisma.athlete_session.create({
             data: {
               ...mapped,
@@ -94,12 +96,14 @@ const create = async () => {
           });
         }
       } catch (error) {
-        console.log(s?.id + " ATHLETE SESSION ERROR");
+        console.log(s?.id + ' ATHLETE SESSION ERROR');
       }
 
       // semaphore.release();
     });
   });
+
+  // console.log('DB updated!');
 };
 
 export default create;

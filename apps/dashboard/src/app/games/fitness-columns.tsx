@@ -1,24 +1,24 @@
-"use client";
+'use client';
 
-import { ColumnDef } from "@tanstack/react-table";
-import { game } from "@repo/db";
-import Link from "next/link";
-import Bar from "@components/bar";
-import { Badge } from "@repo/ui";
-import { PlaneIcon } from "lucide-react";
-import { DataTableColumnHeader } from "./components/data-table-column-header";
+import { ColumnDef } from '@tanstack/react-table';
+import { game } from '@repo/db';
+import Link from 'next/link';
+import Bar from '@components/bar';
+import { Badge } from '@repo/ui';
+import { PlaneIcon } from 'lucide-react';
+import { DataTableColumnHeader } from './components/data-table-column-header';
 
 type competition = {
   [key: string]: string;
 };
 const competitionMap: competition = {
-  rpl: "РПЛ",
-  cup: "Кубок",
+  rpl: 'РПЛ',
+  cup: 'Кубок',
 };
 
 export const fitness_columns: ColumnDef<game>[] = [
   {
-    accessorKey: "date",
+    accessorKey: 'date',
     header: ({ column }) => {
       return <DataTableColumnHeader column={column} title="Дата" />;
     },
@@ -35,7 +35,7 @@ export const fitness_columns: ColumnDef<game>[] = [
     },
   },
   {
-    accessorKey: "vs",
+    accessorKey: 'vs',
     header: () => (
       <div className="text-center text-xs lg:text-sm">Соперник</div>
     ),
@@ -48,14 +48,14 @@ export const fitness_columns: ColumnDef<game>[] = [
             className="flex flex-nowrap gap-2 underline"
           >
             <span className="whitespace-nowrap">{vs}</span>
-            {home ? "" : <PlaneIcon className="h-4 w-4" />}
+            {home ? '' : <PlaneIcon className="h-4 w-4" />}
           </Link>
         </div>
       );
     },
   },
   {
-    accessorKey: "competition",
+    accessorKey: 'competition',
     header: () => <div className="text-center text-xs lg:text-sm">Тип</div>,
     cell: ({ row }) => {
       const { competition } = row.original;
@@ -68,7 +68,7 @@ export const fitness_columns: ColumnDef<game>[] = [
     },
   },
   {
-    accessorKey: "result",
+    accessorKey: 'result',
     header: () => (
       <div className="text-center text-xs lg:text-sm">Результат</div>
     ),
@@ -77,10 +77,10 @@ export const fitness_columns: ColumnDef<game>[] = [
       const typeOfScore = (): string => {
         const uralScore = result?.slice(0, 1);
         const opponentScore = result?.slice(2);
-        if (!uralScore || !opponentScore) return "";
-        if (uralScore === opponentScore) return "bg-slate-400";
-        if (uralScore > opponentScore) return "bg-green-500";
-        return "bg-destructive";
+        if (!uralScore || !opponentScore) return '';
+        if (uralScore === opponentScore) return 'bg-slate-400';
+        if (uralScore > opponentScore) return 'bg-green-500';
+        return 'bg-destructive';
       };
       return (
         <div className="text-center text-sm">
@@ -90,12 +90,12 @@ export const fitness_columns: ColumnDef<game>[] = [
     },
   },
   {
-    accessorKey: "total_distance",
+    accessorKey: 'total_distance',
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Общая дистанция" />
     ),
     cell: ({ row }) => {
-      const data: number = row.getValue("total_distance");
+      const data: number = row.getValue('total_distance');
       if (!data) return null;
       const value = data.toFixed(0);
       return (
@@ -107,7 +107,7 @@ export const fitness_columns: ColumnDef<game>[] = [
     },
   },
   {
-    accessorKey: "speedzone4_distance",
+    accessorKey: 'speedzone4_distance',
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Дистанция 20-25 км/ч" />
     ),
@@ -124,7 +124,7 @@ export const fitness_columns: ColumnDef<game>[] = [
     },
   },
   {
-    accessorKey: "speedzone5_distance",
+    accessorKey: 'speedzone5_distance',
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Дистанция &gt;25 км/ч" />
     ),
@@ -141,129 +141,13 @@ export const fitness_columns: ColumnDef<game>[] = [
     },
   },
   {
-    accessorKey: "avg_speed",
+    accessorKey: 'avg_speed',
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Средняя скорость" />
     ),
     cell: ({ row }) => {
-      const data: number = row.getValue("avg_speed");
+      const data: number = row.getValue('avg_speed');
       return <div className="text-center text-sm">{data}</div>;
     },
   },
-  // {
-  //   accessorKey: 'number',
-  //   header: ({ column }) => (
-  //     <DataTableColumnHeader
-  //       column={column}
-  //       title="Номер"
-  //     />
-  //   ),
-  //   cell: ({ row }) => <div className="w-8">{row.getValue('number')}</div>,
-  //   enableSorting: false,
-  //   enableHiding: false,
-  // },
-  // {
-  //   accessorKey: 'title',
-  //   header: ({ column }) => (
-  //     <DataTableColumnHeader
-  //       column={column}
-  //       title="Title"
-  //     />
-  //   ),
-  //   cell: ({ row }) => {
-  //     const label = labels.find((label) => label.value === row.original.label);
-  //     return (
-  //       <div className="flex space-x-2">
-  //         {label && <Badge variant="outline">{label.label}</Badge>}
-  //         <span className="max-w-[500px] truncate font-medium">{row.getValue('title')}</span>
-  //       </div>
-  //     );
-  //   },
-  // },
-  // {
-  //   accessorKey: 'last_name',
-  //   header: ({ column }) => (
-  //     <DataTableColumnHeader
-  //       column={column}
-  //       title="Игрок"
-  //     />
-  //   ),
-  //   cell: ({ row }) => {
-  //     return (
-  //       <div className="flex space-x-2 items-center">
-  //         <span
-  //           className={cn(
-  //             'max-w-[500px] truncate font-medium',
-  //             row.original.isInjured && 'text-red-500'
-  //           )}
-  //         >
-  //           {row.getValue('last_name')}
-  //         </span>
-  //         {row.original.isInjured && <CrossCircledIcon className="text-red-500" />}
-  //       </div>
-  //     );
-  //   },
-  // },
-  // {
-  //   accessorKey: 'athlete_sessions',
-  //   header: ({ column }) => {
-  //     return (
-  //       <DataTableColumnHeader
-  //         column={column}
-  //         title="date?"
-  //       />
-  //     );
-  //   },
-  //   cell: ({ row }) => {
-  //     const session: athlete_session[] = row.original.athlete_sessions.filter(
-  //       (session) =>
-  //         new Date(session.session.start_timestamp).toLocaleDateString() ===
-  //         new Date('2023-07-18T06:49:01.000Z').toLocaleDateString()
-  //     );
-  //     if (session.length === 0) return;
-  //     let {
-  //       total_distance,
-  //       athletesessionpowerzone_distance_2,
-  //       athletesessionpowerzone_distance_3,
-  //     } = session[0];
-  //     athletesessionpowerzone_distance_2 ??= 0;
-  //     athletesessionpowerzone_distance_3 ??= 0;
-  //     const total_intensity =
-  //       athletesessionpowerzone_distance_2 + athletesessionpowerzone_distance_3;
-  //     return (
-  //       <div className="flex flex-col items-start gap-1">
-  //         <Badge variant="outline">{total_distance?.toFixed()}</Badge>
-  //         <Badge variant="secondary">{total_intensity.toFixed()}</Badge>
-  //       </div>
-  //     );
-  //   },
-  // },
-  // {
-  //   accessorKey: 'priority',
-  //   header: ({ column }) => (
-  //     <DataTableColumnHeader
-  //       column={column}
-  //       title="Priority"
-  //     />
-  //   ),
-  //   cell: ({ row }) => {
-  //     const priority = priorities.find((priority) => priority.value === row.getValue('priority'));
-  //     if (!priority) {
-  //       return null;
-  //     }
-  //     return (
-  //       <div className="flex items-center">
-  //         {priority.icon && <priority.icon className="mr-2 h-4 w-4 text-muted-foreground" />}
-  //         <span>{priority.label}</span>
-  //       </div>
-  //     );
-  //   },
-  //   filterFn: (row, id, value) => {
-  //     return value.includes(row.getValue(id));
-  //   },
-  // },
-  // {
-  //   id: 'actions',
-  //   cell: ({ row }) => <DataTableRowActions row={row} />,
-  // },
 ];

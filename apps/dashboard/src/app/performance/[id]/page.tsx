@@ -1,19 +1,15 @@
-import React from "react";
-import { PrismaClient } from "@repo/db";
-import { DataTable } from "./data-table";
-import { columns } from "./columns";
-import { Metadata } from "next";
-// import SimpleTable from '@components/table';
-// import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@repo/ui/components/ui/collapsible';
-// import { TriangleDownIcon } from '@radix-ui/react-icons';
-// import { Button } from '@repo/ui';
-
-export const metadata: Metadata = {
-  title: "Статистика тренировки",
-  description: "A task and issue tracker build using Tanstack Table.",
-};
+import React from 'react';
+import { PrismaClient } from '@repo/db';
+import { DataTable } from './data-table';
+import { columns } from './columns';
+import { Metadata } from 'next';
 
 const prisma = new PrismaClient();
+
+export const metadata: Metadata = {
+  title: 'Статистика тренировки',
+  description: 'A task and issue tracker build using Tanstack Table.',
+};
 
 type Props = {
   params: {
@@ -33,7 +29,7 @@ export default async function page({ params: { id } }: Props) {
         },
         orderBy: {
           athlete: {
-            name: "asc",
+            name: 'asc',
           },
         },
       },
@@ -87,22 +83,6 @@ export default async function page({ params: { id } }: Props) {
         <div className="space-y-4">
           <DataTable data={data} columns={columns} />
         </div>
-        {/* <Collapsible>
-          <CollapsibleTrigger>
-            <Button
-              size={'sm'}
-              variant={'outline'}
-            >
-              Посмотреть все данные
-            </Button>
-          </CollapsibleTrigger>
-          <CollapsibleContent>
-            <SimpleTable
-              head={[]}
-              data={athlete_sessions}
-            />
-          </CollapsibleContent>
-        </Collapsible> */}
       </div>
     );
   }

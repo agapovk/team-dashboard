@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { DataTable } from "../data-table";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@repo/ui";
-import { game } from "@repo/db";
-import { useSearchParams } from "next/navigation";
+import { DataTable } from '../data-table';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@repo/ui';
+import { game } from '@repo/db';
+import { useSearchParams } from 'next/navigation';
 import {
   athleteGameFitnessWithAthlete,
   fitness_columns,
-} from "../fitness-columns";
-import { athleteGameTtdWithAthlete, ttd_columns } from "../ttd_columns";
-import { Suspense } from "react";
+} from '../fitness-columns';
+import { athleteGameTtdWithAthlete, ttd_columns } from '../ttd_columns';
+import { Suspense } from 'react';
 
 type Props = {
   game: game & {
@@ -20,14 +20,14 @@ type Props = {
 
 export default function GameTabs({ game }: Props) {
   const searchParams = useSearchParams();
-  const defaultTab = searchParams.get("tab");
+  const defaultTab = searchParams.get('tab');
 
   const athlete_fitnees_data = game?.athlete_fitness;
   const athlete_ttd_data = game?.athlete_ttd;
 
   return (
-    <Suspense>
-      <Tabs defaultValue={defaultTab || "fitness"}>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Tabs defaultValue={defaultTab || 'fitness'}>
         <div className="h-full flex-1 flex-col space-y-8 p-8 md:flex">
           <div className="flex items-center justify-between space-y-2">
             <div>
@@ -36,7 +36,7 @@ export default function GameTabs({ game }: Props) {
               </h2>
               <p className="text-muted-foreground">
                 Отчет о матче
-                {game.date ? game.date.toLocaleDateString() : ""}
+                {game.date ? game.date.toLocaleDateString() : ''}
               </p>
             </div>
             <TabsList className="grid grid-cols-2">

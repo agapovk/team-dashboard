@@ -14,7 +14,7 @@ model session {
   team_id                                       Int?
   name                                          String?           @db.VarChar(255)
   start_timestamp                               DateTime
-  end_timestamp                                 DateTime
+  end_timestamp                                 DateTime?
   category_name                                 String?           @db.VarChar(255)
   notes                                         String?           @db.VarChar(255)
   total_time                                    Int?
@@ -156,7 +156,7 @@ model athlete {
   height                Int?
   isInTeam              Boolean                @default(false)
   isInjured             Boolean                @default(false)
-  number                Int?                   
+  number                Int?
   photo                 String?
   weight                Float?
   foot                  String?

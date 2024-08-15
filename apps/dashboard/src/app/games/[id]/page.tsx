@@ -1,12 +1,12 @@
-import React from "react";
-import { PrismaClient } from "@repo/db";
-import GameTabs from "./components/GameTabs";
-import { Metadata } from "next";
+import React from 'react';
+import { PrismaClient } from '@repo/db';
+import GameTabs from './components/GameTabs';
+import { Metadata } from 'next';
 const prisma = new PrismaClient();
 
 export const metadata: Metadata = {
-  title: "Статистика игры",
-  description: "A task and issue tracker build using Tanstack Table.",
+  title: 'Статистика игры',
+  description: 'A task and issue tracker build using Tanstack Table.',
 };
 
 type Props = {
@@ -34,6 +34,5 @@ export default async function page({ params: { id } }: Props) {
     },
   });
 
-  if (game) return;
-  // <GameTabs game={game} />;
+  if (game) return <GameTabs game={game} />;
 }

@@ -1,12 +1,12 @@
-import { Metadata } from "next";
-import { PrismaClient } from "@repo/db";
-import { Schedule } from "@components/Calendar/Schedule";
+import { Metadata } from 'next';
+import { PrismaClient } from '@repo/db';
+import { Schedule } from '@components/Calendar/Schedule';
 export const revalidate = 0;
 const prisma = new PrismaClient();
 
 export const metadata: Metadata = {
-  title: "Dashboard",
-  description: "Example dashboard app using the components.",
+  title: 'Dashboard',
+  description: 'Example dashboard app using the components.',
 };
 
 export default async function Home() {
@@ -15,12 +15,17 @@ export default async function Home() {
       OR: [
         {
           name: {
-            startsWith: "[ТРЕНИРОВКА]",
+            startsWith: '[ТРЕНИРОВКА]',
+          },
+        },
+        {
+          category_name: {
+            equals: 'БЕЗ ДАТЧИКОВ',
           },
         },
         {
           name: {
-            startsWith: "[МАТЧ]",
+            startsWith: '[МАТЧ]',
           },
         },
       ],

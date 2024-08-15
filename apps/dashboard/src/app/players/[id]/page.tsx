@@ -1,18 +1,16 @@
-import React from "react";
-import { PrismaClient } from "@repo/db";
-import Link from "next/link";
-import { Button } from "@repo/ui";
-import { Metadata } from "next";
-import PlayerTabs from "./components/PlayerTabs";
+import React from 'react';
+import { PrismaClient } from '@repo/db';
+import Link from 'next/link';
+import { Button } from '@repo/ui';
+import { Metadata } from 'next';
+import PlayerTabs from './components/PlayerTabs';
 
 const prisma = new PrismaClient();
 
 export const metadata: Metadata = {
-  title: "Статистика игрока",
-  description: "Игроки команды и их данные",
+  title: 'Статистика игрока',
+  description: 'Игроки команды и их данные',
 };
-
-// const activeTab =
 
 type Props = {
   params: { id: number };
@@ -27,7 +25,7 @@ export default async function PlayerPage({ params }: Props) {
         },
         orderBy: {
           game: {
-            date: "desc",
+            date: 'desc',
           },
         },
       },
@@ -37,7 +35,7 @@ export default async function PlayerPage({ params }: Props) {
         },
         orderBy: {
           game: {
-            date: "desc",
+            date: 'desc',
           },
         },
       },
@@ -47,7 +45,7 @@ export default async function PlayerPage({ params }: Props) {
         },
         orderBy: {
           session: {
-            start_timestamp: "desc",
+            start_timestamp: 'desc',
           },
         },
       },

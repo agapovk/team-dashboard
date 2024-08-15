@@ -1,30 +1,30 @@
-import React from "react";
-import { cn } from "@repo/ui/lib/utils";
+import React from 'react'
+import { cn } from '@repo/ui/lib/utils'
 
 type Props = {
-  values: number[];
-  min?: number;
-  max: number;
-  height?: number;
-  color?: string;
-};
+  values: number[]
+  min?: number
+  max: number
+  height?: number
+  color?: string
+}
 
-const colors = ["bg-orange-300", "bg-red-500", "bg-blue-300", "bg-green-400"];
+const colors = ['bg-orange-300', 'bg-red-500', 'bg-blue-300', 'bg-green-400']
 
 const invLerp = (from: number, to: number, value: number) =>
-  (value - from) / (to - from);
+  (value - from) / (to - from)
 
 export default function Bar(props: Props) {
-  const min = props.min ?? 0;
-  const values = props.values.map((v, i) => ({
+  const min = props.min ?? 0
+  const values = props.values.map((v) => ({
     value: v,
     width: `${invLerp(min, props.max, v) * 100}%`,
-  }));
+  }))
   return (
     <div
       className={cn([
-        "relative w-full overflow-visible bg-slate-100",
-        props.height !== undefined ? `h-[${props.height}px]` : "h-[5px]",
+        'relative w-full overflow-visible bg-slate-100',
+        props.height !== undefined ? `h-[${props.height}px]` : 'h-[5px]',
       ])}
     >
       {values.map((v, i) => {
@@ -40,11 +40,11 @@ export default function Bar(props: Props) {
               `absolute h-full transition hover:saturate-150`,
               props.color !== undefined
                 ? `bg-${props.color}`
-                : colors[i % colors.length],
+                : colors[i % colors.length]
             )}
           />
-        );
+        )
       })}
     </div>
-  );
+  )
 }

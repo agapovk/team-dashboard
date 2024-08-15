@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { ColumnDef } from "@tanstack/react-table";
-import { athlete, position } from "@repo/db";
-import Link from "next/link";
-import { Badge } from "@repo/ui";
-import { cn } from "@repo/ui/lib/utils";
-import { DataTableColumnHeader } from "./components/data-table-column-header";
-import { DataTableRowActions } from "./components/data-table-row-actions";
+import { ColumnDef } from '@tanstack/react-table';
+import { athlete, position } from '@repo/db';
+import Link from 'next/link';
+import { Badge } from '@repo/ui';
+import { cn } from '@repo/ui/lib/utils';
+import { DataTableColumnHeader } from './components/data-table-column-header';
+import { DataTableRowActions } from './components/data-table-row-actions';
 
 type athleteWithPosition = athlete & { position: position | null };
 function calculateAge(date: Date) {
@@ -21,33 +21,33 @@ function calculateAge(date: Date) {
 
 export const columns: ColumnDef<athleteWithPosition>[] = [
   {
-    accessorKey: "number",
+    accessorKey: 'number',
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Номер" />
     ),
     cell: ({ row }) => {
-      const value: number = row.getValue("number");
+      const value: number = row.getValue('number');
       const { isInjured } = row.original;
       return (
-        <div className={cn("text-center", isInjured && "text-destructive")}>
+        <div className={cn('text-center', isInjured && 'text-destructive')}>
           {value}
         </div>
       );
     },
   },
   {
-    accessorKey: "id",
+    accessorKey: 'id',
     header: () => <div className="text-center text-xs lg:text-sm">ФИО</div>,
     cell: ({ row }) => {
-      const id: number = row.getValue("id");
+      const id: number = row.getValue('id');
       const { name, isInjured } = row.original;
       return (
         <div className="flex items-center gap-3 text-sm">
           <Link
             href={`/players/${id}`}
             className={cn(
-              "whitespace-nowrap underline",
-              isInjured && "text-destructive",
+              'whitespace-nowrap underline',
+              isInjured && 'text-destructive',
             )}
           >
             {name}
@@ -58,22 +58,22 @@ export const columns: ColumnDef<athleteWithPosition>[] = [
     },
   },
   {
-    accessorKey: "birthday",
+    accessorKey: 'birthday',
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Возраст" />
     ),
     cell: ({ row }) => {
-      const value: Date = row.getValue("birthday");
+      const value: Date = row.getValue('birthday');
       const { isInjured } = row.original;
       return (
-        <div className={cn("text-center", isInjured && "text-destructive")}>
+        <div className={cn('text-center', isInjured && 'text-destructive')}>
           {calculateAge(value)}
         </div>
       );
     },
   },
   {
-    accessorKey: "position_id",
+    accessorKey: 'position_id',
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Амплуа" />
     ),
@@ -81,44 +81,44 @@ export const columns: ColumnDef<athleteWithPosition>[] = [
       const { isInjured, position } = row.original;
       if (!position) return;
       return (
-        <div className={cn("text-center", isInjured && "text-destructive")}>
+        <div className={cn('text-center', isInjured && 'text-destructive')}>
           {position.title}
         </div>
       );
     },
   },
   {
-    accessorKey: "height",
+    accessorKey: 'height',
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Рост" />
     ),
     cell: ({ row }) => {
-      const value: number = row.getValue("height");
+      const value: number = row.getValue('height');
       const { isInjured } = row.original;
       return (
-        <div className={cn("text-center", isInjured && "text-destructive")}>
+        <div className={cn('text-center', isInjured && 'text-destructive')}>
           {value}
         </div>
       );
     },
   },
   {
-    accessorKey: "weight",
+    accessorKey: 'weight',
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Вес" />
     ),
     cell: ({ row }) => {
-      const value: number = row.getValue("weight");
+      const value: number = row.getValue('weight');
       const { isInjured } = row.original;
       return (
-        <div className={cn("text-center", isInjured && "text-destructive")}>
+        <div className={cn('text-center', isInjured && 'text-destructive')}>
           {value}
         </div>
       );
     },
   },
   {
-    id: "actions",
+    id: 'actions',
     cell: ({ row }) => <DataTableRowActions row={row} />,
   },
 ];

@@ -4,6 +4,10 @@
  */
 const config = {
   singleQuote: true,
-};
+  endOfLine: 'lf',
+  semi: false,
+  tabWidth: 2,
+  trailingComma: 'es5',
+}
 
-export default config;
+export default config
