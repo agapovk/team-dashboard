@@ -1,1 +1,22 @@
-{"id":35549,"team":277,"category":1673,"category_name":"ТОВАРИЩЕСКИЙ МАТЧ","notes":"Урал - Арарат 1-1","start_timestamp":"2023-02-05T17:01:36.394000","end_timestamp":"2023-02-05T18:47:15.808000","union_duration":5685,"total_time":5685,"is_stats_valid":true,"tags":[],"drill_enabled":true,"drills_count":2,"minStart":1675615069.14,"maxStop":1675623447.2399998,"drillTags":[[5955],[5956]],"name":"[ТОВАРИЩЕСКИЙ МАТЧ] 5 FEB 2023: 17:01:36 - 18:47:15","created_on":"2023-02-05T18:36:41.040021","updated_on":"2023-04-16T08:49:35.398580","n_tracks":18}
+{
+  "id": 35549,
+  "team": 277,
+  "category": 1673,
+  "category_name": "ТОВАРИЩЕСКИЙ МАТЧ",
+  "notes": "Урал - Арарат 1-1",
+  "start_timestamp": "2023-02-05T17:01:36.394000",
+  "end_timestamp": "2023-02-05T18:47:15.808000",
+  "union_duration": 5685,
+  "total_time": 5685,
+  "is_stats_valid": true,
+  "tags": [],
+  "drill_enabled": true,
+  "drills_count": 2,
+  "minStart": 1675615069.14,
+  "maxStop": 1675623447.2399998,
+  "drillTags": [[5955], [5956]],
+  "name": "[ТОВАРИЩЕСКИЙ МАТЧ] 5 FEB 2023: 17:01:36 - 18:47:15",
+  "created_on": "2023-02-05T18:36:41.040021",
+  "updated_on": "2023-04-16T08:49:35.398580",
+  "n_tracks": 18
+}

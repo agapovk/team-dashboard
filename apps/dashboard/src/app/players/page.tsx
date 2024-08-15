@@ -1,14 +1,14 @@
-import { DataTable } from './data-table';
-import { columns } from './columns';
-import { PrismaClient } from '@repo/db';
-import { Metadata } from 'next';
+import { DataTable } from './data-table'
+import { columns } from './columns'
+import { PrismaClient } from '@repo/db'
+import { Metadata } from 'next'
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient()
 
 export const metadata: Metadata = {
   title: 'Состав команды',
   description: 'Игроки команды и их данные',
-};
+}
 
 export default async function PlayersPage() {
   const players = await prisma.athlete.findMany({
@@ -21,7 +21,7 @@ export default async function PlayersPage() {
     orderBy: {
       name: 'asc',
     },
-  });
+  })
 
   return (
     <div className="h-full flex-1 flex-col space-y-8 p-8 md:flex">
@@ -37,5 +37,5 @@ export default async function PlayersPage() {
         <DataTable columns={columns} data={players} />
       </div>
     </div>
-  );
+  )
 }

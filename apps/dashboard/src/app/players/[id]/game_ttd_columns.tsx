@@ -1,21 +1,21 @@
-'use client';
+'use client'
 
-import { ColumnDef } from '@tanstack/react-table';
-import { athlete_game_ttd, game } from '@repo/db';
-import Link from 'next/link';
-import { DataTableColumnHeader } from './components/data-table-column-header';
-import { cn } from '@repo/ui/lib/utils';
+import { ColumnDef } from '@tanstack/react-table'
+import { athlete_game_ttd, game } from '@repo/db'
+import Link from 'next/link'
+import { DataTableColumnHeader } from './components/data-table-column-header'
+import { cn } from '@repo/ui/lib/utils'
 
-export type athleteGameTtdWithAthlete = athlete_game_ttd & { game: game };
+export type athleteGameTtdWithAthlete = athlete_game_ttd & { game: game }
 export const game_ttd_columns: ColumnDef<athleteGameTtdWithAthlete>[] = [
   {
     accessorKey: 'date',
     header: () => <div className="text-center text-xs lg:text-sm">Дата</div>,
     cell: ({ row }) => {
-      const game: game = row.original.game;
-      const date = game.date?.toLocaleDateString();
+      const game: game = row.original.game
+      const date = game.date?.toLocaleDateString()
 
-      return <div className="text-sm">{date}</div>;
+      return <div className="text-sm">{date}</div>
     },
   },
   {
@@ -24,7 +24,7 @@ export const game_ttd_columns: ColumnDef<athleteGameTtdWithAthlete>[] = [
       <div className="text-center text-xs lg:text-sm">Соперник</div>
     ),
     cell: ({ row }) => {
-      const { vs, id } = row.original.game;
+      const { vs, id } = row.original.game
 
       return (
         <Link
@@ -33,7 +33,7 @@ export const game_ttd_columns: ColumnDef<athleteGameTtdWithAthlete>[] = [
         >
           {vs}
         </Link>
-      );
+      )
     },
   },
   {
@@ -42,9 +42,9 @@ export const game_ttd_columns: ColumnDef<athleteGameTtdWithAthlete>[] = [
       <DataTableColumnHeader column={column} title="Минут на поле" />
     ),
     cell: ({ row }) => {
-      const data: number = row.getValue('minutesPlayed');
-      const value = data.toFixed(0);
-      return <div className=" flex text-center text-sm">{value}</div>;
+      const data: number = row.getValue('minutesPlayed')
+      const value = data.toFixed(0)
+      return <div className=" flex text-center text-sm">{value}</div>
     },
   },
   {
@@ -56,11 +56,11 @@ export const game_ttd_columns: ColumnDef<athleteGameTtdWithAthlete>[] = [
           title="П"
           description="Передачи"
         />
-      );
+      )
     },
     cell: ({ row }) => {
-      const { passes } = row.original;
-      return <div className="text-center">{passes}</div>;
+      const { passes } = row.original
+      return <div className="text-center">{passes}</div>
     },
   },
   {
@@ -72,11 +72,11 @@ export const game_ttd_columns: ColumnDef<athleteGameTtdWithAthlete>[] = [
           title="П+"
           description="Передачи+ %"
         />
-      );
+      )
     },
     cell: ({ row }) => {
-      const { passesSuccess_pct } = row.original;
-      return <div className="text-center">{passesSuccess_pct}</div>;
+      const { passesSuccess_pct } = row.original
+      return <div className="text-center">{passesSuccess_pct}</div>
     },
   },
   {
@@ -88,11 +88,11 @@ export const game_ttd_columns: ColumnDef<athleteGameTtdWithAthlete>[] = [
           title="ПВ"
           description="Передачи вперед"
         />
-      );
+      )
     },
     cell: ({ row }) => {
-      const { passForward } = row.original;
-      return <div className="text-center">{passForward}</div>;
+      const { passForward } = row.original
+      return <div className="text-center">{passForward}</div>
     },
   },
   {
@@ -104,11 +104,11 @@ export const game_ttd_columns: ColumnDef<athleteGameTtdWithAthlete>[] = [
           title="ПВ+"
           description="Передачи вперед+ %"
         />
-      );
+      )
     },
     cell: ({ row }) => {
-      const { passForwardSuccess_pct } = row.original;
-      return <div className="text-center">{passForwardSuccess_pct}</div>;
+      const { passForwardSuccess_pct } = row.original
+      return <div className="text-center">{passForwardSuccess_pct}</div>
     },
   },
   {
@@ -120,11 +120,11 @@ export const game_ttd_columns: ColumnDef<athleteGameTtdWithAthlete>[] = [
           title="ПД"
           description="Передачи длинные"
         />
-      );
+      )
     },
     cell: ({ row }) => {
-      const { passLong } = row.original;
-      return <div className="text-center">{passLong}</div>;
+      const { passLong } = row.original
+      return <div className="text-center">{passLong}</div>
     },
   },
   {
@@ -136,11 +136,11 @@ export const game_ttd_columns: ColumnDef<athleteGameTtdWithAthlete>[] = [
           title="ПД+"
           description="Передачи длинные+ %"
         />
-      );
+      )
     },
     cell: ({ row }) => {
-      const { passLongSuccess_pct } = row.original;
-      return <div className="text-center">{passLongSuccess_pct}</div>;
+      const { passLongSuccess_pct } = row.original
+      return <div className="text-center">{passLongSuccess_pct}</div>
     },
   },
   {
@@ -152,11 +152,11 @@ export const game_ttd_columns: ColumnDef<athleteGameTtdWithAthlete>[] = [
           title="ПК"
           description="Передачи ключевые"
         />
-      );
+      )
     },
     cell: ({ row }) => {
-      const { keyPasses } = row.original;
-      return <div className="text-center">{keyPasses}</div>;
+      const { keyPasses } = row.original
+      return <div className="text-center">{keyPasses}</div>
     },
   },
   {
@@ -168,11 +168,11 @@ export const game_ttd_columns: ColumnDef<athleteGameTtdWithAthlete>[] = [
           title="ПК+"
           description="Передачи ключевые+ %"
         />
-      );
+      )
     },
     cell: ({ row }) => {
-      const { keyPassesSuccess_pct } = row.original;
-      return <div className="text-center">{keyPassesSuccess_pct}</div>;
+      const { keyPassesSuccess_pct } = row.original
+      return <div className="text-center">{keyPassesSuccess_pct}</div>
     },
   },
-];
+]

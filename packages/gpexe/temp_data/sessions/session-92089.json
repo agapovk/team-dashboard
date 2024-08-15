@@ -1,1 +1,24 @@
-{"id":92089,"team":687,"category":3896,"category_name":"ТРЕНИРОВКА","notes":"","start_timestamp":"2024-06-23T11:13:58","end_timestamp":"2024-06-23T12:17:57","union_duration":3791,"total_time":3791,"is_stats_valid":true,"tags":[],"drill_enabled":true,"drills_count":3,"minStart":1719139681.096,"maxStop":1719145378.6500027,"drillTags":[[15489],[16280],[15493]],"name":"[ТРЕНИРОВКА] 23 JUN 2024: 11:13:58 - 12:17:57","created_on":"2024-06-23T09:56:09.558534","updated_on":"2024-06-23T09:57:52.689193","n_tracks":21,"submitted_by":"gpexe-ui","drills":[92092,92091,92090]}
+{
+  "id": 92089,
+  "team": 687,
+  "category": 3896,
+  "category_name": "ТРЕНИРОВКА",
+  "notes": "",
+  "start_timestamp": "2024-06-23T11:13:58",
+  "end_timestamp": "2024-06-23T12:17:57",
+  "union_duration": 3791,
+  "total_time": 3791,
+  "is_stats_valid": true,
+  "tags": [],
+  "drill_enabled": true,
+  "drills_count": 3,
+  "minStart": 1719139681.096,
+  "maxStop": 1719145378.6500027,
+  "drillTags": [[15489], [16280], [15493]],
+  "name": "[ТРЕНИРОВКА] 23 JUN 2024: 11:13:58 - 12:17:57",
+  "created_on": "2024-06-23T09:56:09.558534",
+  "updated_on": "2024-06-23T09:57:52.689193",
+  "n_tracks": 21,
+  "submitted_by": "gpexe-ui",
+  "drills": [92092, 92091, 92090]
+}

@@ -1,1 +1,389 @@
-{"teamsession":83425,"drills_count":2,"players":{"2825":{"athlete_session_id":1413732,"athlete":{"id":2825,"name":"АЮПОВ ТИМУР","last_name":"АЮПОВ","first_name":"ТИМУР","birthdate":"1993-07-26","club":115,"picture":null,"custom_id":"55","v0":8.622222222222222,"a0":6.8,"short_name":"АЮП"},"average_time":{"unit":"time","value":2413.0155267625587},"total_distance":{"unit":"distance","value":2978.540008544922},"total_energy":{"unit":"energy","value":11753.369049072266},"equivalent_distance_index":{"unit":"percentage1","value":0.08039239514832253},"average_p":{"unit":"power","value":4.870821973052641},"power_events":{"unit":"number","value":23},"recovery_average_time":{"unit":"duration","value":77.55251692975524},"recovery_average_power":{"unit":"power","value":3.5451835928055386}},"2827":{"athlete_session_id":1413738,"athlete":{"id":2827,"name":"ЭМЕРСОН _","last_name":"ЭМЕРСОН","first_name":"_","birthdate":"1995-10-07","club":115,"picture":null,"custom_id":null,"v0":9.358333333333333,"a0":7.15,"short_name":"ЭМИ"},"average_time":{"unit":"time","value":2413.014472426648},"total_distance":{"unit":"distance","value":2597.446434020996},"total_energy":{"unit":"energy","value":9578.896789550781},"equivalent_distance_index":{"unit":"percentage1","value":0.06485573777503695},"average_p":{"unit":"power","value":3.9696806210688673},"power_events":{"unit":"number","value":15},"recovery_average_time":{"unit":"duration","value":124.93640125575486},"recovery_average_power":{"unit":"power","value":2.9824654116091067}},"2828":{"athlete_session_id":1413734,"athlete":{"id":2828,"name":"ФИЛИПЕНКО ЕГОР","last_name":"ФИЛИПЕНКО","first_name":"ЕГОР","birthdate":"1988-04-10","club":115,"picture":null,"custom_id":null,"v0":8.708333333333334,"a0":6.63,"short_name":"ФИЛ"},"average_time":{"unit":"time","value":2413.0144736355896},"total_distance":{"unit":"distance","value":2742.5099563598633},"total_energy":{"unit":"energy","value":10519.217559814453},"equivalent_distance_index":{"unit":"percentage1","value":0.0699766583103425},"average_p":{"unit":"power","value":4.359367784464873},"power_events":{"unit":"number","value":13},"recovery_average_time":{"unit":"duration","value":147.33121786181331},"recovery_average_power":{"unit":"power","value":3.5778713348293603}},"2831":{"athlete_session_id":1413740,"athlete":{"id":2831,"name":"МАМИН АРТЕМ","last_name":"МАМИН","first_name":"АРТЕМ","birthdate":"1997-07-25","club":115,"picture":null,"custom_id":null,"v0":8.583333333333332,"a0":7.87,"short_name":"МАМ"},"average_time":{"unit":"time","value":2413.015},"total_distance":{"unit":"distance","value":2800.769729614258},"total_energy":{"unit":"energy","value":10718.353820800781},"equivalent_distance_index":{"unit":"percentage1","value":0.05545499841202384},"average_p":{"unit":"power","value":4.441892744471453},"power_events":{"unit":"number","value":14},"recovery_average_time":{"unit":"duration","value":135.56653846153847},"recovery_average_power":{"unit":"power","value":3.5845710223283063}},"2834":{"athlete_session_id":1413735,"athlete":{"id":2834,"name":"CISSE _","last_name":"CISSE","first_name":"_","birthdate":"1994-02-28","club":115,"picture":null,"custom_id":null,"v0":9.511111111111111,"a0":6.49,"short_name":"СИС"},"average_time":{"unit":"time","value":2413.0155267688833},"total_distance":{"unit":"distance","value":2818.6020584106445},"total_energy":{"unit":"energy","value":11050.739532470703},"equivalent_distance_index":{"unit":"percentage1","value":0.07561310481296823},"average_p":{"unit":"power","value":4.579638800446531},"power_events":{"unit":"number","value":22},"recovery_average_time":{"unit":"duration","value":82.99763716626444},"recovery_average_power":{"unit":"power","value":3.5094031618082075}},"2836":{"athlete_session_id":1413736,"athlete":{"id":2836,"name":"СУНГАТУЛИН ФАНИЛЬ","last_name":"СУНГАТУЛИН","first_name":"ФАНИЛЬ","birthdate":"2001-12-24","club":115,"picture":null,"custom_id":null,"v0":8.516666666666666,"a0":7.05,"short_name":"ФАН"},"average_time":{"unit":"time","value":2413.015},"total_distance":{"unit":"distance","value":2732.670883178711},"total_energy":{"unit":"energy","value":10464.842224121094},"equivalent_distance_index":{"unit":"percentage1","value":0.06115868729551255},"average_p":{"unit":"power","value":4.336832644687702},"power_events":{"unit":"number","value":17},"recovery_average_time":{"unit":"duration","value":108.879375},"recovery_average_power":{"unit":"power","value":3.1844387060903125}},"2843":{"athlete_session_id":1413733,"athlete":{"id":2843,"name":"КАШТАНОВ АЛЕКСЕЙ","last_name":"КАШТАНОВ","first_name":"АЛЕКСЕЙ","birthdate":"1996-03-13","club":115,"picture":null,"custom_id":null,"v0":9.369444444444444,"a0":7.2,"short_name":"КЭШ"},"average_time":{"unit":"time","value":2413.015},"total_distance":{"unit":"distance","value":2962.4053955078125},"total_energy":{"unit":"energy","value":11886.601806640625},"equivalent_distance_index":{"unit":"percentage1","value":0.07656940047655292},"average_p":{"unit":"power","value":4.926037263191744},"power_events":{"unit":"number","value":23},"recovery_average_time":{"unit":"duration","value":66.9075},"recovery_average_power":{"unit":"power","value":3.0465513732918246}},"2844":{"athlete_session_id":1413739,"athlete":{"id":2844,"name":"VLOET RAI","last_name":"VLOET","first_name":"RAI","birthdate":"1995-05-08","club":115,"picture":null,"custom_id":null,"v0":9.366666666666665,"a0":6.62,"short_name":"РАЙ"},"average_time":{"unit":"time","value":2777.0043928086106},"total_distance":{"unit":"distance","value":3779.000747680664},"total_energy":{"unit":"energy","value":14904.765441894531},"equivalent_distance_index":{"unit":"percentage1","value":0.06361932598618947},"average_p":{"unit":"power","value":5.36720989008596},"power_events":{"unit":"number","value":37},"recovery_average_time":{"unit":"duration","value":60.076792419778336},"recovery_average_power":{"unit":"power","value":3.83148206935159}},"4426":{"athlete_session_id":1413731,"athlete":{"id":4426,"name":"ITALO _","last_name":"ITALO","first_name":"_","birthdate":"2002-02-18","club":115,"picture":null,"custom_id":null,"v0":9.694444444444445,"a0":6.48,"short_name":"ITA"},"average_time":{"unit":"time","value":2413.0144749081423},"total_distance":{"unit":"distance","value":2861.7539443969727},"total_energy":{"unit":"energy","value":11058.675476074219},"equivalent_distance_index":{"unit":"percentage1","value":0.07642583309774231},"average_p":{"unit":"power","value":4.582929605714527},"power_events":{"unit":"number","value":26},"recovery_average_time":{"unit":"duration","value":66.48838553157877},"recovery_average_power":{"unit":"power","value":3.1290496425960512}},"5905":{"athlete_session_id":1413737,"athlete":{"id":5905,"name":"ИОНОВ АЛЕКСЕЙ","last_name":"ИОНОВ","first_name":"АЛЕКСЕЙ","birthdate":"1989-02-18","club":115,"picture":null,"custom_id":null,"v0":9.052777777777779,"a0":6.44,"short_name":"ИОН"},"average_time":{"unit":"time","value":2413.015000000001},"total_distance":{"unit":"distance","value":2745.2190551757812},"total_energy":{"unit":"energy","value":10826.672760009766},"equivalent_distance_index":{"unit":"percentage1","value":0.08093861811735947},"average_p":{"unit":"power","value":4.486782204010237},"power_events":{"unit":"number","value":24},"recovery_average_time":{"unit":"duration","value":72.84152173913046},"recovery_average_power":{"unit":"power","value":3.0263198881729534}}},"roles":{"ЦЗ":{"parameters":{"average_time":{"value":2413.0146052426167,"unit":"time"},"total_distance":{"value":2750.62001886672,"unit":"distance"},"total_energy":{"value":10468.785925359203,"unit":"energy"},"equivalent_distance_index":{"value":0.06667830628824903,"unit":"percentage1"},"average_p":{"value":4.338467694648524,"unit":"power"},"power_events":{"value":16.999999837835382,"unit":"number"},"recovery_average_time":{"value":118.58063669631487,"unit":"duration"},"recovery_average_power":{"value":3.3184893673682896,"unit":"power"}},"tracks_count":4,"order":2},"ЦПЗ":{"parameters":{"average_time":{"value":2413.0153511771728,"unit":"time"},"total_distance":{"value":2843.2709914260913,"unit":"distance"},"total_energy":{"value":11089.650314019966,"unit":"energy"},"equivalent_distance_index":{"value":0.07238806323606349,"unit":"percentage1"},"average_p":{"value":4.595764491570597,"unit":"power"},"power_events":{"value":20.666666933479604,"unit":"number"},"recovery_average_time":{"value":89.80984164437088,"unit":"duration"},"recovery_average_power":{"value":3.4130085035337387,"unit":"power"}},"tracks_count":3,"order":3},"НАП":{"parameters":{"average_time":{"value":2545.961938096364,"unit":"time"},"total_distance":{"value":3191.7368562156607,"unit":"distance"},"total_energy":{"value":12652.589264275679,"unit":"energy"},"equivalent_distance_index":{"value":0.07322607401923079,"unit":"percentage1"},"average_p":{"value":4.9477666501319835,"unit":"power"},"power_events":{"value":28.430868041104226,"unit":"number"},"recovery_average_time":{"value":66.29589925624735,"unit":"duration"},"recovery_average_power":{"value":3.3268259326124743,"unit":"power"}},"tracks_count":3,"order":5}},"team":{"parameters":{"average_time":{"value":2454.2819692209778,"unit":"time"},"total_distance":{"value":2914.9259030079998,"unit":"distance"},"total_energy":{"value":11330.1347529182,"unit":"energy"},"equivalent_distance_index":{"value":0.07050047594320508,"unit":"percentage1"},"average_p":{"value":4.603637428174302,"unit":"power"},"power_events":{"value":21.631820399972575,"unit":"number"},"recovery_average_time":{"value":93.84836214544157,"unit":"duration"},"recovery_average_power":{"value":3.3490114271949727,"unit":"power"}}}}
+{
+  "teamsession": 83425,
+  "drills_count": 2,
+  "players": {
+    "2825": {
+      "athlete_session_id": 1413732,
+      "athlete": {
+        "id": 2825,
+        "name": "АЮПОВ ТИМУР",
+        "last_name": "АЮПОВ",
+        "first_name": "ТИМУР",
+        "birthdate": "1993-07-26",
+        "club": 115,
+        "picture": null,
+        "custom_id": "55",
+        "v0": 8.622222222222222,
+        "a0": 6.8,
+        "short_name": "АЮП"
+      },
+      "average_time": { "unit": "time", "value": 2413.0155267625587 },
+      "total_distance": { "unit": "distance", "value": 2978.540008544922 },
+      "total_energy": { "unit": "energy", "value": 11753.369049072266 },
+      "equivalent_distance_index": {
+        "unit": "percentage1",
+        "value": 0.08039239514832253
+      },
+      "average_p": { "unit": "power", "value": 4.870821973052641 },
+      "power_events": { "unit": "number", "value": 23 },
+      "recovery_average_time": {
+        "unit": "duration",
+        "value": 77.55251692975524
+      },
+      "recovery_average_power": { "unit": "power", "value": 3.5451835928055386 }
+    },
+    "2827": {
+      "athlete_session_id": 1413738,
+      "athlete": {
+        "id": 2827,
+        "name": "ЭМЕРСОН _",
+        "last_name": "ЭМЕРСОН",
+        "first_name": "_",
+        "birthdate": "1995-10-07",
+        "club": 115,
+        "picture": null,
+        "custom_id": null,
+        "v0": 9.358333333333333,
+        "a0": 7.15,
+        "short_name": "ЭМИ"
+      },
+      "average_time": { "unit": "time", "value": 2413.014472426648 },
+      "total_distance": { "unit": "distance", "value": 2597.446434020996 },
+      "total_energy": { "unit": "energy", "value": 9578.896789550781 },
+      "equivalent_distance_index": {
+        "unit": "percentage1",
+        "value": 0.06485573777503695
+      },
+      "average_p": { "unit": "power", "value": 3.9696806210688673 },
+      "power_events": { "unit": "number", "value": 15 },
+      "recovery_average_time": {
+        "unit": "duration",
+        "value": 124.93640125575486
+      },
+      "recovery_average_power": { "unit": "power", "value": 2.9824654116091067 }
+    },
+    "2828": {
+      "athlete_session_id": 1413734,
+      "athlete": {
+        "id": 2828,
+        "name": "ФИЛИПЕНКО ЕГОР",
+        "last_name": "ФИЛИПЕНКО",
+        "first_name": "ЕГОР",
+        "birthdate": "1988-04-10",
+        "club": 115,
+        "picture": null,
+        "custom_id": null,
+        "v0": 8.708333333333334,
+        "a0": 6.63,
+        "short_name": "ФИЛ"
+      },
+      "average_time": { "unit": "time", "value": 2413.0144736355896 },
+      "total_distance": { "unit": "distance", "value": 2742.5099563598633 },
+      "total_energy": { "unit": "energy", "value": 10519.217559814453 },
+      "equivalent_distance_index": {
+        "unit": "percentage1",
+        "value": 0.0699766583103425
+      },
+      "average_p": { "unit": "power", "value": 4.359367784464873 },
+      "power_events": { "unit": "number", "value": 13 },
+      "recovery_average_time": {
+        "unit": "duration",
+        "value": 147.33121786181331
+      },
+      "recovery_average_power": { "unit": "power", "value": 3.5778713348293603 }
+    },
+    "2831": {
+      "athlete_session_id": 1413740,
+      "athlete": {
+        "id": 2831,
+        "name": "МАМИН АРТЕМ",
+        "last_name": "МАМИН",
+        "first_name": "АРТЕМ",
+        "birthdate": "1997-07-25",
+        "club": 115,
+        "picture": null,
+        "custom_id": null,
+        "v0": 8.583333333333332,
+        "a0": 7.87,
+        "short_name": "МАМ"
+      },
+      "average_time": { "unit": "time", "value": 2413.015 },
+      "total_distance": { "unit": "distance", "value": 2800.769729614258 },
+      "total_energy": { "unit": "energy", "value": 10718.353820800781 },
+      "equivalent_distance_index": {
+        "unit": "percentage1",
+        "value": 0.05545499841202384
+      },
+      "average_p": { "unit": "power", "value": 4.441892744471453 },
+      "power_events": { "unit": "number", "value": 14 },
+      "recovery_average_time": {
+        "unit": "duration",
+        "value": 135.56653846153847
+      },
+      "recovery_average_power": { "unit": "power", "value": 3.5845710223283063 }
+    },
+    "2834": {
+      "athlete_session_id": 1413735,
+      "athlete": {
+        "id": 2834,
+        "name": "CISSE _",
+        "last_name": "CISSE",
+        "first_name": "_",
+        "birthdate": "1994-02-28",
+        "club": 115,
+        "picture": null,
+        "custom_id": null,
+        "v0": 9.511111111111111,
+        "a0": 6.49,
+        "short_name": "СИС"
+      },
+      "average_time": { "unit": "time", "value": 2413.0155267688833 },
+      "total_distance": { "unit": "distance", "value": 2818.6020584106445 },
+      "total_energy": { "unit": "energy", "value": 11050.739532470703 },
+      "equivalent_distance_index": {
+        "unit": "percentage1",
+        "value": 0.07561310481296823
+      },
+      "average_p": { "unit": "power", "value": 4.579638800446531 },
+      "power_events": { "unit": "number", "value": 22 },
+      "recovery_average_time": {
+        "unit": "duration",
+        "value": 82.99763716626444
+      },
+      "recovery_average_power": { "unit": "power", "value": 3.5094031618082075 }
+    },
+    "2836": {
+      "athlete_session_id": 1413736,
+      "athlete": {
+        "id": 2836,
+        "name": "СУНГАТУЛИН ФАНИЛЬ",
+        "last_name": "СУНГАТУЛИН",
+        "first_name": "ФАНИЛЬ",
+        "birthdate": "2001-12-24",
+        "club": 115,
+        "picture": null,
+        "custom_id": null,
+        "v0": 8.516666666666666,
+        "a0": 7.05,
+        "short_name": "ФАН"
+      },
+      "average_time": { "unit": "time", "value": 2413.015 },
+      "total_distance": { "unit": "distance", "value": 2732.670883178711 },
+      "total_energy": { "unit": "energy", "value": 10464.842224121094 },
+      "equivalent_distance_index": {
+        "unit": "percentage1",
+        "value": 0.06115868729551255
+      },
+      "average_p": { "unit": "power", "value": 4.336832644687702 },
+      "power_events": { "unit": "number", "value": 17 },
+      "recovery_average_time": { "unit": "duration", "value": 108.879375 },
+      "recovery_average_power": { "unit": "power", "value": 3.1844387060903125 }
+    },
+    "2843": {
+      "athlete_session_id": 1413733,
+      "athlete": {
+        "id": 2843,
+        "name": "КАШТАНОВ АЛЕКСЕЙ",
+        "last_name": "КАШТАНОВ",
+        "first_name": "АЛЕКСЕЙ",
+        "birthdate": "1996-03-13",
+        "club": 115,
+        "picture": null,
+        "custom_id": null,
+        "v0": 9.369444444444444,
+        "a0": 7.2,
+        "short_name": "КЭШ"
+      },
+      "average_time": { "unit": "time", "value": 2413.015 },
+      "total_distance": { "unit": "distance", "value": 2962.4053955078125 },
+      "total_energy": { "unit": "energy", "value": 11886.601806640625 },
+      "equivalent_distance_index": {
+        "unit": "percentage1",
+        "value": 0.07656940047655292
+      },
+      "average_p": { "unit": "power", "value": 4.926037263191744 },
+      "power_events": { "unit": "number", "value": 23 },
+      "recovery_average_time": { "unit": "duration", "value": 66.9075 },
+      "recovery_average_power": { "unit": "power", "value": 3.0465513732918246 }
+    },
+    "2844": {
+      "athlete_session_id": 1413739,
+      "athlete": {
+        "id": 2844,
+        "name": "VLOET RAI",
+        "last_name": "VLOET",
+        "first_name": "RAI",
+        "birthdate": "1995-05-08",
+        "club": 115,
+        "picture": null,
+        "custom_id": null,
+        "v0": 9.366666666666665,
+        "a0": 6.62,
+        "short_name": "РАЙ"
+      },
+      "average_time": { "unit": "time", "value": 2777.0043928086106 },
+      "total_distance": { "unit": "distance", "value": 3779.000747680664 },
+      "total_energy": { "unit": "energy", "value": 14904.765441894531 },
+      "equivalent_distance_index": {
+        "unit": "percentage1",
+        "value": 0.06361932598618947
+      },
+      "average_p": { "unit": "power", "value": 5.36720989008596 },
+      "power_events": { "unit": "number", "value": 37 },
+      "recovery_average_time": {
+        "unit": "duration",
+        "value": 60.076792419778336
+      },
+      "recovery_average_power": { "unit": "power", "value": 3.83148206935159 }
+    },
+    "4426": {
+      "athlete_session_id": 1413731,
+      "athlete": {
+        "id": 4426,
+        "name": "ITALO _",
+        "last_name": "ITALO",
+        "first_name": "_",
+        "birthdate": "2002-02-18",
+        "club": 115,
+        "picture": null,
+        "custom_id": null,
+        "v0": 9.694444444444445,
+        "a0": 6.48,
+        "short_name": "ITA"
+      },
+      "average_time": { "unit": "time", "value": 2413.0144749081423 },
+      "total_distance": { "unit": "distance", "value": 2861.7539443969727 },
+      "total_energy": { "unit": "energy", "value": 11058.675476074219 },
+      "equivalent_distance_index": {
+        "unit": "percentage1",
+        "value": 0.07642583309774231
+      },
+      "average_p": { "unit": "power", "value": 4.582929605714527 },
+      "power_events": { "unit": "number", "value": 26 },
+      "recovery_average_time": {
+        "unit": "duration",
+        "value": 66.48838553157877
+      },
+      "recovery_average_power": { "unit": "power", "value": 3.1290496425960512 }
+    },
+    "5905": {
+      "athlete_session_id": 1413737,
+      "athlete": {
+        "id": 5905,
+        "name": "ИОНОВ АЛЕКСЕЙ",
+        "last_name": "ИОНОВ",
+        "first_name": "АЛЕКСЕЙ",
+        "birthdate": "1989-02-18",
+        "club": 115,
+        "picture": null,
+        "custom_id": null,
+        "v0": 9.052777777777779,
+        "a0": 6.44,
+        "short_name": "ИОН"
+      },
+      "average_time": { "unit": "time", "value": 2413.015000000001 },
+      "total_distance": { "unit": "distance", "value": 2745.2190551757812 },
+      "total_energy": { "unit": "energy", "value": 10826.672760009766 },
+      "equivalent_distance_index": {
+        "unit": "percentage1",
+        "value": 0.08093861811735947
+      },
+      "average_p": { "unit": "power", "value": 4.486782204010237 },
+      "power_events": { "unit": "number", "value": 24 },
+      "recovery_average_time": {
+        "unit": "duration",
+        "value": 72.84152173913046
+      },
+      "recovery_average_power": { "unit": "power", "value": 3.0263198881729534 }
+    }
+  },
+  "roles": {
+    "ЦЗ": {
+      "parameters": {
+        "average_time": { "value": 2413.0146052426167, "unit": "time" },
+        "total_distance": { "value": 2750.62001886672, "unit": "distance" },
+        "total_energy": { "value": 10468.785925359203, "unit": "energy" },
+        "equivalent_distance_index": {
+          "value": 0.06667830628824903,
+          "unit": "percentage1"
+        },
+        "average_p": { "value": 4.338467694648524, "unit": "power" },
+        "power_events": { "value": 16.999999837835382, "unit": "number" },
+        "recovery_average_time": {
+          "value": 118.58063669631487,
+          "unit": "duration"
+        },
+        "recovery_average_power": {
+          "value": 3.3184893673682896,
+          "unit": "power"
+        }
+      },
+      "tracks_count": 4,
+      "order": 2
+    },
+    "ЦПЗ": {
+      "parameters": {
+        "average_time": { "value": 2413.0153511771728, "unit": "time" },
+        "total_distance": { "value": 2843.2709914260913, "unit": "distance" },
+        "total_energy": { "value": 11089.650314019966, "unit": "energy" },
+        "equivalent_distance_index": {
+          "value": 0.07238806323606349,
+          "unit": "percentage1"
+        },
+        "average_p": { "value": 4.595764491570597, "unit": "power" },
+        "power_events": { "value": 20.666666933479604, "unit": "number" },
+        "recovery_average_time": {
+          "value": 89.80984164437088,
+          "unit": "duration"
+        },
+        "recovery_average_power": {
+          "value": 3.4130085035337387,
+          "unit": "power"
+        }
+      },
+      "tracks_count": 3,
+      "order": 3
+    },
+    "НАП": {
+      "parameters": {
+        "average_time": { "value": 2545.961938096364, "unit": "time" },
+        "total_distance": { "value": 3191.7368562156607, "unit": "distance" },
+        "total_energy": { "value": 12652.589264275679, "unit": "energy" },
+        "equivalent_distance_index": {
+          "value": 0.07322607401923079,
+          "unit": "percentage1"
+        },
+        "average_p": { "value": 4.9477666501319835, "unit": "power" },
+        "power_events": { "value": 28.430868041104226, "unit": "number" },
+        "recovery_average_time": {
+          "value": 66.29589925624735,
+          "unit": "duration"
+        },
+        "recovery_average_power": {
+          "value": 3.3268259326124743,
+          "unit": "power"
+        }
+      },
+      "tracks_count": 3,
+      "order": 5
+    }
+  },
+  "team": {
+    "parameters": {
+      "average_time": { "value": 2454.2819692209778, "unit": "time" },
+      "total_distance": { "value": 2914.9259030079998, "unit": "distance" },
+      "total_energy": { "value": 11330.1347529182, "unit": "energy" },
+      "equivalent_distance_index": {
+        "value": 0.07050047594320508,
+        "unit": "percentage1"
+      },
+      "average_p": { "value": 4.603637428174302, "unit": "power" },
+      "power_events": { "value": 21.631820399972575, "unit": "number" },
+      "recovery_average_time": {
+        "value": 93.84836214544157,
+        "unit": "duration"
+      },
+      "recovery_average_power": { "value": 3.3490114271949727, "unit": "power" }
+    }
+  }
+}

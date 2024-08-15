@@ -1,8 +1,8 @@
-import * as fs from "node:fs";
+import * as fs from 'node:fs'
 
-import { PrismaClient } from "@repo/db";
+import { PrismaClient } from '@repo/db'
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient()
 
 // type ttdRawData = {
 //   date: string;
@@ -101,41 +101,41 @@ const prisma = new PrismaClient();
 // };
 
 type fitnessRawData = {
-  name: string;
-  number: string | number;
-  minutes: string | number;
-  total_distance: string;
-  speedzone4_distance: string;
-  speedzone5_distance: string;
-  avg_speed: string;
-  date: string;
-  time: string;
-  vs: string;
-  competition: string;
-  result: string;
-  home: boolean | string;
-  game_id: string;
-};
+  name: string
+  number: string | number
+  minutes: string | number
+  total_distance: string
+  speedzone4_distance: string
+  speedzone5_distance: string
+  avg_speed: string
+  date: string
+  time: string
+  vs: string
+  competition: string
+  result: string
+  home: boolean | string
+  game_id: string
+}
 
 const strToFloatNumber = (str: string | undefined): number => {
-  if (!str) return 0;
-  const newStr = str.replace(",", ".");
-  return parseFloat(newStr);
-};
+  if (!str) return 0
+  const newStr = str.replace(',', '.')
+  return parseFloat(newStr)
+}
 
 const gameFitness = async () => {
-  const fitness_files = await fs.promises.readdir(`./temp_data/games/fitness`);
+  const fitness_files = await fs.promises.readdir(`./temp_data/games/fitness`)
   // const ttd_files = await fs.promises.readdir(`./temp_data/games/ttd`);
   const games = await prisma.game.findMany({
     include: {
       athlete_fitness: true,
       athlete_ttd: true,
     },
-  });
-  const athletes = await prisma.athlete.findMany();
+  })
+  const athletes = await prisma.athlete.findMany()
   const findAthlete = (number: number) =>
-    athletes.find((athlete) => athlete.number === number);
-  const findGame = (id: string) => games.find((game) => game.id === id);
+    athletes.find((athlete) => athlete.number === number)
+  const findGame = (id: string) => games.find((game) => game.id === id)
 
   // ttd_files.forEach(async (file) => {
   //   const fileName = file.replace('.json', '');
@@ -259,14 +259,14 @@ const gameFitness = async () => {
   // });
 
   fitness_files.forEach(async (file) => {
-    const fileName = file.replace(".json", "");
+    const fileName = file.replace('.json', '')
     const file_data = await fs.promises.readFile(
       `./temp_data/games/fitness/${file}`,
-      "utf-8",
-    );
+      'utf-8'
+    )
 
-    const fitness_data: fitnessRawData[] = JSON.parse(file_data);
-    const team_fitnessRaw = fitness_data.find((game) => game.number === "team");
+    const fitness_data: fitnessRawData[] = JSON.parse(file_data)
+    const team_fitnessRaw = fitness_data.find((game) => game.number === 'team')
     const {
       date,
       time,
@@ -279,22 +279,22 @@ const gameFitness = async () => {
       speedzone5_distance,
       avg_speed,
       game_id,
-    } = { ...team_fitnessRaw };
+    } = { ...team_fitnessRaw }
 
     const team_fitness_data = {
       date: new Date(`${date}T${time}`),
-      vs: vs ? vs : "",
-      competition: competition ? competition : "",
-      result: result ? result : "",
+      vs: vs ? vs : '',
+      competition: competition ? competition : '',
+      result: result ? result : '',
       home: home === true,
       total_distance: strToFloatNumber(total_distance),
       speedzone4_distance: strToFloatNumber(speedzone4_distance),
       speedzone5_distance: strToFloatNumber(speedzone5_distance),
       avg_speed: strToFloatNumber(avg_speed),
-    };
+    }
 
     const athlete_fitness_data = fitness_data
-      .filter((player) => typeof player.number === "number")
+      .filter((player) => typeof player.number === 'number')
       .map(
         ({
           number,
@@ -312,22 +312,22 @@ const gameFitness = async () => {
             speedzone4_distance: strToFloatNumber(speedzone4_distance),
             speedzone5_distance: strToFloatNumber(speedzone5_distance),
             avg_speed: strToFloatNumber(avg_speed),
-          };
-        },
-      );
+          }
+        }
+      )
 
     // if game with id(fileName) already exists ? fill the fitness data : create a new game with fitness data
     if (games.find((game) => game.id === fileName)) {
       // cheack the fitness data filled
       if (
-        typeof findGame(fileName)?.total_distance === "number" &&
+        typeof findGame(fileName)?.total_distance === 'number' &&
         findGame(fileName)?.athlete_fitness.length ===
           athlete_fitness_data.length
       ) {
         console.log(
-          `Game ${findGame(fileName)?.id} fitness data already filled`,
-        );
-        return;
+          `Game ${findGame(fileName)?.id} fitness data already filled`
+        )
+        return
       } else {
         // fill the fitness data
         try {
@@ -341,16 +341,16 @@ const gameFitness = async () => {
                 create: athlete_fitness_data,
               },
             },
-          });
-          console.log(`Game ${updateGame?.id} updated with fitness`);
+          })
+          console.log(`Game ${updateGame?.id} updated with fitness`)
         } catch (error) {
-          console.log(error);
+          console.log(error)
         }
       }
     } else {
       // check game_id
       if (game_id && findGame(game_id)) {
-        console.log(`Game ${game_id} already created`);
+        console.log(`Game ${game_id} already created`)
         try {
           const updateGame = await prisma.game.update({
             where: {
@@ -362,16 +362,16 @@ const gameFitness = async () => {
                 create: athlete_fitness_data,
               },
             },
-          });
-          console.log(`Game ${updateGame?.id} updated with fitness`);
+          })
+          console.log(`Game ${updateGame?.id} updated with fitness`)
         } catch (error) {
-          console.log(error);
+          console.log(error)
         }
         await fs.promises.rename(
           `./temp_data/games/fitness/${file}`,
-          `./temp_data/games/fitness/${game_id}.json`,
-        );
-        return;
+          `./temp_data/games/fitness/${game_id}.json`
+        )
+        return
       } else {
         // create a new game with fitness data
         try {
@@ -382,20 +382,20 @@ const gameFitness = async () => {
                 create: athlete_fitness_data,
               },
             },
-          });
+          })
 
-          console.log(`Game with fitness ${createdGame.id} created`);
+          console.log(`Game with fitness ${createdGame.id} created`)
 
           await fs.promises.rename(
             `./temp_data/games/fitness/${file}`,
-            `./temp_data/games/fitness/${createdGame.id}.json`,
-          );
+            `./temp_data/games/fitness/${createdGame.id}.json`
+          )
         } catch (error) {
-          console.log(error);
+          console.log(error)
         }
       }
     }
-  });
-};
+  })
+}
 
-export default gameFitness;
+export default gameFitness

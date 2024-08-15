@@ -1,1 +1,22 @@
-{"id":47460,"team":277,"category":1672,"category_name":"ТРЕНИРОВКА","notes":"","start_timestamp":"2023-05-09T13:12:27.804000","end_timestamp":"2023-05-09T14:53:19.910000","union_duration":5896,"total_time":5896,"is_stats_valid":true,"tags":[],"drill_enabled":true,"drills_count":5,"minStart":1683637321.137,"maxStop":1683644540.6,"drillTags":[[5645],[6116],[6429,6427],[5868],[6428]],"name":"[ТРЕНИРОВКА] 9 MAY 2023: 13:12:27 - 14:53:19","created_on":"2023-05-09T12:45:01.475433","updated_on":"2023-05-09T13:03:29.952757","n_tracks":17}
+{
+  "id": 47460,
+  "team": 277,
+  "category": 1672,
+  "category_name": "ТРЕНИРОВКА",
+  "notes": "",
+  "start_timestamp": "2023-05-09T13:12:27.804000",
+  "end_timestamp": "2023-05-09T14:53:19.910000",
+  "union_duration": 5896,
+  "total_time": 5896,
+  "is_stats_valid": true,
+  "tags": [],
+  "drill_enabled": true,
+  "drills_count": 5,
+  "minStart": 1683637321.137,
+  "maxStop": 1683644540.6,
+  "drillTags": [[5645], [6116], [6429, 6427], [5868], [6428]],
+  "name": "[ТРЕНИРОВКА] 9 MAY 2023: 13:12:27 - 14:53:19",
+  "created_on": "2023-05-09T12:45:01.475433",
+  "updated_on": "2023-05-09T13:03:29.952757",
+  "n_tracks": 17
+}

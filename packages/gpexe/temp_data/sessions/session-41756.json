@@ -1,1 +1,22 @@
-{"id":41756,"team":277,"category":1676,"category_name":"ИНДИВИДУАЛЬНАЯ ТРЕНИРОВКА","notes":"","start_timestamp":"2023-03-25T17:29:45.344000","end_timestamp":"2023-03-25T18:51:33.338000","union_duration":4908,"total_time":4908,"is_stats_valid":true,"tags":[],"drill_enabled":false,"drills_count":0,"minStart":1679763511.18,"maxStop":1679770337.225999,"drillTags":[],"name":"[ИНДИВИДУАЛЬНАЯ ТРЕНИРОВКА] 25 MAR 2023: 17:29:45 - 18:51:33","created_on":"2023-03-25T17:45:13.935654","updated_on":"2023-04-16T08:57:46.961962","n_tracks":2}
+{
+  "id": 41756,
+  "team": 277,
+  "category": 1676,
+  "category_name": "ИНДИВИДУАЛЬНАЯ ТРЕНИРОВКА",
+  "notes": "",
+  "start_timestamp": "2023-03-25T17:29:45.344000",
+  "end_timestamp": "2023-03-25T18:51:33.338000",
+  "union_duration": 4908,
+  "total_time": 4908,
+  "is_stats_valid": true,
+  "tags": [],
+  "drill_enabled": false,
+  "drills_count": 0,
+  "minStart": 1679763511.18,
+  "maxStop": 1679770337.225999,
+  "drillTags": [],
+  "name": "[ИНДИВИДУАЛЬНАЯ ТРЕНИРОВКА] 25 MAR 2023: 17:29:45 - 18:51:33",
+  "created_on": "2023-03-25T17:45:13.935654",
+  "updated_on": "2023-04-16T08:57:46.961962",
+  "n_tracks": 2
+}

@@ -1,1 +1,24 @@
-{"id":97950,"team":687,"category":3895,"category_name":"МАТЧ","notes":"","start_timestamp":"2024-08-12T19:30:42","end_timestamp":"2024-08-12T21:19:49","union_duration":5681,"total_time":5681,"is_stats_valid":true,"tags":[],"drill_enabled":true,"drills_count":2,"minStart":1723490821.125,"maxStop":1723498049.5,"drillTags":[[15463],[15466]],"name":"[МАТЧ] 12 AUG 2024: 19:30:42 - 21:19:49","created_on":"2024-08-13T11:40:55.951775","updated_on":"2024-08-13T11:42:14.638431","n_tracks":13,"submitted_by":"gpexe-ui","drills":[97952,97951]}
+{
+  "id": 97950,
+  "team": 687,
+  "category": 3895,
+  "category_name": "МАТЧ",
+  "notes": "",
+  "start_timestamp": "2024-08-12T19:30:42",
+  "end_timestamp": "2024-08-12T21:19:49",
+  "union_duration": 5681,
+  "total_time": 5681,
+  "is_stats_valid": true,
+  "tags": [],
+  "drill_enabled": true,
+  "drills_count": 2,
+  "minStart": 1723490821.125,
+  "maxStop": 1723498049.5,
+  "drillTags": [[15463], [15466]],
+  "name": "[МАТЧ] 12 AUG 2024: 19:30:42 - 21:19:49",
+  "created_on": "2024-08-13T11:40:55.951775",
+  "updated_on": "2024-08-13T11:42:14.638431",
+  "n_tracks": 13,
+  "submitted_by": "gpexe-ui",
+  "drills": [97952, 97951]
+}

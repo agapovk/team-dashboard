@@ -1,104 +1,104 @@
-import * as fs from "node:fs";
+import * as fs from 'node:fs'
 
-import { PrismaClient } from "@repo/db";
+import { PrismaClient } from '@repo/db'
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient()
 
 type ttdRawData = {
-  date: string;
-  time: string;
-  vs: string;
-  competition: string;
-  result: string;
-  home: boolean;
-  game_id: string;
-  number: string | number;
-  player: string;
-  position: string;
-  minutesPlayed: number;
-  goals: number;
-  assists: number;
-  keyPasses: number;
-  keyPassesSuccess: number;
-  keyPassesSuccess_pct: string;
-  shoots: number;
-  shoots_OnTarget: number;
-  shoots_OnTarget_pct: string;
-  xG: string;
-  fouls: number;
-  foulsOnPlayer: number;
-  offside: number;
-  yellowCards: number;
-  redCards: number;
-  actions: number;
-  actionsSuccess: number;
-  actionsSuccess_pct: string;
-  actionsInsideBox: number;
-  chances: number;
-  chancesSuccess: number;
-  chancesSuccess_pct: string;
-  lostBalls: number;
-  lostBalls_OwnHalf: number;
-  ballRecoveries: number;
-  ballRecoveries_OppositeHalf: number;
-  badBallControl: number;
-  passes: number;
-  passesSuccess: number;
-  passesSuccess_pct: string;
-  passForward: number;
-  passForwardSuccess: number;
-  passForwardSuccess_pct: string;
-  passBack: number;
-  passBackSuccess: number;
-  passBackSuccess_pct: string;
-  passLong: number;
-  passLongSuccess: number;
-  passLongSuccess_pct: string;
-  passShorMedium: number;
-  passShorMediumSuccess: number;
-  passShorMediumSuccess_pct: string;
-  passInsideFinalThird: number;
-  passInsideFinalThirdSuccess: number;
-  passInsideFinalThirdSuccess_pct: string;
-  passInsideBox: number;
-  passInsideBoxSuccess: number;
-  passInsideBoxSuccess_pct: string;
-  crosses: number;
-  crossesSuccess: number;
-  crossesSuccess_pct: string;
-  shotAssists: number;
-  shotAssistsSuccess: number;
-  shotAssistsSuccess_pct: string;
-  passesReceived: number;
-  passesReceivedInsideBox: number;
-  challenges: number;
-  challengesSuccess: number;
-  challengesSuccess_pct: string;
-  aerialDuels: number;
-  aerialDuelsSuccess: number;
-  aerialDuelsSuccess_pct: string;
-  challengesInDefence: number;
-  challengesInDefenceSuccess: number;
-  challengesInDefenceSuccess_pct: string;
-  challengesInAttack: number;
-  challengesInAttackSuccess: number;
-  challengesInAttackSuccess_pct: string;
-  dribbles: number;
-  dribblesSuccess: number;
-  dribblesSuccess_pct: string;
-  tackles: number;
-  tacklesSuccess: number;
-  tacklesSuccess_pct: string;
-  interceptions: number;
-  freeKick: number;
-  freeKickShoots: number;
-  freeKickShootsOnTarget: number;
-  freeKickShootsOnTarget_pct: string;
-  corners: number;
-  throwIns: number;
-  throwInSuccess: number;
-  throwInSuccess_pct: string;
-};
+  date: string
+  time: string
+  vs: string
+  competition: string
+  result: string
+  home: boolean
+  game_id: string
+  number: string | number
+  player: string
+  position: string
+  minutesPlayed: number
+  goals: number
+  assists: number
+  keyPasses: number
+  keyPassesSuccess: number
+  keyPassesSuccess_pct: string
+  shoots: number
+  shoots_OnTarget: number
+  shoots_OnTarget_pct: string
+  xG: string
+  fouls: number
+  foulsOnPlayer: number
+  offside: number
+  yellowCards: number
+  redCards: number
+  actions: number
+  actionsSuccess: number
+  actionsSuccess_pct: string
+  actionsInsideBox: number
+  chances: number
+  chancesSuccess: number
+  chancesSuccess_pct: string
+  lostBalls: number
+  lostBalls_OwnHalf: number
+  ballRecoveries: number
+  ballRecoveries_OppositeHalf: number
+  badBallControl: number
+  passes: number
+  passesSuccess: number
+  passesSuccess_pct: string
+  passForward: number
+  passForwardSuccess: number
+  passForwardSuccess_pct: string
+  passBack: number
+  passBackSuccess: number
+  passBackSuccess_pct: string
+  passLong: number
+  passLongSuccess: number
+  passLongSuccess_pct: string
+  passShorMedium: number
+  passShorMediumSuccess: number
+  passShorMediumSuccess_pct: string
+  passInsideFinalThird: number
+  passInsideFinalThirdSuccess: number
+  passInsideFinalThirdSuccess_pct: string
+  passInsideBox: number
+  passInsideBoxSuccess: number
+  passInsideBoxSuccess_pct: string
+  crosses: number
+  crossesSuccess: number
+  crossesSuccess_pct: string
+  shotAssists: number
+  shotAssistsSuccess: number
+  shotAssistsSuccess_pct: string
+  passesReceived: number
+  passesReceivedInsideBox: number
+  challenges: number
+  challengesSuccess: number
+  challengesSuccess_pct: string
+  aerialDuels: number
+  aerialDuelsSuccess: number
+  aerialDuelsSuccess_pct: string
+  challengesInDefence: number
+  challengesInDefenceSuccess: number
+  challengesInDefenceSuccess_pct: string
+  challengesInAttack: number
+  challengesInAttackSuccess: number
+  challengesInAttackSuccess_pct: string
+  dribbles: number
+  dribblesSuccess: number
+  dribblesSuccess_pct: string
+  tackles: number
+  tacklesSuccess: number
+  tacklesSuccess_pct: string
+  interceptions: number
+  freeKick: number
+  freeKickShoots: number
+  freeKickShootsOnTarget: number
+  freeKickShootsOnTarget_pct: string
+  corners: number
+  throwIns: number
+  throwInSuccess: number
+  throwInSuccess_pct: string
+}
 
 // type fitnessRawData = {
 //   name: string;
@@ -118,33 +118,33 @@ type ttdRawData = {
 // };
 
 const strToFloatNumber = (str: string | undefined): number => {
-  if (!str) return 0;
-  const newStr = str.replace(",", ".");
-  return parseFloat(newStr);
-};
+  if (!str) return 0
+  const newStr = str.replace(',', '.')
+  return parseFloat(newStr)
+}
 
 const gameTtd = async () => {
   // const fitness_files = await fs.promises.readdir(`./temp_data/games/fitness`);
-  const ttd_files = await fs.promises.readdir(`./temp_data/games/ttd`);
+  const ttd_files = await fs.promises.readdir(`./temp_data/games/ttd`)
   const games = await prisma.game.findMany({
     include: {
       athlete_fitness: true,
       athlete_ttd: true,
     },
-  });
-  const athletes = await prisma.athlete.findMany();
+  })
+  const athletes = await prisma.athlete.findMany()
   const findAthlete = (number: number) =>
-    athletes.find((athlete) => athlete.number === number);
-  const findGame = (id: string) => games.find((game) => game.id === id);
+    athletes.find((athlete) => athlete.number === number)
+  const findGame = (id: string) => games.find((game) => game.id === id)
 
   ttd_files.forEach(async (file) => {
-    const fileName = file.replace(".json", "");
+    const fileName = file.replace('.json', '')
     const file_data = await fs.promises.readFile(
       `./temp_data/games/ttd/${file}`,
-      "utf-8",
-    );
-    const ttd_data: ttdRawData[] = JSON.parse(file_data);
-    const team_ttdRaw = ttd_data.find((ttd) => ttd.number === "team");
+      'utf-8'
+    )
+    const ttd_data: ttdRawData[] = JSON.parse(file_data)
+    const team_ttdRaw = ttd_data.find((ttd) => ttd.number === 'team')
     const {
       date,
       time,
@@ -157,16 +157,16 @@ const gameTtd = async () => {
       ...restData
     } = {
       ...team_ttdRaw,
-    };
+    }
     const team_ttd_data = {
       date: new Date(`${date}T${time}`),
       home: team_ttdRaw?.home === true,
       xG: strToFloatNumber(xG),
       ...restData,
-    };
+    }
 
     const athlete_ttd_data = ttd_data
-      .filter((player) => typeof player.number === "number")
+      .filter((player) => typeof player.number === 'number')
       .map(
         ({
           date,
@@ -187,19 +187,19 @@ const gameTtd = async () => {
             number: Number(number),
             xG: strToFloatNumber(xG),
             ...player_data,
-          };
-        },
-      );
+          }
+        }
+      )
 
     // if game with id(fileName) already exists ? fill the ttd data : create a new game with ttd data
     if (games.find((game) => game.id === fileName)) {
       // cheack the ttd data filled
       if (
-        typeof findGame(fileName)?.goals === "number" &&
+        typeof findGame(fileName)?.goals === 'number' &&
         findGame(fileName)?.athlete_ttd.length === athlete_ttd_data.length
       ) {
-        console.log(`Game ${findGame(fileName)?.id} ttd data already filled`);
-        return;
+        console.log(`Game ${findGame(fileName)?.id} ttd data already filled`)
+        return
       } else {
         // fill the ttd data
         try {
@@ -214,17 +214,17 @@ const gameTtd = async () => {
                 create: athlete_ttd_data,
               },
             },
-          });
-          console.log(`Game ${updateGame.id} updated with ttd`);
+          })
+          console.log(`Game ${updateGame.id} updated with ttd`)
         } catch (error) {
-          console.log(error);
+          console.log(error)
         }
-        return;
+        return
       }
     } else {
       // check game_id
       if (game_id && findGame(game_id)) {
-        console.log(`Game ${game_id} already created`);
+        console.log(`Game ${game_id} already created`)
         try {
           const updateGame = await prisma.game.update({
             where: {
@@ -237,16 +237,16 @@ const gameTtd = async () => {
                 create: [...athlete_ttd_data],
               },
             },
-          });
-          console.log(`Game ${updateGame.id} updated with ttd`);
+          })
+          console.log(`Game ${updateGame.id} updated with ttd`)
         } catch (error) {
-          console.log(error);
+          console.log(error)
         }
         await fs.promises.rename(
           `./temp_data/games/ttd/${file}`,
-          `./temp_data/games/ttd/${game_id}.json`,
-        );
-        return;
+          `./temp_data/games/ttd/${game_id}.json`
+        )
+        return
       } else {
         // // create a new game with ttd data
         try {
@@ -257,19 +257,19 @@ const gameTtd = async () => {
                 create: [...athlete_ttd_data],
               },
             },
-          });
+          })
 
-          console.log(`Game with ttd${createdGame.id} created`);
+          console.log(`Game with ttd${createdGame.id} created`)
           await fs.promises.rename(
             `./temp_data/games/ttd/${file}`,
-            `./temp_data/games/ttd/${createdGame.id}.json`,
-          );
+            `./temp_data/games/ttd/${createdGame.id}.json`
+          )
         } catch (error) {
-          console.log(error);
+          console.log(error)
         }
       }
     }
-  });
+  })
 
   // fitness_files.forEach(async (file) => {
   //   const fileName = file.replace('.json', '');
@@ -403,6 +403,6 @@ const gameTtd = async () => {
   //     }
   //   }
   // });
-};
+}
 
-export default gameTtd;
+export default gameTtd

@@ -85,7 +85,7 @@ export const ttdColumnsHeaderMap = {
   throwIns: 'Ауты',
   throwInSuccess: 'Ауты+',
   'throwInSuccess%': 'Ауты+%',
-};
+}
 
 export const ttdShorColumnsHeaderMap = {
   number: '№',
@@ -174,4 +174,4 @@ export const ttdShorColumnsHeaderMap = {
   throwIns: 'АУТ',
   throwInSuccess: 'АУТ+',
   'throwInSuccess%': 'АУТ%',
-};
+}

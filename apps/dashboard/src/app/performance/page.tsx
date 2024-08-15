@@ -1,14 +1,14 @@
-import { Metadata } from 'next';
-import { PrismaClient } from '@repo/db';
-import { columns } from './columns';
-import { DataTable } from './data-table';
+import { Metadata } from 'next'
+import { PrismaClient } from '@repo/db'
+import { columns } from './columns'
+import { DataTable } from './data-table'
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient()
 
 export const metadata: Metadata = {
   title: 'Список тренировок',
   description: 'A task and issue tracker build using Tanstack Table.',
-};
+}
 
 export default async function LoadingPage() {
   const sessions = await prisma.session.findMany({
@@ -20,7 +20,7 @@ export default async function LoadingPage() {
     orderBy: {
       start_timestamp: 'desc',
     },
-  });
+  })
 
   return (
     <div className="h-full flex-1 flex-col space-y-8 p-8 md:flex">
@@ -34,5 +34,5 @@ export default async function LoadingPage() {
         <DataTable data={sessions} columns={columns} />
       </div>
     </div>
-  );
+  )
 }

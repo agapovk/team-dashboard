@@ -1,13 +1,13 @@
-'use client';
+'use client'
 
-import * as React from 'react';
-import { Moon, Sun } from 'lucide-react';
-import { useTheme } from 'next-themes';
+import * as React from 'react'
+import { Moon, Sun } from 'lucide-react'
+import { useTheme } from 'next-themes'
 
-import { Button } from '@repo/ui';
+import { Button } from '@repo/ui'
 
 export function ModeToggle() {
-  const { setTheme } = useTheme();
+  const { setTheme } = useTheme()
 
   return (
     <Button variant="outline" size="icon">
@@ -21,5 +21,5 @@ export function ModeToggle() {
       />
       <span className="sr-only">Сменить оформление</span>
     </Button>
-  );
+  )
 }

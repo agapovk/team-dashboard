@@ -1,6 +1,6 @@
-import { date } from "../fetch/date";
+import { date } from '../fetch/date'
 
-export const unitToNumber = (unit: UnitValue) => unit?.value;
+export const unitToNumber = (unit: UnitValue) => unit?.value
 
 export const athses = (id: number, s: GpexeAthleteTrainingSession) => {
   return {
@@ -9,19 +9,19 @@ export const athses = (id: number, s: GpexeAthleteTrainingSession) => {
     total_distance: unitToNumber(s.total_distance),
     average_v: unitToNumber(s.average_v),
     athletesessionspeedzone_distance_1: unitToNumber(
-      s.athletesessionspeedzone_distance_1,
+      s.athletesessionspeedzone_distance_1
     ),
     athletesessionspeedzone_distance_2: unitToNumber(
-      s.athletesessionspeedzone_distance_2,
+      s.athletesessionspeedzone_distance_2
     ),
     athletesessionspeedzone_distance_3: unitToNumber(
-      s.athletesessionspeedzone_distance_3,
+      s.athletesessionspeedzone_distance_3
     ),
     athletesessionspeedzone_distance_4: unitToNumber(
-      s.athletesessionspeedzone_distance_4,
+      s.athletesessionspeedzone_distance_4
     ),
     athletesessionspeedzone_distance_5: unitToNumber(
-      s.athletesessionspeedzone_distance_5,
+      s.athletesessionspeedzone_distance_5
     ),
     max_values_speed: unitToNumber(s.max_values_speed),
     speed_events: unitToNumber(s.speed_events),
@@ -29,13 +29,13 @@ export const athses = (id: number, s: GpexeAthleteTrainingSession) => {
     tot_brake_events: unitToNumber(s.tot_brake_events),
     eccentric_index: unitToNumber(s.eccentric_index),
     athletesessionpowerzone_distance_1: unitToNumber(
-      s.athletesessionpowerzone_distance_1,
+      s.athletesessionpowerzone_distance_1
     ),
     athletesessionpowerzone_distance_2: unitToNumber(
-      s.athletesessionpowerzone_distance_2,
+      s.athletesessionpowerzone_distance_2
     ),
     athletesessionpowerzone_distance_3: unitToNumber(
-      s.athletesessionpowerzone_distance_3,
+      s.athletesessionpowerzone_distance_3
     ),
     average_p: unitToNumber(s.average_p),
     max_values_power: unitToNumber(s.max_values_power),
@@ -52,31 +52,31 @@ export const athses = (id: number, s: GpexeAthleteTrainingSession) => {
     recovery_average_time: unitToNumber(s.recovery_average_time),
     recovery_average_power: unitToNumber(s.recovery_average_power),
     athletesessionpowereventdurationzone_events_1: unitToNumber(
-      s.athletesessionpowereventdurationzone_events_1,
+      s.athletesessionpowereventdurationzone_events_1
     ),
     athletesessionpowereventdurationzone_events_2: unitToNumber(
-      s.athletesessionpowereventdurationzone_events_2,
+      s.athletesessionpowereventdurationzone_events_2
     ),
     athletesessionpowereventdurationzone_events_3: unitToNumber(
-      s.athletesessionpowereventdurationzone_events_3,
+      s.athletesessionpowereventdurationzone_events_3
     ),
     athletesessionpowereventdistancezone_events_1: unitToNumber(
-      s.athletesessionpowereventdistancezone_events_1,
+      s.athletesessionpowereventdistancezone_events_1
     ),
     athletesessionpowereventdistancezone_events_2: unitToNumber(
-      s.athletesessionpowereventdistancezone_events_2,
+      s.athletesessionpowereventdistancezone_events_2
     ),
     athletesessionpowereventdistancezone_events_3: unitToNumber(
-      s.athletesessionpowereventdistancezone_events_3,
+      s.athletesessionpowereventdistancezone_events_3
     ),
     athletesessionpowereventmaxspeedzone_events_1: unitToNumber(
-      s.athletesessionpowereventmaxspeedzone_events_1,
+      s.athletesessionpowereventmaxspeedzone_events_1
     ),
     athletesessionpowereventmaxspeedzone_events_2: unitToNumber(
-      s.athletesessionpowereventmaxspeedzone_events_2,
+      s.athletesessionpowereventmaxspeedzone_events_2
     ),
     athletesessionpowereventmaxspeedzone_events_3: unitToNumber(
-      s.athletesessionpowereventmaxspeedzone_events_3,
+      s.athletesessionpowereventmaxspeedzone_events_3
     ),
     external_work: unitToNumber(s.external_work),
     ext_work_over: unitToNumber(s.ext_work_over),
@@ -93,16 +93,16 @@ export const athses = (id: number, s: GpexeAthleteTrainingSession) => {
     max_values_cardio: unitToNumber(s.max_values_cardio),
     max_values_cardio_percentual: unitToNumber(s.max_values_cardio_percentual),
     athletesessionheartratezone_time_2: unitToNumber(
-      s.athletesessionheartratezone_time_2,
+      s.athletesessionheartratezone_time_2
     ),
     athletesessionheartratezone_time_3: unitToNumber(
-      s.athletesessionheartratezone_time_3,
+      s.athletesessionheartratezone_time_3
     ),
     athletesessionheartratezone_time_4: unitToNumber(
-      s.athletesessionheartratezone_time_4,
+      s.athletesessionheartratezone_time_4
     ),
-  };
-};
+  }
+}
 
 export const dbAth = (athlete: GpexeAthlete) => ({
   id: athlete.id,
@@ -111,11 +111,11 @@ export const dbAth = (athlete: GpexeAthlete) => ({
   last_name: athlete.last_name,
   first_name: athlete.first_name,
   birthday: athlete.birthday,
-});
+})
 
 export const dbSes = (
   s: GpexeTrainingSession,
-  team: GpexeTeamFitnessSession,
+  team: GpexeTeamFitnessSession
 ) => ({
   id: s.id,
   team_id: s.team,
@@ -130,19 +130,19 @@ export const dbSes = (
   total_distance: unitToNumber(team.total_distance),
   average_v: unitToNumber(team.average_v),
   athletesessionspeedzone_distance_1: unitToNumber(
-    team.athletesessionspeedzone_distance_1,
+    team.athletesessionspeedzone_distance_1
   ),
   athletesessionspeedzone_distance_2: unitToNumber(
-    team.athletesessionspeedzone_distance_2,
+    team.athletesessionspeedzone_distance_2
   ),
   athletesessionspeedzone_distance_3: unitToNumber(
-    team.athletesessionspeedzone_distance_3,
+    team.athletesessionspeedzone_distance_3
   ),
   athletesessionspeedzone_distance_4: unitToNumber(
-    team.athletesessionspeedzone_distance_4,
+    team.athletesessionspeedzone_distance_4
   ),
   athletesessionspeedzone_distance_5: unitToNumber(
-    team.athletesessionspeedzone_distance_5,
+    team.athletesessionspeedzone_distance_5
   ),
   max_values_speed: unitToNumber(team.max_values_speed),
   speed_events: unitToNumber(team.speed_events),
@@ -150,13 +150,13 @@ export const dbSes = (
   tot_brake_events: unitToNumber(team.tot_brake_events),
   eccentric_index: unitToNumber(team.eccentric_index),
   athletesessionpowerzone_distance_1: unitToNumber(
-    team.athletesessionpowerzone_distance_1,
+    team.athletesessionpowerzone_distance_1
   ),
   athletesessionpowerzone_distance_2: unitToNumber(
-    team.athletesessionpowerzone_distance_2,
+    team.athletesessionpowerzone_distance_2
   ),
   athletesessionpowerzone_distance_3: unitToNumber(
-    team.athletesessionpowerzone_distance_3,
+    team.athletesessionpowerzone_distance_3
   ),
   average_p: unitToNumber(team.average_p),
   max_values_power: unitToNumber(team.max_values_power),
@@ -173,31 +173,31 @@ export const dbSes = (
   recovery_average_time: unitToNumber(team.recovery_average_time),
   recovery_average_power: unitToNumber(team.recovery_average_power),
   athletesessionpowereventdurationzone_events_1: unitToNumber(
-    team.athletesessionpowereventdurationzone_events_1,
+    team.athletesessionpowereventdurationzone_events_1
   ),
   athletesessionpowereventdurationzone_events_2: unitToNumber(
-    team.athletesessionpowereventdurationzone_events_2,
+    team.athletesessionpowereventdurationzone_events_2
   ),
   athletesessionpowereventdurationzone_events_3: unitToNumber(
-    team.athletesessionpowereventdurationzone_events_3,
+    team.athletesessionpowereventdurationzone_events_3
   ),
   athletesessionpowereventdistancezone_events_1: unitToNumber(
-    team.athletesessionpowereventdistancezone_events_1,
+    team.athletesessionpowereventdistancezone_events_1
   ),
   athletesessionpowereventdistancezone_events_2: unitToNumber(
-    team.athletesessionpowereventdistancezone_events_2,
+    team.athletesessionpowereventdistancezone_events_2
   ),
   athletesessionpowereventdistancezone_events_3: unitToNumber(
-    team.athletesessionpowereventdistancezone_events_3,
+    team.athletesessionpowereventdistancezone_events_3
   ),
   athletesessionpowereventmaxspeedzone_events_1: unitToNumber(
-    team.athletesessionpowereventmaxspeedzone_events_1,
+    team.athletesessionpowereventmaxspeedzone_events_1
   ),
   athletesessionpowereventmaxspeedzone_events_2: unitToNumber(
-    team.athletesessionpowereventmaxspeedzone_events_2,
+    team.athletesessionpowereventmaxspeedzone_events_2
   ),
   athletesessionpowereventmaxspeedzone_events_3: unitToNumber(
-    team.athletesessionpowereventmaxspeedzone_events_3,
+    team.athletesessionpowereventmaxspeedzone_events_3
   ),
   external_work: unitToNumber(team.external_work),
   ext_work_over: unitToNumber(team.ext_work_over),
@@ -214,12 +214,12 @@ export const dbSes = (
   max_values_cardio: unitToNumber(team.max_values_cardio),
   max_values_cardio_percentual: unitToNumber(team.max_values_cardio_percentual),
   athletesessionheartratezone_time_2: unitToNumber(
-    team.athletesessionheartratezone_time_2,
+    team.athletesessionheartratezone_time_2
   ),
   athletesessionheartratezone_time_3: unitToNumber(
-    team.athletesessionheartratezone_time_3,
+    team.athletesessionheartratezone_time_3
   ),
   athletesessionheartratezone_time_4: unitToNumber(
-    team.athletesessionheartratezone_time_4,
+    team.athletesessionheartratezone_time_4
   ),
-});
+})

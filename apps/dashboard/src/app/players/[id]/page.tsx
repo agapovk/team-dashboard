@@ -1,20 +1,20 @@
-import React from 'react';
-import { PrismaClient } from '@repo/db';
-import Link from 'next/link';
-import { Button } from '@repo/ui';
-import { Metadata } from 'next';
-import PlayerTabs from './components/PlayerTabs';
+import React from 'react'
+import { PrismaClient } from '@repo/db'
+import Link from 'next/link'
+import { Button } from '@repo/ui'
+import { Metadata } from 'next'
+import PlayerTabs from './components/PlayerTabs'
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient()
 
 export const metadata: Metadata = {
   title: 'Статистика игрока',
   description: 'Игроки команды и их данные',
-};
+}
 
 type Props = {
-  params: { id: number };
-};
+  params: { id: number }
+}
 
 export default async function PlayerPage({ params }: Props) {
   const player = await prisma.athlete.findUnique({
@@ -53,10 +53,10 @@ export default async function PlayerPage({ params }: Props) {
     where: {
       id: Number(params.id),
     },
-  });
+  })
 
   if (player) {
-    return <PlayerTabs player={player} />;
+    return <PlayerTabs player={player} />
   } else {
     return (
       <div className="flex-1 space-y-4 p-8 pt-6">
@@ -72,6 +72,6 @@ export default async function PlayerPage({ params }: Props) {
           <Link href="/players">Все игроки</Link>
         </Button>
       </div>
-    );
+    )
   }
 }

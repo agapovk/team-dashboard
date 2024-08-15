@@ -1,11 +1,11 @@
-"use client";
+'use client'
 
-import * as React from "react";
+import * as React from 'react'
 
-import { cn } from "@repo/ui/lib/utils";
-import { Avatar, AvatarFallback, AvatarImage, buttonVariants } from "@repo/ui";
+import { cn } from '@repo/ui/lib/utils'
+import { Avatar, AvatarFallback, AvatarImage, buttonVariants } from '@repo/ui'
 
-import Link from "next/link";
+import Link from 'next/link'
 
 export default function TeamSwitcher() {
   return (
@@ -14,8 +14,8 @@ export default function TeamSwitcher() {
       role="combobox"
       aria-label="Select a team"
       className={cn(
-        "w-fit justify-between",
-        buttonVariants({ variant: "outline" }),
+        'w-fit justify-between',
+        buttonVariants({ variant: 'outline' })
       )}
     >
       <Avatar className="mr-2 h-5 w-5">
@@ -24,5 +24,5 @@ export default function TeamSwitcher() {
       </Avatar>
       ФК Урал
     </Link>
-  );
+  )
 }

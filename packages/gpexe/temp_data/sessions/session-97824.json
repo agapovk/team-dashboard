@@ -1,1 +1,24 @@
-{"id":97824,"team":687,"category":3894,"category_name":"ИНДИВИДУАЛЬНАЯ ТРЕНИРОВКА","notes":"","start_timestamp":"2024-08-12T12:03:10","end_timestamp":"2024-08-12T12:53:52","union_duration":3043,"total_time":3043,"is_stats_valid":true,"tags":[],"drill_enabled":false,"drills_count":0,"minStart":1723464061.166,"maxStop":1723467497.6769998,"drillTags":[],"name":"[ИНДИВИДУАЛЬНАЯ ТРЕНИРОВКА] 12 AUG 2024: 12:03:10 - 12:53:52","created_on":"2024-08-12T11:33:17.700947","updated_on":"2024-08-12T11:33:28.769087","n_tracks":1,"submitted_by":"gpexe-ui","drills":[]}
+{
+  "id": 97824,
+  "team": 687,
+  "category": 3894,
+  "category_name": "ИНДИВИДУАЛЬНАЯ ТРЕНИРОВКА",
+  "notes": "",
+  "start_timestamp": "2024-08-12T12:03:10",
+  "end_timestamp": "2024-08-12T12:53:52",
+  "union_duration": 3043,
+  "total_time": 3043,
+  "is_stats_valid": true,
+  "tags": [],
+  "drill_enabled": false,
+  "drills_count": 0,
+  "minStart": 1723464061.166,
+  "maxStop": 1723467497.6769998,
+  "drillTags": [],
+  "name": "[ИНДИВИДУАЛЬНАЯ ТРЕНИРОВКА] 12 AUG 2024: 12:03:10 - 12:53:52",
+  "created_on": "2024-08-12T11:33:17.700947",
+  "updated_on": "2024-08-12T11:33:28.769087",
+  "n_tracks": 1,
+  "submitted_by": "gpexe-ui",
+  "drills": []
+}

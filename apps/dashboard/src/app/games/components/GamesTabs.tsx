@@ -1,20 +1,20 @@
-'use client';
+'use client'
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@repo/ui';
-import { DataTable } from '../data-table';
-import { game } from '@repo/db';
-import { useSearchParams } from 'next/navigation';
-import { fitness_columns } from '../fitness-columns';
-import { ttd_columns } from '../ttd_columns';
-import { Suspense } from 'react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@repo/ui'
+import { DataTable } from '../data-table'
+import { game } from '@repo/db'
+import { useSearchParams } from 'next/navigation'
+import { fitness_columns } from '../fitness-columns'
+import { ttd_columns } from '../ttd_columns'
+import { Suspense } from 'react'
 
 type Props = {
-  games: game[];
-};
+  games: game[]
+}
 
 export default function GamesTabs({ games }: Props) {
-  const searchParams = useSearchParams();
-  const defaultTab = searchParams.get('tab');
+  const searchParams = useSearchParams()
+  const defaultTab = searchParams.get('tab')
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
@@ -43,5 +43,5 @@ export default function GamesTabs({ games }: Props) {
         </div>
       </Tabs>
     </Suspense>
-  );
+  )
 }

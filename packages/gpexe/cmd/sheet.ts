@@ -1,36 +1,36 @@
 /* eslint-disable turbo/no-undeclared-env-vars */
-import * as fs from "node:fs";
+import * as fs from 'node:fs'
 
 const sheet = async (all: Boolean) => {
-  const { GoogleSpreadsheet } = require("google-spreadsheet");
-  console.log(process.env.GOOGLE_SPREADSHEET_ID);
-  const doc = new GoogleSpreadsheet(process.env.GOOGLE_SPREADSHEET_ID);
+  const { GoogleSpreadsheet } = require('google-spreadsheet')
+  console.log(process.env.GOOGLE_SPREADSHEET_ID)
+  const doc = new GoogleSpreadsheet(process.env.GOOGLE_SPREADSHEET_ID)
   await doc.useServiceAccountAuth({
     client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
     private_key: process.env.GOOGLE_PRIVATE_KEY,
-  });
-  await doc.loadInfo();
+  })
+  await doc.loadInfo()
 
-  const sheet = doc.sheetsByTitle["data"];
+  const sheet = doc.sheetsByTitle['data']
 
   // Read team session directory
-  const files = await fs.promises.readdir(`./temp_data/sessions`);
+  const files = await fs.promises.readdir(`./temp_data/sessions`)
 
-  let result: GoogleSheetAthleteSession[] = [];
+  let result: GoogleSheetAthleteSession[] = []
 
   // Clear all rows
-  await sheet.clearRows();
+  await sheet.clearRows()
 
   for await (const file of files) {
     // Get team session data
-    if (file.slice(0, 7) !== "session")
-      console.log(`Wrong file [${file}] in directory`);
+    if (file.slice(0, 7) !== 'session')
+      console.log(`Wrong file [${file}] in directory`)
     else {
       const data_session = await fs.promises.readFile(
         `./temp_data/sessions/${file}`,
-        "utf8",
-      );
-      const session = JSON.parse(data_session);
+        'utf8'
+      )
+      const session = JSON.parse(data_session)
       const {
         id,
         category_name,
@@ -39,17 +39,17 @@ const sheet = async (all: Boolean) => {
         total_time,
         name,
         n_tracks,
-      } = session;
+      } = session
 
       // Get details of the session
       const data_details = await fs.promises.readFile(
         `./temp_data/details/details-${id}.json`,
-        "utf8",
-      );
-      const details = JSON.parse(data_details);
+        'utf8'
+      )
+      const details = JSON.parse(data_details)
       const players: GpexeAthleteTrainingSession[] = Object.values(
-        details.players,
-      );
+        details.players
+      )
       // const roles = Object.entries(details.roles);
       // const team = details.team.parameters;
 
@@ -83,7 +83,7 @@ const sheet = async (all: Boolean) => {
           max_values_cardio,
           athletesessionheartratezone_time_3,
           athletesessionheartratezone_time_4,
-        } = player;
+        } = player
 
         const googleSheetAthleteSession: GoogleSheetAthleteSession = [
           id,
@@ -124,15 +124,15 @@ const sheet = async (all: Boolean) => {
           max_values_cardio.value,
           athletesessionheartratezone_time_3.value,
           athletesessionheartratezone_time_4.value,
-        ];
+        ]
 
-        result.push(googleSheetAthleteSession);
-      });
+        result.push(googleSheetAthleteSession)
+      })
     }
   }
 
   // Fill rows with new values
-  await sheet.addRows(result);
-};
+  await sheet.addRows(result)
+}
 
-export default sheet;
+export default sheet

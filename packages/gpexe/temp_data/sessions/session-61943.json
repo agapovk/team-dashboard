@@ -1,1 +1,23 @@
-{"id":61943,"team":464,"category":2650,"category_name":"ИНДИВИДУАЛЬНАЯ ТРЕНИРОВКА","notes":"","start_timestamp":"2023-09-12T12:00:14.453000","end_timestamp":"2023-09-12T13:00:43.665000","union_duration":3630,"total_time":3630,"is_stats_valid":true,"tags":[],"drill_enabled":false,"drills_count":0,"minStart":1694519061.587,"maxStop":1694523679.717,"drillTags":[],"name":"[ИНДИВИДУАЛЬНАЯ ТРЕНИРОВКА] 12 SEP 2023: 12:00:14 - 13:00:43","created_on":"2023-09-12T12:44:16.882622","updated_on":"2023-09-12T12:45:40.707248","n_tracks":3,"submitted_by":"unknown"}
+{
+  "id": 61943,
+  "team": 464,
+  "category": 2650,
+  "category_name": "ИНДИВИДУАЛЬНАЯ ТРЕНИРОВКА",
+  "notes": "",
+  "start_timestamp": "2023-09-12T12:00:14.453000",
+  "end_timestamp": "2023-09-12T13:00:43.665000",
+  "union_duration": 3630,
+  "total_time": 3630,
+  "is_stats_valid": true,
+  "tags": [],
+  "drill_enabled": false,
+  "drills_count": 0,
+  "minStart": 1694519061.587,
+  "maxStop": 1694523679.717,
+  "drillTags": [],
+  "name": "[ИНДИВИДУАЛЬНАЯ ТРЕНИРОВКА] 12 SEP 2023: 12:00:14 - 13:00:43",
+  "created_on": "2023-09-12T12:44:16.882622",
+  "updated_on": "2023-09-12T12:45:40.707248",
+  "n_tracks": 3,
+  "submitted_by": "unknown"
+}

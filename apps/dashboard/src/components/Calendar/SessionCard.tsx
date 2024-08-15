@@ -1,59 +1,59 @@
-'use client';
+'use client'
 
-import Link from 'next/link';
-import React from 'react';
-import { cn } from '@repo/ui/lib/utils';
-import { session } from '@repo/db';
-import Bar from '@components/bar';
+import Link from 'next/link'
+import React from 'react'
+import { cn } from '@repo/ui/lib/utils'
+import { session } from '@repo/db'
+import Bar from '@components/bar'
 
 type Props = {
-  day: Date;
-  sessions: session[];
-};
+  day: Date
+  sessions: session[]
+}
 
 const zones = {
   td(value: number) {
-    if (value <= 3500) return 'green-500';
-    if (value >= 5500) return 'red-500';
-    return 'orange-300';
+    if (value <= 3500) return 'green-500'
+    if (value >= 5500) return 'red-500'
+    return 'orange-300'
   },
   pd(value: number) {
-    if (value <= 350) return 'green-500';
-    if (value >= 650) return 'red-500';
-    return 'orange-300';
+    if (value <= 350) return 'green-500'
+    if (value >= 650) return 'red-500'
+    return 'orange-300'
   },
   sd(value: number) {
-    if (value <= 100) return 'green-500';
-    if (value >= 180) return 'red-500';
-    return 'orange-300';
+    if (value <= 100) return 'green-500'
+    if (value >= 180) return 'red-500'
+    return 'orange-300'
   },
-};
+}
 
 export default function SessionCard({ day, sessions }: Props) {
   const currentDaySessions = sessions?.filter(
     (session) =>
-      session.start_timestamp.toLocaleDateString() === day.toLocaleDateString(),
-  );
+      session.start_timestamp.toLocaleDateString() === day.toLocaleDateString()
+  )
   function roundToNearest5(date = new Date()) {
-    const minutes = 5;
-    const ms = 1000 * 60 * minutes;
+    const minutes = 5
+    const ms = 1000 * 60 * minutes
 
     // 👇️ replace Math.round with Math.ceil to always round UP
-    return new Date(Math.round(date.getTime() / ms) * ms);
+    return new Date(Math.round(date.getTime() / ms) * ms)
   }
-  if (currentDaySessions.length === 0) return null;
+  if (currentDaySessions.length === 0) return null
 
   function convertSecToMin(duration: number | null) {
-    if (!duration) return 0;
-    return duration / 60;
+    if (!duration) return 0
+    return duration / 60
   }
 
   // Sorting sessions by timestamp
   currentDaySessions.sort(
     (a, b) =>
       new Date(a.start_timestamp).getTime() -
-      new Date(b.start_timestamp).getTime(),
-  );
+      new Date(b.start_timestamp).getTime()
+  )
 
   return (
     <div className="flex flex-col gap-2">
@@ -69,14 +69,14 @@ export default function SessionCard({ day, sessions }: Props) {
           athletesessionpowerzone_distance_3,
           athletesessionspeedzone_distance_4,
           athletesessionspeedzone_distance_5,
-        } = session;
+        } = session
 
         const power_distance =
           (athletesessionpowerzone_distance_2 || 0) +
-          (athletesessionpowerzone_distance_3 || 0);
+          (athletesessionpowerzone_distance_3 || 0)
         const speedzone_distance =
           (athletesessionspeedzone_distance_4 || 0) +
-          (athletesessionspeedzone_distance_5 || 0);
+          (athletesessionspeedzone_distance_5 || 0)
 
         return (
           <Link
@@ -86,7 +86,7 @@ export default function SessionCard({ day, sessions }: Props) {
               'text-accent-foreground mx-1 flex bg-sky-300 dark:bg-sky-800 flex-col gap-2 overflow-auto truncate rounded-lg px-2 py-1 text-xs transition-all hover:bg-opacity-80',
               {
                 'bg-red-300 dark:bg-red-800': name && name.startsWith('[МАТЧ'),
-              },
+              }
             )}
           >
             <div className="flex justify-between">
@@ -135,8 +135,8 @@ export default function SessionCard({ day, sessions }: Props) {
               </div>
             )}
           </Link>
-        );
+        )
       })}
     </div>
-  );
+  )
 }

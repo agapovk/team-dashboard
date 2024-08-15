@@ -1,1 +1,24 @@
-{"id":84460,"team":608,"category":3412,"category_name":"ТРЕНИРОВКА","notes":"","start_timestamp":"2024-03-26T18:01:11.299000","end_timestamp":"2024-03-26T19:07:56.849000","union_duration":4006,"total_time":4006,"is_stats_valid":true,"tags":[],"drill_enabled":false,"drills_count":0,"minStart":1711473091.223,"maxStop":1711480135.662,"drillTags":[],"name":"[ТРЕНИРОВКА] 26 MAR 2024: 18:01:11 - 19:07:56","created_on":"2024-03-26T17:28:16.620991","updated_on":"2024-03-26T17:28:41.102607","n_tracks":16,"submitted_by":"unknown","drills":[]}
+{
+  "id": 84460,
+  "team": 608,
+  "category": 3412,
+  "category_name": "ТРЕНИРОВКА",
+  "notes": "",
+  "start_timestamp": "2024-03-26T18:01:11.299000",
+  "end_timestamp": "2024-03-26T19:07:56.849000",
+  "union_duration": 4006,
+  "total_time": 4006,
+  "is_stats_valid": true,
+  "tags": [],
+  "drill_enabled": false,
+  "drills_count": 0,
+  "minStart": 1711473091.223,
+  "maxStop": 1711480135.662,
+  "drillTags": [],
+  "name": "[ТРЕНИРОВКА] 26 MAR 2024: 18:01:11 - 19:07:56",
+  "created_on": "2024-03-26T17:28:16.620991",
+  "updated_on": "2024-03-26T17:28:41.102607",
+  "n_tracks": 16,
+  "submitted_by": "unknown",
+  "drills": []
+}

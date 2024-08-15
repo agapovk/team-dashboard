@@ -1,40 +1,40 @@
-'use client';
+'use client'
 
-import { ColumnDef } from '@tanstack/react-table';
-import { athlete, athlete_game_ttd } from '@repo/db';
-import Link from 'next/link';
-import { DataTableColumnHeader } from './components/data-table-column-header';
+import { ColumnDef } from '@tanstack/react-table'
+import { athlete, athlete_game_ttd } from '@repo/db'
+import Link from 'next/link'
+import { DataTableColumnHeader } from './components/data-table-column-header'
 
 export type athleteGameTtdWithAthlete = athlete_game_ttd & {
-  athlete: athlete | null;
-};
+  athlete: athlete | null
+}
 export const ttd_columns: ColumnDef<athleteGameTtdWithAthlete>[] = [
   {
     accessorKey: 'position_id',
     accessorFn: (row) => row.athlete?.position_id,
     header: () => {
-      return null;
+      return null
     },
     cell: () => {
-      return null;
+      return null
     },
     filterFn: (row, id, value) => {
-      return value.includes(row.getValue(id));
+      return value.includes(row.getValue(id))
     },
   },
   {
     accessorKey: 'number',
     header: () => <div className="text-center text-xs lg:text-sm">Номер</div>,
     cell: ({ row }) => {
-      const { number } = row.original;
-      return <div className="text-sm">{number}</div>;
+      const { number } = row.original
+      return <div className="text-sm">{number}</div>
     },
   },
   {
     accessorKey: 'athlete',
     header: () => <div className="text-center text-xs lg:text-sm">ФИО</div>,
     cell: ({ row }) => {
-      const { athlete, athlete_id } = row.original;
+      const { athlete, athlete_id } = row.original
       return (
         <div className="whitespace-nowrap text-sm">
           <Link
@@ -44,7 +44,7 @@ export const ttd_columns: ColumnDef<athleteGameTtdWithAthlete>[] = [
             {athlete?.name}
           </Link>
         </div>
-      );
+      )
     },
   },
   {
@@ -53,9 +53,9 @@ export const ttd_columns: ColumnDef<athleteGameTtdWithAthlete>[] = [
       <DataTableColumnHeader column={column} title="Минут на поле" />
     ),
     cell: ({ row }) => {
-      const data: number = row.getValue('minutesPlayed');
-      const value = data.toFixed(0);
-      return <div className=" flex text-center text-sm">{value}</div>;
+      const data: number = row.getValue('minutesPlayed')
+      const value = data.toFixed(0)
+      return <div className=" flex text-center text-sm">{value}</div>
     },
   },
   {
@@ -67,11 +67,11 @@ export const ttd_columns: ColumnDef<athleteGameTtdWithAthlete>[] = [
           title="П"
           description="Передачи"
         />
-      );
+      )
     },
     cell: ({ row }) => {
-      const { passes } = row.original;
-      return <div className="text-center">{passes}</div>;
+      const { passes } = row.original
+      return <div className="text-center">{passes}</div>
     },
   },
   {
@@ -83,11 +83,11 @@ export const ttd_columns: ColumnDef<athleteGameTtdWithAthlete>[] = [
           title="П+"
           description="Передачи+ %"
         />
-      );
+      )
     },
     cell: ({ row }) => {
-      const { passesSuccess_pct } = row.original;
-      return <div className="text-center">{passesSuccess_pct}</div>;
+      const { passesSuccess_pct } = row.original
+      return <div className="text-center">{passesSuccess_pct}</div>
     },
   },
   {
@@ -99,11 +99,11 @@ export const ttd_columns: ColumnDef<athleteGameTtdWithAthlete>[] = [
           title="ПВ"
           description="Передачи вперед"
         />
-      );
+      )
     },
     cell: ({ row }) => {
-      const { passForward } = row.original;
-      return <div className="text-center">{passForward}</div>;
+      const { passForward } = row.original
+      return <div className="text-center">{passForward}</div>
     },
   },
   {
@@ -115,11 +115,11 @@ export const ttd_columns: ColumnDef<athleteGameTtdWithAthlete>[] = [
           title="ПВ+"
           description="Передачи вперед+ %"
         />
-      );
+      )
     },
     cell: ({ row }) => {
-      const { passForwardSuccess_pct } = row.original;
-      return <div className="text-center">{passForwardSuccess_pct}</div>;
+      const { passForwardSuccess_pct } = row.original
+      return <div className="text-center">{passForwardSuccess_pct}</div>
     },
   },
   {
@@ -131,11 +131,11 @@ export const ttd_columns: ColumnDef<athleteGameTtdWithAthlete>[] = [
           title="ПД"
           description="Передачи длинные"
         />
-      );
+      )
     },
     cell: ({ row }) => {
-      const { passLong } = row.original;
-      return <div className="text-center">{passLong}</div>;
+      const { passLong } = row.original
+      return <div className="text-center">{passLong}</div>
     },
   },
   {
@@ -147,11 +147,11 @@ export const ttd_columns: ColumnDef<athleteGameTtdWithAthlete>[] = [
           title="ПД+"
           description="Передачи длинные+ %"
         />
-      );
+      )
     },
     cell: ({ row }) => {
-      const { passLongSuccess_pct } = row.original;
-      return <div className="text-center">{passLongSuccess_pct}</div>;
+      const { passLongSuccess_pct } = row.original
+      return <div className="text-center">{passLongSuccess_pct}</div>
     },
   },
   {
@@ -163,11 +163,11 @@ export const ttd_columns: ColumnDef<athleteGameTtdWithAthlete>[] = [
           title="ПК"
           description="Передачи ключевые"
         />
-      );
+      )
     },
     cell: ({ row }) => {
-      const { keyPasses } = row.original;
-      return <div className="text-center">{keyPasses}</div>;
+      const { keyPasses } = row.original
+      return <div className="text-center">{keyPasses}</div>
     },
   },
   {
@@ -179,11 +179,11 @@ export const ttd_columns: ColumnDef<athleteGameTtdWithAthlete>[] = [
           title="ПК+"
           description="Передачи ключевые+ %"
         />
-      );
+      )
     },
     cell: ({ row }) => {
-      const { keyPassesSuccess_pct } = row.original;
-      return <div className="text-center">{keyPassesSuccess_pct}</div>;
+      const { keyPassesSuccess_pct } = row.original
+      return <div className="text-center">{keyPassesSuccess_pct}</div>
     },
   },
-];
+]

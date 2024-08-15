@@ -1,9 +1,9 @@
-'use client';
+'use client'
 
-import { z } from 'zod';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
-import { athlete } from '@repo/db';
+import { z } from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useForm } from 'react-hook-form'
+import { athlete } from '@repo/db'
 
 import {
   Button,
@@ -21,8 +21,8 @@ import {
   SelectTrigger,
   SelectValue,
   useToast,
-} from '@repo/ui';
-import { updateAthlete } from '@dashboard/actions/athlete';
+} from '@repo/ui'
+import { updateAthlete } from '@dashboard/actions/athlete'
 
 const formSchema = z.object({
   name: z.string().min(2).max(50),
@@ -32,19 +32,19 @@ const formSchema = z.object({
   year: z.string(),
   position_id: z.string().optional(),
   isInjured: z.boolean(),
-});
+})
 
 export type AthleteFormData = {
-  number?: number;
-  name?: string;
-  position_id?: number;
-  isInjured: boolean;
-  birthday?: Date | null;
-};
+  number?: number
+  name?: string
+  position_id?: number
+  isInjured: boolean
+  birthday?: Date | null
+}
 
 type Props = {
-  data: athlete;
-};
+  data: athlete
+}
 
 export function AthleteForm({ data }: Props) {
   const form = useForm<z.infer<typeof formSchema>>({
@@ -59,9 +59,9 @@ export function AthleteForm({ data }: Props) {
       isInjured: data.isInjured,
     },
     mode: 'onChange',
-  });
+  })
 
-  const { toast } = useToast();
+  const { toast } = useToast()
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     const newValues: AthleteFormData = {
@@ -70,10 +70,10 @@ export function AthleteForm({ data }: Props) {
       birthday:
         new Date(`${values.year}-${values.month}-${values.day}`) ?? null,
       isInjured: values.isInjured,
-    };
+    }
 
     try {
-      updateAthlete(data.id, newValues);
+      updateAthlete(data.id, newValues)
 
       toast({
         title: 'OK',
@@ -84,7 +84,7 @@ export function AthleteForm({ data }: Props) {
             </code>
           </pre>
         ),
-      });
+      })
     } catch (error) {
       toast({
         title: 'Error',
@@ -93,7 +93,7 @@ export function AthleteForm({ data }: Props) {
             <code className="text-white">{JSON.stringify(error, null, 2)}</code>
           </pre>
         ),
-      });
+      })
     }
   }
 
@@ -212,5 +212,5 @@ export function AthleteForm({ data }: Props) {
         </div>
       </form>
     </Form>
-  );
+  )
 }

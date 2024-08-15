@@ -1,1 +1,24 @@
-{"id":88855,"team":608,"category":3410,"category_name":"ИНДИВИДУАЛЬНАЯ ТРЕНИРОВКА","notes":"","start_timestamp":"2024-05-03T10:58:06.297000","end_timestamp":"2024-05-03T12:21:51.877000","union_duration":4547,"total_time":4547,"is_stats_valid":true,"tags":[],"drill_enabled":false,"drills_count":0,"minStart":1714733881.145,"maxStop":1714738969.5470002,"drillTags":[],"name":"[ИНДИВИДУАЛЬНАЯ ТРЕНИРОВКА] 3 MAY 2024: 10:58:06 - 12:21:51","created_on":"2024-05-03T09:27:55.805013","updated_on":"2024-05-03T09:28:06.460125","n_tracks":2,"submitted_by":"unknown","drills":[]}
+{
+  "id": 88855,
+  "team": 608,
+  "category": 3410,
+  "category_name": "ИНДИВИДУАЛЬНАЯ ТРЕНИРОВКА",
+  "notes": "",
+  "start_timestamp": "2024-05-03T10:58:06.297000",
+  "end_timestamp": "2024-05-03T12:21:51.877000",
+  "union_duration": 4547,
+  "total_time": 4547,
+  "is_stats_valid": true,
+  "tags": [],
+  "drill_enabled": false,
+  "drills_count": 0,
+  "minStart": 1714733881.145,
+  "maxStop": 1714738969.5470002,
+  "drillTags": [],
+  "name": "[ИНДИВИДУАЛЬНАЯ ТРЕНИРОВКА] 3 MAY 2024: 10:58:06 - 12:21:51",
+  "created_on": "2024-05-03T09:27:55.805013",
+  "updated_on": "2024-05-03T09:28:06.460125",
+  "n_tracks": 2,
+  "submitted_by": "unknown",
+  "drills": []
+}

@@ -1,1 +1,24 @@
-{"id":92337,"team":687,"category":3894,"category_name":"ИНДИВИДУАЛЬНАЯ ТРЕНИРОВКА","notes":"","start_timestamp":"2024-06-27T10:06:14","end_timestamp":"2024-06-27T11:43:21","union_duration":5829,"total_time":5829,"is_stats_valid":true,"tags":[],"drill_enabled":false,"drills_count":0,"minStart":1719482759.312,"maxStop":1719488840.497,"drillTags":[],"name":"[ИНДИВИДУАЛЬНАЯ ТРЕНИРОВКА] 27 JUN 2024: 10:06:14 - 11:43:21","created_on":"2024-06-27T09:38:22.909432","updated_on":"2024-06-27T09:39:38.850852","n_tracks":1,"submitted_by":"gpexe-ui","drills":[]}
+{
+  "id": 92337,
+  "team": 687,
+  "category": 3894,
+  "category_name": "ИНДИВИДУАЛЬНАЯ ТРЕНИРОВКА",
+  "notes": "",
+  "start_timestamp": "2024-06-27T10:06:14",
+  "end_timestamp": "2024-06-27T11:43:21",
+  "union_duration": 5829,
+  "total_time": 5829,
+  "is_stats_valid": true,
+  "tags": [],
+  "drill_enabled": false,
+  "drills_count": 0,
+  "minStart": 1719482759.312,
+  "maxStop": 1719488840.497,
+  "drillTags": [],
+  "name": "[ИНДИВИДУАЛЬНАЯ ТРЕНИРОВКА] 27 JUN 2024: 10:06:14 - 11:43:21",
+  "created_on": "2024-06-27T09:38:22.909432",
+  "updated_on": "2024-06-27T09:39:38.850852",
+  "n_tracks": 1,
+  "submitted_by": "gpexe-ui",
+  "drills": []
+}

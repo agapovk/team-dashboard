@@ -1,1 +1,24 @@
-{"id":91947,"team":687,"category":3897,"category_name":"УПРАЖНЕНИЕ","notes":" 15*10/50","start_timestamp":"2024-06-20T12:00:33","end_timestamp":"2024-06-20T12:18:34","union_duration":1081,"total_time":1081,"is_stats_valid":true,"tags":[15474],"drill_enabled":false,"drills_count":0,"minStart":1718879375.458,"maxStop":1718886372.531,"drillTags":[],"name":"[УПРАЖНЕНИЕ] 20 JUN 2024: 12:00:33 - 12:18:34","created_on":"2024-06-20T11:20:10.622036","updated_on":"2024-06-20T11:21:56.627003","n_tracks":19,"submitted_by":"gpexe-ui","drills":[]}
+{
+  "id": 91947,
+  "team": 687,
+  "category": 3897,
+  "category_name": "УПРАЖНЕНИЕ",
+  "notes": " 15*10/50",
+  "start_timestamp": "2024-06-20T12:00:33",
+  "end_timestamp": "2024-06-20T12:18:34",
+  "union_duration": 1081,
+  "total_time": 1081,
+  "is_stats_valid": true,
+  "tags": [15474],
+  "drill_enabled": false,
+  "drills_count": 0,
+  "minStart": 1718879375.458,
+  "maxStop": 1718886372.531,
+  "drillTags": [],
+  "name": "[УПРАЖНЕНИЕ] 20 JUN 2024: 12:00:33 - 12:18:34",
+  "created_on": "2024-06-20T11:20:10.622036",
+  "updated_on": "2024-06-20T11:21:56.627003",
+  "n_tracks": 19,
+  "submitted_by": "gpexe-ui",
+  "drills": []
+}

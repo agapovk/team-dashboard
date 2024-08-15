@@ -1,30 +1,30 @@
-'use client';
+'use client'
 
-import { ColumnDef } from '@tanstack/react-table';
-import { game } from '@repo/db';
-import Link from 'next/link';
-import { Badge } from '@repo/ui';
-import { PlaneIcon } from 'lucide-react';
-import { DataTableColumnHeader } from './components/data-table-column-header';
-import { cn } from '@repo/ui/lib/utils';
+import { ColumnDef } from '@tanstack/react-table'
+import { game } from '@repo/db'
+import Link from 'next/link'
+import { Badge } from '@repo/ui'
+import { PlaneIcon } from 'lucide-react'
+import { DataTableColumnHeader } from './components/data-table-column-header'
+import { cn } from '@repo/ui/lib/utils'
 
 type competition = {
-  [key: string]: string;
-};
+  [key: string]: string
+}
 const competitionMap: competition = {
   rpl: 'РПЛ',
   cup: 'Кубок',
-};
+}
 
 export const ttd_columns: ColumnDef<game>[] = [
   {
     accessorKey: 'date',
     header: ({ column }) => {
-      return <DataTableColumnHeader column={column} title="Дата" />;
+      return <DataTableColumnHeader column={column} title="Дата" />
     },
     cell: ({ row }) => {
-      const { id, date, competition } = row.original;
-      const localDate = date?.toLocaleDateString();
+      const { id, date, competition } = row.original
+      const localDate = date?.toLocaleDateString()
       return (
         <div className="text-center text-sm">
           <Link href={`/games/${id}?tab=ttd`} className=" underline">
@@ -34,7 +34,7 @@ export const ttd_columns: ColumnDef<game>[] = [
             {competition && competitionMap[competition]}
           </span>
         </div>
-      );
+      )
     },
   },
   {
@@ -43,15 +43,15 @@ export const ttd_columns: ColumnDef<game>[] = [
       <div className="text-center text-xs lg:text-sm">Соперник</div>
     ),
     cell: ({ row }) => {
-      const { vs, home, id, result } = row.original;
+      const { vs, home, id, result } = row.original
       const typeOfScore = (): string => {
-        const uralScore = result?.slice(0, 1);
-        const opponentScore = result?.slice(2);
-        if (!uralScore || !opponentScore) return '';
-        if (uralScore === opponentScore) return 'bg-slate-400';
-        if (uralScore > opponentScore) return 'bg-green-500';
-        return 'bg-destructive';
-      };
+        const uralScore = result?.slice(0, 1)
+        const opponentScore = result?.slice(2)
+        if (!uralScore || !opponentScore) return ''
+        if (uralScore === opponentScore) return 'bg-slate-400'
+        if (uralScore > opponentScore) return 'bg-green-500'
+        return 'bg-destructive'
+      }
       return (
         <div className="flex gap-2 text-sm">
           <Link
@@ -65,7 +65,7 @@ export const ttd_columns: ColumnDef<game>[] = [
             {result}
           </Badge>
         </div>
-      );
+      )
     },
   },
   {
@@ -77,11 +77,11 @@ export const ttd_columns: ColumnDef<game>[] = [
           title="П"
           description="Передачи"
         />
-      );
+      )
     },
     cell: ({ row }) => {
-      const { passes } = row.original;
-      return <div className="text-center">{passes}</div>;
+      const { passes } = row.original
+      return <div className="text-center">{passes}</div>
     },
   },
   {
@@ -93,11 +93,11 @@ export const ttd_columns: ColumnDef<game>[] = [
           title="П+"
           description="Передачи+ %"
         />
-      );
+      )
     },
     cell: ({ row }) => {
-      const { passesSuccess_pct } = row.original;
-      return <div className="text-center">{passesSuccess_pct}</div>;
+      const { passesSuccess_pct } = row.original
+      return <div className="text-center">{passesSuccess_pct}</div>
     },
   },
   {
@@ -109,11 +109,11 @@ export const ttd_columns: ColumnDef<game>[] = [
           title="ПВ"
           description="Передачи вперед"
         />
-      );
+      )
     },
     cell: ({ row }) => {
-      const { passForward } = row.original;
-      return <div className="text-center">{passForward}</div>;
+      const { passForward } = row.original
+      return <div className="text-center">{passForward}</div>
     },
   },
   {
@@ -125,11 +125,11 @@ export const ttd_columns: ColumnDef<game>[] = [
           title="ПВ+"
           description="Передачи вперед+ %"
         />
-      );
+      )
     },
     cell: ({ row }) => {
-      const { passForwardSuccess_pct } = row.original;
-      return <div className="text-center">{passForwardSuccess_pct}</div>;
+      const { passForwardSuccess_pct } = row.original
+      return <div className="text-center">{passForwardSuccess_pct}</div>
     },
   },
   {
@@ -141,11 +141,11 @@ export const ttd_columns: ColumnDef<game>[] = [
           title="ПД"
           description="Передачи длинные"
         />
-      );
+      )
     },
     cell: ({ row }) => {
-      const { passLong } = row.original;
-      return <div className="text-center">{passLong}</div>;
+      const { passLong } = row.original
+      return <div className="text-center">{passLong}</div>
     },
   },
   {
@@ -157,11 +157,11 @@ export const ttd_columns: ColumnDef<game>[] = [
           title="ПД+"
           description="Передачи длинные+ %"
         />
-      );
+      )
     },
     cell: ({ row }) => {
-      const { passLongSuccess_pct } = row.original;
-      return <div className="text-center">{passLongSuccess_pct}</div>;
+      const { passLongSuccess_pct } = row.original
+      return <div className="text-center">{passLongSuccess_pct}</div>
     },
   },
   {
@@ -173,11 +173,11 @@ export const ttd_columns: ColumnDef<game>[] = [
           title="ПК"
           description="Передачи ключевые"
         />
-      );
+      )
     },
     cell: ({ row }) => {
-      const { keyPasses } = row.original;
-      return <div className="text-center">{keyPasses}</div>;
+      const { keyPasses } = row.original
+      return <div className="text-center">{keyPasses}</div>
     },
   },
   {
@@ -189,11 +189,11 @@ export const ttd_columns: ColumnDef<game>[] = [
           title="ПК+"
           description="Передачи ключевые+ %"
         />
-      );
+      )
     },
     cell: ({ row }) => {
-      const { keyPassesSuccess_pct } = row.original;
-      return <div className="text-center">{keyPassesSuccess_pct}</div>;
+      const { keyPassesSuccess_pct } = row.original
+      return <div className="text-center">{keyPassesSuccess_pct}</div>
     },
   },
-];
+]

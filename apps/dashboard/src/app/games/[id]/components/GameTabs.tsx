@@ -1,29 +1,29 @@
-'use client';
+'use client'
 
-import { DataTable } from '../data-table';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@repo/ui';
-import { game } from '@repo/db';
-import { useSearchParams } from 'next/navigation';
+import { DataTable } from '../data-table'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@repo/ui'
+import { game } from '@repo/db'
+import { useSearchParams } from 'next/navigation'
 import {
   athleteGameFitnessWithAthlete,
   fitness_columns,
-} from '../fitness-columns';
-import { athleteGameTtdWithAthlete, ttd_columns } from '../ttd_columns';
-import { Suspense } from 'react';
+} from '../fitness-columns'
+import { athleteGameTtdWithAthlete, ttd_columns } from '../ttd_columns'
+import { Suspense } from 'react'
 
 type Props = {
   game: game & {
-    athlete_ttd: athleteGameTtdWithAthlete[];
-    athlete_fitness: athleteGameFitnessWithAthlete[];
-  };
-};
+    athlete_ttd: athleteGameTtdWithAthlete[]
+    athlete_fitness: athleteGameFitnessWithAthlete[]
+  }
+}
 
 export default function GameTabs({ game }: Props) {
-  const searchParams = useSearchParams();
-  const defaultTab = searchParams.get('tab');
+  const searchParams = useSearchParams()
+  const defaultTab = searchParams.get('tab')
 
-  const athlete_fitnees_data = game?.athlete_fitness;
-  const athlete_ttd_data = game?.athlete_ttd;
+  const athlete_fitnees_data = game?.athlete_fitness
+  const athlete_ttd_data = game?.athlete_ttd
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
@@ -58,5 +58,5 @@ export default function GameTabs({ game }: Props) {
         </div>
       </Tabs>
     </Suspense>
-  );
+  )
 }

@@ -1,12 +1,12 @@
-'use client';
+'use client'
 
-import * as React from 'react';
-import { z } from 'zod';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { format } from 'date-fns';
-import { useForm } from 'react-hook-form';
-import { cn } from '@repo/ui/lib/utils';
-import { Calendar as CalendarIcon } from 'lucide-react';
+import * as React from 'react'
+import { z } from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { format } from 'date-fns'
+import { useForm } from 'react-hook-form'
+import { cn } from '@repo/ui/lib/utils'
+import { Calendar as CalendarIcon } from 'lucide-react'
 import {
   Calendar,
   Popover,
@@ -21,8 +21,8 @@ import {
   FormMessage,
   Input,
   useToast,
-} from '@repo/ui';
-import { addSession } from '~/src/app/actions/session';
+} from '@repo/ui'
+import { addSession } from '~/src/app/actions/session'
 
 const formSchema = z.object({
   id: z.number(),
@@ -32,23 +32,23 @@ const formSchema = z.object({
   start_time_minutes: z.string(),
   total_time: z.string(),
   category_name: z.string(),
-});
+})
 
 export type SessionFormData = {
-  id: number;
-  name: string;
-  start_timestamp: Date;
-  total_time: number;
-  category_name: string;
-};
+  id: number
+  name: string
+  start_timestamp: Date
+  total_time: number
+  category_name: string
+}
 
 type Props = {
-  date: Date;
-};
+  date: Date
+}
 
 function twoDigitFormat(value: number): string {
-  const result = '0' + value.toString();
-  return result.substring(result.length - 2);
+  const result = '0' + value.toString()
+  return result.substring(result.length - 2)
 }
 
 export function SessionForm({ date }: Props) {
@@ -56,7 +56,7 @@ export function SessionForm({ date }: Props) {
     resolver: zodResolver(formSchema),
     defaultValues: {
       id: Number(
-        `${twoDigitFormat(date.getDate())}${twoDigitFormat(date.getMonth() + 1)}${date.getFullYear().toString().substring(2)}`,
+        `${twoDigitFormat(date.getDate())}${twoDigitFormat(date.getMonth() + 1)}${date.getFullYear().toString().substring(2)}`
       ),
       name: 'УТЗ',
       start_timestamp: date,
@@ -66,9 +66,9 @@ export function SessionForm({ date }: Props) {
       category_name: 'БЕЗ ДАТЧИКОВ',
     },
     mode: 'onChange',
-  });
+  })
 
-  const { toast } = useToast();
+  const { toast } = useToast()
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     const {
@@ -78,21 +78,21 @@ export function SessionForm({ date }: Props) {
       start_time_minutes,
       start_timestamp,
       ...rest
-    } = values;
+    } = values
     const newSession = {
       id: Number(`${id}${twoDigitFormat(Number(start_time_hours))}`),
       start_timestamp: new Date(
         new Date(start_timestamp).setHours(
           Number(start_time_hours),
-          Number(start_time_minutes),
-        ),
+          Number(start_time_minutes)
+        )
       ),
       total_time: Number(total_time) * 60,
       ...rest,
-    };
+    }
 
     try {
-      addSession(newSession);
+      addSession(newSession)
 
       toast({
         title: 'OK',
@@ -103,7 +103,7 @@ export function SessionForm({ date }: Props) {
             </code>
           </pre>
         ),
-      });
+      })
     } catch (error) {
       toast({
         title: 'Error',
@@ -112,7 +112,7 @@ export function SessionForm({ date }: Props) {
             <code className="text-white">{JSON.stringify(error, null, 2)}</code>
           </pre>
         ),
-      });
+      })
     }
   }
 
@@ -160,7 +160,7 @@ export function SessionForm({ date }: Props) {
                           variant={'outline'}
                           className={cn(
                             'w-[240px] pl-3 text-left font-normal',
-                            !field.value && 'text-muted-foreground',
+                            !field.value && 'text-muted-foreground'
                           )}
                         >
                           {field.value ? (
@@ -221,5 +221,5 @@ export function SessionForm({ date }: Props) {
         </div>
       </form>
     </Form>
-  );
+  )
 }

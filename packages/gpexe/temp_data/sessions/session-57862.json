@@ -1,1 +1,23 @@
-{"id":57862,"team":464,"category":2646,"category_name":"ТРЕНИРОВКА","notes":"","start_timestamp":"2023-08-15T11:02:59.084000","end_timestamp":"2023-08-15T12:18:23.927000","union_duration":4282,"total_time":4282,"is_stats_valid":true,"tags":[],"drill_enabled":true,"drills_count":4,"minStart":1692096499.124,"maxStop":1692102114.4719946,"drillTags":[[9073],[10544],[9147],[9517]],"name":"[ТРЕНИРОВКА] 15 AUG 2023: 11:02:59 - 12:18:23","created_on":"2023-08-15T11:13:32.259555","updated_on":"2023-08-15T11:21:38.730784","n_tracks":17,"submitted_by":"unknown"}
+{
+  "id": 57862,
+  "team": 464,
+  "category": 2646,
+  "category_name": "ТРЕНИРОВКА",
+  "notes": "",
+  "start_timestamp": "2023-08-15T11:02:59.084000",
+  "end_timestamp": "2023-08-15T12:18:23.927000",
+  "union_duration": 4282,
+  "total_time": 4282,
+  "is_stats_valid": true,
+  "tags": [],
+  "drill_enabled": true,
+  "drills_count": 4,
+  "minStart": 1692096499.124,
+  "maxStop": 1692102114.4719946,
+  "drillTags": [[9073], [10544], [9147], [9517]],
+  "name": "[ТРЕНИРОВКА] 15 AUG 2023: 11:02:59 - 12:18:23",
+  "created_on": "2023-08-15T11:13:32.259555",
+  "updated_on": "2023-08-15T11:21:38.730784",
+  "n_tracks": 17,
+  "submitted_by": "unknown"
+}

@@ -1,6 +1,6 @@
-'use client';
+'use client'
 
-import { Row } from '@tanstack/react-table';
+import { Row } from '@tanstack/react-table'
 import {
   Button,
   Dialog,
@@ -9,20 +9,20 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@repo/ui';
+} from '@repo/ui'
 
-import { DotsVerticalIcon } from '@radix-ui/react-icons';
-import { athlete } from '@repo/db';
-import React from 'react';
+import { DotsVerticalIcon } from '@radix-ui/react-icons'
+import { athlete } from '@repo/db'
+import React from 'react'
 
-import { AthleteForm } from './athlete-form';
+import { AthleteForm } from './athlete-form'
 
 interface DataTableRowActionsProps {
-  row: Row<athlete>;
+  row: Row<athlete>
 }
 
 export function DataTableRowActions({ row }: DataTableRowActionsProps) {
-  const data = row.original;
+  const data = row.original
 
   return (
     <div className="flex items-center gap-3 text-sm">
@@ -44,5 +44,5 @@ export function DataTableRowActions({ row }: DataTableRowActionsProps) {
         </DialogContent>
       </Dialog>
     </div>
-  );
+  )
 }

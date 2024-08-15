@@ -1,1 +1,24 @@
-{"id":97728,"team":687,"category":3896,"category_name":"ТРЕНИРОВКА","notes":"","start_timestamp":"2024-08-11T13:11:56","end_timestamp":"2024-08-11T14:06:36","union_duration":3179,"total_time":3179,"is_stats_valid":true,"tags":[],"drill_enabled":true,"drills_count":3,"minStart":1723380505.152,"maxStop":1723386255.4679978,"drillTags":[[15489],[15496],[15477]],"name":"[ТРЕНИРОВКА] 11 AUG 2024: 13:11:56 - 14:06:36","created_on":"2024-08-11T11:33:00.682197","updated_on":"2024-08-11T11:34:35.243646","n_tracks":23,"submitted_by":"gpexe-ui","drills":[97734,97733,97732]}
+{
+  "id": 97728,
+  "team": 687,
+  "category": 3896,
+  "category_name": "ТРЕНИРОВКА",
+  "notes": "",
+  "start_timestamp": "2024-08-11T13:11:56",
+  "end_timestamp": "2024-08-11T14:06:36",
+  "union_duration": 3179,
+  "total_time": 3179,
+  "is_stats_valid": true,
+  "tags": [],
+  "drill_enabled": true,
+  "drills_count": 3,
+  "minStart": 1723380505.152,
+  "maxStop": 1723386255.4679978,
+  "drillTags": [[15489], [15496], [15477]],
+  "name": "[ТРЕНИРОВКА] 11 AUG 2024: 13:11:56 - 14:06:36",
+  "created_on": "2024-08-11T11:33:00.682197",
+  "updated_on": "2024-08-11T11:34:35.243646",
+  "n_tracks": 23,
+  "submitted_by": "gpexe-ui",
+  "drills": [97734, 97733, 97732]
+}

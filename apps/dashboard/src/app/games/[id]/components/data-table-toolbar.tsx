@@ -1,24 +1,24 @@
-'use client';
+'use client'
 
-import { Cross2Icon } from '@radix-ui/react-icons';
-import { Table } from '@tanstack/react-table';
-import { Button } from '@repo/ui';
-import { DataTableFacetedFilter } from './data-table-faceted-filter';
+import { Cross2Icon } from '@radix-ui/react-icons'
+import { Table } from '@tanstack/react-table'
+import { Button } from '@repo/ui'
+import { DataTableFacetedFilter } from './data-table-faceted-filter'
 
 interface DataTableToolbarProps<TData> {
-  table: Table<TData>;
+  table: Table<TData>
 }
 
 export function DataTableToolbar<TData>({
   table,
 }: DataTableToolbarProps<TData>) {
-  const isFiltered = table.getState().columnFilters.length > 0;
+  const isFiltered = table.getState().columnFilters.length > 0
 
   const positions = [
     { value: 1, label: 'Защ' },
     { value: 2, label: 'Полузащ' },
     { value: 3, label: 'Нап' },
-  ];
+  ]
 
   return (
     <div className="flex items-center justify-between">
@@ -42,5 +42,5 @@ export function DataTableToolbar<TData>({
         )}
       </div>
     </div>
-  );
+  )
 }

@@ -1,33 +1,33 @@
 // fetcher
-import * as dotenv from "dotenv";
-dotenv.config();
+import * as dotenv from 'dotenv'
+dotenv.config()
 
 type GpexeTrainingSession = {
-  id: number;
-  team: number;
-  name: string;
-  start_timestamp: string;
-  end_timestamp: string;
-  category_name: string;
-  notes: string;
-  total_time: number;
-  n_tracks: number;
-};
+  id: number
+  team: number
+  name: string
+  start_timestamp: string
+  end_timestamp: string
+  category_name: string
+  notes: string
+  total_time: number
+  n_tracks: number
+}
 
-const myHeaders = new Headers();
-myHeaders.append("Authorization", process.env.TOKEN || "");
+const myHeaders = new Headers()
+myHeaders.append('Authorization', process.env.TOKEN || '')
 // myHeaders.append("Cookie", process.env.COOKIE || "");
 
 // Get athletes
 export const getAthletes = async () => {
-  const response = await fetch("https://server11.gpexe.com/api/athlete", {
-    method: "GET",
+  const response = await fetch('https://server11.gpexe.com/api/athlete', {
+    method: 'GET',
     headers: myHeaders,
-    redirect: "follow",
-  });
+    redirect: 'follow',
+  })
 
-  return response.json();
-};
+  return response.json()
+}
 
 // Get sessions
 // TODO: метод для скачивания ВСЕХ тренировок (несколько страниц). Возможно придется склеивать
@@ -37,24 +37,24 @@ export const getSessions = async (options: { limit: number }) => {
       options.limit && `limit=${options.limit}`
     }`,
     {
-      method: "GET",
+      method: 'GET',
       headers: myHeaders,
-      redirect: "follow",
-    },
-  );
-  return response.json() as Promise<GpexeTrainingSession[]>;
-};
+      redirect: 'follow',
+    }
+  )
+  return response.json() as Promise<GpexeTrainingSession[]>
+}
 
 // Get session details
 export const getSessionDetails = async (id: number) => {
   const response = await fetch(
     `https://server11.gpexe.com/api/team_session/${id}/details`,
     {
-      method: "GET",
+      method: 'GET',
       headers: myHeaders,
-      redirect: "follow",
-    },
-  );
+      redirect: 'follow',
+    }
+  )
 
-  return response.json();
-};
+  return response.json()
+}
