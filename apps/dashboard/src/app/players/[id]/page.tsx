@@ -1,4 +1,3 @@
-import React from 'react'
 import { PrismaClient } from '@repo/db'
 import Link from 'next/link'
 import { Button } from '@repo/ui'
@@ -18,6 +17,9 @@ type Props = {
 
 export default async function PlayerPage({ params }: Props) {
   const player = await prisma.athlete.findUnique({
+    where: {
+      id: Number(params.id),
+    },
     include: {
       athlete_games_fitness: {
         include: {
@@ -49,9 +51,6 @@ export default async function PlayerPage({ params }: Props) {
           },
         },
       },
-    },
-    where: {
-      id: Number(params.id),
     },
   })
 

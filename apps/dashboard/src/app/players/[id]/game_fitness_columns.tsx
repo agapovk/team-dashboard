@@ -2,7 +2,7 @@
 
 import { ColumnDef } from '@tanstack/react-table'
 import { athlete_game_fitness, game } from '@repo/db'
-import Bar from '@components/bar'
+import { Bar } from '@components/Bars'
 import { DataTableColumnHeader } from '../components/data-table-column-header'
 import Link from 'next/link'
 import { cn } from '@repo/ui/lib/utils'

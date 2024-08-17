@@ -2,10 +2,9 @@
 
 import { ColumnDef } from '@tanstack/react-table'
 import { athlete_session, session } from '@repo/db'
-import Bar from '@components/bar'
 import Link from 'next/link'
 import { cn } from '@repo/ui/lib/utils'
-import BarWithAvg from '@components/barWithAvg'
+import { Bar, BarWithAvg } from '@components/Bars'
 
 export const session_columns: ColumnDef<athlete_session>[] = [
   {

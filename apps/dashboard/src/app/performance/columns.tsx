@@ -3,8 +3,7 @@
 import { ColumnDef } from '@tanstack/react-table'
 import { session } from '@repo/db'
 import Link from 'next/link'
-import Bar from '@components/bar'
-import BarWithTooltip from '@components/barWithTooltip'
+import { Bar, BarWithTooltip } from '@components/Bars'
 
 function roundToNearest5(date = new Date()) {
   const minutes = 5

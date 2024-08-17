@@ -4,8 +4,7 @@ import { ColumnDef } from '@tanstack/react-table'
 import { DataTableColumnHeader } from './components/data-table-column-header'
 import { athlete, athlete_session } from '@repo/db'
 import Link from 'next/link'
-import Bar from '@components/bar'
-import BarWithTooltip from '@components/barWithTooltip'
+import { Bar, BarWithTooltip } from '@components/Bars'
 
 export type AthleteSessionWithAthlete = athlete_session & {
   athlete: athlete

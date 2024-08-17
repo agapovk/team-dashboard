@@ -1,8 +1,10 @@
-import React from 'react'
+import { Suspense } from 'react'
 import { PrismaClient } from '@repo/db'
 import { DataTable } from './data-table'
 import { columns } from './columns'
 import { Metadata } from 'next'
+import { Button } from '@repo/ui'
+import Link from 'next/link'
 
 const prisma = new PrismaClient()
 
@@ -12,37 +14,44 @@ export const metadata: Metadata = {
 }
 
 type Props = {
-  params: {
-    id: number
-  }
+  params: { id: number }
 }
 
-export default async function page({ params: { id } }: Props) {
+export default async function SessionPage({ params }: Props) {
   const session = await prisma.session.findUnique({
     where: {
-      id: Number(id),
+      id: Number(params.id),
     },
     include: {
       athlete_sessions: {
         include: {
           athlete: true,
         },
-        orderBy: {
-          athlete: {
-            name: 'asc',
-          },
-        },
       },
     },
   })
 
-  const athlete_sessions = session?.athlete_sessions
-
-  if (athlete_sessions) {
+  if (!session) {
+    return (
+      <div className="flex-1 space-y-4 p-8 pt-6">
+        <div className="flex items-center justify-between space-y-2">
+          <div>
+            <h2 className="text-2xl font-bold tracking-tight">
+              Сессия не найдена
+            </h2>
+            <p className="text-muted-foreground">Не нашли сессию {params.id}</p>
+          </div>
+        </div>
+        <Button>
+          <Link href="/performance">Все тренировки</Link>
+        </Button>
+      </div>
+    )
+  } else {
+    const athlete_sessions = session?.athlete_sessions
     const distances = athlete_sessions.flatMap((s) => Number(s.total_distance))
     const maxD = Math.max.apply(Math, distances)
     const minD = Math.min.apply(Math, distances)
-
     const power = athlete_sessions.flatMap(
       (s) =>
         Number(s.athletesessionpowerzone_distance_2) +
@@ -50,7 +59,6 @@ export default async function page({ params: { id } }: Props) {
     )
     const maxP = Math.max.apply(Math, power)
     const minP = Math.min.apply(Math, power)
-
     const speed = athlete_sessions.flatMap(
       (s) =>
         Number(s.athletesessionspeedzone_distance_4) +
@@ -71,19 +79,29 @@ export default async function page({ params: { id } }: Props) {
       })) ?? []
 
     return (
-      <div className="h-full flex-1 flex-col space-y-8 p-8 md:flex">
-        <div className="flex items-center justify-between space-y-2">
-          <div>
-            <h2 className="text-2xl font-bold tracking-tight">УТЗ</h2>
-            <p className="text-muted-foreground">
-              Отчет о тренировке {session?.start_timestamp.toLocaleDateString()}
-            </p>
+      <Suspense
+        fallback={
+          <div className="flex justify-center h-full items-center">
+            Загузка данных...
+          </div>
+        }
+      >
+        <div className="h-full flex-1 flex-col space-y-8 p-8 md:flex">
+          <div className="flex items-center justify-between space-y-2">
+            <div>
+              <h2 className="text-2xl font-bold tracking-tight">УТЗ</h2>
+              <p className="text-muted-foreground">
+                Отчет о тренировке{' '}
+                {session.start_timestamp.toLocaleDateString()}
+              </p>
+            </div>
+          </div>
+          <div className="space-y-4">
+            <DataTable data={data} columns={columns} />
           </div>
         </div>
-        <div className="space-y-4">
-          <DataTable data={data} columns={columns} />
-        </div>
-      </div>
+      </Suspense>
     )
   }
 }
+// }
