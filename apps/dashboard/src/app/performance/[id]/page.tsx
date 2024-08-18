@@ -1,12 +1,10 @@
 import { Suspense } from 'react'
-import { PrismaClient } from '@repo/db'
+import prisma from '@repo/db'
 import { DataTable } from './data-table'
 import { columns } from './columns'
 import { Metadata } from 'next'
 import { Button } from '@repo/ui'
 import Link from 'next/link'
-
-const prisma = new PrismaClient()
 
 export const metadata: Metadata = {
   title: 'Статистика тренировки',

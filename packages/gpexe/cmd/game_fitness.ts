@@ -1,8 +1,6 @@
 import * as fs from 'node:fs'
 
-import { PrismaClient } from '@repo/db'
-
-const prisma = new PrismaClient()
+import prisma from '@repo/db'
 
 // type ttdRawData = {
 //   date: string;

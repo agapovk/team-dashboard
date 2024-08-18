@@ -1,9 +1,7 @@
 import { Metadata } from 'next'
-import { PrismaClient } from '@repo/db'
+import prisma from '@repo/db'
 import { columns } from './columns'
 import { DataTable } from './data-table'
-
-const prisma = new PrismaClient()
 
 export const metadata: Metadata = {
   title: 'Список тренировок',

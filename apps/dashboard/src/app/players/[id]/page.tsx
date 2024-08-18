@@ -1,10 +1,8 @@
-import { PrismaClient } from '@repo/db'
+import prisma from '@repo/db'
 import Link from 'next/link'
 import { Button } from '@repo/ui'
 import { Metadata } from 'next'
 import PlayerTabs from './components/PlayerTabs'
-
-const prisma = new PrismaClient()
 
 export const metadata: Metadata = {
   title: 'Статистика игрока',

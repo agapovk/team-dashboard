@@ -1,8 +1,7 @@
 import { Metadata } from 'next'
-import { PrismaClient } from '@repo/db'
 import { Schedule } from '@components/Calendar/Schedule'
+import prisma from '@repo/db'
 export const revalidate = 0
-const prisma = new PrismaClient()
 
 export const metadata: Metadata = {
   title: 'Dashboard',
