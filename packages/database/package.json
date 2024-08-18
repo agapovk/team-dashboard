@@ -4,7 +4,8 @@
   "scripts": {
     "db:generate": "prisma generate",
     "db:push": "prisma db push --skip-generate",
-    "db:studio": "pnpm exec prisma studio"
+    "db:studio": "pnpm exec prisma studio",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@prisma/client": "^5.18.0"
