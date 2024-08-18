@@ -5,6 +5,7 @@ import React from 'react'
 import { cn } from '@repo/ui/lib/utils'
 import { BarWithAvg } from '@components/Bars'
 import { AthleteSessionWithTeamSession } from './PlayerCalendar'
+import { convertSecToMin, roundToNearest5 } from '@utils'
 
 type Props = {
   day: Date
@@ -35,19 +36,6 @@ export default function PlayerSessionCard({ day, athlete_sessions }: Props) {
       athlete_session.session.start_timestamp.toLocaleDateString() ===
       day.toLocaleDateString()
   )
-  function roundToNearest5(date = new Date()) {
-    const minutes = 5
-    const ms = 1000 * 60 * minutes
-
-    // 👇️ replace Math.round with Math.ceil to always round UP
-    return new Date(Math.round(date.getTime() / ms) * ms)
-  }
-  if (currentDaySessions.length === 0) return null
-
-  function convertSecToMin(duration: number | null) {
-    if (!duration) return 0
-    return duration / 60
-  }
 
   // Sorting sessions by timestamp
   currentDaySessions.sort(

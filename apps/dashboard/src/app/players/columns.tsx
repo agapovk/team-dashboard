@@ -7,17 +7,9 @@ import { Badge } from '@repo/ui'
 import { cn } from '@repo/ui/lib/utils'
 import { DataTableColumnHeader } from './components/data-table-column-header'
 import { DataTableRowActions } from './components/data-table-row-actions'
+import { calculateAge } from '@utils'
 
 type athleteWithPosition = athlete & { position: position | null }
-function calculateAge(date: Date) {
-  if (!date) {
-    return 0
-  }
-  const now = new Date()
-  const diff = Math.abs(now.getTime() - date.getTime())
-  const age = Math.floor(diff / (1000 * 60 * 60 * 24 * 365))
-  return age
-}
 
 export const columns: ColumnDef<athleteWithPosition>[] = [
   {

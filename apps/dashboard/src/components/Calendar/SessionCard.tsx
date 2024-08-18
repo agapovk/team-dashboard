@@ -5,6 +5,7 @@ import React from 'react'
 import { cn } from '@repo/ui/lib/utils'
 import { session } from '@repo/db'
 import { Bar } from '@components/Bars'
+import { convertSecToMin, roundToNearest5 } from '@utils'
 
 type Props = {
   day: Date
@@ -30,30 +31,19 @@ const zones = {
 }
 
 export default function SessionCard({ day, sessions }: Props) {
-  const currentDaySessions = sessions?.filter(
-    (session) =>
-      session.start_timestamp.toLocaleDateString() === day.toLocaleDateString()
-  )
-  function roundToNearest5(date = new Date()) {
-    const minutes = 5
-    const ms = 1000 * 60 * minutes
+  const currentDaySessions = sessions
+    ?.filter(
+      (session) =>
+        session.start_timestamp.toLocaleDateString() ===
+        day.toLocaleDateString()
+    )
+    .sort(
+      (a, b) =>
+        new Date(a.start_timestamp).getTime() -
+        new Date(b.start_timestamp).getTime()
+    )
 
-    // 👇️ replace Math.round with Math.ceil to always round UP
-    return new Date(Math.round(date.getTime() / ms) * ms)
-  }
   if (currentDaySessions.length === 0) return null
-
-  function convertSecToMin(duration: number | null) {
-    if (!duration) return 0
-    return duration / 60
-  }
-
-  // Sorting sessions by timestamp
-  currentDaySessions.sort(
-    (a, b) =>
-      new Date(a.start_timestamp).getTime() -
-      new Date(b.start_timestamp).getTime()
-  )
 
   return (
     <div className="flex flex-col gap-2">

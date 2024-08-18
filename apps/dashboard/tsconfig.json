@@ -9,7 +9,8 @@
     "paths": {
       "~/*": ["./*"],
       "@components/*": ["../dashboard/src/components/*"],
-      "@dashboard/*": ["../dashboard/src/app/*"]
+      "@dashboard/*": ["../dashboard/src/app/*"],
+      "@utils": ["../dashboard/src/utils/index.ts"]
     }
   },
   "include": [
