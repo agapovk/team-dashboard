@@ -2,9 +2,10 @@ import * as fs from 'node:fs'
 // import { Semaphore } from "../src/async/semaphore";
 import { athses, dbAth, dbSes } from '../src/mapper'
 import prisma from '@repo/db'
+import { Semaphore } from '../src/async/semaphore'
 
 const create = async () => {
-  // const semaphore = Semaphore(8);
+  const semaphore = Semaphore(8)
 
   // Find all session-details
   const session = await fs.promises.readdir(`./temp_data/sessions`)
@@ -97,7 +98,7 @@ const create = async () => {
         console.log(s?.id + ' ATHLETE SESSION ERROR')
       }
 
-      // semaphore.release();
+      semaphore.release()
     })
   })
 
