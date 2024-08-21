@@ -1,9 +1,9 @@
 'use client'
 
-import { ColumnDef } from '@tanstack/react-table'
-import { session } from '@repo/db'
 import Link from 'next/link'
 import { Bar, BarWithTooltip } from '@components/Bars'
+import { session } from '@repo/db'
+import { ColumnDef } from '@tanstack/react-table'
 
 function roundToNearest5(date = new Date()) {
   const minutes = 5

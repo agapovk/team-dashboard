@@ -1,8 +1,14 @@
 'use client'
 
+import { DotsVerticalIcon } from '@radix-ui/react-icons'
+import { game, session } from '@repo/db'
+import { ru } from 'date-fns/locale'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { DayPicker } from 'react-day-picker'
-import { ru } from 'date-fns/locale'
+
+import GameCard from './GameCard'
+import { SessionForm } from './session-form'
+import SessionCard from './SessionCard'
 import { cn } from '@repo/ui/lib/utils'
 import {
   Button,
@@ -14,11 +20,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@repo/ui'
-import SessionCard from './SessionCard'
-import { game, session } from '@repo/db'
-import GameCard from './GameCard'
-import { DotsVerticalIcon } from '@radix-ui/react-icons'
-import { SessionForm } from './session-form'
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>
 export type CalendarPropsWithEvents = CalendarProps & {

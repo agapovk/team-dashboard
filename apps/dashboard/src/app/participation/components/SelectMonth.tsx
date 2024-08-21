@@ -1,10 +1,11 @@
 'use client'
 
 import React from 'react'
-import { Button } from '@repo/ui'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { addMonths, format, isAfter, isSameMonth } from 'date-fns'
 import { ru } from 'date-fns/locale'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
+
+import { Button } from '@repo/ui'
 
 type Props = {
   currentMonth: Date

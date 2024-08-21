@@ -1,8 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import { cn } from '@repo/ui/lib/utils'
 import { usePathname } from 'next/navigation'
+
+import { cn } from '@repo/ui/lib/utils'
 
 const menuItems = [
   {

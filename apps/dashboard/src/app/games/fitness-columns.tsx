@@ -1,12 +1,13 @@
 'use client'
 
-import { ColumnDef } from '@tanstack/react-table'
-import { game } from '@repo/db'
 import Link from 'next/link'
 import { Bar } from '@components/Bars'
-import { Badge } from '@repo/ui'
+import { game } from '@repo/db'
+import { ColumnDef } from '@tanstack/react-table'
 import { PlaneIcon } from 'lucide-react'
+
 import { DataTableColumnHeader } from './components/data-table-column-header'
+import { Badge } from '@repo/ui'
 
 type competition = {
   [key: string]: string

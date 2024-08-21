@@ -8,7 +8,27 @@ const config = {
   semi: false,
   tabWidth: 2,
   trailingComma: 'es5',
-  plugins: ['prettier-plugin-tailwindcss'],
+  importOrder: [
+    '^(react/(.*)$)|^(react$)',
+    '^(next/(.*)$)|^(next$)',
+    '<THIRD_PARTY_MODULES>',
+    '',
+    '^[.]',
+    '^(@repo/ui/lib)(/.*)$',
+    '^(@repo/ui)',
+    '',
+    '<TYPES>',
+  ],
+  plugins: [
+    '@ianvs/prettier-plugin-sort-imports',
+    'prettier-plugin-tailwindcss',
+  ],
+  importOrderSeparation: false,
+  importOrderSortSpecifiers: true,
+  importOrderBuiltinModulesToTop: true,
+  importOrderParserPlugins: ['typescript', 'jsx', 'decorators-legacy'],
+  importOrderMergeDuplicateImports: true,
+  importOrderCombineTypeAndValueImports: true,
 }
 
 export default config

@@ -1,6 +1,11 @@
 'use client'
 
+import React from 'react'
+import { DotsVerticalIcon } from '@radix-ui/react-icons'
+import { athlete } from '@repo/db'
 import { Row } from '@tanstack/react-table'
+
+import { AthleteForm } from './athlete-form'
 import {
   Button,
   Dialog,
@@ -10,12 +15,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@repo/ui'
-
-import { DotsVerticalIcon } from '@radix-ui/react-icons'
-import { athlete } from '@repo/db'
-import React from 'react'
-
-import { AthleteForm } from './athlete-form'
 
 interface DataTableRowActionsProps {
   row: Row<athlete>

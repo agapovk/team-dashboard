@@ -1,11 +1,11 @@
 #!/usr/bin/env pnpx ts-node
-
 import { Command } from 'commander'
-import fetch from './cmd/fetch'
+
 import create from './cmd/create'
-import sheet from './cmd/sheet'
+import fetch from './cmd/fetch'
 import gameFitness from './cmd/game_fitness'
 import gameTtd from './cmd/game_ttd'
+import sheet from './cmd/sheet'
 
 const program = new Command()
 program

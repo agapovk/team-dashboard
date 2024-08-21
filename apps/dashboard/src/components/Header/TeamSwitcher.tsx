@@ -1,10 +1,10 @@
 'use client'
 
 import * as React from 'react'
+import Link from 'next/link'
 
 import { cn } from '@repo/ui/lib/utils'
 import { Avatar, AvatarFallback, AvatarImage, buttonVariants } from '@repo/ui'
-import Link from 'next/link'
 
 export default function TeamSwitcher() {
   return (

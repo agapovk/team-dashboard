@@ -1,6 +1,7 @@
 import React from 'react'
-import ParticipationTable from './components/ParticipationTable'
 import prisma from '@repo/db'
+
+import ParticipationTable from './components/ParticipationTable'
 
 export default async function page() {
   const players = await prisma.athlete.findMany({

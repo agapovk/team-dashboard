@@ -1,12 +1,13 @@
 'use client'
 
+import { athlete_session, session } from '@repo/db'
+import { ru } from 'date-fns/locale'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { DayPicker } from 'react-day-picker'
-import { ru } from 'date-fns/locale'
+
+import PlayerSessionCard from './PlayerSessionCard'
 import { cn } from '@repo/ui/lib/utils'
 import { buttonVariants } from '@repo/ui'
-import PlayerSessionCard from './PlayerSessionCard'
-import { athlete_session, session } from '@repo/db'
 
 export type PlayerCalendarProps = React.ComponentProps<typeof DayPicker>
 export type AthleteSessionWithTeamSession = athlete_session & {

@@ -1,8 +1,9 @@
 import * as fs from 'node:fs'
+import prisma from '@repo/db'
+
+import { Semaphore } from '../src/async/semaphore'
 // import { Semaphore } from "../src/async/semaphore";
 import { athses, dbAth, dbSes } from '../src/mapper'
-import prisma from '@repo/db'
-import { Semaphore } from '../src/async/semaphore'
 
 const create = async () => {
   const semaphore = Semaphore(8)

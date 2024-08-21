@@ -1,10 +1,11 @@
 'use client'
 
-import { ColumnDef } from '@tanstack/react-table'
-import { athlete_game_fitness, game } from '@repo/db'
-import { Bar } from '@components/Bars'
-import { DataTableColumnHeader } from '../components/data-table-column-header'
 import Link from 'next/link'
+import { Bar } from '@components/Bars'
+import { athlete_game_fitness, game } from '@repo/db'
+import { ColumnDef } from '@tanstack/react-table'
+
+import { DataTableColumnHeader } from '../components/data-table-column-header'
 import { cn } from '@repo/ui/lib/utils'
 
 export type AthleteGameWithGame = athlete_game_fitness & { game: game }

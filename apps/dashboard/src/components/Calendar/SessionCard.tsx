@@ -1,11 +1,12 @@
 'use client'
 
-import Link from 'next/link'
 import React from 'react'
-import { cn } from '@repo/ui/lib/utils'
-import { session } from '@repo/db'
+import Link from 'next/link'
 import { Bar } from '@components/Bars'
+import { session } from '@repo/db'
 import { convertSecToMin, roundToNearest5 } from '@utils'
+
+import { cn } from '@repo/ui/lib/utils'
 
 type Props = {
   day: Date

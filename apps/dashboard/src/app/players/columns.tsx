@@ -1,13 +1,14 @@
 'use client'
 
-import { ColumnDef } from '@tanstack/react-table'
-import { athlete, position } from '@repo/db'
 import Link from 'next/link'
-import { Badge } from '@repo/ui'
-import { cn } from '@repo/ui/lib/utils'
+import { athlete, position } from '@repo/db'
+import { ColumnDef } from '@tanstack/react-table'
+import { calculateAge } from '@utils'
+
 import { DataTableColumnHeader } from './components/data-table-column-header'
 import { DataTableRowActions } from './components/data-table-row-actions'
-import { calculateAge } from '@utils'
+import { cn } from '@repo/ui/lib/utils'
+import { Badge } from '@repo/ui'
 
 type athleteWithPosition = athlete & { position: position | null }
 

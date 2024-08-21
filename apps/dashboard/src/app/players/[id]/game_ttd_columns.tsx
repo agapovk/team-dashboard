@@ -1,8 +1,9 @@
 'use client'
 
-import { ColumnDef } from '@tanstack/react-table'
-import { athlete_game_ttd, game } from '@repo/db'
 import Link from 'next/link'
+import { athlete_game_ttd, game } from '@repo/db'
+import { ColumnDef } from '@tanstack/react-table'
+
 import { DataTableColumnHeader } from './components/data-table-column-header'
 import { cn } from '@repo/ui/lib/utils'
 

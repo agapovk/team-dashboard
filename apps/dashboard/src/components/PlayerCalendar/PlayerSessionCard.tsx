@@ -1,11 +1,12 @@
 'use client'
 
-import Link from 'next/link'
 import React from 'react'
-import { cn } from '@repo/ui/lib/utils'
+import Link from 'next/link'
 import { BarWithAvg } from '@components/Bars'
-import { AthleteSessionWithTeamSession } from './PlayerCalendar'
 import { convertSecToMin, roundToNearest5 } from '@utils'
+
+import { AthleteSessionWithTeamSession } from './PlayerCalendar'
+import { cn } from '@repo/ui/lib/utils'
 
 type Props = {
   day: Date

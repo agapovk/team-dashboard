@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import prisma from '@repo/db'
+
 import { columns } from './columns'
 import { DataTable } from './data-table'
 

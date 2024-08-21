@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import prisma from '@repo/db'
+
 import GamesTabs from './components/GamesTabs'
 
 export const metadata: Metadata = {

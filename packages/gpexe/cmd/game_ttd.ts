@@ -1,5 +1,4 @@
 import * as fs from 'node:fs'
-
 import prisma from '@repo/db'
 
 type ttdRawData = {

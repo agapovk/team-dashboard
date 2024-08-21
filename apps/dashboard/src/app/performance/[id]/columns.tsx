@@ -1,10 +1,11 @@
 'use client'
 
-import { ColumnDef } from '@tanstack/react-table'
-import { DataTableColumnHeader } from './components/data-table-column-header'
-import { athlete, athlete_session } from '@repo/db'
 import Link from 'next/link'
 import { Bar, BarWithTooltip } from '@components/Bars'
+import { athlete, athlete_session } from '@repo/db'
+import { ColumnDef } from '@tanstack/react-table'
+
+import { DataTableColumnHeader } from './components/data-table-column-header'
 
 export type AthleteSessionWithAthlete = athlete_session & {
   athlete: athlete

@@ -1,18 +1,17 @@
 'use client'
 
 import * as React from 'react'
-import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { addSession } from '~/src/app/actions/session'
 import { format } from 'date-fns'
-import { useForm } from 'react-hook-form'
-import { cn } from '@repo/ui/lib/utils'
 import { Calendar as CalendarIcon } from 'lucide-react'
+import { useForm } from 'react-hook-form'
+import { z } from 'zod'
+
+import { cn } from '@repo/ui/lib/utils'
 import {
-  Calendar,
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
   Button,
+  Calendar,
   Form,
   FormControl,
   FormField,
@@ -20,9 +19,11 @@ import {
   FormLabel,
   FormMessage,
   Input,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
   useToast,
 } from '@repo/ui'
-import { addSession } from '~/src/app/actions/session'
 
 const formSchema = z.object({
   id: z.number(),

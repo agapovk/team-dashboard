@@ -1,12 +1,13 @@
 'use client'
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@repo/ui'
-import { DataTable } from '../data-table'
-import { game } from '@repo/db'
+import { Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
+import { game } from '@repo/db'
+
+import { DataTable } from '../data-table'
 import { fitness_columns } from '../fitness-columns'
 import { ttd_columns } from '../ttd_columns'
-import { Suspense } from 'react'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@repo/ui'
 
 type Props = {
   games: game[]

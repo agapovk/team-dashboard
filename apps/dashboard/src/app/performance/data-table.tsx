@@ -4,8 +4,6 @@ import * as React from 'react'
 import {
   ColumnDef,
   ColumnFiltersState,
-  SortingState,
-  VisibilityState,
   flexRender,
   getCoreRowModel,
   getFacetedRowModel,
@@ -13,8 +11,12 @@ import {
   getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
+  SortingState,
   useReactTable,
+  VisibilityState,
 } from '@tanstack/react-table'
+
+import { DataTablePagination } from './components/data-table-pagination'
 import {
   Table,
   TableBody,
@@ -23,7 +25,6 @@ import {
   TableHeader,
   TableRow,
 } from '@repo/ui'
-import { DataTablePagination } from './components/data-table-pagination'
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]

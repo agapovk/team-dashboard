@@ -1,7 +1,8 @@
-import { DataTable } from './data-table'
-import { columns } from './columns'
-import prisma from '@repo/db'
 import { Metadata } from 'next'
+import prisma from '@repo/db'
+
+import { columns } from './columns'
+import { DataTable } from './data-table'
 
 export const metadata: Metadata = {
   title: 'Состав команды',

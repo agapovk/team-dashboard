@@ -1,7 +1,8 @@
 import React from 'react'
-import prisma from '@repo/db'
-import GameTabs from './components/GameTabs'
 import { Metadata } from 'next'
+import prisma from '@repo/db'
+
+import GameTabs from './components/GameTabs'
 
 export const metadata: Metadata = {
   title: 'Статистика игры',

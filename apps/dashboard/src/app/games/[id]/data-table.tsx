@@ -4,17 +4,18 @@ import * as React from 'react'
 import {
   ColumnDef,
   ColumnFiltersState,
-  SortingState,
-  VisibilityState,
   flexRender,
   getCoreRowModel,
   getFacetedRowModel,
   getFacetedUniqueValues,
   getFilteredRowModel,
   getSortedRowModel,
+  SortingState,
   useReactTable,
+  VisibilityState,
 } from '@tanstack/react-table'
 
+import { DataTableToolbar } from './components/data-table-toolbar'
 import {
   Table,
   TableBody,
@@ -23,8 +24,6 @@ import {
   TableHeader,
   TableRow,
 } from '@repo/ui'
-
-import { DataTableToolbar } from './components/data-table-toolbar'
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]

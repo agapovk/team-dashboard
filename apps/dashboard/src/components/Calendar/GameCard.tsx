@@ -1,10 +1,11 @@
 'use client'
 
-import Link from 'next/link'
 import React from 'react'
-import { cn } from '@repo/ui/lib/utils'
+import Link from 'next/link'
 import { game } from '@repo/db'
 import { PlaneIcon } from 'lucide-react'
+
+import { cn } from '@repo/ui/lib/utils'
 
 type Props = {
   day: Date

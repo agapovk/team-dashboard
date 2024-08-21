@@ -1,9 +1,13 @@
 'use client'
 
 import React from 'react'
-import { getDaysInMonth, isSameDay } from 'date-fns'
+import Link from 'next/link'
+import { AthleteSessionWithTeamSession } from '@components/PlayerCalendar/PlayerCalendar'
 import { athlete } from '@repo/db'
+import { getDaysInMonth, isSameDay } from 'date-fns'
+
 import SelectMonth from './SelectMonth'
+import { cn } from '@repo/ui/lib/utils'
 import {
   Table,
   TableBody,
@@ -12,9 +16,6 @@ import {
   TableHeader,
   TableRow,
 } from '@repo/ui'
-import { AthleteSessionWithTeamSession } from '@components/PlayerCalendar/PlayerCalendar'
-import { cn } from '@repo/ui/lib/utils'
-import Link from 'next/link'
 
 function createArrayFromOneToX(X: number): number[] {
   return Array.from({ length: X }, (_, index) => index + 1)

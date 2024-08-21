@@ -1,11 +1,14 @@
 import './globals.css'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 
-import { ThemeProvider } from '@components/Theme/theme-provider'
-import Header from '@components/Header/Header'
-import { Toaster } from '@repo/ui'
 import { Suspense } from 'react'
+import { Inter } from 'next/font/google'
+import Header from '@components/Header/Header'
+import { ThemeProvider } from '@components/Theme/theme-provider'
+
+import { Toaster } from '@repo/ui'
+
+import type { Metadata } from 'next'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {

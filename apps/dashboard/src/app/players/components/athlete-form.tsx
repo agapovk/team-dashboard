@@ -1,9 +1,10 @@
 'use client'
 
-import { z } from 'zod'
+import { updateAthlete } from '@dashboard/actions/athlete'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
 import { athlete } from '@repo/db'
+import { useForm } from 'react-hook-form'
+import { z } from 'zod'
 
 import {
   Button,
@@ -14,15 +15,14 @@ import {
   FormLabel,
   FormMessage,
   Input,
-  Switch,
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
+  Switch,
   useToast,
 } from '@repo/ui'
-import { updateAthlete } from '@dashboard/actions/athlete'
 
 const formSchema = z.object({
   name: z.string().min(2).max(50),

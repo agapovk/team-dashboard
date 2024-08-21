@@ -1,10 +1,11 @@
 'use client'
 
-import { ColumnDef } from '@tanstack/react-table'
-import { athlete_session, session } from '@repo/db'
 import Link from 'next/link'
-import { cn } from '@repo/ui/lib/utils'
 import { Bar, BarWithAvg } from '@components/Bars'
+import { athlete_session, session } from '@repo/db'
+import { ColumnDef } from '@tanstack/react-table'
+
+import { cn } from '@repo/ui/lib/utils'
 
 export const session_columns: ColumnDef<athlete_session>[] = [
   {

@@ -1,17 +1,18 @@
 'use client'
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@repo/ui'
-import { DataTable } from '../data-table'
-import { session_columns } from '../session_columns'
-import { game_fitness_columns } from '../game_fitness_columns'
-import { athlete, athlete_game_fitness, athlete_game_ttd, game } from '@repo/db'
-import { useSearchParams } from 'next/navigation'
-import { game_ttd_columns } from '../game_ttd_columns'
 import { Suspense } from 'react'
+import { useSearchParams } from 'next/navigation'
 import {
   AthleteSessionWithTeamSession,
   PlayerSchedule,
 } from '@components/PlayerCalendar/PlayerCalendar'
+import { athlete, athlete_game_fitness, athlete_game_ttd, game } from '@repo/db'
+
+import { DataTable } from '../data-table'
+import { game_fitness_columns } from '../game_fitness_columns'
+import { game_ttd_columns } from '../game_ttd_columns'
+import { session_columns } from '../session_columns'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@repo/ui'
 
 type Props = {
   player: athlete & {

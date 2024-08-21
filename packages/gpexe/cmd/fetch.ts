@@ -1,4 +1,5 @@
 import * as fs from 'node:fs'
+
 import { getSessionDetails, getSessions } from '../src/fetch'
 
 const fetch = async ({ all }: { all: boolean }) => {
