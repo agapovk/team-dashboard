@@ -44,7 +44,7 @@ export const game_ttd_columns: ColumnDef<athleteGameTtdWithAthlete>[] = [
     cell: ({ row }) => {
       const data: number = row.getValue('minutesPlayed')
       const value = data.toFixed(0)
-      return <div className=" flex text-center text-sm">{value}</div>
+      return <div className="flex text-center text-sm">{value}</div>
     },
   },
   {

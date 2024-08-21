@@ -79,7 +79,7 @@ export default async function SessionPage({ params }: Props) {
     return (
       <Suspense
         fallback={
-          <div className="flex justify-center h-full items-center">
+          <div className="flex h-full items-center justify-center">
             Загузка данных...
           </div>
         }

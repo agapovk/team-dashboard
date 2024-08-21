@@ -25,7 +25,7 @@ export default function RootLayout({
           <Header />
           <Suspense
             fallback={
-              <div className="flex justify-center h-full items-center">
+              <div className="flex h-full items-center justify-center">
                 Загузка данных...
               </div>
             }

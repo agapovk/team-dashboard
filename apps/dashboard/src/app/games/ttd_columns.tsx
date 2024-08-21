@@ -27,7 +27,7 @@ export const ttd_columns: ColumnDef<game>[] = [
       const localDate = date?.toLocaleDateString()
       return (
         <div className="text-center text-sm">
-          <Link href={`/games/${id}?tab=ttd`} className=" underline">
+          <Link href={`/games/${id}?tab=ttd`} className="underline">
             {localDate}
           </Link>
           <span className="ml-2 text-sm">

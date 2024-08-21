@@ -27,7 +27,7 @@ export const fitness_columns: ColumnDef<game>[] = [
       const localDate = date?.toLocaleDateString()
       return (
         <div className="text-center text-sm">
-          <Link href={`/games/${id}`} className=" underline">
+          <Link href={`/games/${id}`} className="underline">
             {localDate}
           </Link>
         </div>

@@ -13,7 +13,7 @@ type Props = {
 
 export default function SelectMonth({ currentMonth, setMonth }: Props) {
   return (
-    <div className="flex gap-2 items-center place-self-end">
+    <div className="flex items-center gap-2 place-self-end">
       <Button
         variant="ghost"
         className="px-3"
@@ -22,7 +22,7 @@ export default function SelectMonth({ currentMonth, setMonth }: Props) {
       >
         <ChevronLeft className="h-4 w-4" />
       </Button>
-      <span className="font-medium text-sm w-[160px] text-center">
+      <span className="w-[160px] text-center text-sm font-medium">
         {format(currentMonth, 'LLLL yyyy', { locale: ru }).toUpperCase()}
       </span>
       <Button

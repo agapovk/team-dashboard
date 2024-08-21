@@ -44,7 +44,7 @@ export default function ParticipationTable({ players }: Props) {
             <TableRow>
               <TableHead className="w-[100px] p-2">Игрок</TableHead>
               {daysArray(currentMonth).map((day) => (
-                <TableHead key={day} className="text-center p-2">
+                <TableHead key={day} className="p-2 text-center">
                   {day}
                 </TableHead>
               ))}
@@ -53,7 +53,7 @@ export default function ParticipationTable({ players }: Props) {
           <TableBody className="border-b">
             {players.map((player) => (
               <TableRow key={player.id}>
-                <TableCell className="font-medium p-2 border-x">
+                <TableCell className="border-x p-2 font-medium">
                   <Link href={`/players/${player.id}`} className="underline">
                     {player.last_name}
                   </Link>
@@ -75,7 +75,7 @@ export default function ParticipationTable({ players }: Props) {
                   )
 
                   return (
-                    <TableCell key={day} className="p-2 border-r">
+                    <TableCell key={day} className="border-r p-2">
                       <div className="flex w-full justify-center">
                         {currentAthleteSession.length !== 0 &&
                           currentAthleteSession.map((athses) => (
@@ -85,10 +85,10 @@ export default function ParticipationTable({ players }: Props) {
                                 'flex h-3 w-3 rounded-full',
                                 athses.session.category_name?.includes(
                                   'ИНДИВИДУАЛЬНАЯ'
-                                ) && 'bg-blue-400',
+                                ) && 'bg-sky-400',
                                 athses.session.category_name?.includes(
                                   'МАТЧ'
-                                ) && 'bg-red-400',
+                                ) && 'bg-yellow-400',
                                 athses.session.category_name === 'ТРЕНИРОВКА' &&
                                   'bg-green-400'
                               )}`}

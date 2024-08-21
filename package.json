@@ -8,13 +8,15 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "format": "pnpx prettier . --write \"**/*.{ts,tsx,md}\"",
+    "format:check": "pnpx prettier ./apps/ --check",
+    "format:write": "pnpx prettier ./apps/ --write",
     "ui:add": "pnpm --filter @repo/ui ui:add"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "prettier": "^3.3.2",
+    "prettier-plugin-tailwindcss": "^0.6.6",
     "turbo": "2.0.6"
   },
   "packageManager": "pnpm@9.6.0",

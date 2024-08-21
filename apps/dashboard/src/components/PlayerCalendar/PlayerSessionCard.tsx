@@ -69,7 +69,7 @@ export default function PlayerSessionCard({ day, athlete_sessions }: Props) {
             key={id}
             href={`/performance/${session.id}`}
             className={cn(
-              'text-accent-foreground mx-1 flex bg-sky-300 dark:bg-sky-800 flex-col gap-2 overflow-auto truncate rounded-lg px-2 py-1 text-xs transition-all hover:bg-opacity-80',
+              'text-accent-foreground mx-1 flex flex-col gap-2 overflow-auto truncate rounded-lg bg-sky-300 px-2 py-1 text-xs transition-all hover:bg-opacity-80 dark:bg-sky-800',
               {
                 'bg-red-300 dark:bg-red-800':
                   session.category_name && session.category_name === 'МАТЧ',

@@ -145,7 +145,7 @@ export function SessionForm({ date }: Props) {
             </FormItem>
           )}
         />
-        <div className="flex gap-3 justify-stretch">
+        <div className="flex justify-stretch gap-3">
           <FormField
             control={form.control}
             name="start_timestamp"

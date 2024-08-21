@@ -28,7 +28,7 @@ export default function GameCard({ day, games }: Props) {
             'text-accent-foreground mx-1 flex flex-col items-start gap-1 overflow-auto truncate rounded-lg bg-red-300 px-2 py-1 text-xs transition-all hover:bg-opacity-80 dark:bg-red-800'
           )}
         >
-          <div className="flex justify-between items-center w-full">
+          <div className="flex w-full items-center justify-between">
             {game.date?.toLocaleTimeString('ru-RU', {
               hour: '2-digit',
               minute: '2-digit',

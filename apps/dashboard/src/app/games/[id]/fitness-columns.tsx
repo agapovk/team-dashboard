@@ -56,7 +56,7 @@ export const fitness_columns: ColumnDef<athleteGameFitnessWithAthlete>[] = [
     cell: ({ row }) => {
       const data: number = row.getValue('minutes')
       const value = data.toFixed(0)
-      return <div className=" flex text-center text-sm">{value}</div>
+      return <div className="flex text-center text-sm">{value}</div>
     },
   },
   {
