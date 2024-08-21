@@ -9,13 +9,13 @@ const menuItems = [
     title: 'Игроки',
     href: '/players',
   },
-  // {
-  //   title: 'История травм',
-  //   href: '/injuries',
-  // },
   {
     title: 'Тренировки',
     href: '/performance',
+  },
+  {
+    title: 'Посещение',
+    href: '/participation',
   },
   {
     title: 'Игры',
