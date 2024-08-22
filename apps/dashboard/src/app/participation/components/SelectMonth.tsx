@@ -14,7 +14,7 @@ type Props = {
 
 export default function SelectMonth({ currentMonth, setMonth }: Props) {
   return (
-    <div className="flex items-center gap-2 place-self-end">
+    <div className="flex items-center gap-2">
       <Button
         variant="ghost"
         className="px-3"

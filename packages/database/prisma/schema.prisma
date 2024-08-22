@@ -2,6 +2,7 @@ generator client {
   provider = "prisma-client-js"
 }
 
+// // TIMEWEB.CLOUD Database
 // datasource db {
 //   provider          = "postgresql"
 //   url               = env("DATABASE_URL")
@@ -154,6 +155,7 @@ model athlete {
   athlete_sessions      athlete_session[]
   athlete_games_fitness athlete_game_fitness[]
   athlete_games_ttd     athlete_game_ttd[]
+  injury                injury[]
   name                  String?
   last_name             String?
   first_name            String?
@@ -166,7 +168,6 @@ model athlete {
   photo                 String?
   weight                Float?
   foot                  String?
-  // injury           injury[]
 }
 
 model position {
@@ -379,11 +380,13 @@ model athlete_game_ttd {
   throwInSuccess_pct              String?
 }
 
-// model injury {
-//   id                 Int      @id @default(autoincrement())
-//   date               DateTime
-//   diagnosis          String
-//   athleteId          Int
-//   estimated_recovery DateTime
-//   athlete            athlete  @relation(fields: [athleteId], references: [id])
-// }
+model injury {
+  id                 String    @id @default(uuid())
+  start_date         DateTime  @default(now())
+  end_date           DateTime?
+  place              String?
+  diagnosis          String?
+  estimated_recovery String?
+  athlete_id         Int
+  athlete            athlete   @relation(fields: [athlete_id], references: [id])
+}

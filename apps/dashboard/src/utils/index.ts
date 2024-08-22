@@ -1,3 +1,5 @@
+import { getDaysInMonth } from 'date-fns'
+
 export function convertSecToMin(duration: number | null) {
   if (!duration) return 0
   return duration / 60
@@ -17,4 +19,12 @@ export function calculateAge(date: Date) {
   const diff = Math.abs(now.getTime() - date.getTime())
   const age = Math.floor(diff / (1000 * 60 * 60 * 24 * 365))
   return age
+}
+
+export function createArrayFromOneToX(X: number): number[] {
+  return Array.from({ length: X }, (_, index) => index + 1)
+}
+
+export function daysArray(date: Date): number[] {
+  return createArrayFromOneToX(getDaysInMonth(date))
 }

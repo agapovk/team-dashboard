@@ -12,34 +12,20 @@ export default async function page() {
       name: 'asc',
     },
     include: {
+      injury: true,
       // athlete_games_fitness: {
       //   include: {
       //     game: true,
-      //   },
-      //   orderBy: {
-      //     game: {
-      //       date: 'desc',
-      //     },
       //   },
       // },
       // athlete_games_ttd: {
       //   include: {
       //     game: true,
       //   },
-      //   orderBy: {
-      //     game: {
-      //       date: 'desc',
-      //     },
-      //   },
       // },
       athlete_sessions: {
         include: {
           session: true,
-        },
-        orderBy: {
-          session: {
-            start_timestamp: 'desc',
-          },
         },
       },
     },
@@ -47,17 +33,7 @@ export default async function page() {
 
   return (
     <div className="h-full flex-1 flex-col space-y-8 p-8 md:flex">
-      <div className="grid grid-cols-2 items-center gap-4">
-        <div>
-          <h2 className="text-2xl font-bold tracking-tight">
-            Дневник посещения
-          </h2>
-          <p className="text-muted-foreground">
-            Анализ участия игроков в УТЗ и матчах
-          </p>
-        </div>
-        <ParticipationTable players={players} />
-      </div>
+      <ParticipationTable players={players} />
     </div>
   )
 }
