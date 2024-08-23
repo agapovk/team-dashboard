@@ -31,7 +31,17 @@ export default async function Home() {
       ],
     },
   })
+
+  const players = await prisma.athlete.findMany({
+    where: {
+      isInTeam: true,
+    },
+    orderBy: {
+      name: 'asc',
+    },
+  })
+
   const games = await prisma.game.findMany()
 
-  return <Schedule sessions={sessions} games={games} />
+  return <Schedule sessions={sessions} games={games} players={players} />
 }

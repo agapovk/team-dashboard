@@ -1,8 +1,10 @@
 'use client'
 
 import * as React from 'react'
+import { addSession } from '@dashboard/actions/session'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { addSession } from '~/src/app/actions/session'
+import { athlete } from '@repo/db'
+import { twoDigitFormat } from '@utils'
 import { format } from 'date-fns'
 import { Calendar as CalendarIcon } from 'lucide-react'
 import { useForm } from 'react-hook-form'
@@ -12,6 +14,9 @@ import { cn } from '@repo/ui/lib/utils'
 import {
   Button,
   Calendar,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
   Form,
   FormControl,
   FormField,
@@ -22,6 +27,7 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
+  ScrollArea,
   useToast,
 } from '@repo/ui'
 
@@ -33,6 +39,12 @@ const formSchema = z.object({
   start_time_minutes: z.string(),
   total_time: z.string(),
   category_name: z.string(),
+  athletes: z
+    .object({
+      id: z.number(),
+      name: z.string(),
+    })
+    .array(),
 })
 
 export type SessionFormData = {
@@ -41,18 +53,19 @@ export type SessionFormData = {
   start_timestamp: Date
   total_time: number
   category_name: string
+  athletes: { id: number; name: string }[]
 }
 
 type Props = {
   date: Date
+  players: athlete[]
 }
 
-function twoDigitFormat(value: number): string {
-  const result = '0' + value.toString()
-  return result.substring(result.length - 2)
-}
+export function SessionForm({ date, players }: Props) {
+  const playersArray = players.map((player) => {
+    return { id: player.id, name: player.name ?? undefined }
+  })
 
-export function SessionForm({ date }: Props) {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -65,6 +78,7 @@ export function SessionForm({ date }: Props) {
       start_time_minutes: '00',
       total_time: Number(60).toString(),
       category_name: 'БЕЗ ДАТЧИКОВ',
+      athletes: playersArray,
     },
     mode: 'onChange',
   })
@@ -80,6 +94,7 @@ export function SessionForm({ date }: Props) {
       start_timestamp,
       ...rest
     } = values
+
     const newSession = {
       id: Number(`${id}${twoDigitFormat(Number(start_time_hours))}`),
       start_timestamp: new Date(
@@ -217,6 +232,31 @@ export function SessionForm({ date }: Props) {
             )}
           />
         </div>
+        <FormField
+          control={form.control}
+          name="athletes"
+          render={({ field }) => (
+            <FormItem className="flex flex-col gap-1">
+              <FormLabel>Список игроков</FormLabel>
+              <FormControl>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="outline">Выбрать игроков</Button>
+                  </DropdownMenuTrigger>
+                  <ScrollArea>
+                    <DropdownMenuContent className="text-sm">
+                      {field.value.map((v) => (
+                        <div>{v.name}</div>
+                      ))}
+                    </DropdownMenuContent>
+                  </ScrollArea>
+                </DropdownMenu>
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
         <div className="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2">
           <Button type="submit">Сохранить</Button>
         </div>

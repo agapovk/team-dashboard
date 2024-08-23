@@ -1,7 +1,7 @@
 'use client'
 
 import { DotsVerticalIcon } from '@radix-ui/react-icons'
-import { game, session } from '@repo/db'
+import { athlete, game, session } from '@repo/db'
 import { ru } from 'date-fns/locale'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { DayPicker } from 'react-day-picker'
@@ -25,6 +25,7 @@ export type CalendarProps = React.ComponentProps<typeof DayPicker>
 export type CalendarPropsWithEvents = CalendarProps & {
   sessions: session[]
   games: game[]
+  players: athlete[]
 }
 
 function Schedule({
@@ -33,6 +34,7 @@ function Schedule({
   showOutsideDays = true,
   sessions,
   games,
+  players,
   ...props
 }: CalendarPropsWithEvents) {
   return (
@@ -90,7 +92,7 @@ function Schedule({
                     <DialogTitle>Добавить тренировку</DialogTitle>
                     <DialogDescription>Описание</DialogDescription>
                   </DialogHeader>
-                  <SessionForm date={date} />
+                  <SessionForm date={date} players={players} />
                 </DialogContent>
               </Dialog>
             </div>

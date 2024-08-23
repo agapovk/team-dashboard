@@ -7,6 +7,7 @@ import { athlete, injury } from '@repo/db'
 import { daysArray } from '@utils'
 import { isSameDay, isWithinInterval } from 'date-fns'
 
+import InjuryInfo from './InjuryInfo'
 import Marker from './Marker'
 import SelectMonth from './SelectMonth'
 import { cn } from '@repo/ui/lib/utils'
@@ -93,6 +94,11 @@ export default function ParticipationTable({ players }: Props) {
                     )}
                   >
                     <Marker data={currentAthleteSession} />
+                    <InjuryInfo
+                      currentDayInjury={currentDayInjury}
+                      currentMonth={currentMonth}
+                      day={day}
+                    />
                   </TableCell>
                 )
               })}

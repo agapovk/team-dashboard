@@ -28,3 +28,8 @@ export function createArrayFromOneToX(X: number): number[] {
 export function daysArray(date: Date): number[] {
   return createArrayFromOneToX(getDaysInMonth(date))
 }
+
+export function twoDigitFormat(value: number): string {
+  const result = '0' + value.toString()
+  return result.substring(result.length - 2)
+}
