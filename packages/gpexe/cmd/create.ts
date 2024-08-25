@@ -10,48 +10,44 @@ export default async function create() {
   // Create session in db
   const localDetails: GpexeDetails[] = await getLocalData('details')
 
-  // localDetails.forEach(async (detail) => {
-  //   const currentSession: GpexeTrainingSession = JSON.parse(
-  //     await fs.promises.readFile(
-  //       `./temp_data/sessions/session-${detail.teamsession}.json`,
-  //       'utf-8'
-  //     )
-  //   )
-  //   const dbSesion = await prisma.session.findUnique({
-  //     where: { gpexe_id: currentSession.id },
-  //   })
-  //   if (!dbSesion) {
-  //     await prisma.session.create({
-  //       data: {
-  //         ...dbSes(currentSession, detail.team.parameters),
-  //       },
-  //     })
-  //     console.log(`creating session ${currentSession.id} in db`)
-  //   }
-  // })
+  localDetails.forEach(async (detail) => {
+    const currentSession: GpexeTrainingSession = JSON.parse(
+      await fs.promises.readFile(
+        `./temp_data/sessions/session-${detail.teamsession}.json`,
+        'utf-8'
+      )
+    )
+    const dbSesion = await prisma.session.findUnique({
+      where: { gpexe_id: currentSession.id },
+    })
+    if (!dbSesion) {
+      await prisma.session.create({
+        data: {
+          ...dbSes(currentSession, detail.team.parameters),
+        },
+      })
+      console.log(`creating session ${currentSession.id} in db`)
+    }
+  })
 
-  // // Create athlete in db
-  // const athletes = await getLocalData('athletes')
+  // Create athlete in db
+  const athletes = await getLocalData('athletes')
 
-  // athletes.forEach(async (athlete) => {
-  //   const dbAthlete = await prisma.athlete.findUnique({
-  //     where: { gpexe_id: athlete.id },
-  //   })
-  //   if (!dbAthlete) {
-  //     await prisma.athlete.create({
-  //       data: {
-  //         ...dbAth(athlete),
-  //       },
-  //     })
-  //     console.log('creating athlete: ' + athlete.name)
-  //   }
-  // })
+  athletes.forEach(async (athlete) => {
+    const dbAthlete = await prisma.athlete.findUnique({
+      where: { gpexe_id: athlete.id },
+    })
+    if (!dbAthlete) {
+      await prisma.athlete.create({
+        data: {
+          ...dbAth(athlete),
+        },
+      })
+      console.log('creating athlete: ' + athlete.name)
+    }
+  })
 
   // Create athlete_sesions in db
-  // const dbAthleteSessions = await prisma.athlete_session.findMany({
-  //   select: { gpexe_id: true },
-  // })
-
   localDetails.forEach(async (detail) => {
     semaphore.acquire()
 
@@ -68,12 +64,6 @@ export default async function create() {
         athSes.athlete_session_id,
         athSes
       )
-
-      // const skipSession = dbAthleteSessions.find(
-      //   (s) => s.gpexe_id === athSes.athlete_session_id
-      // )
-
-      // if (skipSession) return
 
       const dbAthleteId = await prisma.athlete.findUnique({
         where: { gpexe_id: athSes.athlete.id },

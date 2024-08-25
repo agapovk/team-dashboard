@@ -77,7 +77,8 @@ export default function ParticipationTable({ players }: Props) {
                   (athses) =>
                     isSameDay(new Date(athses.session.start_timestamp), date) &&
                     (athses.session.category_name?.includes('ТРЕНИРОВКА') ||
-                      athses.session.category_name?.includes('МАТЧ'))
+                      athses.session.category_name?.includes('МАТЧ') ||
+                      athses.session.category_name?.includes('БЕЗ ДАТЧИКОВ'))
                 )
                 const currentDayInjury = player.injury?.find((inj) =>
                   isWithinInterval(date, {

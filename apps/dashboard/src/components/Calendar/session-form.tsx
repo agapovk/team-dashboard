@@ -38,14 +38,13 @@ const formSchema = z.object({
   category_name: z.string(),
   athletes: z
     .object({
-      id: z.string(),
+      athlete_id: z.string(),
     })
     .array(),
 })
-export type AthleteSelect = { id: string }
+export type AthleteSelect = { athlete_id: string }
 
 export type SessionFormData = {
-  id: string
   gpexe_id: null
   name: string
   start_timestamp: Date
@@ -61,7 +60,7 @@ type Props = {
 
 export function SessionForm({ date, players }: Props) {
   const playersArray = players.map((player) => {
-    return { id: player.id }
+    return { athlete_id: player.id }
   })
 
   const [selected, setSelected] = React.useState(playersArray)
@@ -109,28 +108,27 @@ export function SessionForm({ date, players }: Props) {
         )
       ),
       total_time: Number(total_time) * 60,
-      athlete_sessions: selected.map((player) => {
+      athletes: selected.map((player) => {
         return {
-          athlete_id: player.id,
+          athlete_id: player.athlete_id,
           average_time: Number(total_time),
         }
       }),
     }
 
     try {
-      console.log(newSession)
-      // addSession(newSession)
+      addSession(newSession)
 
-      // toast({
-      //   title: 'OK',
-      //   description: (
-      //     <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-      //       <code className="text-white">
-      //         {JSON.stringify(newSession, null, 2)}
-      //       </code>
-      //     </pre>
-      //   ),
-      // })
+      toast({
+        title: 'OK',
+        description: (
+          <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+            <code className="text-white">
+              {JSON.stringify(newSession, null, 2)}
+            </code>
+          </pre>
+        ),
+      })
     } catch (error) {
       toast({
         title: 'Error',

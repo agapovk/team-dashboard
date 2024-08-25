@@ -15,7 +15,6 @@ import {
   buttonVariants,
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -90,7 +89,6 @@ function Schedule({
                 <DialogContent className="max-w-xl">
                   <DialogHeader>
                     <DialogTitle>Добавить тренировку</DialogTitle>
-                    <DialogDescription>Описание</DialogDescription>
                   </DialogHeader>
                   <SessionForm date={date} players={players} />
                 </DialogContent>

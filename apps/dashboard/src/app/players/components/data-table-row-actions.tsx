@@ -10,7 +10,6 @@ import {
   Button,
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -37,7 +36,6 @@ export function DataTableRowActions({ row }: DataTableRowActionsProps) {
         <DialogContent>
           <DialogHeader>
             <DialogTitle>Редактировать игрока</DialogTitle>
-            <DialogDescription></DialogDescription>
           </DialogHeader>
           <AthleteForm data={data} />
         </DialogContent>

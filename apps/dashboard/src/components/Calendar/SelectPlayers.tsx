@@ -19,21 +19,23 @@ export default function SelectPlayers({
   setSelected,
 }: Props) {
   function badgeVariant(id: string) {
-    return selected.find((p) => p.id === id) ? 'outline' : 'default'
+    return selected.find((p) => p.athlete_id === id) ? 'outline' : 'default'
   }
 
   function badgeStyle(id: string) {
-    return selected.find((p) => p.id === id) ? '' : 'line-through decoration-2'
+    return selected.find((p) => p.athlete_id === id)
+      ? ''
+      : 'line-through decoration-2'
   }
 
   function clickHandler(player: athlete) {
     setSelected((prev) => {
-      return prev.find((p) => p.id === player.id)
-        ? prev.filter((p) => p.id !== player.id)
+      return prev.find((p) => p.athlete_id === player.id)
+        ? prev.filter((p) => p.athlete_id !== player.id)
         : [
             ...prev,
             {
-              id: player.id,
+              athlete_id: player.id,
             },
           ]
     })

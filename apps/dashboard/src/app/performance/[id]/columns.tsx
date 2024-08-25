@@ -52,7 +52,7 @@ export const columns: ColumnDef<AthleteSessionWithAthlete>[] = [
     },
     cell: ({ row }) => {
       const data: number = row.getValue('average_v')
-      const value = data.toFixed(2)
+      const value = data?.toFixed(2)
       return <div className="text-center text-sm">{value}</div>
     },
   },
@@ -64,7 +64,7 @@ export const columns: ColumnDef<AthleteSessionWithAthlete>[] = [
     cell: ({ row }) => {
       const data: number = row.getValue('total_distance')
       if (!data) return null
-      const value = data.toFixed(0)
+      const value = data?.toFixed(0)
       return (
         <div className="text-center text-xs">
           {Number(value).toLocaleString()}
@@ -91,11 +91,11 @@ export const columns: ColumnDef<AthleteSessionWithAthlete>[] = [
       const data: number = row.original.athletesessionpowerzone_distance_2 || 0
       const data2: number = row.original.athletesessionpowerzone_distance_3 || 0
       const total = data + data2
-      const value = data.toFixed(0)
-      const value2 = data2.toFixed(0)
+      const value = data?.toFixed(0)
+      const value2 = data2?.toFixed(0)
       return (
         <div className="text-center text-xs">
-          {Number(total.toFixed(0)).toLocaleString()}
+          {Number(total?.toFixed(0)).toLocaleString()}
           <BarWithTooltip
             values={[data, data2]}
             min={row.original.minP * 0.9}
@@ -123,11 +123,11 @@ export const columns: ColumnDef<AthleteSessionWithAthlete>[] = [
       const data: number = row.original.athletesessionspeedzone_distance_4 || 0
       const data2: number = row.original.athletesessionspeedzone_distance_5 || 0
       const total = data + data2
-      const value = data.toFixed(0)
-      const value2 = data2.toFixed(0)
+      const value = data?.toFixed(0)
+      const value2 = data2?.toFixed(0)
       return (
         <div className="text-center text-xs">
-          {Number(total.toFixed(0)).toLocaleString()}
+          {Number(total?.toFixed(0)).toLocaleString()}
           <BarWithTooltip
             values={[data, data2]}
             min={row.original.minS * 0.9}
@@ -145,7 +145,7 @@ export const columns: ColumnDef<AthleteSessionWithAthlete>[] = [
     ),
     cell: ({ row }) => {
       const data: number = row.getValue('max_values_speed')
-      const value = (data * 3.6).toFixed(2)
+      const value = (data * 3.6)?.toFixed(2)
       return <div className="text-center text-sm">{value}</div>
     },
   },

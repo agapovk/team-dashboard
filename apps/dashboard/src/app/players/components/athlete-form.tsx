@@ -55,7 +55,7 @@ export function AthleteForm({ data }: Props) {
       day: data.birthday?.getDate().toString() ?? undefined,
       month: data.birthday?.getMonth().toString() ?? undefined,
       year: data.birthday?.getFullYear().toString() ?? undefined,
-      position_id: data.position_id ? data.position_id.toString() : undefined,
+      position_id: data.position_id ?? undefined,
       isInjured: data.isInjured,
     },
     mode: 'onChange',
@@ -181,9 +181,15 @@ export function AthleteForm({ data }: Props) {
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="1">Защитник</SelectItem>
-                  <SelectItem value="2">Полузащитник</SelectItem>
-                  <SelectItem value="3">Нападющий</SelectItem>
+                  <SelectItem value="5154b1bf-4263-4115-85b4-f09171b5a6e1">
+                    Защитник
+                  </SelectItem>
+                  <SelectItem value="7b308ffe-9f01-439b-884d-0c5180971f6d">
+                    Полузащитник
+                  </SelectItem>
+                  <SelectItem value="9d307760-8c15-4f19-b203-18d1ffcb2d55">
+                    Нападющий
+                  </SelectItem>
                 </SelectContent>
               </Select>
               <FormMessage />
