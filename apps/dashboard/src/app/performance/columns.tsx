@@ -43,7 +43,7 @@ export const columns: ColumnDef<session>[] = [
       const localTime = date.toLocaleTimeString().slice(0, 5)
       if (name === 'game')
         return <div className="text-center text-sm">{localTime}</div>
-      const id: number = row.original.id
+      const id: string = row.original.id
       if (!id) return null
       return <div className="text-center text-sm">{localTime}</div>
     },

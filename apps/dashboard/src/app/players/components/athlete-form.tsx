@@ -37,7 +37,7 @@ const formSchema = z.object({
 export type AthleteFormData = {
   number?: number
   name?: string
-  position_id?: number
+  position_id?: string
   isInjured: boolean
   birthday?: Date | null
 }
@@ -66,7 +66,7 @@ export function AthleteForm({ data }: Props) {
   function onSubmit(values: z.infer<typeof formSchema>) {
     const newValues: AthleteFormData = {
       number: Number(values.number) ?? null,
-      position_id: Number(values.position_id) ?? null,
+      position_id: values.position_id ?? undefined,
       birthday:
         new Date(`${values.year}-${values.month}-${values.day}`) ?? null,
       isInjured: values.isInjured,

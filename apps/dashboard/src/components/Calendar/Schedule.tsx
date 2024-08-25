@@ -87,7 +87,7 @@ function Schedule({
                     <DotsVerticalIcon className="h-4 w-4" />
                   </Button>
                 </DialogTrigger>
-                <DialogContent>
+                <DialogContent className="max-w-xl">
                   <DialogHeader>
                     <DialogTitle>Добавить тренировку</DialogTitle>
                     <DialogDescription>Описание</DialogDescription>

@@ -11,13 +11,13 @@ export const metadata: Metadata = {
 }
 
 type Props = {
-  params: { id: number }
+  params: { id: string }
 }
 
 export default async function PlayerPage({ params }: Props) {
   const player = await prisma.athlete.findUnique({
     where: {
-      id: Number(params.id),
+      id: params.id,
     },
     include: {
       athlete_games_fitness: {

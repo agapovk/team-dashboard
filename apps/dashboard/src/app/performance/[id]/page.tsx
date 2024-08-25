@@ -13,13 +13,13 @@ export const metadata: Metadata = {
 }
 
 type Props = {
-  params: { id: number }
+  params: { id: string }
 }
 
 export default async function SessionPage({ params }: Props) {
   const session = await prisma.session.findUnique({
     where: {
-      id: Number(params.id),
+      id: params.id,
     },
     include: {
       athlete_sessions: {

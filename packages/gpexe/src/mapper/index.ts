@@ -105,19 +105,19 @@ export const athses = (id: number, s: GpexeAthleteTrainingSession) => {
 }
 
 export const dbAth = (athlete: GpexeAthlete) => ({
-  id: athlete.id,
+  gpexe_id: athlete.id,
   name: athlete.name,
   short_name: athlete.short_name,
   last_name: athlete.last_name,
   first_name: athlete.first_name,
-  birthday: athlete.birthday,
+  birthday: new Date(athlete.birthdate),
 })
 
 export const dbSes = (
   s: GpexeTrainingSession,
   team: GpexeTeamFitnessSession
 ) => ({
-  id: s.id,
+  gpexe_id: s.id,
   team_id: s.team,
   name: s.name,
   start_timestamp: date(s.start_timestamp),

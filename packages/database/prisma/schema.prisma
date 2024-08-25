@@ -16,15 +16,16 @@ datasource db {
 }
 
 model session {
-  id                                            Int               @id
+  id                                            String            @id @default(uuid())
+  gpexe_id                                      Int?              @unique
   athlete_sessions                              athlete_session[]
-  team_id                                       Int?
-  name                                          String?           @db.VarChar(255)
-  start_timestamp                               DateTime
-  end_timestamp                                 DateTime?
   category_name                                 String?           @db.VarChar(255)
-  notes                                         String?           @db.VarChar(255)
+  start_timestamp                               DateTime
   total_time                                    Int?
+  name                                          String?           @db.VarChar(255)
+  end_timestamp                                 DateTime?
+  notes                                         String?           @db.VarChar(255)
+  team_id                                       Int?
   n_tracks                                      Int?
   average_time                                  Float?
   total_distance                                Float?
@@ -85,10 +86,11 @@ model session {
 }
 
 model athlete_session {
-  id                                            Int     @id
-  athlete_id                                    Int
+  id                                            String  @id @default(uuid())
+  gpexe_id                                      Int?    @unique
+  athlete_id                                    String
   athlete                                       athlete @relation(fields: [athlete_id], references: [id])
-  session_id                                    Int
+  session_id                                    String
   session                                       session @relation(fields: [session_id], references: [id])
   average_time                                  Float?
   total_distance                                Float?
@@ -149,29 +151,30 @@ model athlete_session {
 }
 
 model athlete {
-  id                    Int                    @id
-  position_id           Int?
+  id                    String                 @id @default(uuid())
+  name                  String?
+  isInTeam              Boolean                @default(false)
+  isInjured             Boolean                @default(false)
+  number                Int?
+  birthday              DateTime?
   position              position?              @relation(fields: [position_id], references: [id])
   athlete_sessions      athlete_session[]
   athlete_games_fitness athlete_game_fitness[]
   athlete_games_ttd     athlete_game_ttd[]
   injury                injury[]
-  name                  String?
-  last_name             String?
-  first_name            String?
-  short_name            String?
-  birthday              DateTime?
   height                Int?
-  isInTeam              Boolean                @default(false)
-  isInjured             Boolean                @default(false)
-  number                Int?
   photo                 String?
   weight                Float?
   foot                  String?
+  last_name             String?
+  first_name            String?
+  short_name            String?
+  position_id           String?
+  gpexe_id              Int                    @unique
 }
 
 model position {
-  id       Int       @id @default(autoincrement())
+  id       String    @id @default(uuid())
   title    String
   athletes athlete[]
 }
@@ -276,7 +279,7 @@ model game {
 
 model athlete_game_fitness {
   id                  String   @id @default(uuid())
-  athlete_id          Int?
+  athlete_id          String?
   athlete             athlete? @relation(fields: [athlete_id], references: [id])
   game_id             String
   game                game     @relation(fields: [game_id], references: [id])
@@ -290,7 +293,7 @@ model athlete_game_fitness {
 
 model athlete_game_ttd {
   id                              String   @id @default(uuid())
-  athlete_id                      Int?
+  athlete_id                      String?
   athlete                         athlete? @relation(fields: [athlete_id], references: [id])
   game_id                         String
   game                            game     @relation(fields: [game_id], references: [id])
@@ -382,11 +385,11 @@ model athlete_game_ttd {
 
 model injury {
   id                 String    @id @default(uuid())
+  athlete            athlete   @relation(fields: [athlete_id], references: [id])
   start_date         DateTime  @default(now())
   end_date           DateTime?
   place              String?
   diagnosis          String?
   estimated_recovery String?
-  athlete_id         Int
-  athlete            athlete   @relation(fields: [athlete_id], references: [id])
+  athlete_id         String
 }

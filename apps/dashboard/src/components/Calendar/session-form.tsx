@@ -10,13 +10,11 @@ import { Calendar as CalendarIcon } from 'lucide-react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
+import SelectPlayers from './SelectPlayers'
 import { cn } from '@repo/ui/lib/utils'
 import {
   Button,
   Calendar,
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
   Form,
   FormControl,
   FormField,
@@ -27,7 +25,6 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-  ScrollArea,
   useToast,
 } from '@repo/ui'
 
@@ -41,19 +38,20 @@ const formSchema = z.object({
   category_name: z.string(),
   athletes: z
     .object({
-      id: z.number(),
-      name: z.string(),
+      id: z.string(),
     })
     .array(),
 })
+export type AthleteSelect = { id: string }
 
 export type SessionFormData = {
-  id: number
+  id: string
+  gpexe_id: null
   name: string
   start_timestamp: Date
   total_time: number
   category_name: string
-  athletes: { id: number; name: string }[]
+  athletes: AthleteSelect[]
 }
 
 type Props = {
@@ -63,11 +61,14 @@ type Props = {
 
 export function SessionForm({ date, players }: Props) {
   const playersArray = players.map((player) => {
-    return { id: player.id, name: player.name ?? undefined }
+    return { id: player.id }
   })
+
+  const [selected, setSelected] = React.useState(playersArray)
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
+
     defaultValues: {
       id: Number(
         `${twoDigitFormat(date.getDate())}${twoDigitFormat(date.getMonth() + 1)}${date.getFullYear().toString().substring(2)}`
@@ -78,7 +79,7 @@ export function SessionForm({ date, players }: Props) {
       start_time_minutes: '00',
       total_time: Number(60).toString(),
       category_name: 'БЕЗ ДАТЧИКОВ',
-      athletes: playersArray,
+      athletes: selected,
     },
     mode: 'onChange',
   })
@@ -87,7 +88,10 @@ export function SessionForm({ date, players }: Props) {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     const {
+      // eslint-disable-next-line no-unused-vars
       id,
+      // eslint-disable-next-line no-unused-vars
+      athletes,
       total_time,
       start_time_hours,
       start_time_minutes,
@@ -96,7 +100,8 @@ export function SessionForm({ date, players }: Props) {
     } = values
 
     const newSession = {
-      id: Number(`${id}${twoDigitFormat(Number(start_time_hours))}`),
+      ...rest,
+      gpexe_id: null,
       start_timestamp: new Date(
         new Date(start_timestamp).setHours(
           Number(start_time_hours),
@@ -104,22 +109,28 @@ export function SessionForm({ date, players }: Props) {
         )
       ),
       total_time: Number(total_time) * 60,
-      ...rest,
+      athlete_sessions: selected.map((player) => {
+        return {
+          athlete_id: player.id,
+          average_time: Number(total_time),
+        }
+      }),
     }
 
     try {
-      addSession(newSession)
+      console.log(newSession)
+      // addSession(newSession)
 
-      toast({
-        title: 'OK',
-        description: (
-          <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-            <code className="text-white">
-              {JSON.stringify(newSession, null, 2)}
-            </code>
-          </pre>
-        ),
-      })
+      // toast({
+      //   title: 'OK',
+      //   description: (
+      //     <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+      //       <code className="text-white">
+      //         {JSON.stringify(newSession, null, 2)}
+      //       </code>
+      //     </pre>
+      //   ),
+      // })
     } catch (error) {
       toast({
         title: 'Error',
@@ -235,22 +246,15 @@ export function SessionForm({ date, players }: Props) {
         <FormField
           control={form.control}
           name="athletes"
-          render={({ field }) => (
+          render={() => (
             <FormItem className="flex flex-col gap-1">
               <FormLabel>Список игроков</FormLabel>
               <FormControl>
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button variant="outline">Выбрать игроков</Button>
-                  </DropdownMenuTrigger>
-                  <ScrollArea>
-                    <DropdownMenuContent className="text-sm">
-                      {field.value.map((v) => (
-                        <div>{v.name}</div>
-                      ))}
-                    </DropdownMenuContent>
-                  </ScrollArea>
-                </DropdownMenu>
+                <SelectPlayers
+                  players={players}
+                  selected={selected}
+                  setSelected={setSelected}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>

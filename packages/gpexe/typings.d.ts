@@ -76,7 +76,7 @@ type GpexeAthlete = {
   short_name: string
   last_name: string
   first_name: string
-  birthday: string
+  birthdate: string
 }
 
 type GpexeAthleteTrainingSession = {
@@ -143,6 +143,22 @@ type GpexeAthleteTrainingSession = {
   deceleration_events: UnitValue
 }
 
+type UnitValue = {
+  unit: string
+  value: number | null
+}
+
+type GpexeDetails = {
+  teamsession: number
+  drills_count: number
+  players: {
+    [id: string]: GpexeAthleteTrainingSession
+  }
+  team: {
+    parameters: GpexeTeamFitnessSession
+  }
+}
+
 type GoogleSheetAthleteSession = [
   id: string,
   category_name: string,
@@ -183,18 +199,3 @@ type GoogleSheetAthleteSession = [
   athletesessionheartratezone_time_3_value: number | null,
   athletesessionheartratezone_time_4_value: number | null,
 ]
-
-type UnitValue = {
-  unit: string
-  value: number | null
-}
-
-type GpexeDetails = {
-  teamsession: number
-  players: {
-    [id: string]: GpexeAthleteTrainingSession
-  }
-  team: {
-    parameters: GpexeTeamFitnessSession
-  }
-}
