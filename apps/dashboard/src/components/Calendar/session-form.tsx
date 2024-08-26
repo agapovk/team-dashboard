@@ -118,17 +118,6 @@ export function SessionForm({ date, players }: Props) {
 
     try {
       addSession(newSession)
-
-      toast({
-        title: 'OK',
-        description: (
-          <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-            <code className="text-white">
-              {JSON.stringify(newSession, null, 2)}
-            </code>
-          </pre>
-        ),
-      })
     } catch (error) {
       toast({
         title: 'Error',

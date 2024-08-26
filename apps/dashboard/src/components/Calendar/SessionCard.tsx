@@ -3,10 +3,19 @@
 import React from 'react'
 import Link from 'next/link'
 import { Bar } from '@components/Bars'
+import { deleteSession } from '@dashboard/actions/session'
+import { CrossCircledIcon } from '@radix-ui/react-icons'
 import { session } from '@repo/db'
 import { convertSecToMin, roundToNearest5 } from '@utils'
 
+import { Spinner } from './Spinner'
 import { cn } from '@repo/ui/lib/utils'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@repo/ui'
 
 type Props = {
   day: Date
@@ -32,6 +41,8 @@ const zones = {
 }
 
 export default function SessionCard({ day, sessions }: Props) {
+  const [loading, setLoading] = React.useState(false)
+
   const currentDaySessions = sessions
     ?.filter(
       (session) =>
@@ -70,62 +81,95 @@ export default function SessionCard({ day, sessions }: Props) {
           (athletesessionspeedzone_distance_5 || 0)
 
         return (
-          <Link
-            key={id}
-            href={`/performance/${id}`}
-            className={cn(
-              'text-accent-foreground mx-1 flex flex-col gap-2 overflow-auto truncate rounded-lg bg-sky-300 px-2 py-1 text-xs transition-all hover:bg-opacity-80 dark:bg-sky-800',
-              {
-                'bg-red-300 dark:bg-red-800': name && name.startsWith('[МАТЧ'),
-              }
-            )}
-          >
-            <div className="flex justify-between">
-              <span className="font-semibold">
-                {roundToNearest5(start_timestamp).toLocaleTimeString('ru-RU', {
-                  hour: '2-digit',
-                  minute: '2-digit',
-                })}
-              </span>
-              <span className="font-semibold">
-                {convertSecToMin(total_time).toFixed(0)}&apos;
-              </span>
-            </div>
+          <TooltipProvider delayDuration={100} key={id}>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Link
+                  href={`/performance/${id}`}
+                  className={cn(
+                    'text-accent-foreground mx-1 flex flex-col gap-2 overflow-auto truncate rounded-lg bg-sky-300 px-2 py-1 text-xs transition-all hover:bg-opacity-80 dark:bg-sky-800',
+                    {
+                      'bg-red-300 dark:bg-red-800':
+                        name && name.startsWith('[МАТЧ'),
+                    }
+                  )}
+                >
+                  <div className="flex justify-between">
+                    <span className="font-semibold">
+                      {roundToNearest5(start_timestamp).toLocaleTimeString(
+                        'ru-RU',
+                        {
+                          hour: '2-digit',
+                          minute: '2-digit',
+                        }
+                      )}
+                    </span>
+                    <span className="font-semibold">
+                      {convertSecToMin(total_time).toFixed(0)}&apos;
+                    </span>
+                  </div>
 
-            {category_name && category_name === 'БЕЗ ДАТЧИКОВ' ? (
-              <span className="py-4">{name}</span>
-            ) : (
-              <div className="grid grid-cols-[min-content_1fr] items-center justify-items-end gap-x-2">
-                <span className="">
-                  {Number(total_distance?.toFixed(0)).toLocaleString()}
-                </span>
-                <Bar
-                  // height={6}
-                  max={13000}
-                  values={[total_distance ?? 0]}
-                  color={zones.td(total_distance ?? 0)}
-                />
-                <span className="">
-                  {Number(power_distance?.toFixed(0)).toLocaleString()}
-                </span>
-                <Bar
-                  // height={8}
-                  values={[power_distance]}
-                  max={2500}
-                  color={zones.pd(power_distance)}
-                />
-                <span className="">
-                  {Number(speedzone_distance?.toFixed(0)).toLocaleString()}
-                </span>
-                <Bar
-                  // height={8}
-                  values={[speedzone_distance]}
-                  max={600}
-                  color={zones.sd(speedzone_distance)}
-                />
-              </div>
-            )}
-          </Link>
+                  {category_name && category_name === 'БЕЗ ДАТЧИКОВ' ? (
+                    <div>
+                      <span className="py-4">{name}</span>
+                    </div>
+                  ) : (
+                    <div className="grid grid-cols-[min-content_1fr] items-center justify-items-end gap-x-2">
+                      <span className="">
+                        {Number(total_distance?.toFixed(0)).toLocaleString()}
+                      </span>
+                      <Bar
+                        // height={6}
+                        max={13000}
+                        values={[total_distance ?? 0]}
+                        color={zones.td(total_distance ?? 0)}
+                      />
+                      <span className="">
+                        {Number(power_distance?.toFixed(0)).toLocaleString()}
+                      </span>
+                      <Bar
+                        // height={8}
+                        values={[power_distance]}
+                        max={2500}
+                        color={zones.pd(power_distance)}
+                      />
+                      <span className="">
+                        {Number(
+                          speedzone_distance?.toFixed(0)
+                        ).toLocaleString()}
+                      </span>
+                      <Bar
+                        // height={8}
+                        values={[speedzone_distance]}
+                        max={600}
+                        color={zones.sd(speedzone_distance)}
+                      />
+                    </div>
+                  )}
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent
+                className={cn(
+                  'sr-only',
+                  category_name &&
+                    category_name === 'БЕЗ ДАТЧИКОВ' &&
+                    'not-sr-only p-1'
+                )}
+              >
+                {loading ? (
+                  <Spinner />
+                ) : (
+                  <CrossCircledIcon
+                    className="cursor-pointer"
+                    onClick={() => {
+                      setLoading(true)
+                      deleteSession(session.id)
+                    }}
+                  />
+                )}
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         )
       })}
     </div>

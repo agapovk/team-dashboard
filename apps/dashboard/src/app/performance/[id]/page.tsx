@@ -90,8 +90,7 @@ export default async function SessionPage({ params }: Props) {
             <div>
               <h2 className="text-2xl font-bold tracking-tight">УТЗ</h2>
               <p className="text-muted-foreground">
-                Отчет о тренировке{' '}
-                {session.start_timestamp.toLocaleDateString()}
+                {`Отчет о тренировке ${session.start_timestamp.toLocaleDateString()}`}
               </p>
             </div>
           </div>

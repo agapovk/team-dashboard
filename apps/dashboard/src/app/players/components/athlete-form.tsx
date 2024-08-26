@@ -74,17 +74,6 @@ export function AthleteForm({ data }: Props) {
 
     try {
       updateAthlete(data.id, newValues)
-
-      toast({
-        title: 'OK',
-        description: (
-          <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-            <code className="text-white">
-              {JSON.stringify(newValues, null, 2)}
-            </code>
-          </pre>
-        ),
-      })
     } catch (error) {
       toast({
         title: 'Error',

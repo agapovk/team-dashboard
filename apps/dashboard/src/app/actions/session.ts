@@ -18,3 +18,31 @@ export const addSession = async ({ athletes, ...data }: SessionFormData) => {
 
   revalidatePath('/')
 }
+
+export const deleteSession = async (id: string) => {
+  try {
+    const as = await prisma.athlete_session.deleteMany({
+      where: {
+        session_id: id,
+      },
+    })
+
+    const s = await prisma.session.delete({
+      where: {
+        id: id,
+      },
+      // data: {
+      //   athlete_sessions: {
+      //     deleteMany: {
+      //       session_id: id,
+      //     },
+      //   },
+      // },
+    })
+    console.log(as, s)
+  } catch (error) {
+    console.log(error)
+  }
+
+  revalidatePath('/')
+}
