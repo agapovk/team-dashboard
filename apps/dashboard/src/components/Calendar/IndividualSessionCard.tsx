@@ -66,7 +66,7 @@ export default function IndividualSessionCard({ day, sessions }: Props) {
           <TooltipContent className={cn()}>
             {currentDaySessions.map((s) => {
               return s.athlete_sessions.map((session) => (
-                <div className="flex justify-start gap-2">
+                <div className="flex justify-start gap-2 text-xs">
                   <span>{session.athlete.last_name}</span>
                   <span>
                     {Number(
