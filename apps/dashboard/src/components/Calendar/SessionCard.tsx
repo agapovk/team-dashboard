@@ -146,7 +146,7 @@ export default function SessionCard({ day, sessions }: Props) {
                       <Bar
                         // height={8}
                         values={[speedzone_distance]}
-                        max={600}
+                        max={850}
                         color={zones.sd(speedzone_distance)}
                       />
                     </div>

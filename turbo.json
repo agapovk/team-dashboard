@@ -11,6 +11,11 @@
       "cache": false,
       "persistent": true
     },
+    "start": {
+      "dependsOn": ["^db:generate"],
+      "cache": false,
+      "persistent": true
+    },
     "lint": {
       "dependsOn": ["^lint"]
     },
