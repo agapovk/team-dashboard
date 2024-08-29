@@ -31,13 +31,6 @@ export const deleteSession = async (id: string) => {
       where: {
         id: id,
       },
-      // data: {
-      //   athlete_sessions: {
-      //     deleteMany: {
-      //       session_id: id,
-      //     },
-      //   },
-      // },
     })
     console.log(as, s)
   } catch (error) {

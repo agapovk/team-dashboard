@@ -18,7 +18,7 @@ export default function Marker({ data }: Props) {
               'flex h-3 w-3 rounded-full bg-green-400',
               athses.session.category_name?.includes('ИНДИВИДУАЛЬНАЯ') &&
                 'bg-sky-400',
-              athses.session.category_name?.includes('МАТЧ') && 'bg-yellow-400'
+              athses.session.category_name?.includes('МАТЧ') && 'bg-yellow-500'
             )}`}
           />
         ))}

@@ -32,7 +32,7 @@ export default async function PlayersPage() {
           </p>
         </div>
       </div>
-      <div className="space-y-4">
+      <div className="py-4">
         <DataTable columns={columns} data={players} />
       </div>
     </div>

@@ -11,24 +11,8 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const sessions = await prisma.session.findMany({
-    where: {
-      OR: [
-        {
-          name: {
-            startsWith: '[ТРЕНИРОВКА]',
-          },
-        },
-        {
-          category_name: {
-            equals: 'БЕЗ ДАТЧИКОВ',
-          },
-        },
-        {
-          name: {
-            startsWith: '[МАТЧ]',
-          },
-        },
-      ],
+    include: {
+      athlete_sessions: true,
     },
   })
 

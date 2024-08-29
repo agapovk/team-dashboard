@@ -1,15 +1,14 @@
 'use client'
 
 import * as React from 'react'
-import { addSession } from '@dashboard/actions/session'
+import { addGame } from '@dashboard/actions/game'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { athlete } from '@repo/db'
 import { format } from 'date-fns'
-import { Calendar as CalendarIcon } from 'lucide-react'
+import { Calendar as CalendarIcon, HomeIcon, PlaneIcon } from 'lucide-react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
-import SelectPlayers from './SelectPlayers'
 import { cn } from '@repo/ui/lib/utils'
 import {
   Button,
@@ -24,31 +23,35 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
+  RadioGroup,
+  RadioGroupItem,
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
   useToast,
 } from '@repo/ui'
 
 const formSchema = z.object({
-  name: z.string(),
   start_timestamp: z.date(),
   start_time_hours: z.string(),
   start_time_minutes: z.string(),
-  total_time: z.string(),
-  category_name: z.string(),
-  athletes: z
-    .object({
-      athlete_id: z.string(),
-    })
-    .array(),
+  vs: z.string(),
+  competition: z.string(),
+  result: z.string(),
+  home: z.string(),
+  // total_distance: z.number(),
 })
-export type AthleteSelect = { athlete_id: string }
+// export type AthleteSelect = { athlete_id: string }
 
-export type SessionFormData = {
-  gpexe_id: null
-  name: string
-  start_timestamp: Date
-  total_time: number
-  category_name: string
-  athletes: AthleteSelect[]
+export type GameFormData = {
+  date: Date
+  vs: string
+  result: string
+  home: boolean
+  competition: string
+  // total_distance: undefined,
 }
 
 type Props = {
@@ -56,24 +59,25 @@ type Props = {
   players: athlete[]
 }
 
-export function SessionForm({ date, players }: Props) {
-  const playersArray = players.map((player) => {
-    return { athlete_id: player.id }
-  })
+// eslint-disable-next-line no-unused-vars
+export function GameForm({ date, players }: Props) {
+  // const playersArray = players.map((player) => {
+  //   return { athlete_id: player.id }
+  // })
 
-  const [selected, setSelected] = React.useState(playersArray)
+  // const [selected, setSelected] = React.useState(playersArray)
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
 
     defaultValues: {
-      name: 'УТЗ',
       start_timestamp: date,
-      start_time_hours: '12',
+      start_time_hours: '18',
       start_time_minutes: '00',
-      total_time: Number(60).toString(),
-      category_name: 'БЕЗ ДАТЧИКОВ',
-      athletes: selected,
+      competition: 'fnl',
+      result: '',
+      home: 'home',
+      // total_distance: undefined,
     },
     mode: 'onChange',
   })
@@ -82,35 +86,42 @@ export function SessionForm({ date, players }: Props) {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     const {
-      // eslint-disable-next-line no-unused-vars
-      athletes,
-      total_time,
       start_time_hours,
       start_time_minutes,
       start_timestamp,
-      ...rest
+      vs,
+      competition,
+      result,
+      home,
+      // total_distance,
     } = values
 
-    const newSession = {
-      ...rest,
-      gpexe_id: null,
-      start_timestamp: new Date(
-        new Date(start_timestamp).setHours(
+    const newGame = {
+      date: new Date(
+        new Date(start_timestamp).setUTCHours(
           Number(start_time_hours),
           Number(start_time_minutes)
         )
       ),
-      total_time: Number(total_time) * 60,
-      athletes: selected.map((player) => {
-        return {
-          athlete_id: player.athlete_id,
-          average_time: Number(total_time),
-        }
-      }),
+      vs,
+      competition,
+      result,
+      home: home === 'home',
+      // total_distance,
     }
 
     try {
-      addSession(newSession)
+      addGame(newGame)
+      // toast({
+      //   title: 'NEW GAME',
+      //   description: (
+      //     <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+      //       <code className="text-white">
+      //         {JSON.stringify(newGame, null, 2)}
+      //       </code>
+      //     </pre>
+      //   ),
+      // })
     } catch (error) {
       toast({
         title: 'Error',
@@ -128,12 +139,49 @@ export function SessionForm({ date, players }: Props) {
       <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-4 py-4">
         <FormField
           control={form.control}
-          name="name"
+          name="home"
+          render={({ field }) => (
+            <FormItem className="space-y-1">
+              <FormMessage />
+              <RadioGroup
+                onValueChange={field.onChange}
+                defaultValue={field.value}
+                className="grid grid-cols-2 gap-8 pt-2"
+              >
+                <FormItem>
+                  <FormLabel className="[&:has([data-state=checked])>div]:border-primary [&:has([data-state=checked])>div]:bg-secondary">
+                    <FormControl>
+                      <RadioGroupItem value="home" className="sr-only" />
+                    </FormControl>
+                    <div className="border-muted bg-popover hover:bg-accent hover:text-accent-foreground flex items-center justify-center rounded-md border p-1">
+                      <HomeIcon />
+                      <span className="p-2 font-normal">Дома</span>
+                    </div>
+                  </FormLabel>
+                </FormItem>
+                <FormItem>
+                  <FormLabel className="[&:has([data-state=checked])>div]:border-primary [&:has([data-state=checked])>div]:bg-secondary">
+                    <FormControl>
+                      <RadioGroupItem value="away" className="sr-only" />
+                    </FormControl>
+                    <div className="border-muted bg-popover hover:bg-accent hover:text-accent-foreground flex items-center justify-center rounded-md border p-1">
+                      <PlaneIcon />
+                      <span className="p-2 font-normal">На выезде</span>
+                    </div>
+                  </FormLabel>
+                </FormItem>
+              </RadioGroup>
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="vs"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Название</FormLabel>
+              <FormLabel>Соперник</FormLabel>
               <FormControl>
-                <Input placeholder="УТЗ" {...field} />
+                <Input placeholder="Команда" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -141,13 +189,36 @@ export function SessionForm({ date, players }: Props) {
         />
         <FormField
           control={form.control}
-          name="total_time"
+          name="result"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Длительность, мин</FormLabel>
+              <FormLabel>Счет матча</FormLabel>
               <FormControl>
-                <Input placeholder="85" {...field} />
+                <Input placeholder="3-0" {...field} />
               </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="competition"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Соревнование</FormLabel>
+              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormControl>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Выберите тип матча" />
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent>
+                  <SelectItem value="fnl">ФНЛ</SelectItem>
+                  <SelectItem value="cup">Кубок</SelectItem>
+                  <SelectItem value="friendly">Товарищеский матч</SelectItem>
+                </SelectContent>
+              </Select>
               <FormMessage />
             </FormItem>
           )}
@@ -158,7 +229,7 @@ export function SessionForm({ date, players }: Props) {
             name="start_timestamp"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Дата и время начала УТЗ</FormLabel>
+                <FormLabel>Дата и время начала матча</FormLabel>
                 <div>
                   <Popover>
                     <PopoverTrigger asChild>
@@ -203,7 +274,7 @@ export function SessionForm({ date, players }: Props) {
               <FormItem className="flex-1">
                 <FormLabel>Часы</FormLabel>
                 <FormControl>
-                  <Input placeholder="12" {...field} />
+                  <Input placeholder="18" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -223,23 +294,6 @@ export function SessionForm({ date, players }: Props) {
             )}
           />
         </div>
-        <FormField
-          control={form.control}
-          name="athletes"
-          render={() => (
-            <FormItem className="flex flex-col gap-1">
-              <FormLabel>Список игроков</FormLabel>
-              <FormControl>
-                <SelectPlayers
-                  players={players}
-                  selected={selected}
-                  setSelected={setSelected}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
 
         <div className="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2">
           <Button type="submit">Сохранить</Button>

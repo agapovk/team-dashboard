@@ -13,16 +13,6 @@ export default async function page() {
     },
     include: {
       injury: true,
-      // athlete_games_fitness: {
-      //   include: {
-      //     game: true,
-      //   },
-      // },
-      // athlete_games_ttd: {
-      //   include: {
-      //     game: true,
-      //   },
-      // },
       athlete_sessions: {
         include: {
           session: true,
@@ -31,9 +21,11 @@ export default async function page() {
     },
   })
 
+  const games = await prisma.game.findMany()
+
   return (
     <div className="h-full flex-1 flex-col space-y-8 p-8 md:flex">
-      <ParticipationTable players={players} />
+      <ParticipationTable players={players} games={games} />
     </div>
   )
 }

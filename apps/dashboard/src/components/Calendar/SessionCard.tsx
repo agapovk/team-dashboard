@@ -8,7 +8,7 @@ import { CrossCircledIcon } from '@radix-ui/react-icons'
 import { session } from '@repo/db'
 import { convertSecToMin, roundToNearest5 } from '@utils'
 
-import { Spinner } from './Spinner'
+import { Spinner } from '../Spinner'
 import { cn } from '@repo/ui/lib/utils'
 import {
   Tooltip,
@@ -45,6 +45,11 @@ export default function SessionCard({ day, sessions }: Props) {
 
   const currentDaySessions = sessions
     ?.filter(
+      (session) =>
+        session.category_name === 'ТРЕНИРОВКА' ||
+        session.category_name?.includes('МАТЧ')
+    )
+    .filter(
       (session) =>
         session.start_timestamp.toLocaleDateString() ===
         day.toLocaleDateString()
@@ -94,25 +99,25 @@ export default function SessionCard({ day, sessions }: Props) {
                     }
                   )}
                 >
-                  <div className="flex justify-between">
-                    <span className="font-semibold">
-                      {roundToNearest5(start_timestamp).toLocaleTimeString(
-                        'ru-RU',
-                        {
-                          hour: '2-digit',
-                          minute: '2-digit',
-                        }
-                      )}
-                    </span>
-                    <span className="font-semibold">
-                      {convertSecToMin(total_time).toFixed(0)}&apos;
-                    </span>
-                  </div>
+                  {!category_name?.includes('МАТЧ') && (
+                    <div className="flex justify-between">
+                      <span className="font-semibold">
+                        {roundToNearest5(start_timestamp).toLocaleTimeString(
+                          'ru-RU',
+                          {
+                            hour: '2-digit',
+                            minute: '2-digit',
+                          }
+                        )}
+                      </span>
+                      <span className="font-semibold">
+                        {convertSecToMin(total_time).toFixed(0)}&apos;
+                      </span>
+                    </div>
+                  )}
 
                   {category_name && category_name === 'БЕЗ ДАТЧИКОВ' ? (
-                    <div>
-                      <span className="py-4">{name}</span>
-                    </div>
+                    <div className="py-4">{name}</div>
                   ) : (
                     <div className="grid grid-cols-[min-content_1fr] items-center justify-items-end gap-x-2">
                       <span className="">

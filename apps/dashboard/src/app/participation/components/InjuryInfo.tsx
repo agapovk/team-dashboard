@@ -1,3 +1,4 @@
+import { UTCDate } from '@date-fns/utc'
 import { injury } from '@repo/db'
 import { differenceInDays } from 'date-fns'
 
@@ -10,21 +11,19 @@ import {
 
 type Props = {
   currentDayInjury: injury | undefined
-  currentMonth: Date
+  currentDate: Date
   day: number
 }
 
 export default function InjuryInfo({
   currentDayInjury,
-  currentMonth,
+  currentDate,
   day,
 }: Props) {
-  const today = new Date(
-    Date.UTC(
-      currentMonth.getFullYear(),
-      currentMonth.getMonth(),
-      new Date().getDate()
-    )
+  const today = new UTCDate(
+    currentDate.getFullYear(),
+    currentDate.getMonth(),
+    new UTCDate().getDate()
   )
 
   if (currentDayInjury && today.getDate() === day)
@@ -32,12 +31,17 @@ export default function InjuryInfo({
       <TooltipProvider delayDuration={100}>
         <Tooltip>
           <TooltipTrigger asChild>
-            <div className="w-full cursor-pointer text-center text-red-700">
-              {differenceInDays(today, currentDayInjury.start_date) + 1}
+            <div className="w-full cursor-pointer text-center font-bold text-red-700">
+              {differenceInDays(
+                today,
+                new UTCDate(currentDayInjury.start_date)
+              )}
             </div>
           </TooltipTrigger>
           <TooltipContent>
-            <p className="text-xs">{currentDayInjury.place}</p>
+            <div className="text-xs">{currentDayInjury.place}</div>
+            <div className="text-xs">{currentDayInjury.diagnosis}</div>
+            <div className="text-xs">{currentDayInjury.estimated_recovery}</div>
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
@@ -48,15 +52,17 @@ export default function InjuryInfo({
       <TooltipProvider delayDuration={100}>
         <Tooltip>
           <TooltipTrigger asChild>
-            <div className="w-full cursor-pointer text-center text-red-700">
+            <div className="w-full cursor-pointer text-center font-bold text-red-700">
               {differenceInDays(
-                currentDayInjury.end_date,
-                currentDayInjury.start_date
-              ) + 1}
+                new UTCDate(currentDayInjury.end_date),
+                new UTCDate(currentDayInjury.start_date)
+              )}
             </div>
           </TooltipTrigger>
           <TooltipContent>
-            <p className="text-xs">{currentDayInjury.place}</p>
+            <div className="text-xs">{currentDayInjury.place}</div>
+            <div className="text-xs">{currentDayInjury.diagnosis}</div>
+            <div className="text-xs">{currentDayInjury.estimated_recovery}</div>
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>

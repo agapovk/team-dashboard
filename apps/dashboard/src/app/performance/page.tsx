@@ -29,7 +29,7 @@ export default async function LoadingPage() {
           <p className="text-muted-foreground">Анализ динамики нагрузки</p>
         </div>
       </div>
-      <div className="space-y-4">
+      <div className="py-4">
         <DataTable data={sessions} columns={columns} />
       </div>
     </div>

@@ -1,12 +1,16 @@
 'use client'
 
 import { DotsVerticalIcon } from '@radix-ui/react-icons'
-import { athlete, game, session } from '@repo/db'
+import { athlete, game } from '@repo/db'
 import { ru } from 'date-fns/locale'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { DayPicker } from 'react-day-picker'
 
+import { GameForm } from './game-form'
 import GameCard from './GameCard'
+import IndividualSessionCard, {
+  SessionWithAthleteSession,
+} from './IndividualSessionCard'
 import { SessionForm } from './session-form'
 import SessionCard from './SessionCard'
 import { cn } from '@repo/ui/lib/utils'
@@ -18,11 +22,15 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
 } from '@repo/ui'
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>
 export type CalendarPropsWithEvents = CalendarProps & {
-  sessions: session[]
+  sessions: SessionWithAthleteSession[]
   games: game[]
   players: athlete[]
 }
@@ -73,31 +81,47 @@ function Schedule({
         ...classNames,
       }}
       components={{
-        DayContent: ({ date }) => (
-          <div className="flex h-full w-full flex-col gap-1 border-none bg-transparent p-2">
-            <div className="flex items-center justify-between">
-              <span className="mx-2 text-lg font-medium">{date.getDate()}</span>
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button
-                    variant="ghost"
-                    className="data-[state=open]:bg-muted flex h-8 w-8 p-0"
-                  >
-                    <DotsVerticalIcon className="h-4 w-4" />
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="max-w-xl">
-                  <DialogHeader>
-                    <DialogTitle>Добавить тренировку</DialogTitle>
-                  </DialogHeader>
-                  <SessionForm date={date} players={players} />
-                </DialogContent>
-              </Dialog>
+        DayContent: ({ date }) => {
+          return (
+            <div className="flex h-full w-full flex-col gap-1 border-none bg-transparent p-2">
+              <div className="flex items-center justify-between">
+                <span className="mx-2 text-lg font-medium">
+                  {date.getDate()}
+                </span>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      className="data-[state=open]:bg-muted flex h-8 w-8 p-0"
+                    >
+                      <DotsVerticalIcon className="h-4 w-4" />
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-xl">
+                    <DialogHeader>
+                      <DialogTitle>Добавить</DialogTitle>
+                    </DialogHeader>
+                    <Tabs defaultValue="session" className="">
+                      <TabsList className="grid w-full grid-cols-2">
+                        <TabsTrigger value="session">Тренировка</TabsTrigger>
+                        <TabsTrigger value="game">Игра</TabsTrigger>
+                      </TabsList>
+                      <TabsContent value="session">
+                        <SessionForm date={date} players={players} />
+                      </TabsContent>
+                      <TabsContent value="game">
+                        <GameForm date={date} players={players} />
+                      </TabsContent>
+                    </Tabs>
+                  </DialogContent>
+                </Dialog>
+              </div>
+              <GameCard day={date} games={games} />
+              <SessionCard day={date} sessions={sessions} />
+              <IndividualSessionCard day={date} sessions={sessions} />
             </div>
-            <SessionCard day={date} sessions={sessions} />
-            <GameCard day={date} games={games} />
-          </div>
-        ),
+          )
+        },
         IconLeft: () => <ChevronLeft className="h-4 w-4" />,
         IconRight: () => <ChevronRight className="h-4 w-4" />,
       }}
