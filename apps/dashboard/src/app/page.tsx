@@ -12,7 +12,15 @@ export const metadata: Metadata = {
 export default async function Home() {
   const sessions = await prisma.session.findMany({
     include: {
-      athlete_sessions: true,
+      athlete_sessions: {
+        include: {
+          athlete: {
+            select: {
+              last_name: true,
+            },
+          },
+        },
+      },
     },
   })
 

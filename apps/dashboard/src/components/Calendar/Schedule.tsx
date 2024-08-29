@@ -9,7 +9,7 @@ import { DayPicker } from 'react-day-picker'
 import { GameForm } from './game-form'
 import GameCard from './GameCard'
 import IndividualSessionCard, {
-  SessionWithAthleteSession,
+  SessionWithAthleteSessionWithAthlete,
 } from './IndividualSessionCard'
 import { SessionForm } from './session-form'
 import SessionCard from './SessionCard'
@@ -30,7 +30,7 @@ import {
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>
 export type CalendarPropsWithEvents = CalendarProps & {
-  sessions: SessionWithAthleteSession[]
+  sessions: SessionWithAthleteSessionWithAthlete[]
   games: game[]
   players: athlete[]
 }

@@ -12,13 +12,17 @@ import {
   TooltipTrigger,
 } from '@repo/ui'
 
-export type SessionWithAthleteSession = session & {
-  athlete_sessions: athlete_session[]
+type AthleteSessionWithAthlete = athlete_session & {
+  athlete: { last_name: string | null }
+}
+
+export type SessionWithAthleteSessionWithAthlete = session & {
+  athlete_sessions: AthleteSessionWithAthlete[]
 }
 
 type Props = {
   day: Date
-  sessions: SessionWithAthleteSession[]
+  sessions: SessionWithAthleteSessionWithAthlete[]
 }
 
 export default function IndividualSessionCard({ day, sessions }: Props) {
@@ -51,7 +55,10 @@ export default function IndividualSessionCard({ day, sessions }: Props) {
               <div className="flex justify-between">
                 <span className="font-semibold">Индивидуально</span>
                 <span className="font-semibold">
-                  {currentDaySessions.length}
+                  {currentDaySessions.reduce((prev, session) => {
+                    prev += session.athlete_sessions.length
+                    return prev
+                  }, 0)}
                 </span>
               </div>
             </Link>
@@ -59,7 +66,14 @@ export default function IndividualSessionCard({ day, sessions }: Props) {
           <TooltipContent className={cn()}>
             {currentDaySessions.map((s) => {
               return s.athlete_sessions.map((session) => (
-                <div>{session.athlete_id}</div>
+                <div className="flex justify-start gap-2">
+                  <span>{session.athlete.last_name}</span>
+                  <span>
+                    {Number(
+                      session.total_distance?.toFixed(0)
+                    ).toLocaleString()}
+                  </span>
+                </div>
               ))
             })}
           </TooltipContent>
