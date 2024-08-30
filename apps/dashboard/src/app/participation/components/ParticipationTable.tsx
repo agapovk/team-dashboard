@@ -141,12 +141,14 @@ export default function ParticipationTable({ players, games }: Props) {
                       currentDayInjury && 'bg-red-200'
                     )}
                   >
-                    <Marker data={currentDayAthleteSession} />
-                    <InjuryInfo
-                      currentDayInjury={currentDayInjury}
-                      currentDate={currentDate}
-                      day={day}
-                    />
+                    <div className="flex items-center justify-center gap-1">
+                      <Marker data={currentDayAthleteSession} />
+                      <InjuryInfo
+                        currentDayInjury={currentDayInjury}
+                        currentDate={currentDate}
+                        day={day}
+                      />
+                    </div>
                   </TableCell>
                 )
               })}

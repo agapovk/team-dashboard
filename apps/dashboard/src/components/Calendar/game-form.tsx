@@ -66,7 +66,7 @@ export function GameForm({ date, players }: Props) {
   // })
 
   // const [selected, setSelected] = React.useState(playersArray)
-
+  console.log(date)
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
 
@@ -74,6 +74,7 @@ export function GameForm({ date, players }: Props) {
       start_timestamp: date,
       start_time_hours: '18',
       start_time_minutes: '00',
+      vs: '',
       competition: 'fnl',
       result: '',
       home: 'home',
@@ -96,13 +97,17 @@ export function GameForm({ date, players }: Props) {
       // total_distance,
     } = values
 
-    const newGame = {
-      date: new Date(
+    const date = new Date(
+      new Date(
         new Date(start_timestamp).setUTCHours(
           Number(start_time_hours),
           Number(start_time_minutes)
         )
-      ),
+      ).setDate(start_timestamp.getDate())
+    )
+
+    const newGame = {
+      date,
       vs,
       competition,
       result,

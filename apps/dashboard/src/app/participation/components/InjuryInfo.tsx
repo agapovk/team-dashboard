@@ -31,7 +31,7 @@ export default function InjuryInfo({
       <TooltipProvider delayDuration={100}>
         <Tooltip>
           <TooltipTrigger asChild>
-            <div className="w-full cursor-pointer text-center font-bold text-red-700">
+            <div className="cursor-pointer text-center font-bold text-red-700">
               {differenceInDays(
                 today,
                 new UTCDate(currentDayInjury.start_date)
@@ -52,7 +52,7 @@ export default function InjuryInfo({
       <TooltipProvider delayDuration={100}>
         <Tooltip>
           <TooltipTrigger asChild>
-            <div className="w-full cursor-pointer text-center font-bold text-red-700">
+            <div className="cursor-pointer text-center font-bold text-red-700">
               {differenceInDays(
                 new UTCDate(currentDayInjury.end_date),
                 new UTCDate(currentDayInjury.start_date)

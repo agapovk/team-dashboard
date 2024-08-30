@@ -19,6 +19,7 @@ import {
   buttonVariants,
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -100,6 +101,7 @@ function Schedule({
                   <DialogContent className="max-w-xl">
                     <DialogHeader>
                       <DialogTitle>Добавить</DialogTitle>
+                      <DialogDescription />
                     </DialogHeader>
                     <Tabs defaultValue="session" className="">
                       <TabsList className="grid w-full grid-cols-2">

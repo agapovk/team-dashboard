@@ -47,6 +47,7 @@ export default function SessionCard({ day, sessions }: Props) {
     ?.filter(
       (session) =>
         session.category_name === 'ТРЕНИРОВКА' ||
+        session.category_name === 'БЕЗ ДАТЧИКОВ' ||
         session.category_name?.includes('МАТЧ')
     )
     .filter(
