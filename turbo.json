@@ -4,7 +4,7 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build", "^db:generate"],
-      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*", "DATABASE_URL"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
     "dev": {
@@ -21,7 +21,8 @@
       "dependsOn": ["^lint"]
     },
     "db:generate": {
-      "cache": false
+      "cache": false,
+      "inputs": ["$TURBO_DEFAULT$", ".env*", "DATABASE_URL"]
     },
     "db:push": {
       "cache": false
