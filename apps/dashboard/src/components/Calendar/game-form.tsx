@@ -66,7 +66,6 @@ export function GameForm({ date, players }: Props) {
   // })
 
   // const [selected, setSelected] = React.useState(playersArray)
-  console.log(date)
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
 

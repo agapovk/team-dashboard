@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react'
 import { updateAthlete } from '@dashboard/actions/athlete'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { athlete } from '@repo/db'
@@ -47,6 +48,7 @@ type Props = {
 }
 
 export function AthleteForm({ data }: Props) {
+  const { toast } = useToast()
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -61,8 +63,6 @@ export function AthleteForm({ data }: Props) {
     mode: 'onChange',
   })
 
-  const { toast } = useToast()
-
   function onSubmit(values: z.infer<typeof formSchema>) {
     const newValues: AthleteFormData = {
       number: Number(values.number) ?? null,
@@ -74,6 +74,16 @@ export function AthleteForm({ data }: Props) {
 
     try {
       updateAthlete(data.id, newValues)
+      toast({
+        title: 'OK',
+        description: (
+          <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+            <code className="text-white">
+              {JSON.stringify(newValues, null, 2)}
+            </code>
+          </pre>
+        ),
+      })
     } catch (error) {
       toast({
         title: 'Error',
@@ -170,14 +180,20 @@ export function AthleteForm({ data }: Props) {
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="5154b1bf-4263-4115-85b4-f09171b5a6e1">
-                    Защитник
+                  <SelectItem value="b1c755af-e878-40a1-b1eb-394bf2fd4186">
+                    Центральный защитник
                   </SelectItem>
-                  <SelectItem value="7b308ffe-9f01-439b-884d-0c5180971f6d">
-                    Полузащитник
+                  <SelectItem value="eeac27ce-6852-4138-b150-2837793979da">
+                    Крайний защитник
                   </SelectItem>
-                  <SelectItem value="9d307760-8c15-4f19-b203-18d1ffcb2d55">
-                    Нападющий
+                  <SelectItem value="67cfbfb5-08ef-4682-aa5f-4afdf39934f2">
+                    Центральный полузащитник
+                  </SelectItem>
+                  <SelectItem value="4e85bb95-b39e-495f-8ee1-b4aca9c84d9a">
+                    Крайний полузащитник
+                  </SelectItem>
+                  <SelectItem value="38215882-5f03-49f5-af58-6e4993526bef">
+                    Нападающий
                   </SelectItem>
                 </SelectContent>
               </Select>

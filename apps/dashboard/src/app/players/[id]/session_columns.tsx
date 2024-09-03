@@ -30,6 +30,7 @@ export const session_columns: ColumnDef<athlete_session>[] = [
     ),
     cell: ({ row }) => {
       const data: number = row.getValue('average_v')
+      if (!data) return null
       const value = data.toFixed(2)
       return <div className="text-center text-sm">{value}</div>
     },
@@ -59,7 +60,8 @@ export const session_columns: ColumnDef<athlete_session>[] = [
       </div>
     ),
     cell: ({ row }) => {
-      const data: number = row.getValue('athletesessionpowerzone_distance_2')
+      const data: number =
+        row.getValue('athletesessionpowerzone_distance_2') || 0
       const data2: number = row.original.athletesessionpowerzone_distance_3 || 0
       const value = data.toFixed(0)
       const value2 = data2.toFixed(0)
@@ -83,7 +85,8 @@ export const session_columns: ColumnDef<athlete_session>[] = [
       </div>
     ),
     cell: ({ row }) => {
-      const data: number = row.getValue('athletesessionspeedzone_distance_4')
+      const data: number =
+        row.getValue('athletesessionspeedzone_distance_4') || 0
       const data2: number = row.original.athletesessionspeedzone_distance_5 || 0
       const value = data.toFixed(0)
       const value2 = data2.toFixed(0)
@@ -104,6 +107,7 @@ export const session_columns: ColumnDef<athlete_session>[] = [
     ),
     cell: ({ row }) => {
       const data: number = row.getValue('max_values_speed')
+      if (!data) return null
       const value = (data * 3.6).toFixed(2)
       return <div className="text-center text-sm">{value}</div>
     },
@@ -115,6 +119,7 @@ export const session_columns: ColumnDef<athlete_session>[] = [
     ),
     cell: ({ row }) => {
       const data: number = row.getValue('tot_burst_events')
+      if (!data) return null
       const value = data
       return <div className="text-center text-sm">{value}</div>
     },
@@ -128,6 +133,7 @@ export const session_columns: ColumnDef<athlete_session>[] = [
     ),
     cell: ({ row }) => {
       const data: number = row.getValue('tot_brake_events')
+      if (!data) return null
       const value = data
       return <div className="text-center text-sm">{value}</div>
     },

@@ -74,6 +74,11 @@ export default function PlayerSessionCard({ day, athlete_sessions }: Props) {
               {
                 'bg-red-300 dark:bg-red-800':
                   session.category_name && session.category_name === 'МАТЧ',
+              },
+              {
+                'bg-emerald-300 dark:bg-emerald-800':
+                  session.category_name &&
+                  session.category_name === 'ИНДИВИДУАЛЬНАЯ ТРЕНИРОВКА',
               }
             )}
           >

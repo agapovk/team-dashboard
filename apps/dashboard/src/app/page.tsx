@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import { Schedule } from '@components/Calendar/Schedule'
 import prisma from '@repo/db'
 
-export const revalidate = 0
+// export const revalidate = 0
 
 export const metadata: Metadata = {
   title: 'Dashboard',

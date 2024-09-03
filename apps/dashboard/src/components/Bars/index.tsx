@@ -1,4 +1,5 @@
 import React from 'react'
+import { v4 as uuidv4 } from 'uuid'
 
 import { cn } from '@repo/ui/lib/utils'
 import {
@@ -40,7 +41,10 @@ export function Bar(props: Props) {
       {values.map((v, i) => {
         return (
           <div
-            key={`${i}_${v.value}`}
+            key={
+              uuidv4()
+              // `${i}_${v.value}`
+            }
             style={{
               width: v.width,
               top: 0,
@@ -78,7 +82,10 @@ export function BarWithAvg(props: Props) {
         return (
           <>
             <div
-              key={`${i}_${v.value}`}
+              key={
+                uuidv4()
+                // `${i}_${v.value}`
+              }
               style={{
                 width: v.width,
                 top: 0,
@@ -91,7 +98,13 @@ export function BarWithAvg(props: Props) {
                   : colors[i % colors.length]
               )}
             ></div>
-            <TooltipProvider key={`${i}_${v.value}`} delayDuration={100}>
+            <TooltipProvider
+              key={
+                uuidv4()
+                // `${i}_${v.value}`
+              }
+              delayDuration={100}
+            >
               <Tooltip>
                 <TooltipTrigger asChild>
                   <div
@@ -107,8 +120,7 @@ export function BarWithAvg(props: Props) {
                   />
                 </TooltipTrigger>
                 <TooltipContent>
-                  Среднее по команде:{' '}
-                  {Number(props.team_avg?.toFixed(0)).toLocaleString()}
+                  {`Среднее по команде: ${Number(props.team_avg?.toFixed(0)).toLocaleString()}`}
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
@@ -138,7 +150,10 @@ export function BarWithTooltip(props: Props) {
             <Tooltip key={v.value}>
               <TooltipTrigger asChild>
                 <div
-                  key={`${i}_${v.value}`}
+                  key={
+                    uuidv4()
+                    // `${i}_${v.value}`
+                  }
                   style={{
                     width: v.width,
                     top: 0,

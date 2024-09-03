@@ -5,7 +5,7 @@ import { getSessionDetails, getSessions } from '../src/fetch'
 import { getLocalData } from './create'
 
 const fetch = async ({ all }: { all: boolean }) => {
-  const limit = all ? 10000 : 5
+  const limit = all ? 10000 : 10
 
   // Create folders if needed
   await fs.promises.mkdir('./temp_data/sessions', { recursive: true })
