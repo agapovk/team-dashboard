@@ -157,6 +157,7 @@ type GpexeDetails = {
   team: {
     parameters: GpexeTeamFitnessSession
   }
+  start_timestamp: Date
 }
 
 type GoogleSheetAthleteSession = [

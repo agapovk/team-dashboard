@@ -13,13 +13,15 @@ const fetch = async ({ all }: { all: boolean }) => {
   await fs.promises.mkdir('./temp_data/athletes', { recursive: true })
 
   // Check existing sessions
-  const existingFiles = await fs.promises.readdir(`./temp_data/sessions`)
+  const existingSessionFiles = await fs.promises.readdir(`./temp_data/sessions`)
   const existingSessions: number[] = []
+  const existingDetailsFiles = await fs.promises.readdir(`./temp_data/details`)
+  const existingDetails: number[] = []
 
-  for await (const file of existingFiles) {
+  for await (const file of existingSessionFiles) {
     // Get team session data
     if (file.slice(0, 7) !== 'session')
-      console.log(`Wrong file [${file}] in directory`)
+      console.log(`Wrong file [${file}] in sessions directory`)
     else {
       const data_session = await fs.promises.readFile(
         `./temp_data/sessions/${file}`,
@@ -27,6 +29,20 @@ const fetch = async ({ all }: { all: boolean }) => {
       )
       const session = JSON.parse(data_session)
       existingSessions.push(session.id)
+    }
+  }
+
+  for await (const file of existingDetailsFiles) {
+    // Get details data
+    if (file.slice(0, 7) !== 'details')
+      console.log(`Wrong file [${file}] in details directory`)
+    else {
+      const data_details = await fs.promises.readFile(
+        `./temp_data/details/${file}`,
+        'utf8'
+      )
+      const details = JSON.parse(data_details)
+      existingDetails.push(details.teamsession)
     }
   }
 
@@ -38,9 +54,8 @@ const fetch = async ({ all }: { all: boolean }) => {
 
   for (const session of sessions) {
     // Download only new sessions
-    if (!existingSessions.includes(session.id)) {
-      const id = session.id
-
+    const id = session.id
+    if (!existingSessions.includes(id)) {
       // Create local session
       console.time(`[local] Session ${id} have been saved!`)
       await fs.promises.writeFile(
@@ -48,13 +63,19 @@ const fetch = async ({ all }: { all: boolean }) => {
         JSON.stringify(session)
       )
       console.timeEnd(`[local] Session ${id} have been saved!`)
+    }
 
+    if (!existingDetails.includes(id)) {
       // Create local session-details
       console.time(`[local] Details ${id} have been saved!`)
       const details = await getSessionDetails(id)
+      const detailsWithDate = {
+        ...details,
+        start_timestamp: session.start_timestamp,
+      }
       await fs.promises.writeFile(
         `./temp_data/details/details-${details.teamsession}.json`,
-        JSON.stringify(details)
+        JSON.stringify(detailsWithDate)
       )
       console.timeEnd(`[local] Details ${id} have been saved!`)
     }

@@ -93,12 +93,13 @@ model session {
 }
 
 model athlete_session {
-  id                                            String  @id @default(uuid())
-  gpexe_id                                      Int?    @unique
+  id                                            String   @id @default(uuid())
+  gpexe_id                                      Int?     @unique
+  start_timestamp                               DateTime
   athlete_id                                    String
-  athlete                                       athlete @relation(fields: [athlete_id], references: [id])
+  athlete                                       athlete  @relation(fields: [athlete_id], references: [id])
   session_id                                    String
-  session                                       session @relation(fields: [session_id], references: [id])
+  session                                       session  @relation(fields: [session_id], references: [id])
   average_time                                  Float?
   total_distance                                Float?
   average_v                                     Float?

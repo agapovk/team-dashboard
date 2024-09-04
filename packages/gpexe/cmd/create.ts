@@ -83,6 +83,7 @@ export default async function create() {
             gpexe_id: id,
             athlete_id: dbAthleteId.id,
             session_id: dbSessionId.id,
+            start_timestamp: new Date(detail.start_timestamp),
           },
         })
         console.log('creating athlete session ' + id)

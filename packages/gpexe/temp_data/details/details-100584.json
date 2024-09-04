@@ -1,0 +1,4815 @@
+{
+  "teamsession": 100584,
+  "drills_count": 4,
+  "players": {
+    "2823": {
+      "athlete_session_id": 1745316,
+      "athlete": {
+        "id": 2823,
+        "name": "БЕВЕЕВ МИНГИЯН",
+        "last_name": "БЕВЕЕВ",
+        "first_name": "МИНГИЯН",
+        "birthdate": "1995-11-30",
+        "club": 115,
+        "picture": null,
+        "custom_id": null,
+        "v0": 9.522222222222222,
+        "a0": 6.35,
+        "short_name": "БЕВ"
+      },
+      "average_time": { "unit": "time", "value": 4115 },
+      "total_distance": { "unit": "distance", "value": 5908.431964874268 },
+      "average_v": { "unit": "speed", "value": 1.4358506185089843 },
+      "athletesessionspeedzone_distance_1": {
+        "unit": "distance",
+        "value": 3425.5575256347656
+      },
+      "athletesessionspeedzone_distance_2": {
+        "unit": "distance",
+        "value": 1453.105583190918
+      },
+      "athletesessionspeedzone_distance_3": {
+        "unit": "distance",
+        "value": 725.9051513671874
+      },
+      "athletesessionspeedzone_distance_4": {
+        "unit": "distance",
+        "value": 237.02075195312497
+      },
+      "athletesessionspeedzone_distance_5": {
+        "unit": "distance",
+        "value": 66.90185546874999
+      },
+      "max_values_speed": { "unit": "speed", "value": 8.673650568181817 },
+      "speed_events": { "unit": "number", "value": 3 },
+      "acceleration_events": { "unit": "number", "value": 19 },
+      "deceleration_events": { "unit": "number", "value": 30 },
+      "eccentric_index": { "unit": "number", "value": -25.789583206176758 },
+      "athletesessionpowerzone_distance_1": {
+        "unit": "distance",
+        "value": 4930.577720642091
+      },
+      "athletesessionpowerzone_distance_2": {
+        "unit": "distance",
+        "value": 839.2785034179688
+      },
+      "athletesessionpowerzone_distance_3": {
+        "unit": "distance",
+        "value": 138.63464355468753
+      },
+      "average_p": { "unit": "power", "value": 6.569373669095158 },
+      "max_values_power": { "unit": "power", "value": 85.01420454545453 },
+      "equivalent_distance_index": {
+        "unit": "percentage1",
+        "value": 0.14747109268893377
+      },
+      "equivalent_distance": { "unit": "distance", "value": 6779.7548828125 },
+      "total_energy": { "unit": "energy", "value": 27032.545639038086 },
+      "anaerobic_energy": { "unit": "energy", "value": 10708.955701774868 },
+      "anaerobic_index": { "unit": "percentage", "value": 0.3961504715379047 },
+      "aerobic_ratio": { "unit": "percentage", "value": 0.35306558594205434 },
+      "average_power_aer": { "unit": "power", "value": 6.476624542708665 },
+      "power_events": { "unit": "number", "value": 86 },
+      "power_events_avg_time": {
+        "unit": "duration",
+        "value": 6.663953488372095
+      },
+      "power_events_avg_power": {
+        "unit": "power",
+        "value": 21.109735954639522
+      },
+      "recovery_average_time": {
+        "unit": "duration",
+        "value": 36.583411764705886
+      },
+      "recovery_average_power": {
+        "unit": "power",
+        "value": 3.8417911247694625
+      },
+      "athletesessionpowereventdurationzone_events_1": {
+        "unit": "number",
+        "value": 32
+      },
+      "athletesessionpowereventdurationzone_events_2": {
+        "unit": "number",
+        "value": 39
+      },
+      "athletesessionpowereventdurationzone_events_3": {
+        "unit": "number",
+        "value": 15
+      },
+      "athletesessionpowereventdistancezone_events_1": {
+        "unit": "number",
+        "value": 33
+      },
+      "athletesessionpowereventdistancezone_events_2": {
+        "unit": "number",
+        "value": 36
+      },
+      "athletesessionpowereventdistancezone_events_3": {
+        "unit": "number",
+        "value": 17
+      },
+      "athletesessionpowereventmaxspeedzone_events_1": {
+        "unit": "number",
+        "value": 22
+      },
+      "athletesessionpowereventmaxspeedzone_events_2": {
+        "unit": "number",
+        "value": 45
+      },
+      "athletesessionpowereventmaxspeedzone_events_3": {
+        "unit": "number",
+        "value": 19
+      },
+      "external_work": { "unit": "energy", "value": 6239.47705078125 },
+      "ext_work_over": { "unit": "energy", "value": 213.5336151123047 },
+      "ext_work_over_neg": { "unit": "energy", "value": 361.94793701171875 },
+      "tot_brake_events": { "unit": "number", "value": 39 },
+      "tot_burst_events": { "unit": "number", "value": 28 },
+      "average_external_power": {
+        "unit": "power",
+        "value": 1.5163002014160156
+      },
+      "ext_work_over_zone0": { "unit": "energy", "value": 84.169921875 },
+      "ext_work_over_zone1": { "unit": "energy", "value": 79.90953063964844 },
+      "ext_work_over_zone2": { "unit": "energy", "value": 49.45414352416992 },
+      "ext_work_over_zone0_neg": {
+        "unit": "energy",
+        "value": 119.30541229248047
+      },
+      "ext_work_over_zone1_neg": {
+        "unit": "energy",
+        "value": 206.75564575195312
+      },
+      "ext_work_over_zone2_neg": {
+        "unit": "energy",
+        "value": 35.88673400878906
+      },
+      "average_hr": { "unit": "hr", "value": 124.99138309691834 },
+      "average_hr_percentual": {
+        "unit": "percentage",
+        "value": 0.511743173991483
+      },
+      "max_values_cardio": { "unit": "hr", "value": 169.2921142578125 },
+      "max_values_cardio_percentual": {
+        "unit": "percentage",
+        "value": 0.8605678288016733
+      },
+      "athletesessionheartratezone_time_2": {
+        "unit": "time",
+        "value": 24.310000000000002
+      },
+      "athletesessionheartratezone_time_3": { "unit": "time", "value": 0 }
+    },
+    "2824": {
+      "athlete_session_id": 1745315,
+      "athlete": {
+        "id": 2824,
+        "name": "ГОГЛИЧИДЗЕ ЛЕО",
+        "last_name": "ГОГЛИЧИДЗЕ",
+        "first_name": "ЛЕО",
+        "birthdate": "1997-05-29",
+        "club": 115,
+        "picture": null,
+        "custom_id": null,
+        "v0": 9.033333333333333,
+        "a0": 7.14,
+        "short_name": "ЛЕО"
+      },
+      "average_time": { "unit": "time", "value": 4115 },
+      "total_distance": { "unit": "distance", "value": 5898.342788696289 },
+      "average_v": { "unit": "speed", "value": 1.4333796166445822 },
+      "athletesessionspeedzone_distance_1": {
+        "unit": "distance",
+        "value": 3646.00373840332
+      },
+      "athletesessionspeedzone_distance_2": {
+        "unit": "distance",
+        "value": 1442.1746215820315
+      },
+      "athletesessionspeedzone_distance_3": {
+        "unit": "distance",
+        "value": 563.8623657226562
+      },
+      "athletesessionspeedzone_distance_4": {
+        "unit": "distance",
+        "value": 147.287109375
+      },
+      "athletesessionspeedzone_distance_5": {
+        "unit": "distance",
+        "value": 99.11401367187501
+      },
+      "max_values_speed": { "unit": "speed", "value": 8.3984375 },
+      "speed_events": { "unit": "number", "value": 5 },
+      "acceleration_events": { "unit": "number", "value": 19 },
+      "deceleration_events": { "unit": "number", "value": 21 },
+      "eccentric_index": { "unit": "number", "value": -14.62085247039795 },
+      "athletesessionpowerzone_distance_1": {
+        "unit": "distance",
+        "value": 5141.059982299804
+      },
+      "athletesessionpowerzone_distance_2": {
+        "unit": "distance",
+        "value": 576.0649719238281
+      },
+      "athletesessionpowerzone_distance_3": {
+        "unit": "distance",
+        "value": 181.31689453125
+      },
+      "average_p": { "unit": "power", "value": 6.340656108693555 },
+      "max_values_power": { "unit": "power", "value": 86.15056818181819 },
+      "equivalent_distance_index": {
+        "unit": "percentage1",
+        "value": 0.14043232464155375
+      },
+      "equivalent_distance": { "unit": "distance", "value": 6726.660778045654 },
+      "total_energy": { "unit": "energy", "value": 26091.73648071289 },
+      "anaerobic_energy": { "unit": "energy", "value": 10602.938927140838 },
+      "anaerobic_index": { "unit": "percentage", "value": 0.40637153203576815 },
+      "aerobic_ratio": { "unit": "percentage", "value": 0.34077334872949955 },
+      "average_power_aer": { "unit": "power", "value": 6.264738669044645 },
+      "power_events": { "unit": "number", "value": 90 },
+      "power_events_avg_time": {
+        "unit": "duration",
+        "value": 6.062833333333333
+      },
+      "power_events_avg_power": { "unit": "power", "value": 20.92397969563802 },
+      "recovery_average_time": {
+        "unit": "duration",
+        "value": 35.82106741573033
+      },
+      "recovery_average_power": { "unit": "power", "value": 3.750067772700807 },
+      "athletesessionpowereventdurationzone_events_1": {
+        "unit": "number",
+        "value": 39
+      },
+      "athletesessionpowereventdurationzone_events_2": {
+        "unit": "number",
+        "value": 43
+      },
+      "athletesessionpowereventdurationzone_events_3": {
+        "unit": "number",
+        "value": 8
+      },
+      "athletesessionpowereventdistancezone_events_1": {
+        "unit": "number",
+        "value": 35
+      },
+      "athletesessionpowereventdistancezone_events_2": {
+        "unit": "number",
+        "value": 38
+      },
+      "athletesessionpowereventdistancezone_events_3": {
+        "unit": "number",
+        "value": 17
+      },
+      "athletesessionpowereventmaxspeedzone_events_1": {
+        "unit": "number",
+        "value": 27
+      },
+      "athletesessionpowereventmaxspeedzone_events_2": {
+        "unit": "number",
+        "value": 45
+      },
+      "athletesessionpowereventmaxspeedzone_events_3": {
+        "unit": "number",
+        "value": 18
+      },
+      "external_work": { "unit": "energy", "value": 5910.72314453125 },
+      "ext_work_over": { "unit": "energy", "value": 208.13478088378906 },
+      "ext_work_over_neg": { "unit": "energy", "value": 279.4193420410156 },
+      "tot_brake_events": { "unit": "number", "value": 24 },
+      "tot_burst_events": { "unit": "number", "value": 17 },
+      "average_external_power": {
+        "unit": "power",
+        "value": 1.4363882541656494
+      },
+      "ext_work_over_zone0": { "unit": "energy", "value": 30.093856811523438 },
+      "ext_work_over_zone1": { "unit": "energy", "value": 72.48945617675781 },
+      "ext_work_over_zone2": { "unit": "energy", "value": 105.55149841308594 },
+      "ext_work_over_zone0_neg": {
+        "unit": "energy",
+        "value": 58.46112823486328
+      },
+      "ext_work_over_zone1_neg": {
+        "unit": "energy",
+        "value": 139.9937286376953
+      },
+      "ext_work_over_zone2_neg": {
+        "unit": "energy",
+        "value": 80.96451568603516
+      },
+      "average_hr": { "unit": "hr", "value": 138.14300256830097 },
+      "average_hr_percentual": {
+        "unit": "percentage",
+        "value": 0.5542056919737658
+      },
+      "max_values_cardio": { "unit": "hr", "value": 172.8877716064453 },
+      "max_values_cardio_percentual": {
+        "unit": "percentage",
+        "value": 0.8006224936627327
+      },
+      "athletesessionheartratezone_time_2": { "unit": "time", "value": 0 },
+      "athletesessionheartratezone_time_3": { "unit": "time", "value": 0 }
+    },
+    "2825": {
+      "athlete_session_id": 1745309,
+      "athlete": {
+        "id": 2825,
+        "name": "АЮПОВ ТИМУР",
+        "last_name": "АЮПОВ",
+        "first_name": "ТИМУР",
+        "birthdate": "1993-07-26",
+        "club": 115,
+        "picture": null,
+        "custom_id": "55",
+        "v0": 8.555555555555555,
+        "a0": 6.7,
+        "short_name": "АЮП"
+      },
+      "average_time": { "unit": "time", "value": 4115 },
+      "total_distance": { "unit": "distance", "value": 6063.467430114746 },
+      "average_v": { "unit": "speed", "value": 1.4735271954399396 },
+      "athletesessionspeedzone_distance_1": {
+        "unit": "distance",
+        "value": 3531.1452636718745
+      },
+      "athletesessionspeedzone_distance_2": {
+        "unit": "distance",
+        "value": 1432.5442810058594
+      },
+      "athletesessionspeedzone_distance_3": {
+        "unit": "distance",
+        "value": 831.6212158203124
+      },
+      "athletesessionspeedzone_distance_4": {
+        "unit": "distance",
+        "value": 268.18298339843756
+      },
+      "athletesessionspeedzone_distance_5": { "unit": "distance", "value": 0 },
+      "max_values_speed": { "unit": "speed", "value": 6.862572380708634 },
+      "speed_events": { "unit": "number", "value": 0 },
+      "acceleration_events": { "unit": "number", "value": 12 },
+      "deceleration_events": { "unit": "number", "value": 14 },
+      "eccentric_index": { "unit": "number", "value": -42.53507995605469 },
+      "athletesessionpowerzone_distance_1": {
+        "unit": "distance",
+        "value": 5056.977752685547
+      },
+      "athletesessionpowerzone_distance_2": {
+        "unit": "distance",
+        "value": 920.1090087890625
+      },
+      "athletesessionpowerzone_distance_3": {
+        "unit": "distance",
+        "value": 86.40698242187501
+      },
+      "average_p": { "unit": "power", "value": 6.5620775209527284 },
+      "max_values_power": { "unit": "power", "value": 78.76422013149677 },
+      "equivalent_distance_index": {
+        "unit": "percentage1",
+        "value": 0.1330855604055301
+      },
+      "equivalent_distance": { "unit": "distance", "value": 6870.427391052246 },
+      "total_energy": { "unit": "energy", "value": 27002.517120361328 },
+      "anaerobic_energy": { "unit": "energy", "value": 10872.05606928708 },
+      "anaerobic_index": { "unit": "percentage", "value": 0.40263120733618474 },
+      "aerobic_ratio": { "unit": "percentage", "value": 0.35267346045965936 },
+      "average_power_aer": { "unit": "power", "value": 6.473434673661413 },
+      "power_events": { "unit": "number", "value": 88 },
+      "power_events_avg_time": {
+        "unit": "duration",
+        "value": 7.24562356621932
+      },
+      "power_events_avg_power": { "unit": "power", "value": 21.03190966085954 },
+      "recovery_average_time": {
+        "unit": "duration",
+        "value": 35.44022287206453
+      },
+      "recovery_average_power": { "unit": "power", "value": 3.736912179474076 },
+      "athletesessionpowereventdurationzone_events_1": {
+        "unit": "number",
+        "value": 25
+      },
+      "athletesessionpowereventdurationzone_events_2": {
+        "unit": "number",
+        "value": 48
+      },
+      "athletesessionpowereventdurationzone_events_3": {
+        "unit": "number",
+        "value": 15
+      },
+      "athletesessionpowereventdistancezone_events_1": {
+        "unit": "number",
+        "value": 20
+      },
+      "athletesessionpowereventdistancezone_events_2": {
+        "unit": "number",
+        "value": 47
+      },
+      "athletesessionpowereventdistancezone_events_3": {
+        "unit": "number",
+        "value": 21
+      },
+      "athletesessionpowereventmaxspeedzone_events_1": {
+        "unit": "number",
+        "value": 13
+      },
+      "athletesessionpowereventmaxspeedzone_events_2": {
+        "unit": "number",
+        "value": 53
+      },
+      "athletesessionpowereventmaxspeedzone_events_3": {
+        "unit": "number",
+        "value": 22
+      },
+      "external_work": { "unit": "energy", "value": 6309.091796875 },
+      "ext_work_over": { "unit": "energy", "value": 65.62957763671875 },
+      "ext_work_over_neg": { "unit": "energy", "value": 162.78656005859375 },
+      "tot_brake_events": { "unit": "number", "value": 17 },
+      "tot_burst_events": { "unit": "number", "value": 11 },
+      "average_external_power": {
+        "unit": "power",
+        "value": 1.5332181453704834
+      },
+      "ext_work_over_zone0": { "unit": "energy", "value": 21.089420318603516 },
+      "ext_work_over_zone1": { "unit": "energy", "value": 37.658870697021484 },
+      "ext_work_over_zone2": { "unit": "energy", "value": 6.881290912628174 },
+      "ext_work_over_zone0_neg": {
+        "unit": "energy",
+        "value": 21.32693862915039
+      },
+      "ext_work_over_zone1_neg": {
+        "unit": "energy",
+        "value": 106.79231262207031
+      },
+      "ext_work_over_zone2_neg": {
+        "unit": "energy",
+        "value": 34.66726303100586
+      },
+      "average_hr": { "unit": "hr", "value": 123.05591066345356 },
+      "average_hr_percentual": {
+        "unit": "percentage",
+        "value": 0.4569268888656055
+      },
+      "max_values_cardio": { "unit": "hr", "value": 167.4894561767578 },
+      "max_values_cardio_percentual": {
+        "unit": "percentage",
+        "value": 0.778909102730129
+      },
+      "athletesessionheartratezone_time_2": { "unit": "time", "value": 0 },
+      "athletesessionheartratezone_time_3": { "unit": "time", "value": 0 }
+    },
+    "2827": {
+      "athlete_session_id": 1745318,
+      "athlete": {
+        "id": 2827,
+        "name": "ЭМЕРСОН _",
+        "last_name": "ЭМЕРСОН",
+        "first_name": "_",
+        "birthdate": "1995-10-07",
+        "club": 115,
+        "picture": null,
+        "custom_id": null,
+        "v0": 8.799999999999999,
+        "a0": 6.86,
+        "short_name": "ЭМИ"
+      },
+      "average_time": { "unit": "time", "value": 4115 },
+      "total_distance": { "unit": "distance", "value": 5515.5192947387695 },
+      "average_v": { "unit": "speed", "value": 1.340366363256538 },
+      "athletesessionspeedzone_distance_1": {
+        "unit": "distance",
+        "value": 3402.83634185791
+      },
+      "athletesessionspeedzone_distance_2": {
+        "unit": "distance",
+        "value": 1301.8045349121094
+      },
+      "athletesessionspeedzone_distance_3": {
+        "unit": "distance",
+        "value": 612.6115112304689
+      },
+      "athletesessionspeedzone_distance_4": {
+        "unit": "distance",
+        "value": 174.654296875
+      },
+      "athletesessionspeedzone_distance_5": {
+        "unit": "distance",
+        "value": 23.63330078125
+      },
+      "max_values_speed": { "unit": "speed", "value": 7.5372885255661854 },
+      "speed_events": { "unit": "number", "value": 3 },
+      "acceleration_events": { "unit": "number", "value": 14 },
+      "deceleration_events": { "unit": "number", "value": 20 },
+      "eccentric_index": { "unit": "number", "value": -24.25812530517578 },
+      "athletesessionpowerzone_distance_1": {
+        "unit": "distance",
+        "value": 4695.19605255127
+      },
+      "athletesessionpowerzone_distance_2": {
+        "unit": "distance",
+        "value": 685.2003784179686
+      },
+      "athletesessionpowerzone_distance_3": {
+        "unit": "distance",
+        "value": 135.1435546875
+      },
+      "average_p": { "unit": "power", "value": 6.017048701652535 },
+      "max_values_power": { "unit": "power", "value": 83.54050061905514 },
+      "equivalent_distance_index": {
+        "unit": "percentage1",
+        "value": 0.1461564353496423
+      },
+      "equivalent_distance": { "unit": "distance", "value": 6321.647933959961 },
+      "total_energy": { "unit": "energy", "value": 24759.759063720703 },
+      "anaerobic_energy": { "unit": "energy", "value": 10091.092247909886 },
+      "anaerobic_index": { "unit": "percentage", "value": 0.40756019563598594 },
+      "aerobic_ratio": { "unit": "percentage", "value": 0.3233813347358941 },
+      "average_power_aer": { "unit": "power", "value": 5.961068221040943 },
+      "power_events": { "unit": "number", "value": 81 },
+      "power_events_avg_time": {
+        "unit": "duration",
+        "value": 6.696418337138818
+      },
+      "power_events_avg_power": {
+        "unit": "power",
+        "value": 21.298381911383736
+      },
+      "recovery_average_time": { "unit": "duration", "value": 39.787679086955 },
+      "recovery_average_power": { "unit": "power", "value": 3.436133975034041 },
+      "athletesessionpowereventdurationzone_events_1": {
+        "unit": "number",
+        "value": 26
+      },
+      "athletesessionpowereventdurationzone_events_2": {
+        "unit": "number",
+        "value": 43
+      },
+      "athletesessionpowereventdurationzone_events_3": {
+        "unit": "number",
+        "value": 12
+      },
+      "athletesessionpowereventdistancezone_events_1": {
+        "unit": "number",
+        "value": 19
+      },
+      "athletesessionpowereventdistancezone_events_2": {
+        "unit": "number",
+        "value": 45
+      },
+      "athletesessionpowereventdistancezone_events_3": {
+        "unit": "number",
+        "value": 17
+      },
+      "athletesessionpowereventmaxspeedzone_events_1": {
+        "unit": "number",
+        "value": 17
+      },
+      "athletesessionpowereventmaxspeedzone_events_2": {
+        "unit": "number",
+        "value": 44
+      },
+      "athletesessionpowereventmaxspeedzone_events_3": {
+        "unit": "number",
+        "value": 20
+      },
+      "external_work": { "unit": "energy", "value": 5681.1796875 },
+      "ext_work_over": { "unit": "energy", "value": 172.74185180664062 },
+      "ext_work_over_neg": { "unit": "energy", "value": 283.3911437988281 },
+      "tot_brake_events": { "unit": "number", "value": 25 },
+      "tot_burst_events": { "unit": "number", "value": 21 },
+      "average_external_power": { "unit": "power", "value": 1.380624771118164 },
+      "ext_work_over_zone0": { "unit": "energy", "value": 20.318870544433594 },
+      "ext_work_over_zone1": { "unit": "energy", "value": 108.40007781982422 },
+      "ext_work_over_zone2": { "unit": "energy", "value": 44.02290344238281 },
+      "ext_work_over_zone0_neg": {
+        "unit": "energy",
+        "value": 40.413021087646484
+      },
+      "ext_work_over_zone1_neg": {
+        "unit": "energy",
+        "value": 188.7040252685547
+      },
+      "ext_work_over_zone2_neg": {
+        "unit": "energy",
+        "value": 54.274017333984375
+      },
+      "average_hr": { "unit": "hr", "value": 141.72492989757393 },
+      "average_hr_percentual": {
+        "unit": "percentage",
+        "value": 0.6286533069044148
+      },
+      "max_values_cardio": { "unit": "hr", "value": 178.68150329589844 },
+      "max_values_cardio_percentual": {
+        "unit": "percentage",
+        "value": 0.9129346407376803
+      },
+      "athletesessionheartratezone_time_2": {
+        "unit": "time",
+        "value": 357.6649243722888
+      },
+      "athletesessionheartratezone_time_3": { "unit": "time", "value": 0 }
+    },
+    "2828": {
+      "athlete_session_id": 1745313,
+      "athlete": {
+        "id": 2828,
+        "name": "ФИЛИПЕНКО ЕГОР",
+        "last_name": "ФИЛИПЕНКО",
+        "first_name": "ЕГОР",
+        "birthdate": "1988-04-10",
+        "club": 115,
+        "picture": null,
+        "custom_id": null,
+        "v0": 8.708333333333334,
+        "a0": 6.63,
+        "short_name": "ФИЛ"
+      },
+      "average_time": { "unit": "time", "value": 4115 },
+      "total_distance": { "unit": "distance", "value": 5718.878135681152 },
+      "average_v": { "unit": "speed", "value": 1.389785488358142 },
+      "athletesessionspeedzone_distance_1": {
+        "unit": "distance",
+        "value": 3744.2286453247075
+      },
+      "athletesessionspeedzone_distance_2": {
+        "unit": "distance",
+        "value": 1371.4344635009766
+      },
+      "athletesessionspeedzone_distance_3": {
+        "unit": "distance",
+        "value": 438.31134033203125
+      },
+      "athletesessionspeedzone_distance_4": {
+        "unit": "distance",
+        "value": 148.50817871093747
+      },
+      "athletesessionspeedzone_distance_5": {
+        "unit": "distance",
+        "value": 16.415771484375
+      },
+      "max_values_speed": { "unit": "speed", "value": 7.643819435996951 },
+      "speed_events": { "unit": "number", "value": 2 },
+      "acceleration_events": { "unit": "number", "value": 10 },
+      "deceleration_events": { "unit": "number", "value": 13 },
+      "eccentric_index": { "unit": "number", "value": -40.21501541137695 },
+      "athletesessionpowerzone_distance_1": {
+        "unit": "distance",
+        "value": 5051.951866149902
+      },
+      "athletesessionpowerzone_distance_2": {
+        "unit": "distance",
+        "value": 596.0272827148438
+      },
+      "athletesessionpowerzone_distance_3": {
+        "unit": "distance",
+        "value": 70.91925048828124
+      },
+      "average_p": { "unit": "power", "value": 5.982627600285909 },
+      "max_values_power": { "unit": "power", "value": 74.59160383420021 },
+      "equivalent_distance_index": {
+        "unit": "percentage1",
+        "value": 0.12176275400570269
+      },
+      "equivalent_distance": {
+        "unit": "distance",
+        "value": 6415.2244873046875
+      },
+      "total_energy": { "unit": "energy", "value": 24618.128814697266 },
+      "anaerobic_energy": { "unit": "energy", "value": 9473.263734081951 },
+      "anaerobic_index": { "unit": "percentage", "value": 0.3848084395604559 },
+      "aerobic_ratio": { "unit": "percentage", "value": 0.3215314009469317 },
+      "average_power_aer": { "unit": "power", "value": 5.925018751171951 },
+      "power_events": { "unit": "number", "value": 69 },
+      "power_events_avg_time": {
+        "unit": "duration",
+        "value": 6.552175273166268
+      },
+      "power_events_avg_power": {
+        "unit": "power",
+        "value": 20.348460363305133
+      },
+      "recovery_average_time": {
+        "unit": "duration",
+        "value": 47.79420109775313
+      },
+      "recovery_average_power": { "unit": "power", "value": 3.990373441281069 },
+      "athletesessionpowereventdurationzone_events_1": {
+        "unit": "number",
+        "value": 27
+      },
+      "athletesessionpowereventdurationzone_events_2": {
+        "unit": "number",
+        "value": 33
+      },
+      "athletesessionpowereventdurationzone_events_3": {
+        "unit": "number",
+        "value": 9
+      },
+      "athletesessionpowereventdistancezone_events_1": {
+        "unit": "number",
+        "value": 25
+      },
+      "athletesessionpowereventdistancezone_events_2": {
+        "unit": "number",
+        "value": 33
+      },
+      "athletesessionpowereventdistancezone_events_3": {
+        "unit": "number",
+        "value": 11
+      },
+      "athletesessionpowereventmaxspeedzone_events_1": {
+        "unit": "number",
+        "value": 16
+      },
+      "athletesessionpowereventmaxspeedzone_events_2": {
+        "unit": "number",
+        "value": 42
+      },
+      "athletesessionpowereventmaxspeedzone_events_3": {
+        "unit": "number",
+        "value": 11
+      },
+      "external_work": { "unit": "energy", "value": 5606.65771484375 },
+      "ext_work_over": { "unit": "energy", "value": 94.75971221923828 },
+      "ext_work_over_neg": { "unit": "energy", "value": 222.24200439453125 },
+      "tot_brake_events": { "unit": "number", "value": 17 },
+      "tot_burst_events": { "unit": "number", "value": 17 },
+      "average_external_power": {
+        "unit": "power",
+        "value": 1.3625138998031616
+      },
+      "ext_work_over_zone0": { "unit": "energy", "value": 30.201513290405273 },
+      "ext_work_over_zone1": { "unit": "energy", "value": 44.15680694580078 },
+      "ext_work_over_zone2": { "unit": "energy", "value": 20.401348114013672 },
+      "ext_work_over_zone0_neg": {
+        "unit": "energy",
+        "value": 29.717880249023438
+      },
+      "ext_work_over_zone1_neg": {
+        "unit": "energy",
+        "value": 153.91009521484375
+      },
+      "ext_work_over_zone2_neg": {
+        "unit": "energy",
+        "value": 38.61405944824219
+      },
+      "average_hr": { "unit": "hr", "value": 152.77918329270375 },
+      "average_hr_percentual": {
+        "unit": "percentage",
+        "value": 0.6398564365014051
+      },
+      "max_values_cardio": { "unit": "hr", "value": 201.24159240722656 },
+      "max_values_cardio_percentual": {
+        "unit": "percentage",
+        "value": 0.9740799476360452
+      },
+      "athletesessionheartratezone_time_2": {
+        "unit": "time",
+        "value": 637.8351324039825
+      },
+      "athletesessionheartratezone_time_3": {
+        "unit": "time",
+        "value": 13.420002785769745
+      }
+    },
+    "2829": {
+      "athlete_session_id": 1745310,
+      "athlete": {
+        "id": 2829,
+        "name": "БЕГИЧ СИЛЬВИЕ",
+        "last_name": "БЕГИЧ",
+        "first_name": "СИЛЬВИЕ",
+        "birthdate": "1993-06-03",
+        "club": 115,
+        "picture": null,
+        "custom_id": "2",
+        "v0": 8.780555555555555,
+        "a0": 6.39,
+        "short_name": "БЕГ"
+      },
+      "average_time": { "unit": "time", "value": 4115 },
+      "total_distance": { "unit": "distance", "value": 5652.077713012695 },
+      "average_v": { "unit": "speed", "value": 1.3735518452525912 },
+      "athletesessionspeedzone_distance_1": {
+        "unit": "distance",
+        "value": 3756.2190246582036
+      },
+      "athletesessionspeedzone_distance_2": {
+        "unit": "distance",
+        "value": 1231.2730102539062
+      },
+      "athletesessionspeedzone_distance_3": {
+        "unit": "distance",
+        "value": 539.1589965820312
+      },
+      "athletesessionspeedzone_distance_4": {
+        "unit": "distance",
+        "value": 104.991943359375
+      },
+      "athletesessionspeedzone_distance_5": {
+        "unit": "distance",
+        "value": 20.464843750000004
+      },
+      "max_values_speed": { "unit": "speed", "value": 7.874643283218013 },
+      "speed_events": { "unit": "number", "value": 1 },
+      "acceleration_events": { "unit": "number", "value": 4 },
+      "deceleration_events": { "unit": "number", "value": 18 },
+      "eccentric_index": { "unit": "number", "value": -37.60572814941406 },
+      "athletesessionpowerzone_distance_1": {
+        "unit": "distance",
+        "value": 4979.276458740235
+      },
+      "athletesessionpowerzone_distance_2": {
+        "unit": "distance",
+        "value": 595.6547241210938
+      },
+      "athletesessionpowerzone_distance_3": {
+        "unit": "distance",
+        "value": 77.1766357421875
+      },
+      "average_p": { "unit": "power", "value": 5.816967120770786 },
+      "max_values_power": { "unit": "power", "value": 72.05254214948974 },
+      "equivalent_distance_index": {
+        "unit": "percentage1",
+        "value": 0.1160082649557801
+      },
+      "equivalent_distance": { "unit": "distance", "value": 6307.765441894531 },
+      "total_energy": { "unit": "energy", "value": 23936.44647216797 },
+      "anaerobic_energy": { "unit": "energy", "value": 9333.49705417426 },
+      "anaerobic_index": { "unit": "percentage", "value": 0.3899282654602368 },
+      "aerobic_ratio": { "unit": "percentage", "value": 0.3126281146956711 },
+      "average_power_aer": { "unit": "power", "value": 5.756417113317611 },
+      "power_events": { "unit": "number", "value": 70 },
+      "power_events_avg_time": {
+        "unit": "duration",
+        "value": 6.119144102897965
+      },
+      "power_events_avg_power": {
+        "unit": "power",
+        "value": 21.063517897469655
+      },
+      "recovery_average_time": {
+        "unit": "duration",
+        "value": 43.11442906722971
+      },
+      "recovery_average_power": { "unit": "power", "value": 3.851435946635979 },
+      "athletesessionpowereventdurationzone_events_1": {
+        "unit": "number",
+        "value": 33
+      },
+      "athletesessionpowereventdurationzone_events_2": {
+        "unit": "number",
+        "value": 27
+      },
+      "athletesessionpowereventdurationzone_events_3": {
+        "unit": "number",
+        "value": 10
+      },
+      "athletesessionpowereventdistancezone_events_1": {
+        "unit": "number",
+        "value": 28
+      },
+      "athletesessionpowereventdistancezone_events_2": {
+        "unit": "number",
+        "value": 27
+      },
+      "athletesessionpowereventdistancezone_events_3": {
+        "unit": "number",
+        "value": 15
+      },
+      "athletesessionpowereventmaxspeedzone_events_1": {
+        "unit": "number",
+        "value": 18
+      },
+      "athletesessionpowereventmaxspeedzone_events_2": {
+        "unit": "number",
+        "value": 37
+      },
+      "athletesessionpowereventmaxspeedzone_events_3": {
+        "unit": "number",
+        "value": 15
+      },
+      "external_work": { "unit": "energy", "value": 5440.7275390625 },
+      "ext_work_over": { "unit": "energy", "value": 108.36476135253906 },
+      "ext_work_over_neg": { "unit": "energy", "value": 238.99005126953125 },
+      "tot_brake_events": { "unit": "number", "value": 21 },
+      "tot_burst_events": { "unit": "number", "value": 19 },
+      "average_external_power": {
+        "unit": "power",
+        "value": 1.3221900463104248
+      },
+      "ext_work_over_zone0": { "unit": "energy", "value": 31.2916202545166 },
+      "ext_work_over_zone1": { "unit": "energy", "value": 34.737972259521484 },
+      "ext_work_over_zone2": { "unit": "energy", "value": 42.33516311645508 },
+      "ext_work_over_zone0_neg": {
+        "unit": "energy",
+        "value": 47.39915466308594
+      },
+      "ext_work_over_zone1_neg": {
+        "unit": "energy",
+        "value": 152.70455932617188
+      },
+      "ext_work_over_zone2_neg": {
+        "unit": "energy",
+        "value": 38.886287689208984
+      },
+      "average_hr": { "unit": "hr", "value": null },
+      "average_hr_percentual": { "unit": "percentage", "value": null },
+      "max_values_cardio": { "unit": "hr", "value": null },
+      "max_values_cardio_percentual": { "unit": "percentage", "value": null },
+      "athletesessionheartratezone_time_2": { "unit": "time", "value": null },
+      "athletesessionheartratezone_time_3": { "unit": "time", "value": null }
+    },
+    "2831": {
+      "athlete_session_id": 1745317,
+      "athlete": {
+        "id": 2831,
+        "name": "МАМИН АРТЕМ",
+        "last_name": "МАМИН",
+        "first_name": "АРТЕМ",
+        "birthdate": "1997-07-25",
+        "club": 115,
+        "picture": null,
+        "custom_id": null,
+        "v0": 9.430555555555555,
+        "a0": 6.34,
+        "short_name": "МАМ"
+      },
+      "average_time": { "unit": "time", "value": 4115 },
+      "total_distance": { "unit": "distance", "value": 5473.533966064453 },
+      "average_v": { "unit": "speed", "value": 1.3301098697082718 },
+      "athletesessionspeedzone_distance_1": {
+        "unit": "distance",
+        "value": 3523.983345031738
+      },
+      "athletesessionspeedzone_distance_2": {
+        "unit": "distance",
+        "value": 1357.0797729492188
+      },
+      "athletesessionspeedzone_distance_3": {
+        "unit": "distance",
+        "value": 445.7236938476563
+      },
+      "athletesessionspeedzone_distance_4": {
+        "unit": "distance",
+        "value": 146.8082275390625
+      },
+      "athletesessionspeedzone_distance_5": { "unit": "distance", "value": 0 },
+      "max_values_speed": { "unit": "speed", "value": 6.906961689507648 },
+      "speed_events": { "unit": "number", "value": 0 },
+      "acceleration_events": { "unit": "number", "value": 12 },
+      "deceleration_events": { "unit": "number", "value": 15 },
+      "eccentric_index": { "unit": "number", "value": -4.911243915557861 },
+      "athletesessionpowerzone_distance_1": {
+        "unit": "distance",
+        "value": 4823.856391906738
+      },
+      "athletesessionpowerzone_distance_2": {
+        "unit": "distance",
+        "value": 562.6339111328125
+      },
+      "athletesessionpowerzone_distance_3": {
+        "unit": "distance",
+        "value": 87.104736328125
+      },
+      "average_p": { "unit": "power", "value": 5.769915021383856 },
+      "max_values_power": { "unit": "power", "value": 93.67899710499319 },
+      "equivalent_distance_index": {
+        "unit": "percentage1",
+        "value": 0.12405532624443416
+      },
+      "equivalent_distance": { "unit": "distance", "value": 6152.55500793457 },
+      "total_energy": { "unit": "energy", "value": 23743.77227783203 },
+      "anaerobic_energy": { "unit": "energy", "value": 9508.10592828593 },
+      "anaerobic_index": { "unit": "percentage", "value": 0.40044630722654845 },
+      "aerobic_ratio": { "unit": "percentage", "value": 0.3100993383043993 },
+      "average_power_aer": { "unit": "power", "value": 5.715229240153021 },
+      "power_events": { "unit": "number", "value": 71 },
+      "power_events_avg_time": {
+        "unit": "duration",
+        "value": 6.026759287487907
+      },
+      "power_events_avg_power": { "unit": "power", "value": 20.6388401380727 },
+      "recovery_average_time": {
+        "unit": "duration",
+        "value": 44.32684775866169
+      },
+      "recovery_average_power": { "unit": "power", "value": 3.725939709227597 },
+      "athletesessionpowereventdurationzone_events_1": {
+        "unit": "number",
+        "value": 29
+      },
+      "athletesessionpowereventdurationzone_events_2": {
+        "unit": "number",
+        "value": 38
+      },
+      "athletesessionpowereventdurationzone_events_3": {
+        "unit": "number",
+        "value": 4
+      },
+      "athletesessionpowereventdistancezone_events_1": {
+        "unit": "number",
+        "value": 29
+      },
+      "athletesessionpowereventdistancezone_events_2": {
+        "unit": "number",
+        "value": 31
+      },
+      "athletesessionpowereventdistancezone_events_3": {
+        "unit": "number",
+        "value": 11
+      },
+      "athletesessionpowereventmaxspeedzone_events_1": {
+        "unit": "number",
+        "value": 20
+      },
+      "athletesessionpowereventmaxspeedzone_events_2": {
+        "unit": "number",
+        "value": 38
+      },
+      "athletesessionpowereventmaxspeedzone_events_3": {
+        "unit": "number",
+        "value": 13
+      },
+      "external_work": { "unit": "energy", "value": 5439.06591796875 },
+      "ext_work_over": { "unit": "energy", "value": 141.54550170898438 },
+      "ext_work_over_neg": { "unit": "energy", "value": 156.1668701171875 },
+      "tot_brake_events": { "unit": "number", "value": 20 },
+      "tot_burst_events": { "unit": "number", "value": 23 },
+      "average_external_power": { "unit": "power", "value": 1.321733832359314 },
+      "ext_work_over_zone0": { "unit": "energy", "value": 70.81245422363281 },
+      "ext_work_over_zone1": { "unit": "energy", "value": 70.73302459716797 },
+      "ext_work_over_zone2": { "unit": "energy", "value": 0 },
+      "ext_work_over_zone0_neg": {
+        "unit": "energy",
+        "value": 54.144344329833984
+      },
+      "ext_work_over_zone1_neg": {
+        "unit": "energy",
+        "value": 99.18917083740234
+      },
+      "ext_work_over_zone2_neg": {
+        "unit": "energy",
+        "value": 2.833345890045166
+      },
+      "average_hr": { "unit": "hr", "value": 132.8646339454233 },
+      "average_hr_percentual": {
+        "unit": "percentage",
+        "value": 0.5604971841955638
+      },
+      "max_values_cardio": { "unit": "hr", "value": 168.4242401123047 },
+      "max_values_cardio_percentual": {
+        "unit": "percentage",
+        "value": 0.8340326162484976
+      },
+      "athletesessionheartratezone_time_2": { "unit": "time", "value": 0 },
+      "athletesessionheartratezone_time_3": { "unit": "time", "value": 0 }
+    },
+    "2833": {
+      "athlete_session_id": 1745312,
+      "athlete": {
+        "id": 2833,
+        "name": "МИШКИЧ ДАНИЭЛЬ",
+        "last_name": "МИШКИЧ",
+        "first_name": "ДАНИЭЛЬ",
+        "birthdate": "1993-10-11",
+        "club": 115,
+        "picture": null,
+        "custom_id": null,
+        "v0": 8.805555555555555,
+        "a0": 6.43,
+        "short_name": "МИШ"
+      },
+      "average_time": { "unit": "time", "value": 4115 },
+      "total_distance": { "unit": "distance", "value": 6454.617614746094 },
+      "average_v": { "unit": "speed", "value": 1.5685834417911 },
+      "athletesessionspeedzone_distance_1": {
+        "unit": "distance",
+        "value": 3774.2328338623047
+      },
+      "athletesessionspeedzone_distance_2": {
+        "unit": "distance",
+        "value": 1737.179244995117
+      },
+      "athletesessionspeedzone_distance_3": {
+        "unit": "distance",
+        "value": 650.3653564453126
+      },
+      "athletesessionspeedzone_distance_4": {
+        "unit": "distance",
+        "value": 264.0928955078125
+      },
+      "athletesessionspeedzone_distance_5": {
+        "unit": "distance",
+        "value": 28.755371093750004
+      },
+      "max_values_speed": { "unit": "speed", "value": 7.439632169026295 },
+      "speed_events": { "unit": "number", "value": 3 },
+      "acceleration_events": { "unit": "number", "value": 14 },
+      "deceleration_events": { "unit": "number", "value": 10 },
+      "eccentric_index": { "unit": "number", "value": 14.712929725646973 },
+      "athletesessionpowerzone_distance_1": {
+        "unit": "distance",
+        "value": 5641.702423095703
+      },
+      "athletesessionpowerzone_distance_2": {
+        "unit": "distance",
+        "value": 679.0608520507812
+      },
+      "athletesessionpowerzone_distance_3": {
+        "unit": "distance",
+        "value": 133.86242675781247
+      },
+      "average_p": { "unit": "power", "value": 6.841097317101954 },
+      "max_values_power": { "unit": "power", "value": 83.97551394608558 },
+      "equivalent_distance_index": {
+        "unit": "percentage1",
+        "value": 0.11424673545403752
+      },
+      "equivalent_distance": { "unit": "distance", "value": 7192.036605834961 },
+      "total_energy": { "unit": "energy", "value": 28150.665161132812 },
+      "anaerobic_energy": { "unit": "energy", "value": 10421.53985134057 },
+      "anaerobic_index": { "unit": "percentage", "value": 0.37020581189425783 },
+      "aerobic_ratio": { "unit": "percentage", "value": 0.36766914996965 },
+      "average_power_aer": { "unit": "power", "value": 6.763861254201522 },
+      "power_events": { "unit": "number", "value": 73 },
+      "power_events_avg_time": {
+        "unit": "duration",
+        "value": 6.50431376825815
+      },
+      "power_events_avg_power": { "unit": "power", "value": 21.37151533936801 },
+      "recovery_average_time": {
+        "unit": "duration",
+        "value": 41.5387416962607
+      },
+      "recovery_average_power": { "unit": "power", "value": 4.701489196291188 },
+      "athletesessionpowereventdurationzone_events_1": {
+        "unit": "number",
+        "value": 31
+      },
+      "athletesessionpowereventdurationzone_events_2": {
+        "unit": "number",
+        "value": 31
+      },
+      "athletesessionpowereventdurationzone_events_3": {
+        "unit": "number",
+        "value": 11
+      },
+      "athletesessionpowereventdistancezone_events_1": {
+        "unit": "number",
+        "value": 21
+      },
+      "athletesessionpowereventdistancezone_events_2": {
+        "unit": "number",
+        "value": 33
+      },
+      "athletesessionpowereventdistancezone_events_3": {
+        "unit": "number",
+        "value": 19
+      },
+      "athletesessionpowereventmaxspeedzone_events_1": {
+        "unit": "number",
+        "value": 14
+      },
+      "athletesessionpowereventmaxspeedzone_events_2": {
+        "unit": "number",
+        "value": 37
+      },
+      "athletesessionpowereventmaxspeedzone_events_3": {
+        "unit": "number",
+        "value": 22
+      },
+      "external_work": { "unit": "energy", "value": 6554.9697265625 },
+      "ext_work_over": { "unit": "energy", "value": 243.383544921875 },
+      "ext_work_over_neg": { "unit": "energy", "value": 180.95143127441406 },
+      "tot_brake_events": { "unit": "number", "value": 17 },
+      "tot_burst_events": { "unit": "number", "value": 20 },
+      "average_external_power": {
+        "unit": "power",
+        "value": 1.5929707288742065
+      },
+      "ext_work_over_zone0": { "unit": "energy", "value": 29.113697052001953 },
+      "ext_work_over_zone1": { "unit": "energy", "value": 167.81988525390625 },
+      "ext_work_over_zone2": { "unit": "energy", "value": 46.449893951416016 },
+      "ext_work_over_zone0_neg": {
+        "unit": "energy",
+        "value": 24.509180068969727
+      },
+      "ext_work_over_zone1_neg": {
+        "unit": "energy",
+        "value": 109.7254638671875
+      },
+      "ext_work_over_zone2_neg": {
+        "unit": "energy",
+        "value": 46.7168083190918
+      },
+      "average_hr": { "unit": "hr", "value": 142.69772966894936 },
+      "average_hr_percentual": {
+        "unit": "percentage",
+        "value": 0.617147236335443
+      },
+      "max_values_cardio": { "unit": "hr", "value": 181.5607147216797 },
+      "max_values_cardio_percentual": {
+        "unit": "percentage",
+        "value": 0.9071695128483559
+      },
+      "athletesessionheartratezone_time_2": {
+        "unit": "time",
+        "value": 905.4648189944256
+      },
+      "athletesessionheartratezone_time_3": { "unit": "time", "value": 0 }
+    },
+    "2836": {
+      "athlete_session_id": 1745307,
+      "athlete": {
+        "id": 2836,
+        "name": "СУНГАТУЛИН ФАНИЛЬ",
+        "last_name": "СУНГАТУЛИН",
+        "first_name": "ФАНИЛЬ",
+        "birthdate": "2001-12-24",
+        "club": 115,
+        "picture": null,
+        "custom_id": null,
+        "v0": 8.516666666666666,
+        "a0": 7.05,
+        "short_name": "ФАН"
+      },
+      "average_time": { "unit": "time", "value": 4115 },
+      "total_distance": { "unit": "distance", "value": 5874.217582702637 },
+      "average_v": { "unit": "speed", "value": 1.427535935003259 },
+      "athletesessionspeedzone_distance_1": {
+        "unit": "distance",
+        "value": 3501.49169921875
+      },
+      "athletesessionspeedzone_distance_2": {
+        "unit": "distance",
+        "value": 1578.5898895263674
+      },
+      "athletesessionspeedzone_distance_3": {
+        "unit": "distance",
+        "value": 655.6631469726564
+      },
+      "athletesessionspeedzone_distance_4": {
+        "unit": "distance",
+        "value": 123.83618164062497
+      },
+      "athletesessionspeedzone_distance_5": {
+        "unit": "distance",
+        "value": 14.656005859375
+      },
+      "max_values_speed": { "unit": "speed", "value": 7.697088068181818 },
+      "speed_events": { "unit": "number", "value": 1 },
+      "acceleration_events": { "unit": "number", "value": 15 },
+      "deceleration_events": { "unit": "number", "value": 21 },
+      "eccentric_index": { "unit": "number", "value": -45.042144775390625 },
+      "athletesessionpowerzone_distance_1": {
+        "unit": "distance",
+        "value": 5052.642501831056
+      },
+      "athletesessionpowerzone_distance_2": {
+        "unit": "distance",
+        "value": 727.4705810546876
+      },
+      "athletesessionpowerzone_distance_3": {
+        "unit": "distance",
+        "value": 94.12384033203126
+      },
+      "average_p": { "unit": "power", "value": 6.402582113330009 },
+      "max_values_power": { "unit": "power", "value": 79.24360795454545 },
+      "equivalent_distance_index": {
+        "unit": "percentage1",
+        "value": 0.1408264980622711
+      },
+      "equivalent_distance": { "unit": "distance", "value": 6701.463073730469 },
+      "total_energy": { "unit": "energy", "value": 26346.209228515625 },
+      "anaerobic_energy": { "unit": "energy", "value": 10472.193522012634 },
+      "anaerobic_index": { "unit": "percentage", "value": 0.3974838820712823 },
+      "aerobic_ratio": { "unit": "percentage", "value": 0.34410151092780417 },
+      "average_power_aer": { "unit": "power", "value": 6.341283708409623 },
+      "power_events": { "unit": "number", "value": 89 },
+      "power_events_avg_time": {
+        "unit": "duration",
+        "value": 6.888595505617978
+      },
+      "power_events_avg_power": {
+        "unit": "power",
+        "value": 20.108012970913663
+      },
+      "recovery_average_time": { "unit": "duration", "value": 35.07625 },
+      "recovery_average_power": { "unit": "power", "value": 3.833029563384234 },
+      "athletesessionpowereventdurationzone_events_1": {
+        "unit": "number",
+        "value": 28
+      },
+      "athletesessionpowereventdurationzone_events_2": {
+        "unit": "number",
+        "value": 47
+      },
+      "athletesessionpowereventdurationzone_events_3": {
+        "unit": "number",
+        "value": 14
+      },
+      "athletesessionpowereventdistancezone_events_1": {
+        "unit": "number",
+        "value": 26
+      },
+      "athletesessionpowereventdistancezone_events_2": {
+        "unit": "number",
+        "value": 45
+      },
+      "athletesessionpowereventdistancezone_events_3": {
+        "unit": "number",
+        "value": 18
+      },
+      "athletesessionpowereventmaxspeedzone_events_1": {
+        "unit": "number",
+        "value": 28
+      },
+      "athletesessionpowereventmaxspeedzone_events_2": {
+        "unit": "number",
+        "value": 47
+      },
+      "athletesessionpowereventmaxspeedzone_events_3": {
+        "unit": "number",
+        "value": 14
+      },
+      "external_work": { "unit": "energy", "value": 6108.9453125 },
+      "ext_work_over": { "unit": "energy", "value": 89.70360565185547 },
+      "ext_work_over_neg": { "unit": "energy", "value": 236.74148559570312 },
+      "tot_brake_events": { "unit": "number", "value": 21 },
+      "tot_burst_events": { "unit": "number", "value": 16 },
+      "average_external_power": {
+        "unit": "power",
+        "value": 1.4845788478851318
+      },
+      "ext_work_over_zone0": { "unit": "energy", "value": 38.3311653137207 },
+      "ext_work_over_zone1": { "unit": "energy", "value": 30.55106544494629 },
+      "ext_work_over_zone2": { "unit": "energy", "value": 20.82137680053711 },
+      "ext_work_over_zone0_neg": {
+        "unit": "energy",
+        "value": 34.453678131103516
+      },
+      "ext_work_over_zone1_neg": {
+        "unit": "energy",
+        "value": 157.63510131835938
+      },
+      "ext_work_over_zone2_neg": {
+        "unit": "energy",
+        "value": 44.65271759033203
+      },
+      "average_hr": { "unit": "hr", "value": 138.22748095053265 },
+      "average_hr_percentual": {
+        "unit": "percentage",
+        "value": 0.6017498534656358
+      },
+      "max_values_cardio": { "unit": "hr", "value": 172.0877685546875 },
+      "max_values_cardio_percentual": {
+        "unit": "percentage",
+        "value": 0.8622136042668269
+      },
+      "athletesessionheartratezone_time_2": { "unit": "time", "value": 53.68 },
+      "athletesessionheartratezone_time_3": { "unit": "time", "value": 0 }
+    },
+    "2838": {
+      "athlete_session_id": 1745306,
+      "athlete": {
+        "id": 2838,
+        "name": "ЕГОРЫЧЕВ АНДРЕЙ",
+        "last_name": "ЕГОРЫЧЕВ",
+        "first_name": "АНДРЕЙ",
+        "birthdate": "1993-02-14",
+        "club": 115,
+        "picture": null,
+        "custom_id": null,
+        "v0": 9.330555555555556,
+        "a0": 6.87,
+        "short_name": "ЕГО"
+      },
+      "average_time": { "unit": "time", "value": 2738 },
+      "total_distance": { "unit": "distance", "value": 3449.606414794922 },
+      "average_v": { "unit": "speed", "value": 1.2599207856940384 },
+      "athletesessionspeedzone_distance_1": {
+        "unit": "distance",
+        "value": 2007.2200012207031
+      },
+      "athletesessionspeedzone_distance_2": {
+        "unit": "distance",
+        "value": 887.6662292480469
+      },
+      "athletesessionspeedzone_distance_3": {
+        "unit": "distance",
+        "value": 387.7994384765625
+      },
+      "athletesessionspeedzone_distance_4": {
+        "unit": "distance",
+        "value": 154.404541015625
+      },
+      "athletesessionspeedzone_distance_5": {
+        "unit": "distance",
+        "value": 12.5322265625
+      },
+      "max_values_speed": { "unit": "speed", "value": 7.253196022727271 },
+      "speed_events": { "unit": "number", "value": 2 },
+      "acceleration_events": { "unit": "number", "value": 15 },
+      "deceleration_events": { "unit": "number", "value": 14 },
+      "eccentric_index": { "unit": "number", "value": -20.84906005859375 },
+      "athletesessionpowerzone_distance_1": {
+        "unit": "distance",
+        "value": 2888.318328857422
+      },
+      "athletesessionpowerzone_distance_2": {
+        "unit": "distance",
+        "value": 449.8818054199219
+      },
+      "athletesessionpowerzone_distance_3": {
+        "unit": "distance",
+        "value": 111.42230224609376
+      },
+      "average_p": { "unit": "power", "value": 5.721015567717853 },
+      "max_values_power": { "unit": "power", "value": 91.55717329545452 },
+      "equivalent_distance_index": {
+        "unit": "percentage1",
+        "value": 0.15867439091885038
+      },
+      "equivalent_distance": {
+        "unit": "distance",
+        "value": 3996.9706115722656
+      },
+      "total_energy": { "unit": "energy", "value": 15663.883178710938 },
+      "anaerobic_energy": { "unit": "energy", "value": 6994.5052084461595 },
+      "anaerobic_index": { "unit": "percentage", "value": 0.4465371152635073 },
+      "aerobic_ratio": { "unit": "percentage", "value": 0.30747127737645213 },
+      "average_power_aer": { "unit": "power", "value": 5.633836249688997 },
+      "power_events": { "unit": "number", "value": 55 },
+      "power_events_avg_time": {
+        "unit": "duration",
+        "value": 6.312000000000001
+      },
+      "power_events_avg_power": {
+        "unit": "power",
+        "value": 22.225378920815206
+      },
+      "recovery_average_time": {
+        "unit": "duration",
+        "value": 37.160648148148155
+      },
+      "recovery_average_power": {
+        "unit": "power",
+        "value": 2.6721810829403734
+      },
+      "athletesessionpowereventdurationzone_events_1": {
+        "unit": "number",
+        "value": 24
+      },
+      "athletesessionpowereventdurationzone_events_2": {
+        "unit": "number",
+        "value": 24
+      },
+      "athletesessionpowereventdurationzone_events_3": {
+        "unit": "number",
+        "value": 7
+      },
+      "athletesessionpowereventdistancezone_events_1": {
+        "unit": "number",
+        "value": 17
+      },
+      "athletesessionpowereventdistancezone_events_2": {
+        "unit": "number",
+        "value": 28
+      },
+      "athletesessionpowereventdistancezone_events_3": {
+        "unit": "number",
+        "value": 10
+      },
+      "athletesessionpowereventmaxspeedzone_events_1": {
+        "unit": "number",
+        "value": 11
+      },
+      "athletesessionpowereventmaxspeedzone_events_2": {
+        "unit": "number",
+        "value": 24
+      },
+      "athletesessionpowereventmaxspeedzone_events_3": {
+        "unit": "number",
+        "value": 20
+      },
+      "external_work": { "unit": "energy", "value": 3630.193603515625 },
+      "ext_work_over": { "unit": "energy", "value": 99.24762725830078 },
+      "ext_work_over_neg": { "unit": "energy", "value": 151.5330352783203 },
+      "tot_brake_events": { "unit": "number", "value": 15 },
+      "tot_burst_events": { "unit": "number", "value": 13 },
+      "average_external_power": {
+        "unit": "power",
+        "value": 1.3258776664733887
+      },
+      "ext_work_over_zone0": { "unit": "energy", "value": 32.05940246582031 },
+      "ext_work_over_zone1": { "unit": "energy", "value": 52.99679946899414 },
+      "ext_work_over_zone2": { "unit": "energy", "value": 14.191433906555176 },
+      "ext_work_over_zone0_neg": {
+        "unit": "energy",
+        "value": 23.92526626586914
+      },
+      "ext_work_over_zone1_neg": {
+        "unit": "energy",
+        "value": 107.7652587890625
+      },
+      "ext_work_over_zone2_neg": {
+        "unit": "energy",
+        "value": 19.842561721801758
+      },
+      "average_hr": { "unit": "hr", "value": 130.92513091174183 },
+      "average_hr_percentual": {
+        "unit": "percentage",
+        "value": 0.5498072163700917
+      },
+      "max_values_cardio": { "unit": "hr", "value": 170.76345825195312 },
+      "max_values_cardio_percentual": {
+        "unit": "percentage",
+        "value": 0.8586314593174661
+      },
+      "athletesessionheartratezone_time_2": {
+        "unit": "time",
+        "value": 6.050000000000002
+      },
+      "athletesessionheartratezone_time_3": { "unit": "time", "value": 0 }
+    },
+    "2839": {
+      "athlete_session_id": 1745303,
+      "athlete": {
+        "id": 2839,
+        "name": "ЖЕЛЕЗНОВ ЮРИЙ",
+        "last_name": "ЖЕЛЕЗНОВ",
+        "first_name": "ЮРИЙ",
+        "birthdate": "2002-11-15",
+        "club": 115,
+        "picture": null,
+        "custom_id": null,
+        "v0": 9.64722222222222,
+        "a0": 7.4,
+        "short_name": "ЖЕЛ"
+      },
+      "average_time": { "unit": "time", "value": 4115 },
+      "total_distance": { "unit": "distance", "value": 6132.954284667969 },
+      "average_v": { "unit": "speed", "value": 1.4903940429822544 },
+      "athletesessionspeedzone_distance_1": {
+        "unit": "distance",
+        "value": 3571.731719970703
+      },
+      "athletesessionspeedzone_distance_2": {
+        "unit": "distance",
+        "value": 1593.0018615722659
+      },
+      "athletesessionspeedzone_distance_3": {
+        "unit": "distance",
+        "value": 709.6588134765626
+      },
+      "athletesessionspeedzone_distance_4": {
+        "unit": "distance",
+        "value": 220.20996093749997
+      },
+      "athletesessionspeedzone_distance_5": {
+        "unit": "distance",
+        "value": 38.44946289062501
+      },
+      "max_values_speed": { "unit": "speed", "value": 7.86576999307246 },
+      "speed_events": { "unit": "number", "value": 4 },
+      "acceleration_events": { "unit": "number", "value": 15 },
+      "deceleration_events": { "unit": "number", "value": 22 },
+      "eccentric_index": { "unit": "number", "value": -39.57691192626953 },
+      "athletesessionpowerzone_distance_1": {
+        "unit": "distance",
+        "value": 5241.070983886719
+      },
+      "athletesessionpowerzone_distance_2": {
+        "unit": "distance",
+        "value": 738.6900634765625
+      },
+      "athletesessionpowerzone_distance_3": {
+        "unit": "distance",
+        "value": 153.29077148437497
+      },
+      "average_p": { "unit": "power", "value": 6.688129882197765 },
+      "max_values_power": { "unit": "power", "value": 91.58384113830192 },
+      "equivalent_distance_index": {
+        "unit": "percentage1",
+        "value": 0.13974187280682204
+      },
+      "equivalent_distance": { "unit": "distance", "value": 6989.984802246094 },
+      "total_energy": { "unit": "energy", "value": 27521.577270507812 },
+      "anaerobic_energy": { "unit": "energy", "value": 11245.032923752839 },
+      "anaerobic_index": { "unit": "percentage", "value": 0.40858969721197785 },
+      "aerobic_ratio": { "unit": "percentage", "value": 0.35944804096369215 },
+      "average_power_aer": { "unit": "power", "value": 6.598858071542639 },
+      "power_events": { "unit": "number", "value": 90 },
+      "power_events_avg_time": {
+        "unit": "duration",
+        "value": 6.137997699846451
+      },
+      "power_events_avg_power": {
+        "unit": "power",
+        "value": 22.409164322747124
+      },
+      "recovery_average_time": {
+        "unit": "duration",
+        "value": 35.27290813014334
+      },
+      "recovery_average_power": { "unit": "power", "value": 4.039680976955691 },
+      "athletesessionpowereventdurationzone_events_1": {
+        "unit": "number",
+        "value": 34
+      },
+      "athletesessionpowereventdurationzone_events_2": {
+        "unit": "number",
+        "value": 51
+      },
+      "athletesessionpowereventdurationzone_events_3": {
+        "unit": "number",
+        "value": 5
+      },
+      "athletesessionpowereventdistancezone_events_1": {
+        "unit": "number",
+        "value": 26
+      },
+      "athletesessionpowereventdistancezone_events_2": {
+        "unit": "number",
+        "value": 50
+      },
+      "athletesessionpowereventdistancezone_events_3": {
+        "unit": "number",
+        "value": 14
+      },
+      "athletesessionpowereventmaxspeedzone_events_1": {
+        "unit": "number",
+        "value": 16
+      },
+      "athletesessionpowereventmaxspeedzone_events_2": {
+        "unit": "number",
+        "value": 54
+      },
+      "athletesessionpowereventmaxspeedzone_events_3": {
+        "unit": "number",
+        "value": 20
+      },
+      "external_work": { "unit": "energy", "value": 6365.84326171875 },
+      "ext_work_over": { "unit": "energy", "value": 73.39971923828125 },
+      "ext_work_over_neg": { "unit": "energy", "value": 169.55284118652344 },
+      "tot_brake_events": { "unit": "number", "value": 18 },
+      "tot_burst_events": { "unit": "number", "value": 6 },
+      "average_external_power": {
+        "unit": "power",
+        "value": 1.5469892024993896
+      },
+      "ext_work_over_zone0": { "unit": "energy", "value": 12.414813995361328 },
+      "ext_work_over_zone1": { "unit": "energy", "value": 49.477783203125 },
+      "ext_work_over_zone2": { "unit": "energy", "value": 11.507118225097656 },
+      "ext_work_over_zone0_neg": {
+        "unit": "energy",
+        "value": 45.98823547363281
+      },
+      "ext_work_over_zone1_neg": {
+        "unit": "energy",
+        "value": 100.8907699584961
+      },
+      "ext_work_over_zone2_neg": {
+        "unit": "energy",
+        "value": 22.67390251159668
+      },
+      "average_hr": { "unit": "hr", "value": 149.9561026893197 },
+      "average_hr_percentual": {
+        "unit": "percentage",
+        "value": 0.6290636551700678
+      },
+      "max_values_cardio": { "unit": "hr", "value": 181.3831329345703 },
+      "max_values_cardio_percentual": {
+        "unit": "percentage",
+        "value": 0.8488330974445476
+      },
+      "athletesessionheartratezone_time_2": { "unit": "time", "value": 0 },
+      "athletesessionheartratezone_time_3": { "unit": "time", "value": 0 }
+    },
+    "2842": {
+      "athlete_session_id": 1745320,
+      "athlete": {
+        "id": 2842,
+        "name": "БИКФАЛВИ ЭРИК",
+        "last_name": "БИКФАЛВИ",
+        "first_name": "ЭРИК",
+        "birthdate": "1988-02-05",
+        "club": 115,
+        "picture": null,
+        "custom_id": null,
+        "v0": 8.797222222222222,
+        "a0": 6.56,
+        "short_name": "ЭРК"
+      },
+      "average_time": { "unit": "time", "value": 4115 },
+      "total_distance": { "unit": "distance", "value": 5922.000862121582 },
+      "average_v": { "unit": "speed", "value": 1.439090692915029 },
+      "athletesessionspeedzone_distance_1": {
+        "unit": "distance",
+        "value": 3845.53042602539
+      },
+      "athletesessionspeedzone_distance_2": {
+        "unit": "distance",
+        "value": 1342.6598205566406
+      },
+      "athletesessionspeedzone_distance_3": {
+        "unit": "distance",
+        "value": 568.6805419921875
+      },
+      "athletesessionspeedzone_distance_4": {
+        "unit": "distance",
+        "value": 154.81652832031253
+      },
+      "athletesessionspeedzone_distance_5": {
+        "unit": "distance",
+        "value": 10.349853515625
+      },
+      "max_values_speed": { "unit": "speed", "value": 7.448510092791457 },
+      "speed_events": { "unit": "number", "value": 1 },
+      "acceleration_events": { "unit": "number", "value": 3 },
+      "deceleration_events": { "unit": "number", "value": 23 },
+      "eccentric_index": { "unit": "number", "value": -63.771522521972656 },
+      "athletesessionpowerzone_distance_1": {
+        "unit": "distance",
+        "value": 5166.9969482421875
+      },
+      "athletesessionpowerzone_distance_2": {
+        "unit": "distance",
+        "value": 683.1659545898438
+      },
+      "athletesessionpowerzone_distance_3": {
+        "unit": "distance",
+        "value": 71.874267578125
+      },
+      "average_p": { "unit": "power", "value": 6.148398859376351 },
+      "max_values_power": { "unit": "power", "value": 71.80399240822086 },
+      "equivalent_distance_index": {
+        "unit": "percentage1",
+        "value": 0.11844059084037561
+      },
+      "equivalent_distance": { "unit": "distance", "value": 6623.406143188477 },
+      "total_energy": { "unit": "energy", "value": 25301.27081298828 },
+      "anaerobic_energy": { "unit": "energy", "value": 9756.585787998092 },
+      "anaerobic_index": { "unit": "percentage", "value": 0.3856164324753837 },
+      "aerobic_ratio": { "unit": "percentage", "value": 0.3304406409553754 },
+      "average_power_aer": { "unit": "power", "value": 6.065574268419189 },
+      "power_events": { "unit": "number", "value": 71 },
+      "power_events_avg_time": {
+        "unit": "duration",
+        "value": 6.754928153599765
+      },
+      "power_events_avg_power": {
+        "unit": "power",
+        "value": 20.656157130926427
+      },
+      "recovery_average_time": {
+        "unit": "duration",
+        "value": 42.75934812965392
+      },
+      "recovery_average_power": {
+        "unit": "power",
+        "value": 4.0474834178105015
+      },
+      "athletesessionpowereventdurationzone_events_1": {
+        "unit": "number",
+        "value": 23
+      },
+      "athletesessionpowereventdurationzone_events_2": {
+        "unit": "number",
+        "value": 37
+      },
+      "athletesessionpowereventdurationzone_events_3": {
+        "unit": "number",
+        "value": 11
+      },
+      "athletesessionpowereventdistancezone_events_1": {
+        "unit": "number",
+        "value": 19
+      },
+      "athletesessionpowereventdistancezone_events_2": {
+        "unit": "number",
+        "value": 34
+      },
+      "athletesessionpowereventdistancezone_events_3": {
+        "unit": "number",
+        "value": 18
+      },
+      "athletesessionpowereventmaxspeedzone_events_1": {
+        "unit": "number",
+        "value": 15
+      },
+      "athletesessionpowereventmaxspeedzone_events_2": {
+        "unit": "number",
+        "value": 42
+      },
+      "athletesessionpowereventmaxspeedzone_events_3": {
+        "unit": "number",
+        "value": 14
+      },
+      "external_work": { "unit": "energy", "value": 5774.943359375 },
+      "ext_work_over": { "unit": "energy", "value": 56.198516845703125 },
+      "ext_work_over_neg": { "unit": "energy", "value": 254.0464324951172 },
+      "tot_brake_events": { "unit": "number", "value": 24 },
+      "tot_burst_events": { "unit": "number", "value": 7 },
+      "average_external_power": {
+        "unit": "power",
+        "value": 1.4033546447753906
+      },
+      "ext_work_over_zone0": { "unit": "energy", "value": 8.08548641204834 },
+      "ext_work_over_zone1": { "unit": "energy", "value": 35.7019157409668 },
+      "ext_work_over_zone2": { "unit": "energy", "value": 12.411120414733887 },
+      "ext_work_over_zone0_neg": {
+        "unit": "energy",
+        "value": 48.30804443359375
+      },
+      "ext_work_over_zone1_neg": {
+        "unit": "energy",
+        "value": 179.2570343017578
+      },
+      "ext_work_over_zone2_neg": {
+        "unit": "energy",
+        "value": 26.481395721435547
+      },
+      "average_hr": { "unit": "hr", "value": 128.68076930276789 },
+      "average_hr_percentual": {
+        "unit": "percentage",
+        "value": 0.5676096636592387
+      },
+      "max_values_cardio": { "unit": "hr", "value": 171.963623046875 },
+      "max_values_cardio_percentual": {
+        "unit": "percentage",
+        "value": 0.9253191987345041
+      },
+      "athletesessionheartratezone_time_2": {
+        "unit": "time",
+        "value": 185.34996093025413
+      },
+      "athletesessionheartratezone_time_3": { "unit": "time", "value": 0 }
+    },
+    "2846": {
+      "athlete_session_id": 1745308,
+      "athlete": {
+        "id": 2846,
+        "name": "МОСИН ЕГОР",
+        "last_name": "МОСИН",
+        "first_name": "ЕГОР",
+        "birthdate": "2003-08-31",
+        "club": 115,
+        "picture": null,
+        "custom_id": null,
+        "v0": 9.375,
+        "a0": 7.26,
+        "short_name": "МОС"
+      },
+      "average_time": { "unit": "time", "value": 4115 },
+      "total_distance": { "unit": "distance", "value": 6539.845916748047 },
+      "average_v": { "unit": "speed", "value": 1.5892950719143915 },
+      "athletesessionspeedzone_distance_1": {
+        "unit": "distance",
+        "value": 3263.178344726563
+      },
+      "athletesessionspeedzone_distance_2": {
+        "unit": "distance",
+        "value": 1989.1302185058594
+      },
+      "athletesessionspeedzone_distance_3": {
+        "unit": "distance",
+        "value": 860.9046630859375
+      },
+      "athletesessionspeedzone_distance_4": {
+        "unit": "distance",
+        "value": 299.15624999999994
+      },
+      "athletesessionspeedzone_distance_5": {
+        "unit": "distance",
+        "value": 127.50598144531249
+      },
+      "max_values_speed": { "unit": "speed", "value": 8.833451704545453 },
+      "speed_events": { "unit": "number", "value": 8 },
+      "acceleration_events": { "unit": "number", "value": 32 },
+      "deceleration_events": { "unit": "number", "value": 38 },
+      "eccentric_index": { "unit": "number", "value": -15.202069282531738 },
+      "athletesessionpowerzone_distance_1": {
+        "unit": "distance",
+        "value": 5347.934112548829
+      },
+      "athletesessionpowerzone_distance_2": {
+        "unit": "distance",
+        "value": 942.4172973632814
+      },
+      "athletesessionpowerzone_distance_3": {
+        "unit": "distance",
+        "value": 249.52404785156247
+      },
+      "average_p": { "unit": "power", "value": 7.587474864450509 },
+      "max_values_power": { "unit": "power", "value": 97.29225852272727 },
+      "equivalent_distance_index": {
+        "unit": "percentage1",
+        "value": 0.1679337056350929
+      },
+      "equivalent_distance": { "unit": "distance", "value": 7638.106475830078 },
+      "total_energy": { "unit": "energy", "value": 31221.965881347656 },
+      "anaerobic_energy": { "unit": "energy", "value": 12457.998302637603 },
+      "anaerobic_index": { "unit": "percentage", "value": 0.3990138977789399 },
+      "aerobic_ratio": { "unit": "percentage", "value": 0.40778259751615065 },
+      "average_power_aer": { "unit": "power", "value": 7.5213647100205945 },
+      "power_events": { "unit": "number", "value": 105 },
+      "power_events_avg_time": {
+        "unit": "duration",
+        "value": 6.707380952380953
+      },
+      "power_events_avg_power": { "unit": "power", "value": 22.81278201511928 },
+      "recovery_average_time": {
+        "unit": "duration",
+        "value": 30.181250000000002
+      },
+      "recovery_average_power": { "unit": "power", "value": 4.239423375599343 },
+      "athletesessionpowereventdurationzone_events_1": {
+        "unit": "number",
+        "value": 40
+      },
+      "athletesessionpowereventdurationzone_events_2": {
+        "unit": "number",
+        "value": 51
+      },
+      "athletesessionpowereventdurationzone_events_3": {
+        "unit": "number",
+        "value": 14
+      },
+      "athletesessionpowereventdistancezone_events_1": {
+        "unit": "number",
+        "value": 38
+      },
+      "athletesessionpowereventdistancezone_events_2": {
+        "unit": "number",
+        "value": 42
+      },
+      "athletesessionpowereventdistancezone_events_3": {
+        "unit": "number",
+        "value": 25
+      },
+      "athletesessionpowereventmaxspeedzone_events_1": {
+        "unit": "number",
+        "value": 20
+      },
+      "athletesessionpowereventmaxspeedzone_events_2": {
+        "unit": "number",
+        "value": 58
+      },
+      "athletesessionpowereventmaxspeedzone_events_3": {
+        "unit": "number",
+        "value": 27
+      },
+      "external_work": { "unit": "energy", "value": 7352.5830078125 },
+      "ext_work_over": { "unit": "energy", "value": 303.597412109375 },
+      "ext_work_over_neg": { "unit": "energy", "value": 412.4516906738281 },
+      "tot_brake_events": { "unit": "number", "value": 35 },
+      "tot_burst_events": { "unit": "number", "value": 30 },
+      "average_external_power": { "unit": "power", "value": 1.78680419921875 },
+      "ext_work_over_zone0": { "unit": "energy", "value": 58.679710388183594 },
+      "ext_work_over_zone1": { "unit": "energy", "value": 120.10482025146484 },
+      "ext_work_over_zone2": { "unit": "energy", "value": 124.81287384033203 },
+      "ext_work_over_zone0_neg": {
+        "unit": "energy",
+        "value": 78.04924774169922
+      },
+      "ext_work_over_zone1_neg": {
+        "unit": "energy",
+        "value": 227.4725799560547
+      },
+      "ext_work_over_zone2_neg": {
+        "unit": "energy",
+        "value": 106.92976379394531
+      },
+      "average_hr": { "unit": "hr", "value": null },
+      "average_hr_percentual": { "unit": "percentage", "value": null },
+      "max_values_cardio": { "unit": "hr", "value": null },
+      "max_values_cardio_percentual": { "unit": "percentage", "value": null },
+      "athletesessionheartratezone_time_2": { "unit": "time", "value": null },
+      "athletesessionheartratezone_time_3": { "unit": "time", "value": null }
+    },
+    "3930": {
+      "athlete_session_id": 1745305,
+      "athlete": {
+        "id": 3930,
+        "name": "БУРКИН ДМИТРИЙ",
+        "last_name": "БУРКИН",
+        "first_name": "ДМИТРИЙ",
+        "birthdate": "2002-02-04",
+        "club": 115,
+        "picture": null,
+        "custom_id": null,
+        "v0": 9.333333333333334,
+        "a0": 6.8,
+        "short_name": "БУР"
+      },
+      "average_time": { "unit": "time", "value": 4115 },
+      "total_distance": { "unit": "distance", "value": 6362.670104980469 },
+      "average_v": { "unit": "speed", "value": 1.5462380065475907 },
+      "athletesessionspeedzone_distance_1": {
+        "unit": "distance",
+        "value": 3827.632141113281
+      },
+      "athletesessionspeedzone_distance_2": {
+        "unit": "distance",
+        "value": 1480.889404296875
+      },
+      "athletesessionspeedzone_distance_3": {
+        "unit": "distance",
+        "value": 634.605224609375
+      },
+      "athletesessionspeedzone_distance_4": {
+        "unit": "distance",
+        "value": 325.6820068359375
+      },
+      "athletesessionspeedzone_distance_5": {
+        "unit": "distance",
+        "value": 93.90771484374999
+      },
+      "max_values_speed": { "unit": "speed", "value": 8.815694341371241 },
+      "speed_events": { "unit": "number", "value": 9 },
+      "acceleration_events": { "unit": "number", "value": 23 },
+      "deceleration_events": { "unit": "number", "value": 28 },
+      "eccentric_index": { "unit": "number", "value": -19.76209831237793 },
+      "athletesessionpowerzone_distance_1": {
+        "unit": "distance",
+        "value": 5372.511657714843
+      },
+      "athletesessionpowerzone_distance_2": {
+        "unit": "distance",
+        "value": 773.9459228515626
+      },
+      "athletesessionpowerzone_distance_3": {
+        "unit": "distance",
+        "value": 216.2589111328125
+      },
+      "average_p": { "unit": "power", "value": 6.920078780977854 },
+      "max_values_power": { "unit": "power", "value": 106.35651380627137 },
+      "equivalent_distance_index": {
+        "unit": "percentage1",
+        "value": 0.14992667295672502
+      },
+      "equivalent_distance": { "unit": "distance", "value": 7316.604064941406 },
+      "total_energy": { "unit": "energy", "value": 28475.679809570312 },
+      "anaerobic_energy": { "unit": "energy", "value": 11560.746940141902 },
+      "anaerobic_index": { "unit": "percentage", "value": 0.4059866882003808 },
+      "aerobic_ratio": { "unit": "percentage", "value": 0.3719139438003147 },
+      "average_power_aer": { "unit": "power", "value": 6.825500606110476 },
+      "power_events": { "unit": "number", "value": 82 },
+      "power_events_avg_time": {
+        "unit": "duration",
+        "value": 7.001098896246225
+      },
+      "power_events_avg_power": { "unit": "power", "value": 22.91614470830778 },
+      "recovery_average_time": {
+        "unit": "duration",
+        "value": 38.73562467172533
+      },
+      "recovery_average_power": { "unit": "power", "value": 4.066942782368415 },
+      "athletesessionpowereventdurationzone_events_1": {
+        "unit": "number",
+        "value": 35
+      },
+      "athletesessionpowereventdurationzone_events_2": {
+        "unit": "number",
+        "value": 31
+      },
+      "athletesessionpowereventdurationzone_events_3": {
+        "unit": "number",
+        "value": 16
+      },
+      "athletesessionpowereventdistancezone_events_1": {
+        "unit": "number",
+        "value": 29
+      },
+      "athletesessionpowereventdistancezone_events_2": {
+        "unit": "number",
+        "value": 31
+      },
+      "athletesessionpowereventdistancezone_events_3": {
+        "unit": "number",
+        "value": 22
+      },
+      "athletesessionpowereventmaxspeedzone_events_1": {
+        "unit": "number",
+        "value": 15
+      },
+      "athletesessionpowereventmaxspeedzone_events_2": {
+        "unit": "number",
+        "value": 42
+      },
+      "athletesessionpowereventmaxspeedzone_events_3": {
+        "unit": "number",
+        "value": 25
+      },
+      "external_work": { "unit": "energy", "value": 6457.89501953125 },
+      "ext_work_over": { "unit": "energy", "value": 277.4120178222656 },
+      "ext_work_over_neg": { "unit": "energy", "value": 414.06182861328125 },
+      "tot_brake_events": { "unit": "number", "value": 36 },
+      "tot_burst_events": { "unit": "number", "value": 29 },
+      "average_external_power": { "unit": "power", "value": 1.569379210472107 },
+      "ext_work_over_zone0": { "unit": "energy", "value": 48.41241455078125 },
+      "ext_work_over_zone1": { "unit": "energy", "value": 169.1783447265625 },
+      "ext_work_over_zone2": { "unit": "energy", "value": 59.821285247802734 },
+      "ext_work_over_zone0_neg": {
+        "unit": "energy",
+        "value": 97.49969482421875
+      },
+      "ext_work_over_zone1_neg": {
+        "unit": "energy",
+        "value": 237.5446319580078
+      },
+      "ext_work_over_zone2_neg": {
+        "unit": "energy",
+        "value": 79.01761627197266
+      },
+      "average_hr": { "unit": "hr", "value": 159.03019379329837 },
+      "average_hr_percentual": {
+        "unit": "percentage",
+        "value": 0.6877096791201276
+      },
+      "max_values_cardio": { "unit": "hr", "value": 193.89425659179688 },
+      "max_values_cardio_percentual": {
+        "unit": "percentage",
+        "value": 0.9298212263319228
+      },
+      "athletesessionheartratezone_time_2": {
+        "unit": "time",
+        "value": 407.7700777711343
+      },
+      "athletesessionheartratezone_time_3": { "unit": "time", "value": 0 }
+    },
+    "5660": {
+      "athlete_session_id": 1745304,
+      "athlete": {
+        "id": 5660,
+        "name": "БОЧЕРОВ ВАЛЕРИЙ",
+        "last_name": "БОЧЕРОВ",
+        "first_name": "ВАЛЕРИЙ",
+        "birthdate": "2000-08-10",
+        "club": 115,
+        "picture": null,
+        "custom_id": null,
+        "v0": 8.677777777777777,
+        "a0": 7.7,
+        "short_name": "БОЧ"
+      },
+      "average_time": { "unit": "time", "value": 4115 },
+      "total_distance": { "unit": "distance", "value": 6222.630157470703 },
+      "average_v": { "unit": "speed", "value": 1.5122061849022408 },
+      "athletesessionspeedzone_distance_1": {
+        "unit": "distance",
+        "value": 3703.674468994141
+      },
+      "athletesessionspeedzone_distance_2": {
+        "unit": "distance",
+        "value": 1806.5917358398438
+      },
+      "athletesessionspeedzone_distance_3": {
+        "unit": "distance",
+        "value": 570.0801391601562
+      },
+      "athletesessionspeedzone_distance_4": {
+        "unit": "distance",
+        "value": 130.51708984375
+      },
+      "athletesessionspeedzone_distance_5": {
+        "unit": "distance",
+        "value": 11.78662109375
+      },
+      "max_values_speed": { "unit": "speed", "value": 7.421874999999999 },
+      "speed_events": { "unit": "number", "value": 2 },
+      "acceleration_events": { "unit": "number", "value": 13 },
+      "deceleration_events": { "unit": "number", "value": 15 },
+      "eccentric_index": { "unit": "number", "value": -28.465354919433594 },
+      "athletesessionpowerzone_distance_1": {
+        "unit": "distance",
+        "value": 5470.869659423829
+      },
+      "athletesessionpowerzone_distance_2": {
+        "unit": "distance",
+        "value": 674.912109375
+      },
+      "athletesessionpowerzone_distance_3": {
+        "unit": "distance",
+        "value": 76.8682861328125
+      },
+      "average_p": { "unit": "power", "value": 6.694791790548483 },
+      "max_values_power": { "unit": "power", "value": 81.71164772727272 },
+      "equivalent_distance_index": {
+        "unit": "percentage1",
+        "value": 0.11935717323045703
+      },
+      "equivalent_distance": { "unit": "distance", "value": 6965.345703125 },
+      "total_energy": { "unit": "energy", "value": 27548.633056640625 },
+      "anaerobic_energy": { "unit": "energy", "value": 10252.97356045507 },
+      "anaerobic_index": { "unit": "percentage", "value": 0.3721772161752897 },
+      "aerobic_ratio": { "unit": "percentage", "value": 0.35980607975000806 },
+      "average_power_aer": { "unit": "power", "value": 6.611317544547515 },
+      "power_events": { "unit": "number", "value": 85 },
+      "power_events_avg_time": {
+        "unit": "duration",
+        "value": 6.356705882352942
+      },
+      "power_events_avg_power": { "unit": "power", "value": 20.16604065614588 },
+      "recovery_average_time": {
+        "unit": "duration",
+        "value": 40.61750000000001
+      },
+      "recovery_average_power": { "unit": "power", "value": 4.414140954273242 },
+      "athletesessionpowereventdurationzone_events_1": {
+        "unit": "number",
+        "value": 32
+      },
+      "athletesessionpowereventdurationzone_events_2": {
+        "unit": "number",
+        "value": 44
+      },
+      "athletesessionpowereventdurationzone_events_3": {
+        "unit": "number",
+        "value": 9
+      },
+      "athletesessionpowereventdistancezone_events_1": {
+        "unit": "number",
+        "value": 29
+      },
+      "athletesessionpowereventdistancezone_events_2": {
+        "unit": "number",
+        "value": 44
+      },
+      "athletesessionpowereventdistancezone_events_3": {
+        "unit": "number",
+        "value": 12
+      },
+      "athletesessionpowereventmaxspeedzone_events_1": {
+        "unit": "number",
+        "value": 23
+      },
+      "athletesessionpowereventmaxspeedzone_events_2": {
+        "unit": "number",
+        "value": 51
+      },
+      "athletesessionpowereventmaxspeedzone_events_3": {
+        "unit": "number",
+        "value": 11
+      },
+      "external_work": { "unit": "energy", "value": 6428.84521484375 },
+      "ext_work_over": { "unit": "energy", "value": 46.76325607299805 },
+      "ext_work_over_neg": { "unit": "energy", "value": 83.97970581054688 },
+      "tot_brake_events": { "unit": "number", "value": 11 },
+      "tot_burst_events": { "unit": "number", "value": 7 },
+      "average_external_power": {
+        "unit": "power",
+        "value": 1.5623199939727783
+      },
+      "ext_work_over_zone0": { "unit": "energy", "value": 2.279494524002075 },
+      "ext_work_over_zone1": { "unit": "energy", "value": 21.740745544433594 },
+      "ext_work_over_zone2": { "unit": "energy", "value": 22.743009567260742 },
+      "ext_work_over_zone0_neg": {
+        "unit": "energy",
+        "value": 18.69249725341797
+      },
+      "ext_work_over_zone1_neg": {
+        "unit": "energy",
+        "value": 44.028446197509766
+      },
+      "ext_work_over_zone2_neg": {
+        "unit": "energy",
+        "value": 21.258773803710938
+      },
+      "average_hr": { "unit": "hr", "value": null },
+      "average_hr_percentual": { "unit": "percentage", "value": null },
+      "max_values_cardio": { "unit": "hr", "value": null },
+      "max_values_cardio_percentual": { "unit": "percentage", "value": null },
+      "athletesessionheartratezone_time_2": { "unit": "time", "value": null },
+      "athletesessionheartratezone_time_3": { "unit": "time", "value": null }
+    },
+    "5905": {
+      "athlete_session_id": 1745302,
+      "athlete": {
+        "id": 5905,
+        "name": "ИОНОВ АЛЕКСЕЙ",
+        "last_name": "ИОНОВ",
+        "first_name": "АЛЕКСЕЙ",
+        "birthdate": "1989-02-18",
+        "club": 115,
+        "picture": null,
+        "custom_id": null,
+        "v0": 9.53888888888889,
+        "a0": 6.36,
+        "short_name": "ИОН"
+      },
+      "average_time": { "unit": "time", "value": 4115 },
+      "total_distance": { "unit": "distance", "value": 6028.081497192383 },
+      "average_v": { "unit": "speed", "value": 1.464907933480369 },
+      "athletesessionspeedzone_distance_1": {
+        "unit": "distance",
+        "value": 3771.716690063476
+      },
+      "athletesessionspeedzone_distance_2": {
+        "unit": "distance",
+        "value": 1142.3962707519531
+      },
+      "athletesessionspeedzone_distance_3": {
+        "unit": "distance",
+        "value": 688.6365966796875
+      },
+      "athletesessionspeedzone_distance_4": {
+        "unit": "distance",
+        "value": 330.8013916015625
+      },
+      "athletesessionspeedzone_distance_5": {
+        "unit": "distance",
+        "value": 94.630859375
+      },
+      "max_values_speed": { "unit": "speed", "value": 8.212002840909092 },
+      "speed_events": { "unit": "number", "value": 5 },
+      "acceleration_events": { "unit": "number", "value": 21 },
+      "deceleration_events": { "unit": "number", "value": 25 },
+      "eccentric_index": { "unit": "number", "value": -18.110774993896484 },
+      "athletesessionpowerzone_distance_1": {
+        "unit": "distance",
+        "value": 5054.111557006836
+      },
+      "athletesessionpowerzone_distance_2": {
+        "unit": "distance",
+        "value": 746.8832397460938
+      },
+      "athletesessionpowerzone_distance_3": {
+        "unit": "distance",
+        "value": 227.18701171875
+      },
+      "average_p": { "unit": "power", "value": 6.338474181841306 },
+      "max_values_power": { "unit": "power", "value": 81.34765625 },
+      "equivalent_distance_index": {
+        "unit": "percentage1",
+        "value": 0.14018540428519977
+      },
+      "equivalent_distance": { "unit": "distance", "value": 6873.13053894043 },
+      "total_energy": { "unit": "energy", "value": 26082.757873535156 },
+      "anaerobic_energy": { "unit": "energy", "value": 10668.269358297352 },
+      "anaerobic_index": { "unit": "percentage", "value": 0.40901615580773765 },
+      "aerobic_ratio": { "unit": "percentage", "value": 0.34065608286499316 },
+      "average_power_aer": { "unit": "power", "value": 6.242752655836005 },
+      "power_events": { "unit": "number", "value": 85 },
+      "power_events_avg_time": {
+        "unit": "duration",
+        "value": 6.576705882352941
+      },
+      "power_events_avg_power": {
+        "unit": "power",
+        "value": 22.584785506304573
+      },
+      "recovery_average_time": {
+        "unit": "duration",
+        "value": 34.95446428571429
+      },
+      "recovery_average_power": {
+        "unit": "power",
+        "value": 3.4645560038517376
+      },
+      "athletesessionpowereventdurationzone_events_1": {
+        "unit": "number",
+        "value": 34
+      },
+      "athletesessionpowereventdurationzone_events_2": {
+        "unit": "number",
+        "value": 36
+      },
+      "athletesessionpowereventdurationzone_events_3": {
+        "unit": "number",
+        "value": 15
+      },
+      "athletesessionpowereventdistancezone_events_1": {
+        "unit": "number",
+        "value": 30
+      },
+      "athletesessionpowereventdistancezone_events_2": {
+        "unit": "number",
+        "value": 35
+      },
+      "athletesessionpowereventdistancezone_events_3": {
+        "unit": "number",
+        "value": 20
+      },
+      "athletesessionpowereventmaxspeedzone_events_1": {
+        "unit": "number",
+        "value": 21
+      },
+      "athletesessionpowereventmaxspeedzone_events_2": {
+        "unit": "number",
+        "value": 36
+      },
+      "athletesessionpowereventmaxspeedzone_events_3": {
+        "unit": "number",
+        "value": 28
+      },
+      "external_work": { "unit": "energy", "value": 5887.75537109375 },
+      "ext_work_over": { "unit": "energy", "value": 294.2028503417969 },
+      "ext_work_over_neg": { "unit": "energy", "value": 424.3357238769531 },
+      "tot_brake_events": { "unit": "number", "value": 28 },
+      "tot_burst_events": { "unit": "number", "value": 32 },
+      "average_external_power": {
+        "unit": "power",
+        "value": 1.4308067560195923
+      },
+      "ext_work_over_zone0": { "unit": "energy", "value": 97.6732406616211 },
+      "ext_work_over_zone1": { "unit": "energy", "value": 123.66480255126953 },
+      "ext_work_over_zone2": { "unit": "energy", "value": 72.86485290527344 },
+      "ext_work_over_zone0_neg": {
+        "unit": "energy",
+        "value": 64.95628356933594
+      },
+      "ext_work_over_zone1_neg": {
+        "unit": "energy",
+        "value": 283.97479248046875
+      },
+      "ext_work_over_zone2_neg": {
+        "unit": "energy",
+        "value": 75.40473175048828
+      },
+      "average_hr": { "unit": "hr", "value": 114.29034933513243 },
+      "average_hr_percentual": {
+        "unit": "percentage",
+        "value": 0.4525980865277285
+      },
+      "max_values_cardio": { "unit": "hr", "value": 172.88510131835938 },
+      "max_values_cardio_percentual": {
+        "unit": "percentage",
+        "value": 0.8998862696057968
+      },
+      "athletesessionheartratezone_time_2": {
+        "unit": "time",
+        "value": 13.915000000000001
+      },
+      "athletesessionheartratezone_time_3": { "unit": "time", "value": 0 }
+    },
+    "6234": {
+      "athlete_session_id": 1745314,
+      "athlete": {
+        "id": 6234,
+        "name": "ЧУДИН ИВАН",
+        "last_name": "ЧУДИН",
+        "first_name": "ИВАН",
+        "birthdate": "1990-03-07",
+        "club": 115,
+        "picture": null,
+        "custom_id": "",
+        "v0": 8.780555555555555,
+        "a0": 7.26,
+        "short_name": "ЧУД"
+      },
+      "average_time": { "unit": "time", "value": 4115 },
+      "total_distance": { "unit": "distance", "value": 6092.906280517578 },
+      "average_v": { "unit": "speed", "value": 1.48062199042185 },
+      "athletesessionspeedzone_distance_1": {
+        "unit": "distance",
+        "value": 3399.2184448242188
+      },
+      "athletesessionspeedzone_distance_2": {
+        "unit": "distance",
+        "value": 1649.8264465332031
+      },
+      "athletesessionspeedzone_distance_3": {
+        "unit": "distance",
+        "value": 833.4436645507812
+      },
+      "athletesessionspeedzone_distance_4": {
+        "unit": "distance",
+        "value": 197.88720703125
+      },
+      "athletesessionspeedzone_distance_5": {
+        "unit": "distance",
+        "value": 12.5694580078125
+      },
+      "max_values_speed": { "unit": "speed", "value": 7.337537043523599 },
+      "speed_events": { "unit": "number", "value": 2 },
+      "acceleration_events": { "unit": "number", "value": 17 },
+      "deceleration_events": { "unit": "number", "value": 31 },
+      "eccentric_index": { "unit": "number", "value": -45.93207931518555 },
+      "athletesessionpowerzone_distance_1": {
+        "unit": "distance",
+        "value": 5122.346099853516
+      },
+      "athletesessionpowerzone_distance_2": {
+        "unit": "distance",
+        "value": 836.0040283203125
+      },
+      "athletesessionpowerzone_distance_3": {
+        "unit": "distance",
+        "value": 134.5950927734375
+      },
+      "average_p": { "unit": "power", "value": 6.737062962225131 },
+      "max_values_power": { "unit": "power", "value": 86.3281430262837 },
+      "equivalent_distance_index": {
+        "unit": "percentage1",
+        "value": 0.14830652033437342
+      },
+      "equivalent_distance": { "unit": "distance", "value": 6996.52400970459 },
+      "total_energy": { "unit": "energy", "value": 27723.682006835938 },
+      "anaerobic_energy": { "unit": "energy", "value": 11238.906692857923 },
+      "anaerobic_index": { "unit": "percentage", "value": 0.4053901170157233 },
+      "aerobic_ratio": { "unit": "percentage", "value": 0.36207790911278026 },
+      "average_power_aer": { "unit": "power", "value": 6.6707075576937465 },
+      "power_events": { "unit": "number", "value": 90 },
+      "power_events_avg_time": {
+        "unit": "duration",
+        "value": 7.3443317997542295
+      },
+      "power_events_avg_power": {
+        "unit": "power",
+        "value": 20.853530173831516
+      },
+      "recovery_average_time": {
+        "unit": "duration",
+        "value": 34.17353219002472
+      },
+      "recovery_average_power": {
+        "unit": "power",
+        "value": 3.7332634028901284
+      },
+      "athletesessionpowereventdurationzone_events_1": {
+        "unit": "number",
+        "value": 25
+      },
+      "athletesessionpowereventdurationzone_events_2": {
+        "unit": "number",
+        "value": 47
+      },
+      "athletesessionpowereventdurationzone_events_3": {
+        "unit": "number",
+        "value": 18
+      },
+      "athletesessionpowereventdistancezone_events_1": {
+        "unit": "number",
+        "value": 23
+      },
+      "athletesessionpowereventdistancezone_events_2": {
+        "unit": "number",
+        "value": 43
+      },
+      "athletesessionpowereventdistancezone_events_3": {
+        "unit": "number",
+        "value": 24
+      },
+      "athletesessionpowereventmaxspeedzone_events_1": {
+        "unit": "number",
+        "value": 15
+      },
+      "athletesessionpowereventmaxspeedzone_events_2": {
+        "unit": "number",
+        "value": 57
+      },
+      "athletesessionpowereventmaxspeedzone_events_3": {
+        "unit": "number",
+        "value": 18
+      },
+      "external_work": { "unit": "energy", "value": 6484.6982421875 },
+      "ext_work_over": { "unit": "energy", "value": 81.55381774902344 },
+      "ext_work_over_neg": { "unit": "energy", "value": 220.11798095703125 },
+      "tot_brake_events": { "unit": "number", "value": 18 },
+      "tot_burst_events": { "unit": "number", "value": 15 },
+      "average_external_power": { "unit": "power", "value": 1.575830340385437 },
+      "ext_work_over_zone0": { "unit": "energy", "value": 30.39328384399414 },
+      "ext_work_over_zone1": { "unit": "energy", "value": 31.885072708129883 },
+      "ext_work_over_zone2": { "unit": "energy", "value": 19.27546501159668 },
+      "ext_work_over_zone0_neg": {
+        "unit": "energy",
+        "value": 35.58761215209961
+      },
+      "ext_work_over_zone1_neg": {
+        "unit": "energy",
+        "value": 152.96432495117188
+      },
+      "ext_work_over_zone2_neg": {
+        "unit": "energy",
+        "value": 31.56615447998047
+      },
+      "average_hr": { "unit": "hr", "value": 123.63883168292664 },
+      "average_hr_percentual": {
+        "unit": "percentage",
+        "value": 0.5239605471979133
+      },
+      "max_values_cardio": { "unit": "hr", "value": 163.1444549560547 },
+      "max_values_cardio_percentual": {
+        "unit": "percentage",
+        "value": 0.8255301905042343
+      },
+      "athletesessionheartratezone_time_2": { "unit": "time", "value": 0 },
+      "athletesessionheartratezone_time_3": { "unit": "time", "value": 0 }
+    },
+    "6235": {
+      "athlete_session_id": 1745321,
+      "athlete": {
+        "id": 6235,
+        "name": "МАРГАСОВ ТИМОФЕЙ",
+        "last_name": "МАРГАСОВ",
+        "first_name": "ТИМОФЕЙ",
+        "birthdate": "1992-06-12",
+        "club": 115,
+        "picture": null,
+        "custom_id": "",
+        "v0": 9.249999999999998,
+        "a0": 7,
+        "short_name": "МАР"
+      },
+      "average_time": { "unit": "time", "value": 4115 },
+      "total_distance": { "unit": "distance", "value": 6448.625869750977 },
+      "average_v": { "unit": "speed", "value": 1.5671273625899629 },
+      "athletesessionspeedzone_distance_1": {
+        "unit": "distance",
+        "value": 3650.7361602783203
+      },
+      "athletesessionspeedzone_distance_2": {
+        "unit": "distance",
+        "value": 1585.0137939453125
+      },
+      "athletesessionspeedzone_distance_3": {
+        "unit": "distance",
+        "value": 856.8232421875
+      },
+      "athletesessionspeedzone_distance_4": {
+        "unit": "distance",
+        "value": 283.3094482421875
+      },
+      "athletesessionspeedzone_distance_5": {
+        "unit": "distance",
+        "value": 72.78759765625
+      },
+      "max_values_speed": { "unit": "speed", "value": 7.998936351043937 },
+      "speed_events": { "unit": "number", "value": 5 },
+      "acceleration_events": { "unit": "number", "value": 11 },
+      "deceleration_events": { "unit": "number", "value": 25 },
+      "eccentric_index": { "unit": "number", "value": -57.998966217041016 },
+      "athletesessionpowerzone_distance_1": {
+        "unit": "distance",
+        "value": 5354.630325317383
+      },
+      "athletesessionpowerzone_distance_2": {
+        "unit": "distance",
+        "value": 950.8588867187501
+      },
+      "athletesessionpowerzone_distance_3": {
+        "unit": "distance",
+        "value": 143.18103027343753
+      },
+      "average_p": { "unit": "power", "value": 7.176729449685985 },
+      "max_values_power": { "unit": "power", "value": 78.16052789632721 },
+      "equivalent_distance_index": {
+        "unit": "percentage1",
+        "value": 0.1464178375915155
+      },
+      "equivalent_distance": { "unit": "distance", "value": 7392.819725036621 },
+      "total_energy": { "unit": "energy", "value": 29531.768951416016 },
+      "anaerobic_energy": { "unit": "energy", "value": 11764.370770301206 },
+      "anaerobic_index": { "unit": "percentage", "value": 0.3983632267222217 },
+      "aerobic_ratio": { "unit": "percentage", "value": 0.38570742294980215 },
+      "average_power_aer": { "unit": "power", "value": 7.091968181110551 },
+      "power_events": { "unit": "number", "value": 103 },
+      "power_events_avg_time": {
+        "unit": "duration",
+        "value": 6.459561740454784
+      },
+      "power_events_avg_power": {
+        "unit": "power",
+        "value": 21.602466027713515
+      },
+      "recovery_average_time": {
+        "unit": "duration",
+        "value": 29.7431309635666
+      },
+      "recovery_average_power": { "unit": "power", "value": 3.98137007496385 },
+      "athletesessionpowereventdurationzone_events_1": {
+        "unit": "number",
+        "value": 43
+      },
+      "athletesessionpowereventdurationzone_events_2": {
+        "unit": "number",
+        "value": 46
+      },
+      "athletesessionpowereventdurationzone_events_3": {
+        "unit": "number",
+        "value": 14
+      },
+      "athletesessionpowereventdistancezone_events_1": {
+        "unit": "number",
+        "value": 34
+      },
+      "athletesessionpowereventdistancezone_events_2": {
+        "unit": "number",
+        "value": 48
+      },
+      "athletesessionpowereventdistancezone_events_3": {
+        "unit": "number",
+        "value": 21
+      },
+      "athletesessionpowereventmaxspeedzone_events_1": {
+        "unit": "number",
+        "value": 29
+      },
+      "athletesessionpowereventmaxspeedzone_events_2": {
+        "unit": "number",
+        "value": 50
+      },
+      "athletesessionpowereventmaxspeedzone_events_3": {
+        "unit": "number",
+        "value": 24
+      },
+      "external_work": { "unit": "energy", "value": 6936.95751953125 },
+      "ext_work_over": { "unit": "energy", "value": 70.99690246582031 },
+      "ext_work_over_neg": { "unit": "energy", "value": 267.0753479003906 },
+      "tot_brake_events": { "unit": "number", "value": 21 },
+      "tot_burst_events": { "unit": "number", "value": 11 },
+      "average_external_power": {
+        "unit": "power",
+        "value": 1.6858004331588745
+      },
+      "ext_work_over_zone0": { "unit": "energy", "value": 24.91853904724121 },
+      "ext_work_over_zone1": { "unit": "energy", "value": 13.025636672973633 },
+      "ext_work_over_zone2": { "unit": "energy", "value": 33.05270004272461 },
+      "ext_work_over_zone0_neg": {
+        "unit": "energy",
+        "value": 42.18891143798828
+      },
+      "ext_work_over_zone1_neg": {
+        "unit": "energy",
+        "value": 155.80831909179688
+      },
+      "ext_work_over_zone2_neg": {
+        "unit": "energy",
+        "value": 69.07830810546875
+      },
+      "average_hr": { "unit": "hr", "value": 139.97407060949462 },
+      "average_hr_percentual": {
+        "unit": "percentage",
+        "value": 0.6389027865375535
+      },
+      "max_values_cardio": { "unit": "hr", "value": 186.2200469970703 },
+      "max_values_cardio_percentual": {
+        "unit": "percentage",
+        "value": 0.9866168947148144
+      },
+      "athletesessionheartratezone_time_2": {
+        "unit": "time",
+        "value": 590.7548750421722
+      },
+      "athletesessionheartratezone_time_3": {
+        "unit": "time",
+        "value": 54.55998845934595
+      }
+    },
+    "6530": {
+      "athlete_session_id": 1745311,
+      "athlete": {
+        "id": 6530,
+        "name": "ПОРОХОВ ИЛЬЯ",
+        "last_name": "ПОРОХОВ",
+        "first_name": "ИЛЬЯ",
+        "birthdate": "2001-06-11",
+        "club": 115,
+        "picture": null,
+        "custom_id": "",
+        "v0": 9.166666666666666,
+        "a0": 7,
+        "short_name": "ПОР"
+      },
+      "average_time": { "unit": "time", "value": 4115 },
+      "total_distance": { "unit": "distance", "value": 5833.401397705078 },
+      "average_v": { "unit": "speed", "value": 1.4176168998307577 },
+      "athletesessionspeedzone_distance_1": {
+        "unit": "distance",
+        "value": 3644.1357269287105
+      },
+      "athletesessionspeedzone_distance_2": {
+        "unit": "distance",
+        "value": 1269.5794372558594
+      },
+      "athletesessionspeedzone_distance_3": {
+        "unit": "distance",
+        "value": 652.4994506835938
+      },
+      "athletesessionspeedzone_distance_4": {
+        "unit": "distance",
+        "value": 229.1597900390625
+      },
+      "athletesessionspeedzone_distance_5": {
+        "unit": "distance",
+        "value": 38.037353515625
+      },
+      "max_values_speed": { "unit": "speed", "value": 8.265269886363637 },
+      "speed_events": { "unit": "number", "value": 4 },
+      "acceleration_events": { "unit": "number", "value": 19 },
+      "deceleration_events": { "unit": "number", "value": 26 },
+      "eccentric_index": { "unit": "number", "value": -19.715797424316406 },
+      "athletesessionpowerzone_distance_1": {
+        "unit": "distance",
+        "value": 5016.438430786133
+      },
+      "athletesessionpowerzone_distance_2": {
+        "unit": "distance",
+        "value": 629.6256713867188
+      },
+      "athletesessionpowerzone_distance_3": {
+        "unit": "distance",
+        "value": 187.34765625
+      },
+      "average_p": { "unit": "power", "value": 6.29695479816396 },
+      "max_values_power": { "unit": "power", "value": 89.16903409090911 },
+      "equivalent_distance_index": {
+        "unit": "percentage1",
+        "value": 0.14095409088340172
+      },
+      "equivalent_distance": {
+        "unit": "distance",
+        "value": 6655.6431884765625
+      },
+      "total_energy": { "unit": "energy", "value": 25911.559692382812 },
+      "anaerobic_energy": { "unit": "energy", "value": 10561.19822434617 },
+      "anaerobic_index": { "unit": "percentage", "value": 0.40758635719836006 },
+      "aerobic_ratio": { "unit": "percentage", "value": 0.3384246577300588 },
+      "average_power_aer": { "unit": "power", "value": 6.23999009641009 },
+      "power_events": { "unit": "number", "value": 86 },
+      "power_events_avg_time": {
+        "unit": "duration",
+        "value": 6.132499999999999
+      },
+      "power_events_avg_power": {
+        "unit": "power",
+        "value": 22.192734929018243
+      },
+      "recovery_average_time": {
+        "unit": "duration",
+        "value": 36.6060588235294
+      },
+      "recovery_average_power": {
+        "unit": "power",
+        "value": 3.7252559275033628
+      },
+      "athletesessionpowereventdurationzone_events_1": {
+        "unit": "number",
+        "value": 33
+      },
+      "athletesessionpowereventdurationzone_events_2": {
+        "unit": "number",
+        "value": 46
+      },
+      "athletesessionpowereventdurationzone_events_3": {
+        "unit": "number",
+        "value": 7
+      },
+      "athletesessionpowereventdistancezone_events_1": {
+        "unit": "number",
+        "value": 28
+      },
+      "athletesessionpowereventdistancezone_events_2": {
+        "unit": "number",
+        "value": 45
+      },
+      "athletesessionpowereventdistancezone_events_3": {
+        "unit": "number",
+        "value": 13
+      },
+      "athletesessionpowereventmaxspeedzone_events_1": {
+        "unit": "number",
+        "value": 26
+      },
+      "athletesessionpowereventmaxspeedzone_events_2": {
+        "unit": "number",
+        "value": 32
+      },
+      "athletesessionpowereventmaxspeedzone_events_3": {
+        "unit": "number",
+        "value": 28
+      },
+      "external_work": { "unit": "energy", "value": 5808.31298828125 },
+      "ext_work_over": { "unit": "energy", "value": 195.81504821777344 },
+      "ext_work_over_neg": { "unit": "energy", "value": 291.98968505859375 },
+      "tot_brake_events": { "unit": "number", "value": 21 },
+      "tot_burst_events": { "unit": "number", "value": 22 },
+      "average_external_power": { "unit": "power", "value": 1.411520004272461 },
+      "ext_work_over_zone0": { "unit": "energy", "value": 45.200904846191406 },
+      "ext_work_over_zone1": { "unit": "energy", "value": 96.40213012695312 },
+      "ext_work_over_zone2": { "unit": "energy", "value": 54.21196746826172 },
+      "ext_work_over_zone0_neg": {
+        "unit": "energy",
+        "value": 50.46649169921875
+      },
+      "ext_work_over_zone1_neg": {
+        "unit": "energy",
+        "value": 194.4155731201172
+      },
+      "ext_work_over_zone2_neg": {
+        "unit": "energy",
+        "value": 47.1075325012207
+      },
+      "average_hr": { "unit": "hr", "value": 144.43495952236495 },
+      "average_hr_percentual": {
+        "unit": "percentage",
+        "value": 0.6298236586082039
+      },
+      "max_values_cardio": { "unit": "hr", "value": 175.30856323242188 },
+      "max_values_cardio_percentual": {
+        "unit": "percentage",
+        "value": 0.8472434030452245
+      },
+      "athletesessionheartratezone_time_2": { "unit": "time", "value": 0 },
+      "athletesessionheartratezone_time_3": { "unit": "time", "value": 0 }
+    },
+    "6874": {
+      "athlete_session_id": 1745319,
+      "athlete": {
+        "id": 6874,
+        "name": "СЕКУЛИЧ МАРТИН",
+        "last_name": "СЕКУЛИЧ",
+        "first_name": "МАРТИН",
+        "birthdate": "1999-01-04",
+        "club": 115,
+        "picture": null,
+        "custom_id": "",
+        "v0": 9.166666666666666,
+        "a0": 7,
+        "short_name": "СЕК"
+      },
+      "average_time": { "unit": "time", "value": 4115 },
+      "total_distance": { "unit": "distance", "value": 5226.428016662598 },
+      "average_v": { "unit": "speed", "value": 1.2701119256227857 },
+      "athletesessionspeedzone_distance_1": {
+        "unit": "distance",
+        "value": 3350.5963668823247
+      },
+      "athletesessionspeedzone_distance_2": {
+        "unit": "distance",
+        "value": 1182.1763458251953
+      },
+      "athletesessionspeedzone_distance_3": {
+        "unit": "distance",
+        "value": 462.22558593749994
+      },
+      "athletesessionspeedzone_distance_4": {
+        "unit": "distance",
+        "value": 193.4149169921875
+      },
+      "athletesessionspeedzone_distance_5": {
+        "unit": "distance",
+        "value": 38.0384521484375
+      },
+      "max_values_speed": { "unit": "speed", "value": 8.513849431818183 },
+      "speed_events": { "unit": "number", "value": 4 },
+      "acceleration_events": { "unit": "number", "value": 20 },
+      "deceleration_events": { "unit": "number", "value": 28 },
+      "eccentric_index": { "unit": "number", "value": -14.278864860534668 },
+      "athletesessionpowerzone_distance_1": {
+        "unit": "distance",
+        "value": 4536.216659545898
+      },
+      "athletesessionpowerzone_distance_2": {
+        "unit": "distance",
+        "value": 517.2746200561522
+      },
+      "athletesessionpowerzone_distance_3": {
+        "unit": "distance",
+        "value": 172.96038818359375
+      },
+      "average_p": { "unit": "power", "value": 5.562052780113971 },
+      "max_values_power": { "unit": "power", "value": 108.91335227272728 },
+      "equivalent_distance_index": {
+        "unit": "percentage1",
+        "value": 0.15148755396801694
+      },
+      "equivalent_distance": {
+        "unit": "distance",
+        "value": 6018.1668128967285
+      },
+      "total_energy": { "unit": "energy", "value": 22887.48565673828 },
+      "anaerobic_energy": { "unit": "energy", "value": 9990.478364809645 },
+      "anaerobic_index": { "unit": "percentage", "value": 0.43650397053851825 },
+      "aerobic_ratio": { "unit": "percentage", "value": 0.29892795306954345 },
+      "average_power_aer": { "unit": "power", "value": 5.504960292985446 },
+      "power_events": { "unit": "number", "value": 82 },
+      "power_events_avg_time": {
+        "unit": "duration",
+        "value": 5.817256097560975
+      },
+      "power_events_avg_power": { "unit": "power", "value": 21.70135753910716 },
+      "recovery_average_time": {
+        "unit": "duration",
+        "value": 41.65265432098765
+      },
+      "recovery_average_power": {
+        "unit": "power",
+        "value": 3.2467207121471318
+      },
+      "athletesessionpowereventdurationzone_events_1": {
+        "unit": "number",
+        "value": 42
+      },
+      "athletesessionpowereventdurationzone_events_2": {
+        "unit": "number",
+        "value": 31
+      },
+      "athletesessionpowereventdurationzone_events_3": {
+        "unit": "number",
+        "value": 9
+      },
+      "athletesessionpowereventdistancezone_events_1": {
+        "unit": "number",
+        "value": 32
+      },
+      "athletesessionpowereventdistancezone_events_2": {
+        "unit": "number",
+        "value": 40
+      },
+      "athletesessionpowereventdistancezone_events_3": {
+        "unit": "number",
+        "value": 10
+      },
+      "athletesessionpowereventmaxspeedzone_events_1": {
+        "unit": "number",
+        "value": 29
+      },
+      "athletesessionpowereventmaxspeedzone_events_2": {
+        "unit": "number",
+        "value": 30
+      },
+      "athletesessionpowereventmaxspeedzone_events_3": {
+        "unit": "number",
+        "value": 23
+      },
+      "external_work": { "unit": "energy", "value": 5111.4814453125 },
+      "ext_work_over": { "unit": "energy", "value": 250.66737365722656 },
+      "ext_work_over_neg": { "unit": "energy", "value": 334.1763916015625 },
+      "tot_brake_events": { "unit": "number", "value": 27 },
+      "tot_burst_events": { "unit": "number", "value": 25 },
+      "average_external_power": { "unit": "power", "value": 1.242177963256836 },
+      "ext_work_over_zone0": { "unit": "energy", "value": 44.520606994628906 },
+      "ext_work_over_zone1": { "unit": "energy", "value": 162.4893798828125 },
+      "ext_work_over_zone2": { "unit": "energy", "value": 43.657371520996094 },
+      "ext_work_over_zone0_neg": {
+        "unit": "energy",
+        "value": 75.56430053710938
+      },
+      "ext_work_over_zone1_neg": { "unit": "energy", "value": 204.00439453125 },
+      "ext_work_over_zone2_neg": {
+        "unit": "energy",
+        "value": 54.607913970947266
+      },
+      "average_hr": { "unit": "hr", "value": null },
+      "average_hr_percentual": { "unit": "percentage", "value": null },
+      "max_values_cardio": { "unit": "hr", "value": null },
+      "max_values_cardio_percentual": { "unit": "percentage", "value": null },
+      "athletesessionheartratezone_time_2": { "unit": "time", "value": null },
+      "athletesessionheartratezone_time_3": { "unit": "time", "value": null }
+    }
+  },
+  "roles": {
+    "КР ЗАЩ": {
+      "parameters": {
+        "average_time": {
+          "value": 4115,
+          "unit": "time",
+          "is_identifier": false
+        },
+        "total_distance": {
+          "value": 6231.582434015759,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "average_v": {
+          "value": 1.5143779177010692,
+          "unit": "speed",
+          "is_identifier": false
+        },
+        "athletesessionspeedzone_distance_1": {
+          "value": 3562.6218113080076,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "athletesessionspeedzone_distance_2": {
+          "value": 1590.0623250215976,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "athletesessionspeedzone_distance_3": {
+          "value": 728.4196804911289,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "athletesessionspeedzone_distance_4": {
+          "value": 258.4908175257361,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "athletesessionspeedzone_distance_5": {
+          "value": 92.04345240385577,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "max_values_speed": {
+          "value": 8.544033737244627,
+          "unit": "speed",
+          "is_identifier": false
+        },
+        "speed_events": {
+          "value": 5.9999974835557435,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "acceleration_events": {
+          "value": 20.79999568677262,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "deceleration_events": {
+          "value": 28.399980347029306,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "eccentric_index": {
+          "value": -26.674680086708264,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowerzone_distance_1": {
+          "value": 5229.342523869548,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "athletesessionpowerzone_distance_2": {
+          "value": 816.5124663862857,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "athletesessionpowerzone_distance_3": {
+          "value": 185.78309649449196,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "average_p": {
+          "value": 6.918861018066935,
+          "unit": "power",
+          "is_identifier": false
+        },
+        "max_values_power": {
+          "value": 90.59480383748621,
+          "unit": "power",
+          "is_identifier": false
+        },
+        "equivalent_distance_index": {
+          "value": 0.1504363001108039,
+          "unit": "percentage1",
+          "is_identifier": false
+        },
+        "equivalent_distance": {
+          "value": 7170.787994266321,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "total_energy": {
+          "value": 28470.732948211367,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "anaerobic_energy": {
+          "value": 11418.999937709927,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "anaerobic_index": {
+          "value": 0.4011771774430355,
+          "unit": "percentage",
+          "is_identifier": false
+        },
+        "aerobic_ratio": {
+          "value": 0.37184849613401655,
+          "unit": "percentage",
+          "is_identifier": false
+        },
+        "average_power_aer": {
+          "value": 6.8360378033793525,
+          "unit": "power",
+          "is_identifier": false
+        },
+        "power_events": {
+          "value": 93.19999060401628,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "power_events_avg_time": {
+          "value": 6.578964323595083,
+          "unit": "duration",
+          "is_identifier": false
+        },
+        "power_events_avg_power": {
+          "value": 21.873019194556658,
+          "unit": "power",
+          "is_identifier": false
+        },
+        "recovery_average_time": {
+          "value": 34.21290162368583,
+          "unit": "duration",
+          "is_identifier": false
+        },
+        "recovery_average_power": {
+          "value": 3.9759184255802977,
+          "unit": "power",
+          "is_identifier": false
+        },
+        "athletesessionpowereventdurationzone_events_1": {
+          "value": 37.80000288103137,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventdurationzone_events_2": {
+          "value": 42.0000020843752,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventdurationzone_events_3": {
+          "value": 13.399985638609701,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventdistancezone_events_1": {
+          "value": 33.80000301626404,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventdistancezone_events_2": {
+          "value": 38.9999966409228,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventdistancezone_events_3": {
+          "value": 20.399990946829423,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventmaxspeedzone_events_1": {
+          "value": 22.600011201355297,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventmaxspeedzone_events_2": {
+          "value": 47.99999166697795,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventmaxspeedzone_events_3": {
+          "value": 22.599987735683023,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "external_work": {
+          "value": 6579.525340842149,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over": {
+          "value": 214.73493650679717,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over_neg": {
+          "value": 346.9910545552499,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "tot_brake_events": {
+          "value": 30.999981901491115,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "tot_burst_events": {
+          "value": 22.99998469742641,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "average_external_power": {
+          "value": 1.5989340203684925,
+          "unit": "power",
+          "is_identifier": false
+        },
+        "ext_work_over_zone0": {
+          "value": 49.25483831101601,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over_zone1": {
+          "value": 90.94151464813876,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over_zone2": {
+          "value": 74.53858431066352,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over_zone0_neg": {
+          "value": 79.10082599578776,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over_zone1_neg": {
+          "value": 193.5148412816915,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over_zone2_neg": {
+          "value": 74.37540558834657,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "average_hr": {
+          "value": 140.53465543685252,
+          "unit": "hr",
+          "is_identifier": false
+        },
+        "average_hr_percentual": {
+          "value": 0.598140188214396,
+          "unit": "percentage",
+          "is_identifier": false
+        },
+        "max_values_cardio": {
+          "value": 180.5735220180009,
+          "unit": "hr",
+          "is_identifier": false
+        },
+        "max_values_cardio_percentual": {
+          "value": 0.8944067943112706,
+          "unit": "percentage",
+          "is_identifier": false
+        },
+        "athletesessionheartratezone_time_2": {
+          "value": 255.7078732918721,
+          "unit": "time",
+          "is_identifier": false
+        },
+        "athletesessionheartratezone_time_3": {
+          "value": 13.639948722893285,
+          "unit": "time",
+          "is_identifier": false
+        }
+      },
+      "tracks_count": 5,
+      "order": 1
+    },
+    "ЦЗ": {
+      "parameters": {
+        "average_time": {
+          "value": 4115,
+          "unit": "time",
+          "is_identifier": false
+        },
+        "total_distance": {
+          "value": 5590.001129803173,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "average_v": {
+          "value": 1.3584531123689374,
+          "unit": "speed",
+          "is_identifier": false
+        },
+        "athletesessionspeedzone_distance_1": {
+          "value": 3606.8160387672606,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "athletesessionspeedzone_distance_2": {
+          "value": 1315.39836037658,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "athletesessionspeedzone_distance_3": {
+          "value": 508.9507474193486,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "athletesessionspeedzone_distance_4": {
+          "value": 143.74068885025744,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "athletesessionspeedzone_distance_5": {
+          "value": 15.128328040136156,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "max_values_speed": {
+          "value": 7.490672438108102,
+          "unit": "speed",
+          "is_identifier": false
+        },
+        "speed_events": {
+          "value": 1.4999849640603842,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "acceleration_events": {
+          "value": 10.000019426044831,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "deceleration_events": {
+          "value": 16.499984752546474,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "eccentric_index": {
+          "value": -26.747311839493182,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowerzone_distance_1": {
+          "value": 4887.569580386502,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "athletesessionpowerzone_distance_2": {
+          "value": 609.8785975703737,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "athletesessionpowerzone_distance_3": {
+          "value": 92.58598549670673,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "average_p": {
+          "value": 5.896638341440111,
+          "unit": "power",
+          "is_identifier": false
+        },
+        "max_values_power": {
+          "value": 80.96603677406024,
+          "unit": "power",
+          "is_identifier": false
+        },
+        "equivalent_distance_index": {
+          "value": 0.12699566397556183,
+          "unit": "percentage1",
+          "is_identifier": false
+        },
+        "equivalent_distance": {
+          "value": 6299.2967597991055,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "total_energy": {
+          "value": 24264.52143991166,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "anaerobic_energy": {
+          "value": 9601.488763767646,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "anaerobic_index": {
+          "value": 0.3956858479546436,
+          "unit": "percentage",
+          "is_identifier": false
+        },
+        "aerobic_ratio": {
+          "value": 0.31690997893802103,
+          "unit": "percentage",
+          "is_identifier": false
+        },
+        "average_power_aer": {
+          "value": 5.839432086714829,
+          "unit": "power",
+          "is_identifier": false
+        },
+        "power_events": {
+          "value": 72.74998177931718,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "power_events_avg_time": {
+          "value": 6.348621021217252,
+          "unit": "duration",
+          "is_identifier": false
+        },
+        "power_events_avg_power": {
+          "value": 20.83729806039952,
+          "unit": "power",
+          "is_identifier": false
+        },
+        "recovery_average_time": {
+          "value": 43.75579533361378,
+          "unit": "duration",
+          "is_identifier": false
+        },
+        "recovery_average_power": {
+          "value": 3.7509705526290436,
+          "unit": "power",
+          "is_identifier": false
+        },
+        "athletesessionpowereventdurationzone_events_1": {
+          "value": 28.750002763715443,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventdurationzone_events_2": {
+          "value": 35.25002647510857,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventdurationzone_events_3": {
+          "value": 8.749952540493176,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventdistancezone_events_1": {
+          "value": 25.2500378502413,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventdistancezone_events_2": {
+          "value": 33.99996909606558,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventdistancezone_events_3": {
+          "value": 13.49997483301031,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventmaxspeedzone_events_1": {
+          "value": 17.750022397274055,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventmaxspeedzone_events_2": {
+          "value": 40.249977291455274,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventmaxspeedzone_events_3": {
+          "value": 14.749982090587856,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "external_work": {
+          "value": 5541.906680212306,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over": {
+          "value": 129.35307319194277,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over_neg": {
+          "value": 225.19682653303911,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "tot_brake_events": {
+          "value": 20.749992114880943,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "tot_burst_events": {
+          "value": 20.000029654851605,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "average_external_power": {
+          "value": 1.3467653855714685,
+          "unit": "power",
+          "is_identifier": false
+        },
+        "ext_work_over_zone0": {
+          "value": 38.15644038942872,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over_zone1": {
+          "value": 64.5070275968114,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over_zone2": {
+          "value": 26.689587085841417,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over_zone0_neg": {
+          "value": 42.91871169456955,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over_zone1_neg": {
+          "value": 148.62646805935177,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over_zone2_neg": {
+          "value": 33.651619718793256,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "average_hr": {
+          "value": 142.45612228863232,
+          "unit": "hr",
+          "is_identifier": false
+        },
+        "average_hr_percentual": {
+          "value": 0.6096683228691236,
+          "unit": "percentage",
+          "is_identifier": false
+        },
+        "max_values_cardio": {
+          "value": 182.78225594291845,
+          "unit": "hr",
+          "is_identifier": false
+        },
+        "max_values_cardio_percentual": {
+          "value": 0.9070147687722613,
+          "unit": "percentage",
+          "is_identifier": false
+        },
+        "athletesessionheartratezone_time_2": {
+          "value": 331.8289598211658,
+          "unit": "time",
+          "is_identifier": false
+        },
+        "athletesessionheartratezone_time_3": {
+          "value": 4.473275722397151,
+          "unit": "time",
+          "is_identifier": false
+        }
+      },
+      "tracks_count": 4,
+      "order": 2
+    },
+    "ЦПЗ": {
+      "parameters": {
+        "average_time": {
+          "value": 4115,
+          "unit": "time",
+          "is_identifier": false
+        },
+        "total_distance": {
+          "value": 6141.567415476321,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "average_v": {
+          "value": 1.4924948525009116,
+          "unit": "speed",
+          "is_identifier": false
+        },
+        "athletesessionspeedzone_distance_1": {
+          "value": 3581.9510786323085,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "athletesessionspeedzone_distance_2": {
+          "value": 1640.9463948237496,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "athletesessionspeedzone_distance_3": {
+          "value": 708.2357009049508,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "athletesessionspeedzone_distance_4": {
+          "value": 196.90327382671563,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "athletesessionspeedzone_distance_5": {
+          "value": 13.553483289193682,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "max_values_speed": {
+          "value": 7.351740834818605,
+          "unit": "speed",
+          "is_identifier": false
+        },
+        "speed_events": {
+          "value": 1.600003198445629,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "acceleration_events": {
+          "value": 14.200022432737878,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "deceleration_events": {
+          "value": 18.20010260914134,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "eccentric_index": {
+          "value": -29.452478567105963,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowerzone_distance_1": {
+          "value": 5268.906511630466,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "athletesessionpowerzone_distance_2": {
+          "value": 767.5118598321312,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "athletesessionpowerzone_distance_3": {
+          "value": 105.17156001432086,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "average_p": {
+          "value": 6.6475230508059076,
+          "unit": "power",
+          "is_identifier": false
+        },
+        "max_values_power": {
+          "value": 82.00466109847663,
+          "unit": "power",
+          "is_identifier": false
+        },
+        "equivalent_distance_index": {
+          "value": 0.13116463485229932,
+          "unit": "percentage1",
+          "is_identifier": false
+        },
+        "equivalent_distance": {
+          "value": 6945.159759550699,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "total_energy": {
+          "value": 27354.344243288106,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "anaerobic_energy": {
+          "value": 10651.538625566085,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "anaerobic_index": {
+          "value": 0.38957777330421955,
+          "unit": "percentage",
+          "is_identifier": false
+        },
+        "aerobic_ratio": {
+          "value": 0.35726566020096245,
+          "unit": "percentage",
+          "is_identifier": false
+        },
+        "average_power_aer": {
+          "value": 6.572121730440959,
+          "unit": "power",
+          "is_identifier": false
+        },
+        "power_events": {
+          "value": 85.00004024974015,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "power_events_avg_time": {
+          "value": 6.8679179047660135,
+          "unit": "duration",
+          "is_identifier": false
+        },
+        "power_events_avg_power": {
+          "value": 20.706202896081873,
+          "unit": "power",
+          "is_identifier": false
+        },
+        "recovery_average_time": {
+          "value": 37.36922376671231,
+          "unit": "duration",
+          "is_identifier": false
+        },
+        "recovery_average_power": {
+          "value": 4.083764252065663,
+          "unit": "power",
+          "is_identifier": false
+        },
+        "athletesessionpowereventdurationzone_events_1": {
+          "value": 28.199974485927978,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventdurationzone_events_2": {
+          "value": 43.40002903357334,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventdurationzone_events_3": {
+          "value": 13.400036730238838,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventdistancezone_events_1": {
+          "value": 23.79999388014172,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventdistancezone_events_2": {
+          "value": 42.400004980409754,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventdistancezone_events_3": {
+          "value": 18.800041389188678,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventmaxspeedzone_events_1": {
+          "value": 18.599971685669157,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventmaxspeedzone_events_2": {
+          "value": 49.000064143386474,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventmaxspeedzone_events_3": {
+          "value": 17.400004420684525,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "external_work": {
+          "value": 6377.310910905761,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over": {
+          "value": 105.40656617176384,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over_neg": {
+          "value": 176.91577779579575,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "tot_brake_events": {
+          "value": 16.800009557377678,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "tot_burst_events": {
+          "value": 13.800009436223858,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "average_external_power": {
+          "value": 1.5497838180206212,
+          "unit": "power",
+          "is_identifier": false
+        },
+        "ext_work_over_zone0": {
+          "value": 24.241461218449828,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over_zone1": {
+          "value": 57.9309165499137,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over_zone2": {
+          "value": 23.234175385881688,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over_zone0_neg": {
+          "value": 26.914050760185994,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over_zone1_neg": {
+          "value": 114.2294392849861,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over_zone2_neg": {
+          "value": 35.772309495109845,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "average_hr": {
+          "value": 131.9049057084534,
+          "unit": "hr",
+          "is_identifier": false
+        },
+        "average_hr_percentual": {
+          "value": 0.5499458735771099,
+          "unit": "percentage",
+          "is_identifier": false
+        },
+        "max_values_cardio": {
+          "value": 171.0705192144634,
+          "unit": "hr",
+          "is_identifier": false
+        },
+        "max_values_cardio_percentual": {
+          "value": 0.8434554238413693,
+          "unit": "percentage",
+          "is_identifier": false
+        },
+        "athletesessionheartratezone_time_2": {
+          "value": 239.7837921577943,
+          "unit": "time",
+          "is_identifier": false
+        },
+        "athletesessionheartratezone_time_3": {
+          "value": 0,
+          "unit": "time",
+          "is_identifier": false
+        }
+      },
+      "tracks_count": 5,
+      "order": 3
+    },
+    "КР НАП": {
+      "parameters": {
+        "average_time": {
+          "value": 4115,
+          "unit": "time",
+          "is_identifier": false
+        },
+        "total_distance": {
+          "value": 5998.14644366385,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "average_v": {
+          "value": 1.4576397996519457,
+          "unit": "speed",
+          "is_identifier": false
+        },
+        "athletesessionspeedzone_distance_1": {
+          "value": 3662.528138938879,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "athletesessionspeedzone_distance_2": {
+          "value": 1334.9927823977832,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "athletesessionspeedzone_distance_3": {
+          "value": 683.5984222452006,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "athletesessionspeedzone_distance_4": {
+          "value": 260.0571901593138,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "athletesessionspeedzone_distance_5": {
+          "value": 57.0393122411242,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "max_values_speed": {
+          "value": 8.114346932098586,
+          "unit": "speed",
+          "is_identifier": false
+        },
+        "speed_events": {
+          "value": 4.333334860063382,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "acceleration_events": {
+          "value": 18.333330779528733,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "deceleration_events": {
+          "value": 24.33332619933859,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "eccentric_index": {
+          "value": -25.80118683935638,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowerzone_distance_1": {
+          "value": 5103.874029636803,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "athletesessionpowerzone_distance_2": {
+          "value": 705.0666567786736,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "athletesessionpowerzone_distance_3": {
+          "value": 189.27515956682421,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "average_p": {
+          "value": 6.441186899145461,
+          "unit": "power",
+          "is_identifier": false
+        },
+        "max_values_power": {
+          "value": 87.36683527038669,
+          "unit": "power",
+          "is_identifier": false
+        },
+        "equivalent_distance_index": {
+          "value": 0.14029378645225735,
+          "unit": "percentage1",
+          "is_identifier": false
+        },
+        "equivalent_distance": {
+          "value": 6839.586977284318,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "total_energy": {
+          "value": 26505.300797130687,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "anaerobic_energy": {
+          "value": 10824.83462421138,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "anaerobic_index": {
+          "value": 0.40839740699543997,
+          "unit": "percentage",
+          "is_identifier": false
+        },
+        "aerobic_ratio": {
+          "value": 0.3461762933972839,
+          "unit": "percentage",
+          "is_identifier": false
+        },
+        "average_power_aer": {
+          "value": 6.360534115214193,
+          "unit": "power",
+          "is_identifier": false
+        },
+        "power_events": {
+          "value": 87.00000408053467,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "power_events_avg_time": {
+          "value": 6.282401879955697,
+          "unit": "duration",
+          "is_identifier": false
+        },
+        "power_events_avg_power": {
+          "value": 22.39556248797294,
+          "unit": "power",
+          "is_identifier": false
+        },
+        "recovery_average_time": {
+          "value": 35.61113935609113,
+          "unit": "duration",
+          "is_identifier": false
+        },
+        "recovery_average_power": {
+          "value": 3.743164345517977,
+          "unit": "power",
+          "is_identifier": false
+        },
+        "athletesessionpowereventdurationzone_events_1": {
+          "value": 33.666669595212895,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventdurationzone_events_2": {
+          "value": 44.33332507511373,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventdurationzone_events_3": {
+          "value": 9.000009410208042,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventdistancezone_events_1": {
+          "value": 28.000000249827753,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventdistancezone_events_2": {
+          "value": 43.33332507511373,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventdistancezone_events_3": {
+          "value": 15.66667875559318,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventmaxspeedzone_events_1": {
+          "value": 20.99997834818802,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventmaxspeedzone_events_2": {
+          "value": 40.6667036135427,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventmaxspeedzone_events_3": {
+          "value": 25.33332211880394,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "external_work": {
+          "value": 6020.638109873278,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over": {
+          "value": 187.80585120710964,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over_neg": {
+          "value": 295.29278046341636,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "tot_brake_events": {
+          "value": 22.333339814995153,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "tot_burst_events": {
+          "value": 19.9999928382417,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "average_external_power": {
+          "value": 1.4631055402790578,
+          "unit": "power",
+          "is_identifier": false
+        },
+        "ext_work_over_zone0": {
+          "value": 51.76302065207731,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over_zone1": {
+          "value": 89.84821447054861,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over_zone2": {
+          "value": 46.194614813116566,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over_zone0_neg": {
+          "value": 53.80368609170448,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over_zone1_neg": {
+          "value": 193.0937174811969,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over_zone2_neg": {
+          "value": 48.395397871828564,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "average_hr": {
+          "value": 136.227098899218,
+          "unit": "hr",
+          "is_identifier": false
+        },
+        "average_hr_percentual": {
+          "value": 0.5704948617943421,
+          "unit": "percentage",
+          "is_identifier": false
+        },
+        "max_values_cardio": {
+          "value": 176.5256039772418,
+          "unit": "hr",
+          "is_identifier": false
+        },
+        "max_values_cardio_percentual": {
+          "value": 0.8653210059650952,
+          "unit": "percentage",
+          "is_identifier": false
+        },
+        "athletesessionheartratezone_time_2": {
+          "value": 4.63835457778196,
+          "unit": "time",
+          "is_identifier": false
+        },
+        "athletesessionheartratezone_time_3": {
+          "value": 0,
+          "unit": "time",
+          "is_identifier": false
+        }
+      },
+      "tracks_count": 3,
+      "order": 4
+    },
+    "НАП": {
+      "parameters": {
+        "average_time": {
+          "value": 4115,
+          "unit": "time",
+          "is_identifier": false
+        },
+        "total_distance": {
+          "value": 5574.221375339457,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "average_v": {
+          "value": 1.3546029942510682,
+          "unit": "speed",
+          "is_identifier": false
+        },
+        "athletesessionspeedzone_distance_1": {
+          "value": 3598.0683317192393,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "athletesessionspeedzone_distance_2": {
+          "value": 1262.4196834617471,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "athletesessionspeedzone_distance_3": {
+          "value": 515.454125486979,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "athletesessionspeedzone_distance_4": {
+          "value": 174.11533777004573,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "athletesessionspeedzone_distance_5": {
+          "value": 24.193876733468677,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "max_values_speed": {
+          "value": 7.981169139208141,
+          "unit": "speed",
+          "is_identifier": false
+        },
+        "speed_events": {
+          "value": 2.4999700853156672,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "acceleration_events": {
+          "value": 11.499830483455447,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "deceleration_events": {
+          "value": 25.49995014219278,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "eccentric_index": {
+          "value": -39.025687210330574,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowerzone_distance_1": {
+          "value": 4851.613093758449,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "athletesessionpowerzone_distance_2": {
+          "value": 600.2219415186333,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "athletesessionpowerzone_distance_3": {
+          "value": 122.4163198943966,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "average_p": {
+          "value": 5.855231666531118,
+          "unit": "power",
+          "is_identifier": false
+        },
+        "max_values_power": {
+          "value": 90.35830230221202,
+          "unit": "power",
+          "is_identifier": false
+        },
+        "equivalent_distance_index": {
+          "value": 0.1349637428743729,
+          "unit": "percentage1",
+          "is_identifier": false
+        },
+        "equivalent_distance": {
+          "value": 6320.792513223773,
+          "unit": "distance",
+          "is_identifier": false
+        },
+        "total_energy": {
+          "value": 24094.40230407028,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "anaerobic_energy": {
+          "value": 9873.529744129668,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "anaerobic_index": {
+          "value": 0.41105969407873844,
+          "unit": "percentage",
+          "is_identifier": false
+        },
+        "aerobic_ratio": {
+          "value": 0.31468461124316294,
+          "unit": "percentage",
+          "is_identifier": false
+        },
+        "average_power_aer": {
+          "value": 5.7852728708990195,
+          "unit": "power",
+          "is_identifier": false
+        },
+        "power_events": {
+          "value": 76.49989031282412,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "power_events_avg_time": {
+          "value": 6.286101475634891,
+          "unit": "duration",
+          "is_identifier": false
+        },
+        "power_events_avg_power": {
+          "value": 21.178746912736703,
+          "unit": "power",
+          "is_identifier": false
+        },
+        "recovery_average_time": {
+          "value": 42.206012260786096,
+          "unit": "duration",
+          "is_identifier": false
+        },
+        "recovery_average_power": {
+          "value": 3.6471100498333384,
+          "unit": "power",
+          "is_identifier": false
+        },
+        "athletesessionpowereventdurationzone_events_1": {
+          "value": 32.49981054033256,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventdurationzone_events_2": {
+          "value": 34.000059829368666,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventdurationzone_events_3": {
+          "value": 10.000019943122888,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventdistancezone_events_1": {
+          "value": 25.499870369701224,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventdistancezone_events_2": {
+          "value": 36.999940170631334,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventdistancezone_events_3": {
+          "value": 14.000079772491553,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventmaxspeedzone_events_1": {
+          "value": 21.99986039813978,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventmaxspeedzone_events_2": {
+          "value": 36.000119658737326,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "athletesessionpowereventmaxspeedzone_events_3": {
+          "value": 18.499910255947,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "external_work": {
+          "value": 5443.219018094992,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over": {
+          "value": 153.43100609331017,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over_neg": {
+          "value": 294.1106130275291,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "tot_brake_events": {
+          "value": 25.499970085315667,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "tot_burst_events": {
+          "value": 15.999820511894004,
+          "unit": "number",
+          "is_identifier": false
+        },
+        "average_external_power": {
+          "value": 1.3227679111992965,
+          "unit": "power",
+          "is_identifier": false
+        },
+        "ext_work_over_zone0": {
+          "value": 26.302683388295005,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over_zone1": {
+          "value": 99.09438354290062,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over_zone2": {
+          "value": 28.033934393952183,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over_zone0_neg": {
+          "value": 61.93590069791909,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over_zone1_neg": {
+          "value": 191.63046764668078,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "ext_work_over_zone2_neg": {
+          "value": 40.54437438088647,
+          "unit": "energy",
+          "is_identifier": false
+        },
+        "average_hr": {
+          "value": 128.68076930276789,
+          "unit": "hr",
+          "is_identifier": false
+        },
+        "average_hr_percentual": {
+          "value": 0.5676096636592387,
+          "unit": "percentage",
+          "is_identifier": false
+        },
+        "max_values_cardio": {
+          "value": 171.963623046875,
+          "unit": "hr",
+          "is_identifier": false
+        },
+        "max_values_cardio_percentual": {
+          "value": 0.9253191987345041,
+          "unit": "percentage",
+          "is_identifier": false
+        },
+        "athletesessionheartratezone_time_2": {
+          "value": 185.34996093025413,
+          "unit": "time",
+          "is_identifier": false
+        },
+        "athletesessionheartratezone_time_3": {
+          "value": 0,
+          "unit": "time",
+          "is_identifier": false
+        }
+      },
+      "tracks_count": 2,
+      "order": 5
+    }
+  },
+  "team": {
+    "parameters": {
+      "average_time": {
+        "value": 4114.9694724086585,
+        "unit": "time",
+        "is_identifier": false
+      },
+      "total_distance": {
+        "value": 5966.769281667184,
+        "unit": "distance",
+        "is_identifier": false
+      },
+      "average_v": {
+        "value": 1.4500156289098798,
+        "unit": "speed",
+        "is_identifier": false
+      },
+      "athletesessionspeedzone_distance_1": {
+        "value": 3596.5184669378314,
+        "unit": "distance",
+        "is_identifier": false
+      },
+      "athletesessionspeedzone_distance_2": {
+        "value": 1470.8655228796886,
+        "unit": "distance",
+        "is_identifier": false
+      },
+      "athletesessionspeedzone_distance_3": {
+        "value": 647.409317783272,
+        "unit": "distance",
+        "is_identifier": false
+      },
+      "athletesessionspeedzone_distance_4": {
+        "value": 209.49120531825793,
+        "unit": "distance",
+        "is_identifier": false
+      },
+      "athletesessionspeedzone_distance_5": {
+        "value": 42.52640791920994,
+        "unit": "distance",
+        "is_identifier": false
+      },
+      "max_values_speed": {
+        "value": 7.881417056182374,
+        "unit": "speed",
+        "is_identifier": false
+      },
+      "speed_events": {
+        "value": 3.263146628925943,
+        "unit": "number",
+        "is_identifier": false
+      },
+      "acceleration_events": {
+        "value": 15.42102885371131,
+        "unit": "number",
+        "is_identifier": false
+      },
+      "deceleration_events": {
+        "value": 22.263163513811435,
+        "unit": "number",
+        "is_identifier": false
+      },
+      "eccentric_index": {
+        "value": -28.583171264769053,
+        "unit": "number",
+        "is_identifier": false
+      },
+      "athletesessionpowerzone_distance_1": {
+        "value": 5108.229502172183,
+        "unit": "distance",
+        "is_identifier": false
+      },
+      "athletesessionpowerzone_distance_2": {
+        "value": 719.7512364797169,
+        "unit": "distance",
+        "is_identifier": false
+      },
+      "athletesessionpowerzone_distance_3": {
+        "value": 138.8301821863607,
+        "unit": "distance",
+        "is_identifier": false
+      },
+      "average_p": {
+        "value": 6.444866656701099,
+        "unit": "power",
+        "is_identifier": false
+      },
+      "max_values_power": {
+        "value": 85.77255421083365,
+        "unit": "power",
+        "is_identifier": false
+      },
+      "equivalent_distance_index": {
+        "value": 0.13719981128104575,
+        "unit": "percentage1",
+        "is_identifier": false
+      },
+      "equivalent_distance": {
+        "value": 6786.1708687680275,
+        "unit": "distance",
+        "is_identifier": false
+      },
+      "total_energy": {
+        "value": 26520.423688486047,
+        "unit": "energy",
+        "is_identifier": false
+      },
+      "anaerobic_energy": {
+        "value": 10577.903401971766,
+        "unit": "energy",
+        "is_identifier": false
+      },
+      "anaerobic_index": {
+        "value": 0.39914894651655464,
+        "unit": "percentage",
+        "is_identifier": false
+      },
+      "aerobic_ratio": {
+        "value": 0.3463740589412988,
+        "unit": "percentage",
+        "is_identifier": false
+      },
+      "average_power_aer": {
+        "value": 6.371086489002996,
+        "unit": "power",
+        "is_identifier": false
+      },
+      "power_events": {
+        "value": 83.99996660392418,
+        "unit": "number",
+        "is_identifier": false
+      },
+      "power_events_avg_time": {
+        "value": 6.528857603830173,
+        "unit": "duration",
+        "is_identifier": false
+      },
+      "power_events_avg_power": {
+        "value": 21.357340239287662,
+        "unit": "power",
+        "is_identifier": false
+      },
+      "recovery_average_time": {
+        "value": 38.11471014192207,
+        "unit": "duration",
+        "is_identifier": false
+      },
+      "recovery_average_power": {
+        "value": 3.8855789003051204,
+        "unit": "power",
+        "is_identifier": false
+      },
+      "athletesessionpowereventdurationzone_events_1": {
+        "value": 32.15786123945734,
+        "unit": "number",
+        "is_identifier": false
+      },
+      "athletesessionpowereventdurationzone_events_2": {
+        "value": 40.47369086461955,
+        "unit": "number",
+        "is_identifier": false
+      },
+      "athletesessionpowereventdurationzone_events_3": {
+        "value": 11.368414499847287,
+        "unit": "number",
+        "is_identifier": false
+      },
+      "athletesessionpowereventdistancezone_events_1": {
+        "value": 27.578928735443828,
+        "unit": "number",
+        "is_identifier": false
+      },
+      "athletesessionpowereventdistancezone_events_2": {
+        "value": 39.31577147762221,
+        "unit": "number",
+        "is_identifier": false
+      },
+      "athletesessionpowereventdistancezone_events_3": {
+        "value": 17.105266390858148,
+        "unit": "number",
+        "is_identifier": false
+      },
+      "athletesessionpowereventmaxspeedzone_events_1": {
+        "value": 20.21050640531785,
+        "unit": "number",
+        "is_identifier": false
+      },
+      "athletesessionpowereventmaxspeedzone_events_2": {
+        "value": 44.2105367596829,
+        "unit": "number",
+        "is_identifier": false
+      },
+      "athletesessionpowereventmaxspeedzone_events_3": {
+        "value": 19.57892343892342,
+        "unit": "number",
+        "is_identifier": false
+      },
+      "external_work": {
+        "value": 6100.006686030294,
+        "unit": "energy",
+        "is_identifier": false
+      },
+      "ext_work_over": {
+        "value": 157.28408532062764,
+        "unit": "energy",
+        "is_identifier": false
+      },
+      "ext_work_over_neg": {
+        "value": 262.86417657557104,
+        "unit": "energy",
+        "is_identifier": false
+      },
+      "tot_brake_events": {
+        "value": 23.157879689878392,
+        "unit": "number",
+        "is_identifier": false
+      },
+      "tot_burst_events": {
+        "value": 18.73681818515408,
+        "unit": "number",
+        "is_identifier": false
+      },
+      "average_external_power": {
+        "value": 1.482394477987012,
+        "unit": "power",
+        "is_identifier": false
+      },
+      "ext_work_over_zone0": {
+        "value": 38.31584984077085,
+        "unit": "energy",
+        "is_identifier": false
+      },
+      "ext_work_over_zone1": {
+        "value": 77.37493522728033,
+        "unit": "energy",
+        "is_identifier": false
+      },
+      "ext_work_over_zone2": {
+        "value": 41.59329251033542,
+        "unit": "energy",
+        "is_identifier": false
+      },
+      "ext_work_over_zone0_neg": {
+        "value": 51.949028902842684,
+        "unit": "energy",
+        "is_identifier": false
+      },
+      "ext_work_over_zone1_neg": {
+        "value": 162.93522175409217,
+        "unit": "energy",
+        "is_identifier": false
+      },
+      "ext_work_over_zone2_neg": {
+        "value": 47.97994772790671,
+        "unit": "energy",
+        "is_identifier": false
+      },
+      "average_hr": {
+        "value": 136.96589294865066,
+        "unit": "hr",
+        "is_identifier": false
+      },
+      "average_hr_percentual": {
+        "value": 0.5800295302552003,
+        "unit": "percentage",
+        "is_identifier": false
+      },
+      "max_values_cardio": {
+        "value": 177.0975455318203,
+        "unit": "hr",
+        "is_identifier": false
+      },
+      "max_values_cardio_percentual": {
+        "value": 0.8795851139160926,
+        "unit": "percentage",
+        "is_identifier": false
+      },
+      "athletesessionheartratezone_time_2": {
+        "value": 211.78123545350218,
+        "unit": "time",
+        "is_identifier": false
+      },
+      "athletesessionheartratezone_time_3": {
+        "value": 4.531950805233933,
+        "unit": "time",
+        "is_identifier": false
+      }
+    }
+  },
+  "start_timestamp": "2024-09-04T12:02:12"
+}
