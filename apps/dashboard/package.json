@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "14.2.7",
+    "@prisma/nextjs-monorepo-workaround-plugin": "^5.19.1",
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/eslint": "^8",
