@@ -7,6 +7,10 @@ import { cn } from '@repo/ui/lib/utils'
 
 const menuItems = [
   {
+    title: 'Календарь',
+    href: '/calendar',
+  },
+  {
     title: 'Игроки',
     href: '/players',
   },

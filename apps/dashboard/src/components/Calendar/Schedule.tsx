@@ -1,10 +1,11 @@
 'use client'
 
+import React from 'react'
 import { DotsVerticalIcon } from '@radix-ui/react-icons'
 import { athlete, game } from '@repo/db'
+import { fromUnixTime } from 'date-fns'
 import { ru } from 'date-fns/locale'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { DayPicker } from 'react-day-picker'
 
 import { GameForm } from './game-form'
 import GameCard from './GameCard'
@@ -17,6 +18,7 @@ import { cn } from '@repo/ui/lib/utils'
 import {
   Button,
   buttonVariants,
+  Calendar,
   Dialog,
   DialogContent,
   DialogDescription,
@@ -29,32 +31,40 @@ import {
   TabsTrigger,
 } from '@repo/ui'
 
-export type CalendarProps = React.ComponentProps<typeof DayPicker>
+export type CalendarProps = React.ComponentProps<typeof Calendar>
 export type CalendarPropsWithEvents = CalendarProps & {
   sessions: SessionWithAthleteSessionWithAthlete[]
   games: game[]
   players: athlete[]
+  unixDate: string
 }
 
-function Schedule({
+export function Schedule({
   className,
   classNames,
   showOutsideDays = true,
   sessions,
   games,
   players,
+  unixDate,
   ...props
 }: CalendarPropsWithEvents) {
+  const currentDate = fromUnixTime(Number(unixDate))
+
   return (
-    <DayPicker
+    <Calendar
       locale={ru}
       ISOWeek
+      defaultMonth={currentDate}
       showOutsideDays={showOutsideDays}
-      className={cn('p-3', className)}
+      hideHead
+      disableNavigation
+      className={cn('p-0', className)}
       classNames={{
         months: 'flex flex-col space-y-4 sm:space-x-4 sm:space-y-0',
         month: 'space-y-4',
-        caption: 'flex w-64 justify-center relative items-center mx-auto',
+        caption:
+          'flex w-64 justify-center relative items-center mx-auto hidden',
         caption_label: 'uppercase text-sm',
         nav: 'space-x-1 flex items-center',
         nav_button: cn(
@@ -131,6 +141,134 @@ function Schedule({
     />
   )
 }
-Schedule.displayName = 'Calendar'
 
-export { Schedule }
+// 'use client'
+
+// import React from 'react'
+// import { DotsVerticalIcon } from '@radix-ui/react-icons'
+// import { athlete, game, session } from '@repo/db'
+// import { fromUnixTime } from 'date-fns'
+// import { ChevronLeft, ChevronRight } from 'lucide-react'
+
+// import { GameForm } from './game-form'
+// import GameCard from './GameCard'
+// import IndividualSessionCard, {
+//   SessionWithAthleteSessionWithAthlete,
+// } from './IndividualSessionCard'
+// import { SessionForm } from './session-form'
+// import SessionCard from './SessionCard'
+// import {
+//   Button,
+//   buttonVariants,
+//   Calendar,
+//   Dialog,
+//   DialogContent,
+//   DialogDescription,
+//   DialogHeader,
+//   DialogTitle,
+//   DialogTrigger,
+//   Tabs,
+//   TabsContent,
+//   TabsList,
+//   TabsTrigger,
+// } from '@repo/ui'
+
+// type Props = {
+//   sessions: SessionWithAthleteSessionWithAthlete[]
+//   games: game[]
+//   players: athlete[]
+//   date: string
+// }
+// export function Schedule({ sessions, games, players, date }: Props) {
+//   const currentDate = fromUnixTime(Number(date))
+//   // const [selected, setSelected] = React.useState<Date>()
+
+//   return (
+//     <Calendar
+//       mode="single"
+//       // selected={selected}
+//       // onSelect={setSelected}
+//       initialFocus
+//       defaultMonth={currentDate}
+//       components={{
+//         DayContent: ({ date }) => {
+//           return (
+//             <div className="flex h-full w-full flex-col gap-1 border-none bg-transparent p-2">
+//               <div className="flex items-center justify-between">
+//                 <span className="mx-2 text-lg font-medium">
+//                   {date.getDate()}
+//                 </span>
+//                 <Dialog>
+//                   <DialogTrigger asChild>
+//                     <Button
+//                       variant="ghost"
+//                       className="data-[state=open]:bg-muted flex h-8 w-8 p-0"
+//                     >
+//                       <DotsVerticalIcon className="h-4 w-4" />
+//                     </Button>
+//                   </DialogTrigger>
+//                   <DialogContent className="max-w-xl">
+//                     <DialogHeader>
+//                       <DialogTitle>Добавить</DialogTitle>
+//                       <DialogDescription />
+//                     </DialogHeader>
+//                     <Tabs defaultValue="session" className="">
+//                       <TabsList className="grid w-full grid-cols-2">
+//                         <TabsTrigger value="session">Тренировка</TabsTrigger>
+//                         <TabsTrigger value="game">Игра</TabsTrigger>
+//                       </TabsList>
+//                       <TabsContent value="session">
+//                         <SessionForm date={date} players={players} />
+//                       </TabsContent>
+//                       <TabsContent value="game">
+//                         <GameForm date={date} players={players} />
+//                       </TabsContent>
+//                     </Tabs>
+//                   </DialogContent>
+//                 </Dialog>
+//               </div>
+//               <GameCard day={date} games={games} />
+//               <SessionCard day={date} sessions={sessions} />
+//               <IndividualSessionCard day={date} sessions={sessions} />
+//             </div>
+//           )
+//         },
+//         // IconLeft: () => <ChevronLeft className="h-4 w-4" />,
+//         // IconRight: () => <ChevronRight className="h-4 w-4" />,
+//       }}
+//     />
+//   )
+// }
+
+// //   <Dialog>
+// //     <DialogTrigger asChild>
+// //       <Button
+// //         variant="ghost"
+// //         className="data-[state=open]:bg-muted flex h-8 w-8 p-0"
+// //       >
+// //         <DotsVerticalIcon className="h-4 w-4" />
+// //       </Button>
+// //     </DialogTrigger>
+// //     <DialogContent className="max-w-xl">
+// //       <DialogHeader>
+// //         <DialogTitle>Добавить</DialogTitle>
+// //         <DialogDescription />
+// //       </DialogHeader>
+// //       <Tabs defaultValue="session" className="">
+// //         <TabsList className="grid w-full grid-cols-2">
+// //           <TabsTrigger value="session">Тренировка</TabsTrigger>
+// //           <TabsTrigger value="game">Игра</TabsTrigger>
+// //         </TabsList>
+// //         <TabsContent value="session">
+// //           <SessionForm date={date} players={players} />
+// //         </TabsContent>
+// //         <TabsContent value="game">
+// //           <GameForm date={date} players={players} />
+// //         </TabsContent>
+// //       </Tabs>
+// //     </DialogContent>
+// //   </Dialog>
+
+// // <GameCard day={date} games={games} />
+// // <SessionCard day={date} sessions={sessions} />
+// // <IndividualSessionCard day={date} sessions={sessions} />
