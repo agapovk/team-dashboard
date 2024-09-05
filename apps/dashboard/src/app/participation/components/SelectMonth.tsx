@@ -2,14 +2,8 @@
 
 import React from 'react'
 import Link from 'next/link'
-import {
-  addMonths,
-  format,
-  getUnixTime,
-  isAfter,
-  isSameMonth,
-  subMonths,
-} from 'date-fns'
+import { slugFromDate } from '@utils'
+import { addMonths, format, isAfter, isSameMonth, subMonths } from 'date-fns'
 import { ru } from 'date-fns/locale'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
@@ -23,7 +17,9 @@ export default function SelectMonth({ currentDate }: Props) {
   return (
     <div className="flex items-center gap-2">
       {!isAfter(new Date('2023-01-01'), currentDate) ? (
-        <Link href={`/participation/${getUnixTime(subMonths(currentDate, 1))}`}>
+        <Link
+          href={`/participation/${slugFromDate(subMonths(currentDate, 1))}`}
+        >
           <Button
             variant="ghost"
             className="px-3"
@@ -45,7 +41,9 @@ export default function SelectMonth({ currentDate }: Props) {
         {format(currentDate, 'LLLL yyyy', { locale: ru }).toUpperCase()}
       </span>
       {!isSameMonth(currentDate, new Date()) ? (
-        <Link href={`/participation/${getUnixTime(addMonths(currentDate, 1))}`}>
+        <Link
+          href={`/participation/${slugFromDate(addMonths(currentDate, 1))}`}
+        >
           <Button
             variant="ghost"
             className="px-3"

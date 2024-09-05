@@ -5,8 +5,8 @@ import Link from 'next/link'
 import { AthleteSessionWithTeamSession } from '@components/PlayerCalendar/PlayerCalendar'
 import { UTCDate } from '@date-fns/utc'
 import { athlete, game, injury } from '@repo/db'
-import { daysArray } from '@utils'
-import { fromUnixTime, isSameDay, isWithinInterval } from 'date-fns'
+import { dateFromSlug, daysArray } from '@utils'
+import { isSameDay, isWithinInterval } from 'date-fns'
 
 import InjuryInfo from './InjuryInfo'
 import Marker from './Marker'
@@ -37,7 +37,7 @@ type Props = {
 }
 
 export default function ParticipationTable({ players, games, date }: Props) {
-  const currentDate = fromUnixTime(Number(date))
+  const currentDate = dateFromSlug(date)
 
   return (
     <>

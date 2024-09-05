@@ -1,14 +1,9 @@
-import { Metadata } from 'next'
 import { Schedule } from '@components/Calendar/Schedule'
 import prisma from '@repo/db'
-import { endOfMonth, fromUnixTime, startOfMonth } from 'date-fns'
+import { dateFromSlug, getMonthsArray } from '@utils'
+import { endOfMonth, startOfMonth } from 'date-fns'
 
 import SelectMonth from '../components/SelectMonth'
-
-export const metadata: Metadata = {
-  title: 'Calendar',
-  description: 'Example dashboard app using the components.',
-}
 
 type Props = {
   params: {
@@ -16,8 +11,18 @@ type Props = {
   }
 }
 
+export async function generateStaticParams() {
+  const start = startOfMonth('2023-01-01')
+  const end = endOfMonth(new Date())
+  const months = getMonthsArray(start, end)
+
+  return months.map((post) => ({
+    date: post,
+  }))
+}
+
 export default async function CalendarPage({ params: { date } }: Props) {
-  const currentDate = fromUnixTime(Number(date))
+  const currentDate = dateFromSlug(date)
 
   const sessions = await prisma.session.findMany({
     where: {
@@ -69,7 +74,7 @@ export default async function CalendarPage({ params: { date } }: Props) {
         <SelectMonth currentDate={currentDate} />
       </div>
       <Schedule
-        unixDate={date}
+        date={date}
         sessions={sessions}
         games={games}
         players={players}

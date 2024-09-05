@@ -1,7 +1,8 @@
 import { Metadata } from 'next'
 import { Schedule } from '@components/Calendar/Schedule'
 import prisma from '@repo/db'
-import { endOfMonth, getUnixTime, startOfMonth } from 'date-fns'
+import { slugFromDate } from '@utils'
+import { endOfMonth, startOfMonth } from 'date-fns'
 
 import SelectMonth from './components/SelectMonth'
 
@@ -11,17 +12,12 @@ export const metadata: Metadata = {
 }
 
 export default async function CalendarPage() {
-  const currentMonth = new Date().getMonth()
-  const currentYear = new Date().getFullYear()
-  const currnetUnixDate = getUnixTime(
-    new Date(Number(currentYear), Number(currentMonth), 1)
-  )
-
+  const currentDate = startOfMonth(new Date())
   const sessions = await prisma.session.findMany({
     where: {
       start_timestamp: {
-        gte: startOfMonth(new Date()),
-        lte: endOfMonth(new Date()),
+        gte: startOfMonth(currentDate),
+        lte: endOfMonth(currentDate),
       },
     },
     include: {
@@ -49,8 +45,8 @@ export default async function CalendarPage() {
   const games = await prisma.game.findMany({
     where: {
       date: {
-        gte: startOfMonth(new Date()),
-        lte: endOfMonth(new Date()),
+        gte: startOfMonth(currentDate),
+        lte: endOfMonth(currentDate),
       },
     },
   })
@@ -67,7 +63,7 @@ export default async function CalendarPage() {
         <SelectMonth currentDate={new Date()} />
       </div>
       <Schedule
-        unixDate={currnetUnixDate.toString()}
+        date={slugFromDate(currentDate)}
         sessions={sessions}
         games={games}
         players={players}

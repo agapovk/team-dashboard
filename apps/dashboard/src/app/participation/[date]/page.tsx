@@ -1,6 +1,7 @@
 import React from 'react'
 import prisma from '@repo/db'
-import { endOfMonth, fromUnixTime, startOfMonth } from 'date-fns'
+import { dateFromSlug, getMonthsArray } from '@utils'
+import { endOfMonth, startOfMonth } from 'date-fns'
 
 import ParticipationTable from '../components/ParticipationTable'
 
@@ -10,8 +11,19 @@ type Props = {
   }
 }
 
+export async function generateStaticParams() {
+  const start = startOfMonth('2023-01-01')
+  const end = endOfMonth(new Date())
+  const months = getMonthsArray(start, end)
+
+  return months.map((post) => ({
+    date: post,
+  }))
+}
+
 export default async function page({ params: { date } }: Props) {
-  const currentDate = fromUnixTime(Number(date))
+  const currentDate = dateFromSlug(date)
+
   const players = await prisma.athlete.findMany({
     where: {
       isInTeam: true,

@@ -1,16 +1,18 @@
 import React from 'react'
+import { Metadata } from 'next'
 import prisma from '@repo/db'
-import { endOfMonth, getUnixTime, startOfMonth } from 'date-fns'
+import { slugFromDate } from '@utils'
+import { endOfMonth, startOfMonth } from 'date-fns'
 
 import ParticipationTable from './components/ParticipationTable'
 
-export default async function page() {
-  const currentMonth = new Date().getMonth()
-  const currentYear = new Date().getFullYear()
-  const currnetUnixDate = getUnixTime(
-    new Date(Number(currentYear), Number(currentMonth), 1)
-  )
+export const metadata: Metadata = {
+  title: 'Participation',
+  description: 'Example dashboard app using the components.',
+}
 
+export default async function page() {
+  const currentDate = startOfMonth(new Date())
   const players = await prisma.athlete.findMany({
     where: {
       isInTeam: true,
@@ -39,7 +41,7 @@ export default async function page() {
   return (
     <div className="h-full flex-1 flex-col space-y-8 p-8 md:flex">
       <ParticipationTable
-        date={currnetUnixDate.toString()}
+        date={slugFromDate(currentDate)}
         players={players}
         games={games}
       />
