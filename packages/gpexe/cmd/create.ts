@@ -1,35 +1,9 @@
 import * as fs from 'node:fs'
 import prisma from '@repo/db'
 
-import { Semaphore } from '../src/async/semaphore'
 import { athses, dbAth, dbSes } from '../src/mapper'
 
 export default async function create() {
-  const semaphore = Semaphore(8)
-
-  // Create session in db
-  const localDetails: GpexeDetails[] = await getLocalData('details')
-
-  localDetails.forEach(async (detail) => {
-    const currentSession: GpexeTrainingSession = JSON.parse(
-      await fs.promises.readFile(
-        `./temp_data/sessions/session-${detail.teamsession}.json`,
-        'utf-8'
-      )
-    )
-    const dbSesion = await prisma.session.findUnique({
-      where: { gpexe_id: currentSession.id },
-    })
-    if (!dbSesion) {
-      await prisma.session.create({
-        data: {
-          ...dbSes(currentSession, detail.team.parameters),
-        },
-      })
-      console.log(`creating session ${currentSession.id} in db`)
-    }
-  })
-
   // Create athlete in db
   const athletes = await getLocalData('athletes')
 
@@ -47,10 +21,28 @@ export default async function create() {
     }
   })
 
-  // Create athlete_sesions in db
+  const localDetails: GpexeDetails[] = await getLocalData('details')
   localDetails.forEach(async (detail) => {
-    semaphore.acquire()
+    // Create team session in db
+    const currentSession: GpexeTrainingSession = JSON.parse(
+      await fs.promises.readFile(
+        `./temp_data/sessions/session-${detail.teamsession}.json`,
+        'utf-8'
+      )
+    )
+    const dbSesion = await prisma.session.findUnique({
+      where: { gpexe_id: currentSession.id },
+    })
+    if (!dbSesion) {
+      await prisma.session.create({
+        data: {
+          ...dbSes(currentSession, detail.team.parameters),
+        },
+      })
+      console.log(`creating session ${currentSession.id} in db`)
+    }
 
+    // Create athlete_sesions in db
     const athleteSessions: GpexeAthleteTrainingSession[] = Object.values(
       detail.players
     )
@@ -89,8 +81,6 @@ export default async function create() {
         console.log('creating athlete session ' + id)
       }
     })
-
-    semaphore.release()
   })
 }
 

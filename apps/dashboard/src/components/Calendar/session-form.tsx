@@ -41,6 +41,7 @@ const formSchema = z.object({
     .array(),
 })
 export type AthleteSelect = { athlete_id: string }
+export type Athlete_Session = AthleteSelect & { start_timestamp: Date }
 
 export type SessionFormData = {
   gpexe_id: null
@@ -48,7 +49,7 @@ export type SessionFormData = {
   start_timestamp: Date
   total_time: number
   category_name: string
-  athletes: AthleteSelect[]
+  athletes: Athlete_Session[]
 }
 
 type Props = {
@@ -91,19 +92,22 @@ export function SessionForm({ date, players }: Props) {
       ...rest
     } = values
 
+    const timestamp = new Date(
+      new Date(start_timestamp).setHours(
+        Number(start_time_hours),
+        Number(start_time_minutes)
+      )
+    )
+
     const newSession = {
       ...rest,
       gpexe_id: null,
-      start_timestamp: new Date(
-        new Date(start_timestamp).setHours(
-          Number(start_time_hours),
-          Number(start_time_minutes)
-        )
-      ),
+      start_timestamp: timestamp,
       total_time: Number(total_time) * 60,
       athletes: selected.map((player) => {
         return {
           athlete_id: player.athlete_id,
+          start_timestamp: timestamp,
           average_time: Number(total_time),
         }
       }),

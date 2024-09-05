@@ -6,7 +6,7 @@ import { AthleteSessionWithTeamSession } from '@components/PlayerCalendar/Player
 import { UTCDate } from '@date-fns/utc'
 import { athlete, game, injury } from '@repo/db'
 import { daysArray } from '@utils'
-import { isSameDay, isWithinInterval } from 'date-fns'
+import { fromUnixTime, isSameDay, isWithinInterval } from 'date-fns'
 
 import InjuryInfo from './InjuryInfo'
 import Marker from './Marker'
@@ -33,10 +33,11 @@ type AthleteWithAthSesAndTeamSes = athlete & {
 type Props = {
   players: AthleteWithAthSesAndTeamSes[]
   games: game[]
+  date: string
 }
 
-export default function ParticipationTable({ players, games }: Props) {
-  const [currentDate, setCurrentDate] = React.useState(new Date())
+export default function ParticipationTable({ players, games, date }: Props) {
+  const currentDate = fromUnixTime(Number(date))
 
   return (
     <>
@@ -49,9 +50,8 @@ export default function ParticipationTable({ players, games }: Props) {
             Анализ участия игроков в УТЗ и матчах
           </p>
         </div>
-        <SelectMonth currentDate={currentDate} setMonth={setCurrentDate} />
+        <SelectMonth currentDate={currentDate} />
       </div>
-
       <Table className="border-collapse text-xs">
         <TableHeader>
           <TableRow>

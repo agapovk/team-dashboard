@@ -10,7 +10,7 @@ type Props = {
 export default function Marker({ data }: Props) {
   if (data.length === 0) return null
   return (
-    <div>
+    <div className="flex items-center justify-center">
       {data.length !== 0 &&
         data.map((athses) => (
           <span
