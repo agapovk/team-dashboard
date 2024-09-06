@@ -15,10 +15,6 @@ const menuItems = [
     href: '/players',
   },
   {
-    title: 'Тренировки',
-    href: '/performance',
-  },
-  {
     title: 'Посещение',
     href: '/participation',
   },
@@ -26,6 +22,10 @@ const menuItems = [
     title: 'Игры',
     href: '/games',
   },
+  // {
+  //   title: 'Тренировки',
+  //   href: '/performance',
+  // },
 ]
 
 export function MainNav({

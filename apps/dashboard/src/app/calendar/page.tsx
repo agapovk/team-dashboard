@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import { Schedule } from '@components/Calendar/Schedule'
 import prisma from '@repo/db'
 import { slugFromDate } from '@utils'
-import { endOfMonth, startOfMonth } from 'date-fns'
+import { addDays, endOfMonth, startOfMonth, subDays } from 'date-fns'
 
 import SelectMonth from './components/SelectMonth'
 
@@ -16,8 +16,8 @@ export default async function CalendarPage() {
   const sessions = await prisma.session.findMany({
     where: {
       start_timestamp: {
-        gte: startOfMonth(currentDate),
-        lte: endOfMonth(currentDate),
+        gte: subDays(startOfMonth(currentDate), 6),
+        lte: addDays(endOfMonth(currentDate), 6),
       },
     },
     include: {
@@ -45,8 +45,8 @@ export default async function CalendarPage() {
   const games = await prisma.game.findMany({
     where: {
       date: {
-        gte: startOfMonth(currentDate),
-        lte: endOfMonth(currentDate),
+        gte: subDays(startOfMonth(currentDate), 6),
+        lte: addDays(endOfMonth(currentDate), 6),
       },
     },
   })

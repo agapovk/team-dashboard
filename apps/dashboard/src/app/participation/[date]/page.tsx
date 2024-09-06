@@ -49,7 +49,7 @@ export default async function page({ params: { date } }: Props) {
   const games = await prisma.game.findMany()
 
   return (
-    <div className="h-full flex-1 flex-col space-y-8 p-8 md:flex">
+    <div className="h-full flex-1 flex-col space-y-2 p-8 md:flex">
       <ParticipationTable date={date} players={players} games={games} />
     </div>
   )

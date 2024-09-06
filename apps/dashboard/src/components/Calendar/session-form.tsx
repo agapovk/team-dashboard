@@ -30,8 +30,8 @@ import {
 const formSchema = z.object({
   name: z.string(),
   start_timestamp: z.date(),
-  start_time_hours: z.string(),
-  start_time_minutes: z.string(),
+  start_time_hours: z.string().min(2).max(2),
+  start_time_minutes: z.string().min(2).max(2),
   total_time: z.string(),
   category_name: z.string(),
   athletes: z
@@ -63,6 +63,7 @@ export function SessionForm({ date, players }: Props) {
   })
 
   const [selected, setSelected] = React.useState(playersArray)
+  const [loading, setLoading] = React.useState(false)
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -114,6 +115,7 @@ export function SessionForm({ date, players }: Props) {
     }
 
     try {
+      setLoading(true)
       addSession(newSession)
     } catch (error) {
       toast({
@@ -246,7 +248,9 @@ export function SessionForm({ date, players }: Props) {
         />
 
         <div className="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2">
-          <Button type="submit">Сохранить</Button>
+          <Button type="submit" disabled={loading}>
+            Сохранить
+          </Button>
         </div>
       </form>
     </Form>

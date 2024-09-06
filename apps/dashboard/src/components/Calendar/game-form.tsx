@@ -35,9 +35,9 @@ import {
 
 const formSchema = z.object({
   start_timestamp: z.date(),
-  start_time_hours: z.string(),
-  start_time_minutes: z.string(),
-  vs: z.string(),
+  start_time_hours: z.string().min(2).max(2),
+  start_time_minutes: z.string().min(2).max(2),
+  vs: z.string().min(3),
   competition: z.string(),
   result: z.string(),
   home: z.string(),
@@ -66,6 +66,8 @@ export function GameForm({ date, players }: Props) {
   // })
 
   // const [selected, setSelected] = React.useState(playersArray)
+  const [loading, setLoading] = React.useState(false)
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
 
@@ -115,6 +117,7 @@ export function GameForm({ date, players }: Props) {
     }
 
     try {
+      setLoading(true)
       addGame(newGame)
       // toast({
       //   title: 'NEW GAME',
@@ -300,7 +303,9 @@ export function GameForm({ date, players }: Props) {
         </div>
 
         <div className="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2">
-          <Button type="submit">Сохранить</Button>
+          <Button type="submit" disabled={loading}>
+            Сохранить
+          </Button>
         </div>
       </form>
     </Form>

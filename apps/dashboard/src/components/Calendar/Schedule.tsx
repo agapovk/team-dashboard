@@ -57,7 +57,6 @@ export function Schedule({
       ISOWeek
       defaultMonth={currentDate}
       showOutsideDays={showOutsideDays}
-      hideHead
       disableNavigation
       className={cn('p-0', className)}
       classNames={{
