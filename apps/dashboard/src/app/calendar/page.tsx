@@ -36,6 +36,7 @@ export default async function CalendarPage() {
   const players = await prisma.athlete.findMany({
     where: {
       isInTeam: true,
+      OR: [{ position: { title: { not: 'Вратарь' } } }, { position_id: null }],
     },
     orderBy: {
       name: 'asc',

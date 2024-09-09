@@ -22,6 +22,10 @@ const menuItems = [
     title: 'Игры',
     href: '/games',
   },
+  {
+    title: 'Травмы',
+    href: '/injury',
+  },
   // {
   //   title: 'Тренировки',
   //   href: '/performance',

@@ -39,6 +39,13 @@ type Props = {
 export default function ParticipationTable({ players, games, date }: Props) {
   const currentDate = dateFromSlug(date)
 
+  const fieldPlayers = players.filter(
+    (player) => player.position_id !== 'ea846ca7-40dd-40b5-97fa-b2155ff4c50c'
+  )
+  const goalkeepers = players.filter(
+    (player) => player.position_id === 'ea846ca7-40dd-40b5-97fa-b2155ff4c50c'
+  )
+
   return (
     <>
       <div className="flex items-center justify-between gap-4">
@@ -80,7 +87,7 @@ export default function ParticipationTable({ players, games, date }: Props) {
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <span className="w-full cursor-pointer text-center font-bold">
-                            {day}
+                            {date.getDate()}
                           </span>
                         </TooltipTrigger>
                         <TooltipContent>
@@ -89,7 +96,7 @@ export default function ParticipationTable({ players, games, date }: Props) {
                       </Tooltip>
                     </TooltipProvider>
                   ) : (
-                    <span>{day}</span>
+                    <span>{date.getDate()}</span>
                   )}
                 </TableHead>
               )
@@ -97,7 +104,7 @@ export default function ParticipationTable({ players, games, date }: Props) {
           </TableRow>
         </TableHeader>
         <TableBody className="border-b">
-          {players.map((player) => (
+          {fieldPlayers.map((player) => (
             <TableRow key={player.id}>
               <TableCell className="border-x p-2 font-medium">
                 <Link href={`/players/${player.id}`} className="underline">
@@ -145,8 +152,63 @@ export default function ParticipationTable({ players, games, date }: Props) {
                       <Marker data={currentDayAthleteSession} />
                       <InjuryInfo
                         currentDayInjury={currentDayInjury}
-                        currentDate={currentDate}
-                        day={day}
+                        day={date}
+                      />
+                    </div>
+                  </TableCell>
+                )
+              })}
+            </TableRow>
+          ))}
+          {goalkeepers.map((player) => (
+            <TableRow key={player.id}>
+              <TableCell className={cn('border-x p-2 font-medium')}>
+                <Link href={`/players/${player.id}`} className="underline">
+                  {player.last_name}
+                </Link>
+              </TableCell>
+              {daysArray(currentDate).map((day) => {
+                const date = new UTCDate(
+                  currentDate.getFullYear(),
+                  currentDate.getMonth(),
+                  day
+                )
+                const currentDayAthleteSession = player.athlete_sessions.filter(
+                  (athses) =>
+                    isSameDay(
+                      new UTCDate(athses.session.start_timestamp),
+                      date
+                    ) &&
+                    (athses.session.category_name?.includes('ТРЕНИРОВКА') ||
+                      athses.session.category_name?.includes('МАТЧ') ||
+                      athses.session.category_name?.includes('БЕЗ ДАТЧИКОВ'))
+                )
+                const currentDayInjury = player.injury?.find((inj) =>
+                  isWithinInterval(date, {
+                    start: new UTCDate(inj.start_date),
+                    end: inj.end_date
+                      ? new UTCDate(inj.end_date)
+                      : new UTCDate(),
+                  })
+                )
+                const currentDayGame = games.find(
+                  (game) => game.date && isSameDay(new UTCDate(game.date), date)
+                )
+
+                return (
+                  <TableCell
+                    key={day}
+                    className={cn(
+                      'border-r p-2',
+                      currentDayGame && 'bg-yellow-100',
+                      currentDayInjury && 'bg-red-200'
+                    )}
+                  >
+                    <div className="flex items-center justify-center gap-1">
+                      <Marker data={currentDayAthleteSession} />
+                      <InjuryInfo
+                        currentDayInjury={currentDayInjury}
+                        day={date}
                       />
                     </div>
                   </TableCell>

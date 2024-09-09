@@ -29,7 +29,7 @@ export default async function LastDays() {
     <Card className="col-span-4 space-y-4 lg:col-span-5">
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
         <CardTitle className="text-md text-foreground font-normal">
-          Послдение 7 дней
+          Послдение тренировки
         </CardTitle>
         <CardDescription />
         <ChartNoAxesColumn className="text-muted-foreground" />

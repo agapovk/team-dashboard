@@ -10,5 +10,5 @@ export const updateAthlete = async (id: string, data: AthleteFormData) => {
     data,
   })
 
-  revalidatePath('./players')
+  revalidatePath('/players')
 }

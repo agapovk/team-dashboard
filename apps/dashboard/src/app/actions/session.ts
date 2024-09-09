@@ -21,18 +21,17 @@ export const addSession = async ({ athletes, ...data }: SessionFormData) => {
 
 export const deleteSession = async (id: string) => {
   try {
-    const as = await prisma.athlete_session.deleteMany({
+    await prisma.athlete_session.deleteMany({
       where: {
         session_id: id,
       },
     })
 
-    const s = await prisma.session.delete({
+    await prisma.session.delete({
       where: {
         id: id,
       },
     })
-    console.log(as, s)
   } catch (error) {
     console.log(error)
   }

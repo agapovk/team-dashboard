@@ -9,6 +9,7 @@ import { z } from 'zod'
 
 import {
   Button,
+  DialogClose,
   Form,
   FormControl,
   FormField,
@@ -48,6 +49,8 @@ type Props = {
 }
 
 export function AthleteForm({ data }: Props) {
+  const [loading, setLoading] = React.useState(false)
+
   const { toast } = useToast()
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -63,7 +66,7 @@ export function AthleteForm({ data }: Props) {
     mode: 'onChange',
   })
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     const newValues: AthleteFormData = {
       number: Number(values.number) ?? null,
       position_id: values.position_id ?? undefined,
@@ -73,17 +76,18 @@ export function AthleteForm({ data }: Props) {
     }
 
     try {
-      updateAthlete(data.id, newValues)
-      toast({
-        title: 'OK',
-        description: (
-          <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-            <code className="text-white">
-              {JSON.stringify(newValues, null, 2)}
-            </code>
-          </pre>
-        ),
-      })
+      setLoading(true)
+      await updateAthlete(data.id, newValues)
+      // toast({
+      //   title: 'OK',
+      //   description: (
+      //     <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+      //       <code className="text-white">
+      //         {JSON.stringify(newValues, null, 2)}
+      //       </code>
+      //     </pre>
+      //   ),
+      // })
     } catch (error) {
       toast({
         title: 'Error',
@@ -219,7 +223,11 @@ export function AthleteForm({ data }: Props) {
           )}
         />
         <div className="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2">
-          <Button type="submit">Сохранить</Button>
+          <DialogClose asChild>
+            <Button type="submit" disabled={loading}>
+              Сохранить
+            </Button>
+          </DialogClose>
         </div>
       </form>
     </Form>

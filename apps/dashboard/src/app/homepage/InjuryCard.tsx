@@ -13,6 +13,12 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
 } from '@repo/ui'
 
 export default async function InjuryCard() {
@@ -68,9 +74,23 @@ export default async function InjuryCard() {
           ))}
         </div>
       </CardContent>
-      <CardFooter className="flex justify-end">
-        <Link href="#">
-          <Button>Смотреть все</Button>
+      <CardFooter className="flex justify-end gap-4">
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button variant="outline">Добавить</Button>
+          </SheetTrigger>
+          <SheetContent>
+            <SheetHeader>
+              <SheetTitle>Are you absolutely sure?</SheetTitle>
+              <SheetDescription>
+                This action cannot be undone. This will permanently delete your
+                account and remove your data from our servers.
+              </SheetDescription>
+            </SheetHeader>
+          </SheetContent>
+        </Sheet>
+        <Link href="/injury">
+          <Button>Подробнее</Button>
         </Link>
       </CardFooter>
     </Card>

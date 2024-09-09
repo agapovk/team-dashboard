@@ -1,6 +1,6 @@
 import { UTCDate } from '@date-fns/utc'
 import { injury } from '@repo/db'
-import { differenceInDays } from 'date-fns'
+import { differenceInDays, isSameDay } from 'date-fns'
 
 import {
   Tooltip,
@@ -11,22 +11,14 @@ import {
 
 type Props = {
   currentDayInjury: injury | undefined
-  currentDate: Date
-  day: number
+  day: Date
 }
 
-export default function InjuryInfo({
-  currentDayInjury,
-  currentDate,
-  day,
-}: Props) {
-  const today = new UTCDate(
-    currentDate.getFullYear(),
-    currentDate.getMonth(),
-    new UTCDate().getDate()
-  )
+export default function InjuryInfo({ currentDayInjury, day }: Props) {
+  const today = new UTCDate()
 
-  if (currentDayInjury && today.getDate() === day)
+  // For today
+  if (currentDayInjury && isSameDay(today, day))
     return (
       <TooltipProvider delayDuration={100}>
         <Tooltip>
@@ -47,7 +39,11 @@ export default function InjuryInfo({
       </TooltipProvider>
     )
 
-  if (currentDayInjury && currentDayInjury.end_date?.getDate() === day)
+  // For injuery end date
+  if (
+    currentDayInjury?.end_date &&
+    isSameDay(new Date(currentDayInjury.end_date), new Date(day))
+  )
     return (
       <TooltipProvider delayDuration={100}>
         <Tooltip>
