@@ -2,8 +2,9 @@ import { Metadata } from 'next'
 import prisma from '@repo/db'
 
 import { columns } from './columns'
-// import PlayersTable from './components/PlayersTable'
+import Constructor from './components/Constructor'
 import { DataTable } from './data-table'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@repo/ui'
 
 export const metadata: Metadata = {
   title: 'Состав команды',
@@ -23,22 +24,30 @@ export default async function PlayersPage() {
     },
   })
 
-  // const positions = await prisma.position.findMany()
-
   return (
-    <div className="h-full flex-1 flex-col space-y-4 p-8 md:flex">
-      <div className="flex flex-col justify-start space-y-4 sm:flex-row sm:items-center sm:justify-between sm:space-y-0">
-        <div>
-          <h2 className="text-2xl font-bold tracking-tight">Состав команды</h2>
-          <p className="text-muted-foreground">
-            Список игроков команды и их данные
-          </p>
+    <Tabs defaultValue="constructor">
+      <div className="h-full flex-1 flex-col space-y-4 p-8 md:flex">
+        <div className="flex flex-col justify-start space-y-4 sm:flex-row sm:items-center sm:justify-between sm:space-y-0">
+          <div>
+            <h2 className="text-2xl font-bold tracking-tight">
+              Состав команды
+            </h2>
+            <p className="text-muted-foreground">
+              Список игроков команды и их данные
+            </p>
+          </div>
+          <TabsList className="grid grid-cols-2">
+            <TabsTrigger value="squad">Состав</TabsTrigger>
+            <TabsTrigger value="constructor">К тренировке</TabsTrigger>
+          </TabsList>
         </div>
+        <TabsContent value="squad">
+          <DataTable columns={columns} data={players} />
+        </TabsContent>
+        <TabsContent value="constructor">
+          <Constructor players={players} />
+        </TabsContent>
       </div>
-      <div>
-        <DataTable columns={columns} data={players} />
-        {/* <PlayersTable players={players} positions={positions} /> */}
-      </div>
-    </div>
+    </Tabs>
   )
 }

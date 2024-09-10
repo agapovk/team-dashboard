@@ -46,7 +46,10 @@ export default async function InjuryCard() {
       <CardContent className="flex-1">
         <div className="space-y-8">
           {injuries.map((inj) => (
-            <div className="flex items-center justify-between" key={inj.id}>
+            <div
+              className="flex flex-col items-start justify-between space-y-2 sm:flex-row sm:space-y-0"
+              key={inj.id}
+            >
               <div className="flex-1 space-y-1">
                 <p className="text-sm font-medium leading-none">
                   {inj.athlete.name}
@@ -55,7 +58,7 @@ export default async function InjuryCard() {
                   {inj.diagnosis}
                 </p>
               </div>
-              <div className="space-y-1">
+              <div className="flex w-full flex-row items-center justify-between sm:w-fit sm:flex-col sm:items-end sm:space-y-1">
                 <p className="text-right text-sm font-medium leading-none">
                   {format(inj.start_date, 'dd.MM.yy')}
                 </p>
