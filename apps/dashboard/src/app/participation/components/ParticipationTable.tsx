@@ -48,7 +48,7 @@ export default function ParticipationTable({ players, games, date }: Props) {
 
   return (
     <>
-      <div className="flex items-center justify-between gap-4">
+      <div className="flex flex-col justify-start space-y-4 sm:flex-row sm:items-center sm:justify-between sm:space-y-0">
         <div>
           <h2 className="text-2xl font-bold tracking-tight">
             Дневник посещения

@@ -3,7 +3,6 @@ import Link from 'next/link'
 import prisma from '@repo/db'
 import { format } from 'date-fns'
 import { ShieldX } from 'lucide-react'
-import { IoShirt } from 'react-icons/io5'
 
 import {
   Button,
@@ -48,13 +47,7 @@ export default async function InjuryCard() {
         <div className="space-y-8">
           {injuries.map((inj) => (
             <div className="flex items-center justify-between" key={inj.id}>
-              <span className="relative">
-                <IoShirt className="text-border h-10 w-10" />
-                <span className="absolute inset-0 flex h-10 w-10 items-center justify-center font-mono text-sm font-semibold">
-                  {inj.athlete.number}
-                </span>
-              </span>
-              <div className="ml-4 flex-1 space-y-1">
+              <div className="flex-1 space-y-1">
                 <p className="text-sm font-medium leading-none">
                   {inj.athlete.name}
                 </p>

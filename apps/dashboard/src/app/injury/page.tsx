@@ -49,7 +49,7 @@ export default async function page() {
 
   return (
     <Tabs defaultValue="current">
-      <div className="h-full flex-1 flex-col space-y-2 p-8 md:flex">
+      <div className="h-full flex-1 flex-col space-y-4 p-8 md:flex">
         <div className="flex flex-col justify-start space-y-4 sm:flex-row sm:items-center sm:justify-between sm:space-y-0">
           <div>
             <h2 className="text-2xl font-bold tracking-tight">
@@ -59,13 +59,13 @@ export default async function page() {
               Информация по травмированным игрокам
             </p>
           </div>
-          <TabsList className="w-fit">
+          <TabsList className="grid grid-cols-2">
             <TabsTrigger value="current">Текущие</TabsTrigger>
             <TabsTrigger value="history">История</TabsTrigger>
           </TabsList>
         </div>
         <TabsContent value="current">
-          <div className="flex flex-col items-stretch gap-4 py-4 lg:flex-row lg:items-start">
+          <div className="flex flex-col items-stretch gap-4 lg:flex-row lg:items-start">
             <Card className="col-span-6 flex flex-1 flex-col justify-between space-y-2 border-red-500 lg:col-span-2">
               <CardHeader className="flex flex-row items-start justify-between space-y-0 pb-4">
                 <CardTitle className="text-md text-foreground font-semibold">

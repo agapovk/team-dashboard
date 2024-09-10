@@ -20,8 +20,8 @@ export default function GamesTabs({ games }: Props) {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Tabs defaultValue={defaultTab || 'fitness'}>
-        <div className="h-full flex-1 flex-col space-y-2 p-8 md:flex">
-          <div className="flex items-center justify-between space-y-2">
+        <div className="h-full flex-1 flex-col space-y-4 p-8 md:flex">
+          <div className="flex flex-col justify-start space-y-4 sm:flex-row sm:items-center sm:justify-between sm:space-y-0">
             <div>
               <h2 className="text-2xl font-bold tracking-tight">
                 Последние игры

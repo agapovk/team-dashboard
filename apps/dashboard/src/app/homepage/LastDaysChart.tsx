@@ -42,7 +42,7 @@ export function LastDaysChart({ sessions }: Props) {
   return (
     <ChartContainer
       config={chartConfig}
-      className="h-[350px] min-h-[160px] w-full"
+      // className="h-[350px] min-h-[160px] w-full"
     >
       <BarChart accessibilityLayer data={chartData}>
         <CartesianGrid vertical={false} />

@@ -26,8 +26,8 @@ export default async function PlayersPage() {
   // const positions = await prisma.position.findMany()
 
   return (
-    <div className="h-full flex-1 flex-col space-y-2 p-8 md:flex">
-      <div className="flex items-center justify-between space-y-2">
+    <div className="h-full flex-1 flex-col space-y-4 p-8 md:flex">
+      <div className="flex flex-col justify-start space-y-4 sm:flex-row sm:items-center sm:justify-between sm:space-y-0">
         <div>
           <h2 className="text-2xl font-bold tracking-tight">Состав команды</h2>
           <p className="text-muted-foreground">
@@ -35,7 +35,7 @@ export default async function PlayersPage() {
           </p>
         </div>
       </div>
-      <div className="py-4">
+      <div>
         <DataTable columns={columns} data={players} />
         {/* <PlayersTable players={players} positions={positions} /> */}
       </div>
