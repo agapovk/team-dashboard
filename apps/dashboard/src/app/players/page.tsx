@@ -11,6 +11,8 @@ export const metadata: Metadata = {
   description: 'Игроки команды и их данные',
 }
 
+export const revalidate = 0
+
 export default async function PlayersPage() {
   const players = await prisma.athlete.findMany({
     where: {
@@ -25,7 +27,7 @@ export default async function PlayersPage() {
   })
 
   return (
-    <Tabs defaultValue="constructor">
+    <Tabs defaultValue="squad">
       <div className="h-full flex-1 flex-col space-y-4 p-8 md:flex">
         <div className="flex flex-col justify-start space-y-4 sm:flex-row sm:items-center sm:justify-between sm:space-y-0">
           <div>

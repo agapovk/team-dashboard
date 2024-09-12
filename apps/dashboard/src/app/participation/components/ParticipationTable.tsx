@@ -36,6 +36,8 @@ type Props = {
   date: string
 }
 
+export const revalidate = 0
+
 export default function ParticipationTable({ players, games, date }: Props) {
   const currentDate = dateFromSlug(date)
 

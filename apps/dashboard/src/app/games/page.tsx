@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   description: 'A task and issue tracker build using Tanstack Table.',
 }
 
+export const revalidate = 0
+
 export default async function GamesPage() {
   const games = await prisma.game.findMany({
     orderBy: {

@@ -20,6 +20,8 @@ import {
   TabsTrigger,
 } from '@repo/ui'
 
+export const revalidate = 0
+
 export default async function page() {
   const injuries = await prisma.injury.findMany({
     orderBy: {

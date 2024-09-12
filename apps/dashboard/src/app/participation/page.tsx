@@ -11,6 +11,8 @@ export const metadata: Metadata = {
   description: 'Example dashboard app using the components.',
 }
 
+export const revalidate = 0
+
 export default async function page() {
   const currentDate = startOfMonth(new Date())
   const players = await prisma.athlete.findMany({

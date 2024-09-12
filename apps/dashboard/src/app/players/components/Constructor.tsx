@@ -26,13 +26,29 @@ type PlayerButtonProps = {
   variant: 'default' | 'secondary' | 'destructive' | 'outline'
 }
 
+type PlayersWithGroup = {
+  player: athlete
+  group: 'training' | 'injured' | 'individual' | 'recovery'
+}
+
 export default function Constructor({ players }: Props) {
-  const [squad, setSquad] = React.useState(players.filter((p) => !p.isInjured))
-  const [recovery, setRecovery] = React.useState<athlete[]>([])
-  const [individual, setIndividual] = React.useState<athlete[]>([])
-  const [injured, setInjured] = React.useState(
-    players.filter((p) => p.isInjured)
-  )
+  const playersWithGroup: PlayersWithGroup[] = players
+    .filter(
+      (player) => player.position_id !== 'ea846ca7-40dd-40b5-97fa-b2155ff4c50c'
+    )
+    .map((player) => {
+      return {
+        player,
+        group: player.isInjured ? 'injured' : 'training',
+      }
+    })
+
+  const [playerGroups, setPlayerGroups] =
+    React.useState<PlayersWithGroup[]>(playersWithGroup)
+  const training = playerGroups.filter((p) => p.group === 'training')
+  const recovery = playerGroups.filter((p) => p.group === 'recovery')
+  const individual = playerGroups.filter((p) => p.group === 'individual')
+  const injured = playerGroups.filter((p) => p.group === 'injured')
 
   function PlayerButton({ player, variant }: PlayerButtonProps) {
     return (
@@ -49,10 +65,12 @@ export default function Constructor({ players }: Props) {
         <DropdownMenuContent>
           <DropdownMenuItem
             onClick={() =>
-              setSquad((old) =>
-                old.findIndex((p) => p.id === player.id)
-                  ? [...old, player]
-                  : old.filter((p) => p.id === player.id)
+              setPlayerGroups((old) =>
+                old.map((p) => {
+                  if (p.player.id === player.id && p.group !== 'training')
+                    return { player: p.player, group: 'training' }
+                  else return p
+                })
               )
             }
           >
@@ -60,10 +78,12 @@ export default function Constructor({ players }: Props) {
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={() =>
-              setRecovery((old) =>
-                old.findIndex((p) => p.id === player.id)
-                  ? [...old, player]
-                  : old.filter((p) => p.id === player.id)
+              setPlayerGroups((old) =>
+                old.map((p) => {
+                  if (p.player.id === player.id && p.group !== 'recovery')
+                    return { player: p.player, group: 'recovery' }
+                  else return p
+                })
               )
             }
           >
@@ -71,10 +91,12 @@ export default function Constructor({ players }: Props) {
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={() =>
-              setIndividual((old) =>
-                old.findIndex((p) => p.id === player.id)
-                  ? [...old, player]
-                  : old.filter((p) => p.id === player.id)
+              setPlayerGroups((old) =>
+                old.map((p) => {
+                  if (p.player.id === player.id && p.group !== 'individual')
+                    return { player: p.player, group: 'individual' }
+                  else return p
+                })
               )
             }
           >
@@ -82,10 +104,12 @@ export default function Constructor({ players }: Props) {
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={() =>
-              setInjured((old) =>
-                old.findIndex((p) => p.id === player.id)
-                  ? [...old, player]
-                  : old.filter((p) => p.id === player.id)
+              setPlayerGroups((old) =>
+                old.map((p) => {
+                  if (p.player.id === player.id && p.group !== 'injured')
+                    return { player: p.player, group: 'injured' }
+                  else return p
+                })
               )
             }
           >
@@ -103,10 +127,10 @@ export default function Constructor({ players }: Props) {
           <CardTitle className="text-md text-foreground font-semibold">
             Тренируются
           </CardTitle>
-          <CardDescription>{squad.length}</CardDescription>
+          <CardDescription>{training.length}</CardDescription>
         </CardHeader>
         <CardContent className="flex flex-wrap items-start gap-2">
-          {squad.map((player) => (
+          {training.map(({ player }) => (
             <PlayerButton player={player} variant="outline" key={player.id} />
           ))}
         </CardContent>
@@ -121,7 +145,7 @@ export default function Constructor({ players }: Props) {
             <CardDescription>{recovery.length}</CardDescription>
           </CardHeader>
           <CardContent className="flex flex-1 flex-wrap gap-2">
-            {recovery.map((player) => (
+            {recovery.map(({ player }) => (
               <PlayerButton
                 player={player}
                 variant="secondary"
@@ -139,7 +163,7 @@ export default function Constructor({ players }: Props) {
             <CardDescription>{individual.length}</CardDescription>
           </CardHeader>
           <CardContent className="flex flex-1 flex-wrap gap-2">
-            {individual.map((player) => (
+            {individual.map(({ player }) => (
               <PlayerButton player={player} variant="default" key={player.id} />
             ))}
           </CardContent>
@@ -153,7 +177,7 @@ export default function Constructor({ players }: Props) {
             <CardDescription>{injured.length}</CardDescription>
           </CardHeader>
           <CardContent className="flex flex-1 flex-wrap gap-2">
-            {injured.map((player) => (
+            {injured.map(({ player }) => (
               <PlayerButton
                 player={player}
                 variant="destructive"

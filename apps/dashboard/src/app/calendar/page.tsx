@@ -11,6 +11,8 @@ export const metadata: Metadata = {
   description: 'Example dashboard app using the components.',
 }
 
+export const revalidate = 0
+
 export default async function CalendarPage() {
   const currentDate = startOfMonth(new Date())
   const sessions = await prisma.session.findMany({
