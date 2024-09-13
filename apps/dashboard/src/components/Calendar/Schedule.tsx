@@ -1,35 +1,19 @@
 'use client'
 
 import React from 'react'
-import { DotsVerticalIcon } from '@radix-ui/react-icons'
 import { athlete, game } from '@repo/db'
 import { dateFromSlug } from '@utils'
 import { ru } from 'date-fns/locale'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
-import { GameForm } from './game-form'
+import DialogWithForms from './DialogWithForms'
 import GameCard from './GameCard'
 import IndividualSessionCard, {
   SessionWithAthleteSessionWithAthlete,
 } from './IndividualSessionCard'
-import { SessionForm } from './session-form'
 import SessionCard from './SessionCard'
 import { cn } from '@repo/ui/lib/utils'
-import {
-  Button,
-  buttonVariants,
-  Calendar,
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from '@repo/ui'
+import { buttonVariants, Calendar } from '@repo/ui'
 
 export type CalendarProps = React.ComponentProps<typeof Calendar>
 export type CalendarPropsWithEvents = CalendarProps & {
@@ -98,34 +82,7 @@ export function Schedule({
                 <span className="mx-2 text-lg font-medium">
                   {date.getDate()}
                 </span>
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <Button
-                      variant="ghost"
-                      className="data-[state=open]:bg-muted flex h-8 w-8 p-0"
-                    >
-                      <DotsVerticalIcon className="h-4 w-4" />
-                    </Button>
-                  </DialogTrigger>
-                  <DialogContent className="max-w-xl">
-                    <DialogHeader>
-                      <DialogTitle>Добавить</DialogTitle>
-                      <DialogDescription />
-                    </DialogHeader>
-                    <Tabs defaultValue="session" className="">
-                      <TabsList className="grid w-full grid-cols-2">
-                        <TabsTrigger value="session">Тренировка</TabsTrigger>
-                        <TabsTrigger value="game">Игра</TabsTrigger>
-                      </TabsList>
-                      <TabsContent value="session">
-                        <SessionForm date={date} players={players} />
-                      </TabsContent>
-                      <TabsContent value="game">
-                        <GameForm date={date} players={players} />
-                      </TabsContent>
-                    </Tabs>
-                  </DialogContent>
-                </Dialog>
+                <DialogWithForms date={date} players={players} />
               </div>
               <GameCard day={date} games={games} />
               <SessionCard day={date} sessions={sessions} />

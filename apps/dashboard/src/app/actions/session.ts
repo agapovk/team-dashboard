@@ -6,7 +6,7 @@ import prisma from '@repo/db'
 import { v4 as uuidv4 } from 'uuid'
 
 export const addSession = async ({ athletes, ...data }: SessionFormData) => {
-  await prisma.session.create({
+  const result = await prisma.session.create({
     data: {
       id: uuidv4(),
       ...data,
@@ -17,6 +17,7 @@ export const addSession = async ({ athletes, ...data }: SessionFormData) => {
   })
 
   revalidatePath('/')
+  return result
 }
 
 export const deleteSession = async (id: string) => {

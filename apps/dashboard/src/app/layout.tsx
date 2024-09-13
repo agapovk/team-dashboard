@@ -3,6 +3,7 @@ import './globals.css'
 import { Suspense } from 'react'
 import { Inter } from 'next/font/google'
 import Header from '@components/Header/Header'
+import { Spinner } from '@components/Spinner'
 import { ThemeProvider } from '@components/Theme/theme-provider'
 
 import { Toaster } from '@repo/ui'
@@ -28,8 +29,9 @@ export default function RootLayout({
           <Header />
           <Suspense
             fallback={
-              <div className="flex h-full items-center justify-center">
-                Загузка данных...
+              <div className="flex h-full items-center justify-center gap-4">
+                Загузка данных
+                <Spinner />
               </div>
             }
           >

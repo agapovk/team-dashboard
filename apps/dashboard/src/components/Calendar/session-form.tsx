@@ -5,7 +5,7 @@ import { addSession } from '@dashboard/actions/session'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { athlete } from '@repo/db'
 import { format } from 'date-fns'
-import { Calendar as CalendarIcon } from 'lucide-react'
+import { Calendar as CalendarIcon, MonitorCheck } from 'lucide-react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
@@ -55,15 +55,17 @@ export type SessionFormData = {
 type Props = {
   date: Date
   players: athlete[]
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export function SessionForm({ date, players }: Props) {
+export function SessionForm({ date, players, setOpen }: Props) {
   const playersArray = players.map((player) => {
     return { athlete_id: player.id }
   })
 
   const [selected, setSelected] = React.useState(playersArray)
   const [loading, setLoading] = React.useState(false)
+  const [error, setError] = React.useState('')
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -114,24 +116,30 @@ export function SessionForm({ date, players }: Props) {
       }),
     }
 
-    try {
-      setLoading(true)
-      addSession(newSession)
-    } catch (error) {
+    setLoading(true)
+    const result = addSession(newSession)
+    if (!result) {
+      setError('Error')
+      return
+    } else {
       toast({
-        title: 'Error',
+        duration: 2000,
         description: (
-          <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-            <code className="text-white">{JSON.stringify(error, null, 2)}</code>
-          </pre>
+          <span className="flex items-center gap-2">
+            <MonitorCheck />
+            Данные изменены
+          </span>
         ),
       })
+      setOpen(false)
     }
+    setLoading(false)
   }
 
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-4 py-4">
+        <div>{error}</div>
         <FormField
           control={form.control}
           name="name"
@@ -229,12 +237,20 @@ export function SessionForm({ date, players }: Props) {
             )}
           />
         </div>
-        <FormField
+        <div className="text-sm font-medium leading-none">Список игроков</div>
+        <SelectPlayers
+          players={players}
+          selected={selected}
+          setSelected={setSelected}
+        />
+        {/* <FormField
           control={form.control}
           name="athletes"
           render={() => (
             <FormItem className="flex flex-col gap-1">
-              <FormLabel>Список игроков</FormLabel>
+              <div className="text-sm font-medium leading-none">
+                Список игроков
+              </div>
               <FormControl>
                 <SelectPlayers
                   players={players}
@@ -245,7 +261,7 @@ export function SessionForm({ date, players }: Props) {
               <FormMessage />
             </FormItem>
           )}
-        />
+        /> */}
 
         <div className="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2">
           <Button type="submit" disabled={loading}>

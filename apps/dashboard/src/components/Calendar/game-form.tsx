@@ -5,7 +5,12 @@ import { addGame } from '@dashboard/actions/game'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { athlete } from '@repo/db'
 import { format } from 'date-fns'
-import { Calendar as CalendarIcon, HomeIcon, PlaneIcon } from 'lucide-react'
+import {
+  Calendar as CalendarIcon,
+  HomeIcon,
+  MonitorCheck,
+  PlaneIcon,
+} from 'lucide-react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
@@ -57,16 +62,18 @@ export type GameFormData = {
 type Props = {
   date: Date
   players: athlete[]
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 // eslint-disable-next-line no-unused-vars
-export function GameForm({ date, players }: Props) {
+export function GameForm({ date, players, setOpen }: Props) {
   // const playersArray = players.map((player) => {
   //   return { athlete_id: player.id }
   // })
 
   // const [selected, setSelected] = React.useState(playersArray)
   const [loading, setLoading] = React.useState(false)
+  const [error, setError] = React.useState('')
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -116,34 +123,30 @@ export function GameForm({ date, players }: Props) {
       // total_distance,
     }
 
-    try {
-      setLoading(true)
-      addGame(newGame)
-      // toast({
-      //   title: 'NEW GAME',
-      //   description: (
-      //     <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-      //       <code className="text-white">
-      //         {JSON.stringify(newGame, null, 2)}
-      //       </code>
-      //     </pre>
-      //   ),
-      // })
-    } catch (error) {
+    setLoading(true)
+    const actionResult = addGame(newGame)
+    if (!actionResult) {
+      setError('Error')
+      return
+    } else {
       toast({
-        title: 'Error',
+        duration: 2000,
         description: (
-          <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-            <code className="text-white">{JSON.stringify(error, null, 2)}</code>
-          </pre>
+          <span className="flex items-center gap-2">
+            <MonitorCheck />
+            Данные изменены
+          </span>
         ),
       })
+      setOpen(false)
     }
+    setLoading(false)
   }
 
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-4 py-4">
+        <div>{error}</div>
         <FormField
           control={form.control}
           name="home"

@@ -6,7 +6,7 @@ import prisma from '@repo/db'
 import { v4 as uuidv4 } from 'uuid'
 
 export const addGame = async (data: GameFormData) => {
-  await prisma.game.create({
+  const result = await prisma.game.create({
     data: {
       id: uuidv4(),
       ...data,
@@ -14,6 +14,7 @@ export const addGame = async (data: GameFormData) => {
   })
 
   revalidatePath('/')
+  return result
 }
 
 // export const deleteGame = async (id: string) => {
