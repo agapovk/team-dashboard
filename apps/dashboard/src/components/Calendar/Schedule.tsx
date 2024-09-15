@@ -61,7 +61,7 @@ export function Schedule({
         head_cell:
           'text-muted-foreground rounded-md flex-1 font-semibold text-[0.8rem]',
 
-        row: 'grid grid-cols-7  w-full divide-x',
+        row: 'grid grid-cols-7 w-full divide-x',
         tbody: 'grid grid-cols-1 auto-rows-fr border rounded-lg divide-y',
         cell: 'flex-1 text-center text-sm p-0 relative first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20',
         day: cn('h-full w-full p-0 font-normal aria-selected:opacity-100'),

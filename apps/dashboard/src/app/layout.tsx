@@ -6,6 +6,7 @@ import Header from '@components/Header/Header'
 import { Spinner } from '@components/Spinner'
 import { ThemeProvider } from '@components/Theme/theme-provider'
 
+import { cn } from '@repo/ui/lib/utils'
 import { Toaster } from '@repo/ui'
 
 import type { Metadata } from 'next'
@@ -24,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={cn(inter.className, 'relative')}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
           <Suspense

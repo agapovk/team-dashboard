@@ -25,6 +25,22 @@ export function createArrayFromOneToX(X: number): number[] {
   return Array.from({ length: X }, (_, index) => index + 1)
 }
 
+export function createDateArrayFromXToY(
+  startDate: Date,
+  endDate: Date
+): Date[] {
+  const dateArray: Date[] = []
+  let currentDate = new Date(startDate) // Start from X
+
+  // While the current date is less than or equal to the end date Y
+  while (currentDate <= endDate) {
+    dateArray.push(new Date(currentDate)) // Add current date to the array
+    currentDate.setDate(currentDate.getDate() + 1) // Increment the day by 1
+  }
+
+  return dateArray
+}
+
 export function daysArray(date: Date): number[] {
   return createArrayFromOneToX(getDaysInMonth(date))
 }

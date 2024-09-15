@@ -10,6 +10,7 @@ import {
 } from '@repo/ui'
 
 type Props = {
+  value?: number
   values: number[]
   min?: number
   max: number
@@ -20,10 +21,52 @@ type Props = {
   description?: string
 }
 
-const colors = ['bg-orange-300', 'bg-red-500', 'bg-blue-300', 'bg-green-400']
+const colors = ['bg-orange-300', 'bg-red-300', 'bg-blue-300', 'bg-green-300']
 
 const invLerp = (from: number, to: number, value: number): number =>
   (value - from) / (to - from)
+
+export function NewBar(props: Props) {
+  const min = props.min ?? 0
+  const values = props.values.map((v) => ({
+    value: v,
+    width: `${invLerp(min, props.max, v) * 100}%`,
+  }))
+  return (
+    <div
+      className={cn([
+        'relative w-full overflow-visible rounded-full bg-slate-100',
+        props.height !== undefined ? `h-[${props.height}px]` : 'h-4',
+      ])}
+    >
+      {values.map((v, i) => {
+        return (
+          <div
+            key={
+              uuidv4()
+              // `${i}_${v.value}`
+            }
+            style={{
+              width: v.width,
+              top: 0,
+              left: i == 0 ? 0 : values.at(i - 1)?.width,
+            }}
+            className={cn(
+              `absolute h-full rounded-s-full transition hover:saturate-150`,
+              props.color !== undefined
+                ? `bg-${props.color}`
+                : colors[i % colors.length]
+            )}
+          >
+            <span className="ml-2">
+              {Number(props.value?.toFixed(0)).toLocaleString()}
+            </span>
+          </div>
+        )
+      })}
+    </div>
+  )
+}
 
 export function Bar(props: Props) {
   const min = props.min ?? 0

@@ -128,6 +128,9 @@ export default async function page() {
                       <p className="text-muted-foreground text-sm">
                         {inj.diagnosis}
                       </p>
+                      <p className="text-muted-foreground text-sm">
+                        {inj.place}
+                      </p>
                     </div>
                     <div className="flex w-full flex-row items-center justify-between sm:w-fit sm:flex-col sm:items-end sm:space-y-1">
                       <p className="text-right text-sm font-medium">
@@ -135,6 +138,9 @@ export default async function page() {
                       </p>
                       <p className="text-muted-foreground text-right text-sm text-red-500">
                         {`Прогноз: ${inj.estimated_recovery}`}
+                      </p>
+                      <p className="text-muted-foreground text-right text-sm">
+                        {`Пропустил: ${differenceInDays(Date.now(), inj.start_date)} ${dayTitle(differenceInDays(Date.now(), inj.start_date))}`}
                       </p>
                     </div>
                   </div>

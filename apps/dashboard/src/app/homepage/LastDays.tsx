@@ -1,10 +1,12 @@
 import React from 'react'
+import Link from 'next/link'
 import prisma from '@repo/db'
 import { subDays } from 'date-fns'
-import { ChartNoAxesColumn } from 'lucide-react'
+import { ArrowDownLeft } from 'lucide-react'
 
-import { LastDaysChart } from './LastDaysChart'
+import { LastDaysSchedule } from './components/LastDaysSchedule'
 import {
+  Button,
   Card,
   CardContent,
   CardDescription,
@@ -15,9 +17,8 @@ import {
 export default async function LastDays() {
   const sessions = await prisma.session.findMany({
     where: {
-      category_name: 'ТРЕНИРОВКА',
       start_timestamp: {
-        gte: new Date(subDays(new Date(), 14)),
+        gte: subDays(Date.now(), 14),
       },
     },
     orderBy: {
@@ -25,17 +26,30 @@ export default async function LastDays() {
     },
   })
 
+  const games = await prisma.game.findMany({
+    where: {
+      date: {
+        gte: subDays(Date.now(), 14),
+        lte: new Date(),
+      },
+    },
+  })
+
   return (
-    <Card className="col-span-4 space-y-4 lg:col-span-5">
+    <Card className="w-full space-y-4">
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
         <CardTitle className="text-md text-foreground font-normal">
-          Послдение тренировки
+          <Link href="/calendar">
+            <Button variant="outline" size="sm">
+              Послдение тренировки
+            </Button>
+          </Link>
         </CardTitle>
         <CardDescription />
-        <ChartNoAxesColumn className="text-muted-foreground" />
+        <ArrowDownLeft className="text-muted-foreground" />
       </CardHeader>
       <CardContent>
-        <LastDaysChart sessions={sessions} />
+        <LastDaysSchedule sessions={sessions} games={games} />
       </CardContent>
     </Card>
   )
