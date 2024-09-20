@@ -45,6 +45,8 @@ export default function PlayerSessionCard({ day, athlete_sessions }: Props) {
       new Date(b.session.start_timestamp).getTime()
   )
 
+  if (!currentDaySessions) return null
+
   return (
     <div className="flex flex-col gap-2">
       {currentDaySessions.map((athlete_session) => {

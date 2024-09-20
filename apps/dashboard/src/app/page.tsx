@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
-import FutureDays from '@dashboard/homepage/FutureDays'
 import InjuryCard from '@dashboard/homepage/InjuryCard'
-import LastDays from '@dashboard/homepage/LastDays'
 import LastGames from '@dashboard/homepage/LastGames'
+
+import CurrentSchedule from './homepage/CurrentSchedule'
 
 export const metadata: Metadata = {
   title: 'Dashboard',
@@ -15,8 +15,7 @@ export default async function Home() {
   return (
     <div className="flex flex-col items-stretch gap-6 p-8 lg:flex-row lg:items-start">
       <div className="flex flex-1 flex-col items-start gap-6">
-        <LastDays />
-        <FutureDays />
+        <CurrentSchedule />
       </div>
       <div className="flex flex-col items-start gap-6">
         <InjuryCard />

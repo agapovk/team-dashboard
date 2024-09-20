@@ -32,7 +32,7 @@ export default async function LastGames() {
         <CardTitle className="text-md text-foreground font-normal">
           <Link href="/games">
             <Button variant="outline" size="sm">
-              Прошлые игры
+              Последние игры
             </Button>
           </Link>
         </CardTitle>

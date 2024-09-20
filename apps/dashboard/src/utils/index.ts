@@ -21,6 +21,27 @@ export function calculateAge(date: Date) {
   return age
 }
 
+export function ageTitle(age: number) {
+  const lastDigit = age % 10
+  const lastTwoDigits = age % 100
+
+  if (lastTwoDigits >= 11 && lastTwoDigits <= 19) {
+    return `${age} лет`
+  }
+
+  if (lastDigit === 1) {
+    return `${age} год`
+  } else if (lastDigit >= 2 && lastDigit <= 4) {
+    return `${age} года`
+  } else {
+    return `${age} лет`
+  }
+}
+
+export function foot(value: string) {
+  return value === 'right' ? 'Правая' : 'Левая'
+}
+
 export function createArrayFromOneToX(X: number): number[] {
   return Array.from({ length: X }, (_, index) => index + 1)
 }

@@ -21,6 +21,15 @@ export default function GameCard({ day, games }: Props) {
 
   if (currentDayGames.length === 0) return null
 
+  function getResultStyle(result: string | null) {
+    if (result === null) return ''
+    const ural = Number(result.split('-')[0])
+    const opponent = Number(result.split('-')[1])
+    if (ural > opponent) return 'bg-emerald-200'
+    if (ural < opponent) return 'bg-red-200'
+    if (ural === opponent) return 'bg-yellow-200'
+  }
+
   return (
     <div className="flex flex-col gap-2">
       {currentDayGames.map((game) => (
@@ -28,7 +37,8 @@ export default function GameCard({ day, games }: Props) {
           key={game.id}
           href={`/games/${game.id}`}
           className={cn(
-            'text-accent-foreground border-muted-foreground hover:bg-accent mx-1 flex flex-col items-start overflow-auto truncate rounded-lg border px-2 py-1 text-xs transition-all md:py-2'
+            'text-accent-foreground bg-background border-muted-foreground hover:bg-accent mx-1 flex flex-col items-start overflow-auto truncate rounded-lg border px-2 py-1 text-xs transition-all md:py-2',
+            getResultStyle(game.result)
           )}
         >
           <div className="flex w-full flex-col items-center justify-between gap-1 md:gap-2">
@@ -45,9 +55,11 @@ export default function GameCard({ day, games }: Props) {
             <div className="flex w-full items-center justify-center gap-2">
               <span className="font-semibold">{game.vs}</span>
               {game.result && (
-                <span className="hidden font-semibold md:flex">
-                  {game.result}
-                </span>
+                <>
+                  <span className="hidden font-semibold md:flex">
+                    {game.result}
+                  </span>
+                </>
               )}
             </div>
           </div>

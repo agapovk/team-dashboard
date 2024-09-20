@@ -1,9 +1,19 @@
 import { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import prisma from '@repo/db'
+import { ageTitle, calculateAge, foot } from '~/src/utils'
 
 import PlayerTabs from './components/PlayerTabs'
-import { Button } from '@repo/ui'
+import { cn } from '@repo/ui/lib/utils'
+import {
+  Button,
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@repo/ui'
 
 export const metadata: Metadata = {
   title: 'Статистика игрока',
@@ -20,6 +30,8 @@ export default async function PlayerPage({ params }: Props) {
       id: params.id,
     },
     include: {
+      injury: true,
+      position: true,
       athlete_games_fitness: {
         include: {
           game: true,
@@ -53,9 +65,7 @@ export default async function PlayerPage({ params }: Props) {
     },
   })
 
-  if (player) {
-    return <PlayerTabs player={player} />
-  } else {
+  if (!player)
     return (
       <div className="flex-1 space-y-4 p-8 pt-6">
         <div className="flex items-center justify-between space-y-2">
@@ -71,5 +81,74 @@ export default async function PlayerPage({ params }: Props) {
         </Button>
       </div>
     )
-  }
+
+  const age = player.birthday && calculateAge(player.birthday)
+
+  return (
+    <div className="h-full flex-1 flex-col space-y-2 border p-8 md:flex">
+      <div className="grid grid-cols-4 gap-2 md:gap-4">
+        <Card className="col-span-4 flex flex-col justify-between space-y-2 md:col-span-1">
+          <CardHeader className="pb-0">
+            <CardTitle className="text-foreground flex flex-col items-center space-y-3 font-normal">
+              {player.photo && (
+                <div className="relative w-full rounded-md border">
+                  <Image
+                    src={player.photo}
+                    alt={player.name || ''}
+                    width={1000}
+                    height={1000}
+                    className={cn('h-auto w-full object-cover')}
+                  />
+                  <span className="absolute left-4 top-4 text-3xl font-bold">
+                    {player.number}
+                  </span>
+                </div>
+              )}
+              <span className="text-xl font-bold">{player.name}</span>
+            </CardTitle>
+            <CardDescription />
+          </CardHeader>
+          <CardContent className="flex flex-1 flex-col">
+            {player.birthday && (
+              <InfoField title="Возраст:" data={`${ageTitle(Number(age))}`} />
+            )}
+            {player.position && (
+              <InfoField title="Позиция:" data={player.position.title} />
+            )}
+            <div>
+              {player.foot && (
+                <InfoField title="Нога:" data={foot(player.foot)} />
+              )}
+            </div>
+            <div>
+              {player.height && (
+                <InfoField title="Рост:" data={`${player.height} см`} />
+              )}
+            </div>
+            <div>
+              {player.weight && (
+                <InfoField title="Вес:" data={`${player.weight} кг`} />
+              )}
+            </div>
+            <div>Текущая травма?</div>
+            <div>История травм в tab</div>
+          </CardContent>
+        </Card>
+        <PlayerTabs player={player} />
+      </div>
+    </div>
+  )
+}
+
+type InfoProps = {
+  title: string
+  data: string
+}
+function InfoField({ title, data }: InfoProps): JSX.Element {
+  return (
+    <div className="flex gap-2">
+      <span className="text-muted-foreground">{title}</span>
+      <span className="font-semibold">{data}</span>
+    </div>
+  )
 }

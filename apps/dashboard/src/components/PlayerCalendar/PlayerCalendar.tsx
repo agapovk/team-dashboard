@@ -1,6 +1,7 @@
 'use client'
 
-import { athlete_session, session } from '@repo/db'
+import { athlete_session, injury, session } from '@repo/db'
+import { isWithinInterval } from 'date-fns'
 import { ru } from 'date-fns/locale'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { DayPicker } from 'react-day-picker'
@@ -15,21 +16,33 @@ export type AthleteSessionWithTeamSession = athlete_session & {
 }
 export type PlayerCalendarPropsWithAthleteSessions = PlayerCalendarProps & {
   athlete_sessions: AthleteSessionWithTeamSession[]
+  injury: injury[]
 }
 
 function PlayerSchedule({
   className,
   classNames,
+  injury,
   showOutsideDays = true,
   athlete_sessions,
   ...props
 }: PlayerCalendarPropsWithAthleteSessions) {
+  function isInjuredThisDay(day: Date) {
+    const currentDayInjury = injury.find((inj) =>
+      isWithinInterval(day, {
+        start: inj.start_date,
+        end: inj.end_date || new Date(),
+      })
+    )
+    return currentDayInjury ? true : false
+  }
+
   return (
     <DayPicker
       locale={ru}
       ISOWeek
       showOutsideDays={showOutsideDays}
-      className={cn('p-3', className)}
+      className={cn(className)}
       classNames={{
         months: 'flex flex-col space-y-4 sm:space-x-4 sm:space-y-0',
         month: 'space-y-4',
@@ -62,7 +75,12 @@ function PlayerSchedule({
       }}
       components={{
         DayContent: ({ date }) => (
-          <div className="flex h-full w-full flex-col gap-1 border-none bg-transparent p-2">
+          <div
+            className={cn(
+              'flex h-full w-full flex-col gap-1 border-none bg-transparent p-2',
+              isInjuredThisDay(date) && 'bg-red-200'
+            )}
+          >
             <div className="flex items-center justify-between">
               <span className="mx-2 text-lg font-medium">{date.getDate()}</span>
             </div>

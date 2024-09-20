@@ -4,7 +4,7 @@ import prisma from '@repo/db'
 import { subDays } from 'date-fns'
 import { ArrowDownLeft } from 'lucide-react'
 
-import { LastDaysSchedule } from './components/LastDaysSchedule'
+import { CurrentCalendar } from './components/CurrentCalendar'
 import {
   Button,
   Card,
@@ -14,11 +14,19 @@ import {
   CardTitle,
 } from '@repo/ui'
 
-export default async function LastDays() {
+export default async function CurrentSchedule() {
   const sessions = await prisma.session.findMany({
     where: {
+      OR: [
+        {
+          category_name: 'БЕЗ ДАТЧИКОВ',
+        },
+        {
+          category_name: 'ТРЕНИРОВКА',
+        },
+      ],
       start_timestamp: {
-        gte: subDays(Date.now(), 14),
+        gte: subDays(Date.now(), 21),
       },
     },
     orderBy: {
@@ -30,7 +38,6 @@ export default async function LastDays() {
     where: {
       date: {
         gte: subDays(Date.now(), 14),
-        lte: new Date(),
       },
     },
   })
@@ -41,7 +48,7 @@ export default async function LastDays() {
         <CardTitle className="text-md text-foreground font-normal">
           <Link href="/calendar">
             <Button variant="outline" size="sm">
-              Послдение тренировки
+              Текущий график команды
             </Button>
           </Link>
         </CardTitle>
@@ -49,7 +56,7 @@ export default async function LastDays() {
         <ArrowDownLeft className="text-muted-foreground" />
       </CardHeader>
       <CardContent>
-        <LastDaysSchedule sessions={sessions} games={games} />
+        <CurrentCalendar sessions={sessions} games={games} />
       </CardContent>
     </Card>
   )
