@@ -2,8 +2,9 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { BarWithAvg } from '@components/Bars'
+import { ProgressBar } from '@components/Bars'
 import { convertSecToMin, roundToNearest5 } from '@utils'
+import { compareAsc, isSameDay } from 'date-fns'
 
 import { AthleteSessionWithTeamSession } from './PlayerCalendar'
 import { cn } from '@repo/ui/lib/utils'
@@ -15,34 +16,30 @@ type Props = {
 
 const zones = {
   td(value: number) {
-    if (value <= 3900) return 'green-500'
-    if (value >= 6000) return 'red-500'
-    return 'orange-300'
+    if (value <= 3900) return 'bg-green-500'
+    if (value >= 6000) return 'bg-red-400'
+    return 'bg-orange-300'
   },
   pd(value: number) {
-    if (value <= 350) return 'green-500'
-    if (value >= 950) return 'red-500'
-    return 'orange-300'
+    if (value <= 350) return 'bg-green-500'
+    if (value >= 950) return 'bg-red-400'
+    return 'bg-orange-300'
   },
   sd(value: number) {
-    if (value <= 50) return 'green-500'
-    if (value >= 180) return 'red-500'
-    return 'orange-300'
+    if (value <= 50) return 'bg-green-500'
+    if (value >= 180) return 'bg-red-400'
+    return 'bg-orange-300'
   },
 }
 
 export default function PlayerSessionCard({ day, athlete_sessions }: Props) {
-  const currentDaySessions = athlete_sessions?.filter(
-    (athlete_session) =>
-      athlete_session.session.start_timestamp.toLocaleDateString() ===
-      day.toLocaleDateString()
+  const currentDaySessions = athlete_sessions?.filter((athlete_session) =>
+    isSameDay(athlete_session.session.start_timestamp, day)
   )
 
   // Sorting sessions by timestamp
-  currentDaySessions.sort(
-    (a, b) =>
-      new Date(a.session.start_timestamp).getTime() -
-      new Date(b.session.start_timestamp).getTime()
+  currentDaySessions.sort((a, b) =>
+    compareAsc(a.start_timestamp, b.start_timestamp)
   )
 
   if (!currentDaySessions) return null
@@ -98,44 +95,34 @@ export default function PlayerSessionCard({ day, athlete_sessions }: Props) {
                 {convertSecToMin(session.total_time).toFixed(0)}&apos;
               </span>
             </div>
-
             {session.category_name &&
             session.category_name === 'БЕЗ ДАТЧИКОВ' ? (
               <span className="py-4">{session.name}</span>
             ) : (
-              <div className="grid grid-cols-[min-content_1fr] items-center justify-items-end gap-x-2">
-                <span className="">
-                  {Number(total_distance?.toFixed(0)).toLocaleString()}
-                </span>
-                <BarWithAvg
-                  // height={6}
-                  max={13000}
-                  values={[total_distance ?? 0]}
-                  team_avg={session.total_distance ?? 0}
-                  color={zones.td(total_distance ?? 0)}
+              <div className="flex flex-col gap-2">
+                <ProgressBar
+                  value={total_distance || 0}
+                  minValue={0}
+                  maxValue={12000}
+                  backgroundColor={zones.td(total_distance ?? 0)}
+                  average={session.total_distance ?? 0}
                 />
-                <span className="">
-                  {Number(power_distance?.toFixed(0)).toLocaleString()}
-                </span>
-                <BarWithAvg
-                  // height={8}
-                  max={2500}
-                  values={[power_distance]}
-                  team_avg={
+                <ProgressBar
+                  value={power_distance}
+                  minValue={0}
+                  maxValue={12000}
+                  backgroundColor={zones.pd(power_distance)}
+                  average={
                     (session.athletesessionpowerzone_distance_2 ?? 0) +
                     (session.athletesessionpowerzone_distance_3 ?? 0)
                   }
-                  color={zones.pd(power_distance)}
                 />
-                <span className="">
-                  {Number(speedzone_distance?.toFixed(0)).toLocaleString()}
-                </span>
-                <BarWithAvg
-                  // height={8}
-                  max={600}
-                  values={[speedzone_distance]}
-                  color={zones.sd(speedzone_distance)}
-                  team_avg={
+                <ProgressBar
+                  value={speedzone_distance}
+                  minValue={0}
+                  maxValue={12000}
+                  backgroundColor={zones.sd(speedzone_distance)}
+                  average={
                     (session.athletesessionspeedzone_distance_4 ?? 0) +
                     (session.athletesessionspeedzone_distance_5 ?? 0)
                   }

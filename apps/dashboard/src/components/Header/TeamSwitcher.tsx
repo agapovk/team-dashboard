@@ -1,10 +1,11 @@
 'use client'
 
 import * as React from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 
 import { cn } from '@repo/ui/lib/utils'
-import { Avatar, AvatarFallback, AvatarImage, buttonVariants } from '@repo/ui'
+import { buttonVariants } from '@repo/ui'
 
 export default function TeamSwitcher() {
   return (
@@ -13,14 +14,11 @@ export default function TeamSwitcher() {
       role="combobox"
       aria-label="Select a team"
       className={cn(
-        'w-fit justify-between',
+        'flex w-fit justify-between gap-2',
         buttonVariants({ variant: 'outline' })
       )}
     >
-      <Avatar className="mr-2 h-5 w-5">
-        <AvatarImage src="/avatars/01.png" alt="FC Ural" />
-        <AvatarFallback>УЕ</AvatarFallback>
-      </Avatar>
+      <Image src="/avatars/01.png" alt="FC Ural" width={16} height={16} />
       ФК Урал
     </Link>
   )

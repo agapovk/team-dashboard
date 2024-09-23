@@ -20,6 +20,7 @@ export default async function PlayersPage() {
     },
     include: {
       position: true,
+      injury: true,
     },
     orderBy: {
       name: 'asc',

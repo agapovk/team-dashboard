@@ -125,10 +125,7 @@ export function BarWithAvg(props: Props) {
         return (
           <>
             <div
-              key={
-                uuidv4()
-                // `${i}_${v.value}`
-              }
+              key={uuidv4()}
               style={{
                 width: v.width,
                 top: 0,
@@ -140,14 +137,8 @@ export function BarWithAvg(props: Props) {
                   ? `bg-${props.color}`
                   : colors[i % colors.length]
               )}
-            ></div>
-            <TooltipProvider
-              key={
-                uuidv4()
-                // `${i}_${v.value}`
-              }
-              delayDuration={100}
-            >
+            />
+            <TooltipProvider key={uuidv4()} delayDuration={100}>
               <Tooltip>
                 <TooltipTrigger asChild>
                   <div
@@ -218,5 +209,53 @@ export function BarWithTooltip(props: Props) {
         })}
       </div>
     </TooltipProvider>
+  )
+}
+
+type ProgressBarProps = {
+  value: number
+  minValue: number
+  maxValue: number
+  backgroundColor?: string
+  average: number
+}
+
+export const ProgressBar: React.FC<ProgressBarProps> = ({
+  value,
+  minValue,
+  maxValue,
+  backgroundColor,
+  average,
+}) => {
+  const clampedValue = Math.max(minValue, Math.min(value, maxValue))
+  const clampedAverage = Math.max(minValue, Math.min(average, maxValue))
+
+  // Calculate percentages for value and average
+  const percentage = ((clampedValue - minValue) / (maxValue - minValue)) * 100
+  const averagePercentage =
+    ((clampedAverage - minValue) / (maxValue - minValue)) * 100
+
+  return (
+    <div className="relative h-4 overflow-hidden rounded-md border border-sky-500 bg-slate-50 text-left">
+      {/* Value Bar */}
+      <div
+        className={cn('h-full', backgroundColor)}
+        style={{
+          width: `${percentage}%`,
+        }}
+      >
+        <span className="ml-2">
+          {Number(value.toFixed(0)).toLocaleString()}
+        </span>
+      </div>
+
+      {/* Average Marker */}
+      <div
+        className={`absolute bottom-0 top-0 w-[2px] bg-slate-500`}
+        style={{
+          left: `${averagePercentage}%`,
+        }}
+      />
+    </div>
   )
 }

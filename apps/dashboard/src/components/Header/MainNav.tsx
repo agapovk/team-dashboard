@@ -27,10 +27,6 @@ export const menuItems = [
     title: 'Травмы',
     href: '/injury',
   },
-  // {
-  //   title: 'Тренировки',
-  //   href: '/performance',
-  // },
 ]
 
 export function MainNav({
