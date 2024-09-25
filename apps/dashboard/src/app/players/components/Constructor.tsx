@@ -61,6 +61,12 @@ export default function Constructor({ players }: Props) {
 
   const printRef = React.useRef<HTMLDivElement>(null)
   const handlePrint = useReactToPrint({
+    pageStyle: `@media print {
+      @page {
+        size: 297mm 210mm;
+        margin: 0;
+      }
+    }`,
     content: () => printRef.current,
   })
 
@@ -70,7 +76,9 @@ export default function Constructor({ players }: Props) {
         <DropdownMenuTrigger asChild>
           <Button
             variant={variant || 'primary'}
-            className={cn('flex h-fit cursor-pointer gap-2 text-sm')}
+            className={cn(
+              'flex h-fit cursor-pointer gap-2 px-2 text-xs md:px-4 md:text-sm'
+            )}
           >
             <span>{player.number}</span>
             <span className="">{player.last_name}</span>
@@ -175,7 +183,7 @@ export default function Constructor({ players }: Props) {
               </CardHeader>
             </Card>
           </div>
-          <div className="flex gap-4">
+          <div className="flex flex-col gap-4 md:flex-row">
             <Card className="flex flex-1 flex-col space-y-2">
               <CardHeader className="flex flex-row items-start justify-between space-y-0 pb-4">
                 <CardTitle className="text-md text-foreground font-semibold">
@@ -263,12 +271,7 @@ export default function Constructor({ players }: Props) {
                 </CardTitle>
                 <CardDescription>Список игроков к тренировке</CardDescription>
               </div>
-              <Image
-                src="/avatars/01.png"
-                alt="FC Ural"
-                width={48}
-                height={48}
-              />
+              <Image src="/bw-ural.png" alt="FC Ural" width={48} height={48} />
             </CardHeader>
             <CardContent className="h-full p-0">
               <div className="flex h-full divide-x">
