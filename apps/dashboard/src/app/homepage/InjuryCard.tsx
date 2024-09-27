@@ -1,11 +1,12 @@
 import React from 'react'
 import Link from 'next/link'
-import prisma from '@repo/db'
+import { athlete, injury } from '@repo/db'
 import { dayTitle } from '@utils'
-import { differenceInDays, format } from 'date-fns'
+import { addDays, differenceInDays, format, isWithinInterval } from 'date-fns'
 import { Accessibility } from 'lucide-react'
 
 import {
+  Badge,
   Button,
   Card,
   CardContent,
@@ -14,19 +15,27 @@ import {
   CardTitle,
 } from '@repo/ui'
 
-export default async function InjuryCard() {
-  const injuries = await prisma.injury.findMany({
-    where: {
-      end_date: null,
-    },
-    orderBy: {
-      start_date: 'desc',
-    },
-    include: {
-      athlete: true,
-    },
-    take: 5,
-  })
+type Props = {
+  injuries: (injury & { athlete: athlete })[]
+}
+
+export default async function InjuryCard({ injuries }: Props) {
+  const currentInjuries = injuries.filter((injury) => !injury.end_date)
+
+  const afterInjuries = injuries
+    .filter((injury) =>
+      injury.end_date
+        ? isWithinInterval(Date.now(), {
+            start: injury.end_date,
+            end: addDays(injury.end_date, 10),
+          })
+        : false
+    )
+    .sort((a, b) =>
+      a.end_date !== null && b.end_date !== null
+        ? a.end_date.getTime() - b.end_date.getTime()
+        : 0
+    )
 
   return (
     <Card className="flex w-full flex-col justify-between space-y-2">
@@ -34,7 +43,7 @@ export default async function InjuryCard() {
         <CardTitle className="text-md text-foreground font-normal">
           <Link href="/injury">
             <Button variant="outline" size="sm">
-              Текущие травмы
+              Информация по травмам
             </Button>
           </Link>
         </CardTitle>
@@ -42,8 +51,11 @@ export default async function InjuryCard() {
         <Accessibility className="text-muted-foreground" />
       </CardHeader>
       <CardContent className="flex-1">
+        <Badge variant="destructive" className="mb-2 font-semibold">
+          Текущие
+        </Badge>
         <div className="divide-y">
-          {injuries.map((inj) => (
+          {currentInjuries.map((inj) => (
             <div
               className="flex flex-col items-start justify-between gap-2 space-y-2 py-2 sm:flex-row sm:space-y-0"
               key={inj.id}
@@ -64,6 +76,34 @@ export default async function InjuryCard() {
                 </p>
                 <p className="text-muted-foreground text-right text-sm">
                   {`Прошло: ${differenceInDays(Date.now(), inj.start_date)} ${dayTitle(differenceInDays(Date.now(), inj.start_date))}`}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <Badge variant="default" className="my-2 font-semibold">
+          Под наблюдением
+        </Badge>
+        <div className="divide-y">
+          {afterInjuries.map((inj) => (
+            <div
+              className="flex flex-col items-start justify-between gap-2 space-y-2 py-2 sm:flex-row sm:space-y-0"
+              key={inj.id}
+            >
+              <div className="flex-1 space-y-1">
+                <p className="text-sm font-medium">{inj.athlete.name}</p>
+                <p className="text-muted-foreground text-sm">{inj.diagnosis}</p>
+              </div>
+              <div className="flex w-full flex-row items-center justify-between sm:w-fit sm:flex-col sm:items-end sm:space-y-1">
+                <p className="text-muted-foreground text-right text-sm text-emerald-500">
+                  {inj.end_date &&
+                    `В общей группе: ${differenceInDays(Date.now(), inj.end_date)} 
+													${dayTitle(differenceInDays(Date.now(), inj.end_date))}
+															`}
+                </p>
+                <p className="text-muted-foreground text-right text-sm">
+                  {inj.end_date &&
+                    `Пропустил: ${differenceInDays(inj.end_date, inj.start_date)} ${dayTitle(differenceInDays(inj.end_date, inj.start_date))}`}
                 </p>
               </div>
             </div>

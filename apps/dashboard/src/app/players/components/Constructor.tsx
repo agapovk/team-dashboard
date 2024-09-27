@@ -27,6 +27,7 @@ import {
 type Props = {
   players: (athlete & { injury: injury[] })[]
 }
+type PlayerGroup = 'training' | 'recovery' | 'individual' | 'injured'
 
 type PlayerButtonProps = {
   player: athlete
@@ -35,11 +36,11 @@ type PlayerButtonProps = {
 
 type PlayersWithGroup = {
   player: athlete & { injury: injury[] }
-  group: 'training' | 'injured' | 'individual' | 'recovery'
+  group: PlayerGroup
 }
 
 export default function Constructor({ players }: Props) {
-  const playersWithGroup: PlayersWithGroup[] = players
+  const initialGroups: PlayersWithGroup[] = players
     .filter(
       // Filter without Goalkeepres
       (player) => player.position_id !== 'ea846ca7-40dd-40b5-97fa-b2155ff4c50c'
@@ -52,23 +53,36 @@ export default function Constructor({ players }: Props) {
     })
 
   const [playerGroups, setPlayerGroups] =
-    React.useState<PlayersWithGroup[]>(playersWithGroup)
+    React.useState<PlayersWithGroup[]>(initialGroups)
 
   const training = playerGroups.filter((p) => p.group === 'training')
   const recovery = playerGroups.filter((p) => p.group === 'recovery')
   const individual = playerGroups.filter((p) => p.group === 'individual')
   const injured = playerGroups.filter((p) => p.group === 'injured')
 
+  // Check saved local data
+  React.useEffect(() => {
+    const savedGroups = localStorage.getItem('playerGroups')
+    if (savedGroups) {
+      setPlayerGroups(JSON.parse(savedGroups))
+    }
+  }, [])
+
   const printRef = React.useRef<HTMLDivElement>(null)
   const handlePrint = useReactToPrint({
     pageStyle: `@media print {
-      @page {
-        size: 297mm 210mm;
-        margin: 0;
-      }
-    }`,
+				@page {
+					size: 297mm 210mm;
+					margin: 0;
+					}
+					}`,
     content: () => printRef.current,
   })
+
+  const handleClear = () => {
+    setPlayerGroups(initialGroups)
+    localStorage.removeItem('playerGroups')
+  }
 
   function PlayerButton({ player, variant }: PlayerButtonProps) {
     return (
@@ -86,54 +100,62 @@ export default function Constructor({ players }: Props) {
         </DropdownMenuTrigger>
         <DropdownMenuContent>
           <DropdownMenuItem
-            onClick={() =>
-              setPlayerGroups((old) =>
-                old.map((p) => {
+            onClick={() => {
+              setPlayerGroups((old) => {
+                const newGroup: PlayersWithGroup[] = old.map((p) => {
                   if (p.player.id === player.id && p.group !== 'training')
                     return { player: p.player, group: 'training' }
                   else return p
                 })
-              )
-            }
+                localStorage.setItem('playerGroups', JSON.stringify(newGroup))
+                return newGroup
+              })
+            }}
           >
             Тренировка
           </DropdownMenuItem>
           <DropdownMenuItem
-            onClick={() =>
-              setPlayerGroups((old) =>
-                old.map((p) => {
+            onClick={() => {
+              setPlayerGroups((old) => {
+                const newGroup: PlayersWithGroup[] = old.map((p) => {
                   if (p.player.id === player.id && p.group !== 'recovery')
                     return { player: p.player, group: 'recovery' }
                   else return p
                 })
-              )
-            }
+                localStorage.setItem('playerGroups', JSON.stringify(newGroup))
+                return newGroup
+              })
+            }}
           >
             Восстановление
           </DropdownMenuItem>
           <DropdownMenuItem
-            onClick={() =>
-              setPlayerGroups((old) =>
-                old.map((p) => {
+            onClick={() => {
+              setPlayerGroups((old) => {
+                const newGroup: PlayersWithGroup[] = old.map((p) => {
                   if (p.player.id === player.id && p.group !== 'individual')
                     return { player: p.player, group: 'individual' }
                   else return p
                 })
-              )
-            }
+                localStorage.setItem('playerGroups', JSON.stringify(newGroup))
+                return newGroup
+              })
+            }}
           >
             Индивидуально
           </DropdownMenuItem>
           <DropdownMenuItem
-            onClick={() =>
-              setPlayerGroups((old) =>
-                old.map((p) => {
+            onClick={() => {
+              setPlayerGroups((old) => {
+                const newGroup: PlayersWithGroup[] = old.map((p) => {
                   if (p.player.id === player.id && p.group !== 'injured')
                     return { player: p.player, group: 'injured' }
                   else return p
                 })
-              )
-            }
+                localStorage.setItem('playerGroups', JSON.stringify(newGroup))
+                return newGroup
+              })
+            }}
           >
             Травмирован
           </DropdownMenuItem>
@@ -177,9 +199,14 @@ export default function Constructor({ players }: Props) {
                   </CardTitle>
                   <CardDescription>Список игроков к тренировке</CardDescription>
                 </div>
-                <Button variant="outline" onClick={handlePrint}>
-                  Печать
-                </Button>
+                <div className="flex gap-4">
+                  <Button variant="outline" onClick={handleClear}>
+                    Сбросить
+                  </Button>
+                  <Button variant="default" onClick={handlePrint}>
+                    Печать
+                  </Button>
+                </div>
               </CardHeader>
             </Card>
           </div>
@@ -266,7 +293,7 @@ export default function Constructor({ players }: Props) {
           <Card className="aspect-[290/200] divide-y overflow-hidden">
             <CardHeader className="flex flex-row items-center justify-between py-4">
               <div>
-                <CardTitle className="text-md text-foreground font-semibold">
+                <CardTitle className="text-foreground text-lg font-semibold">
                   {format(Date.now(), 'dd MMMM yyyy', { locale: ru })}
                 </CardTitle>
                 <CardDescription>Список игроков к тренировке</CardDescription>
@@ -275,19 +302,22 @@ export default function Constructor({ players }: Props) {
             </CardHeader>
             <CardContent className="h-full p-0">
               <div className="flex h-full divide-x">
-                <div className="flex w-80 flex-col">
-                  <div className="flex flex-col items-start gap-6 px-6 py-4">
+                <div className="flex w-fit flex-col">
+                  <div className="flex flex-col items-start gap-2 px-6 py-4">
                     {training.length > 0 && (
                       <div className="w-full space-y-2">
                         <div className="flex w-full items-center justify-between">
-                          <h3 className="text-md text-foreground font-semibold">
+                          <h3 className="text-foreground text-lg font-semibold">
                             Тренируются
                           </h3>
                           <span>{training.length}</span>
                         </div>
-                        <ul className="space-y-1">
+                        <ul className="space-y-1 text-xl">
                           {training.map(({ player }) => (
-                            <li key={player.id} className="flex gap-2">
+                            <li
+                              key={player.id}
+                              className="flex items-center gap-4"
+                            >
                               <span className="text-muted-foreground w-6">
                                 {player.number}
                               </span>
@@ -301,19 +331,22 @@ export default function Constructor({ players }: Props) {
                     {recovery.length > 0 && (
                       <div className="w-full space-y-2">
                         <div className="flex w-full items-center justify-between">
-                          <h3 className="text-md text-foreground font-semibold">
+                          <h3 className="text-foreground text-lg font-semibold">
                             Восстановление
                           </h3>
                           <span>{recovery.length}</span>
                         </div>
-                        <ul className="space-y-1">
+                        <ul className="space-y-1 text-xl">
                           {recovery.map(({ player }) => (
-                            <li key={player.id} className="flex gap-2">
+                            <li
+                              key={player.id}
+                              className="flex items-center gap-4"
+                            >
                               <span className="text-muted-foreground w-6">
                                 {player.number}
                               </span>
                               {player.last_name}
-                              <span>{lastInjuryInfo(player.injury)}</span>
+                              {lastInjuryInfo(player.injury)}
                             </li>
                           ))}
                         </ul>
@@ -322,14 +355,17 @@ export default function Constructor({ players }: Props) {
                     {individual.length > 0 && (
                       <div className="w-full space-y-2">
                         <div className="flex w-full items-center justify-between">
-                          <h3 className="text-md text-foreground font-semibold">
+                          <h3 className="text-foreground text-lg font-semibold">
                             Индивидуально
                           </h3>
                           <span>{individual.length}</span>
                         </div>
-                        <ul className="space-y-1">
+                        <ul className="space-y-1 text-xl">
                           {individual.map(({ player }) => (
-                            <li key={player.id} className="flex gap-2">
+                            <li
+                              key={player.id}
+                              className="flex items-center gap-4"
+                            >
                               <span className="text-muted-foreground w-6">
                                 {player.number}
                               </span>
@@ -342,14 +378,17 @@ export default function Constructor({ players }: Props) {
                     {injured.length > 0 && (
                       <div className="w-full space-y-2">
                         <div className="flex w-full items-center justify-between">
-                          <h3 className="text-md text-foreground font-semibold">
+                          <h3 className="text-foreground text-lg font-semibold">
                             Травмирован
                           </h3>
                           <span>{injured.length}</span>
                         </div>
-                        <ul className="space-y-1">
+                        <ul className="space-y-1 text-xl">
                           {injured.map(({ player }) => (
-                            <li key={player.id} className="flex gap-2">
+                            <li
+                              key={player.id}
+                              className="flex items-center gap-4"
+                            >
                               <span className="text-muted-foreground w-6">
                                 {player.number}
                               </span>

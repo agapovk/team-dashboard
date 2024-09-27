@@ -1,7 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import prisma from '@repo/db'
-import { addDays } from 'date-fns'
+import { game } from '@repo/db'
 import { WrapText } from 'lucide-react'
 
 import {
@@ -13,19 +12,10 @@ import {
   CardTitle,
 } from '@repo/ui'
 
-export default async function LastGames() {
-  const games = await prisma.game.findMany({
-    where: {
-      date: {
-        lte: addDays(Date.now(), 1),
-      },
-    },
-    orderBy: {
-      date: 'desc',
-    },
-    take: 5,
-  })
-
+type Props = {
+  games: game[]
+}
+export default async function LastGames({ games }: Props) {
   return (
     <Card className="flex w-full flex-col justify-between space-y-2">
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">

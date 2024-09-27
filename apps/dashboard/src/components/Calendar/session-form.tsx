@@ -127,7 +127,7 @@ export function SessionForm({ date, players, setOpen }: Props) {
         description: (
           <span className="flex items-center gap-2">
             <MonitorCheck />
-            Данные изменены
+            Тренировка сохранена
           </span>
         ),
       })

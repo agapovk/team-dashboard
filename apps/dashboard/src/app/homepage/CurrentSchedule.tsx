@@ -1,7 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import prisma from '@repo/db'
-import { subDays } from 'date-fns'
+import { game, session } from '@repo/db'
 import { ArrowDownLeft } from 'lucide-react'
 
 import { CurrentCalendar } from './components/CurrentCalendar'
@@ -14,34 +13,11 @@ import {
   CardTitle,
 } from '@repo/ui'
 
-export default async function CurrentSchedule() {
-  const sessions = await prisma.session.findMany({
-    where: {
-      OR: [
-        {
-          category_name: 'БЕЗ ДАТЧИКОВ',
-        },
-        {
-          category_name: 'ТРЕНИРОВКА',
-        },
-      ],
-      start_timestamp: {
-        gte: subDays(Date.now(), 21),
-      },
-    },
-    orderBy: {
-      start_timestamp: 'asc',
-    },
-  })
-
-  const games = await prisma.game.findMany({
-    where: {
-      date: {
-        gte: subDays(Date.now(), 14),
-      },
-    },
-  })
-
+type Props = {
+  sessions: session[]
+  games: game[]
+}
+export default async function CurrentSchedule({ sessions, games }: Props) {
   return (
     <Card className="w-full space-y-4">
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">

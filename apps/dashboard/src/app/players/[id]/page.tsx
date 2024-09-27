@@ -2,7 +2,8 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import prisma from '@repo/db'
-import { ageTitle, calculateAge, foot } from '~/src/utils'
+import { ageTitle, calculateAge, dayTitle, foot } from '~/src/utils'
+import { differenceInDays, format } from 'date-fns'
 
 import PlayerTabs from './components/PlayerTabs'
 import { cn } from '@repo/ui/lib/utils'
@@ -83,6 +84,7 @@ export default async function PlayerPage({ params }: Props) {
     )
 
   const age = player.birthday && calculateAge(player.birthday)
+  const currentInjury = player.injury.find((inj) => inj.end_date === null)
 
   return (
     <div className="h-full flex-1 flex-col space-y-2 border p-8 md:flex">
@@ -130,8 +132,22 @@ export default async function PlayerPage({ params }: Props) {
                 <InfoField title="Вес:" data={`${player.weight} кг`} />
               )}
             </div>
-            <div>Текущая травма?</div>
-            <div>История травм в tab</div>
+            {currentInjury && (
+              <div className="pt-6">
+                <InfoField
+                  title="Текущая травма:"
+                  data={`${format(currentInjury.start_date, 'dd.MM.yy')}`}
+                />
+                <div>
+                  <p>{currentInjury.diagnosis}</p>
+                  <p>{currentInjury.place}</p>
+                  <p>{`Прогноз: ${currentInjury.estimated_recovery}`}</p>
+                  <p>
+                    {`Пропустил: ${differenceInDays(Date.now(), currentInjury.start_date)} ${dayTitle(differenceInDays(Date.now(), currentInjury.start_date))}`}
+                  </p>
+                </div>
+              </div>
+            )}
           </CardContent>
         </Card>
         <PlayerTabs player={player} />
