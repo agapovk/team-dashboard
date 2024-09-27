@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import prisma from '@repo/db'
 import { subDays } from 'date-fns'
 
-import Homepage from './homepage/page'
+import Homepage from '../components/homepage/Homepage'
 
 export const metadata: Metadata = {
   title: 'Dashboard',

@@ -2,8 +2,8 @@
 
 import React from 'react'
 import Image from 'next/image'
-import InjuryCard from '@dashboard/homepage/InjuryCard'
-import LastGames from '@dashboard/homepage/LastGames'
+import InjuryCard from '@components/homepage/InjuryCard'
+import LastGames from '@components/homepage/LastGames'
 import { athlete, game, injury, session } from '@repo/db'
 import { format } from 'date-fns'
 import { ru } from 'date-fns/locale'
@@ -11,8 +11,6 @@ import { useReactToPrint } from 'react-to-print'
 
 import CurrentSchedule from './CurrentSchedule'
 import { Button, Card, CardDescription, CardHeader, CardTitle } from '@repo/ui'
-
-export const revalidate = 0
 
 type Props = {
   sessions: session[]
