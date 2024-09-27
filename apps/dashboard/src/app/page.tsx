@@ -32,10 +32,8 @@ export default async function Home() {
   })
 
   const games = await prisma.game.findMany({
-    where: {
-      date: {
-        gte: subDays(Date.now(), 14),
-      },
+    orderBy: {
+      date: 'desc',
     },
   })
 
