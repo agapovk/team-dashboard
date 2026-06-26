@@ -1,0 +1,20 @@
+{
+  "extends": [
+    "ultracite/biome/core",
+    "ultracite/biome/react",
+    "ultracite/biome/next",
+    "ultracite/biome/vitest"
+  ],
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  // Смысловой порядок полей домена/DTO важнее алфавитного.
+  "assist": {
+    "actions": { "source": { "useSortedInterfaceMembers": "off" } }
+  },
+  "overrides": [
+    {
+      // Вендоренные shadcn-компоненты — генерёные из реестра, линтер не навязываем.
+      "includes": ["src/components/ui/**", "src/hooks/**"],
+      "linter": { "enabled": false }
+    }
+  ]
+}

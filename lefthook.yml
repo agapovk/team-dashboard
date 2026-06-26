@@ -1,0 +1,22 @@
+# Lefthook — git-хуки. Правила: CODE_STYLE.md §Git-хуки.
+
+pre-commit:
+  jobs:
+    - name: biome
+      glob: "*.{js,jsx,ts,tsx,json,jsonc,css}"
+      run: pnpm exec biome check --write --no-errors-on-unmatched {staged_files}
+      stage_fixed: true
+
+pre-push:
+  jobs:
+    - name: block-main
+      run: |
+        branch="$(git rev-parse --abbrev-ref HEAD)"
+        if [ "$branch" = "main" ]; then
+          echo "✖ Прямой пуш в main запрещён — открой PR."
+          exit 1
+        fi
+    - name: typecheck
+      run: pnpm exec tsc --noEmit
+    - name: test
+      run: pnpm exec vitest run
