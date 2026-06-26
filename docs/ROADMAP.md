@@ -35,21 +35,21 @@
 Интеграция дизайн-системы `docs/UI_KIT.md` в код — слой, на котором строятся все фичевые фазы.
 UI-кит — **канон**; shadcn-имена токенов алиасим на токены кита (не наоборот). Детали — `docs/UI_KIT.md`.
 
-- [ ] **Токены `§3` → `globals.css` + Tailwind v4 `@theme inline`:**
-  - [ ] Лестница поверхностей `--surface-0/1/2`; `--bg=--surface-0`, `--bg-card=--surface-2`
-  - [ ] База `§3.2`: `--fg`, `--fg-muted`, `--muted`, `--border`, **`--border-strong`** (новый), `--primary`/`--primary-fg`, `--secondary`, `--accent`, `--ring=var(--brand)`
-  - [ ] Семантика `§3.3`: success / warning / **info** (новые — у shadcn только destructive); `*-bg` через `color-mix` от токена
-  - [ ] Акцент `§3.4`: `--brand` (мята) + `--brand-fg`/`--brand-bg`/`--brand-strong` (`color-mix`) — всё на одной переменной (будущий picker)
-  - [ ] Бридж к shadcn: `--background→--surface-0`, `--card→--surface-2`, `--foreground→--fg`, `--muted-foreground→--fg-muted`, `--primary-foreground→--primary-fg`, `--ring→--brand`, sidebar-токены прозрачные/`--surface-0` — чтобы 11 вендорных компонентов унаследовали систему без переписи
-  - [ ] Light + dark (`.dark` = тёплый графит `§8`: фон ≥ 0.18, карточки +0.04/ярус, `--secondary` светлее карточки)
-- [ ] **Радиусы/тени `§6`** в токены: `--radius-sm/-/-lg/-xl`, `--shadow-sm/-lg/-card-float/-float`
-- [ ] **Шрифты `§5`** (`next/font/google` + перепривязка `@theme inline`): Inter (текст/заголовки `--font-sans`), Inter Tight (данные/таблицы/метрики, отдельная переменная), JetBrains Mono (числа `--font-mono`, `tabular-nums`) — замена Geist
-- [ ] **App Shell `§2` (rewrite):** утопленный chrome (сайдбар + оба этажа хедера без фона = `--surface-0`), парящие карточки (`--surface-2` + `--shadow-card-float`)
-  - [ ] floor-1 (глобальный): workspace · pill-nav · поиск/уведомления · тумблер темы (☀️↔🌙) · user-chip
-  - [ ] floor-2 (страница): breadcrumb + `<h1>` + подзаголовок · справа page-actions
-  - [ ] Активная пилюля nav — нейтральная (`--surface-2`); «ты здесь» = активный пункт сайдбара (`--brand`/`--brand-fg`)
-  - [ ] Тема: переключатель + персист (`.dark` на `<html>`)
-- [ ] **`/kit` showcase (dev-only):** `app/kit/page.tsx`, гейт `notFound()` вне `development`; свотчи токенов (light+dark) + установленные компоненты/варианты. Растёт по мере добавления `§7`-компонентов; якорь для проверки контраста тёмной темы `§8`
+- [x] **Токены `§3` → `globals.css` + Tailwind v4 `@theme inline`:**
+  - [x] Лестница поверхностей `--surface-0/1/2`; `--bg=--surface-0`, `--bg-card=--surface-2`
+  - [x] База `§3.2`: `--fg`, `--fg-muted`, `--muted`, `--border`, **`--border-strong`** (новый), `--primary`/`--primary-fg`, `--secondary`, `--accent`, `--ring=var(--brand)`
+  - [x] Семантика `§3.3`: success / warning / **info** (новые — у shadcn только destructive); `*-bg` через `color-mix` от токена
+  - [x] Акцент `§3.4`: `--brand` (мята) + `--brand-fg`/`--brand-bg`/`--brand-strong` (`color-mix`) — всё на одной переменной (будущий picker)
+  - [x] Бридж к shadcn: `--background→--surface-0`, `--card→--surface-2`, `--foreground→--fg`, `--muted-foreground→--fg-muted`, `--primary-foreground→--primary-fg`, `--ring→--brand`, sidebar-токены прозрачные/`--surface-0` — чтобы 11 вендорных компонентов унаследовали систему без переписи
+  - [x] Light + dark (`.dark` = тёплый графит `§8`: фон ≥ 0.18, карточки +0.04/ярус, `--secondary` светлее карточки)
+- [x] **Радиусы/тени `§6`** в токены: `--radius-sm/-/-lg/-xl`, `--shadow-sm/-lg/-card-float/-float`
+- [x] **Шрифты `§5`** (`next/font/google` + перепривязка `@theme inline`): Inter (текст/заголовки `--font-sans`), Inter Tight (данные/таблицы/метрики, отдельная переменная), JetBrains Mono (числа `--font-mono`, `tabular-nums`) — замена Geist
+- [x] **App Shell `§2` (rewrite):** утопленный chrome (сайдбар + оба этажа хедера без фона = `--surface-0`), парящие карточки (`--surface-2` + `--shadow-card-float`)
+  - [x] floor-1 (глобальный) — минимум: триггер сайдбара + тумблер темы (☀️↔🌙). Workspace/поиск/уведомления/user-chip отложены до своих фаз
+  - [x] floor-2 (страница): breadcrumb + `<h1>` + подзаголовок · справа page-actions — компонент `PageHeader`
+  - [x] Навигация — в сайдбаре (без pill-nav); «ты здесь» = активный пункт сайдбара (`--brand`/`--brand-fg`)
+  - [x] Тема: `next-themes` (переключатель + персист `.dark` на `<html>`, `system` + анти-FOUC)
+- [x] **`/kit` showcase (dev-only):** `app/kit/page.tsx`, гейт `notFound()` вне `development`; свотчи токенов (light+dark) + установленные компоненты/варианты. Растёт по мере добавления `§7`-компонентов; якорь для проверки контраста тёмной темы `§8`
 
 **Результат:** дизайн-система кита живёт в коде, shell соответствует `§2`, `/kit` показывает токены и тему; фичевые фазы строят UI поверх готового фундамента.
 

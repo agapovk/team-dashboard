@@ -1,10 +1,11 @@
 "use client";
 
 import {
-  ActivityIcon,
   CalendarIcon,
   GaugeIcon,
+  LayoutDashboardIcon,
   type LucideIcon,
+  Ratio,
   UploadIcon,
   UsersIcon,
 } from "lucide-react";
@@ -20,7 +21,6 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarRail,
 } from "@/components/ui/sidebar";
 
 interface NavItem {
@@ -31,6 +31,7 @@ interface NavItem {
 
 // MVP-навигация (заглушки маршрутов). Расширяется по фазам ROADMAP.
 const navItems: NavItem[] = [
+  { title: "Dashboard", url: "/", icon: LayoutDashboardIcon },
   { title: "Trainings", url: "/trainings", icon: GaugeIcon },
   { title: "Players", url: "/players", icon: UsersIcon },
   { title: "Import", url: "/import", icon: UploadIcon },
@@ -42,24 +43,30 @@ export function AppSidebar(props: ComponentProps<typeof Sidebar>) {
 
   return (
     <Sidebar collapsible="icon" {...props}>
-      <SidebarHeader>
+      <SidebarHeader className="h-12 justify-center py-0">
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton render={<Link href="/" />} size="lg">
-              <ActivityIcon className="size-5" />
-              <span className="font-semibold">Team Dashboard</span>
-            </SidebarMenuButton>
+            <div className="flex items-center gap-2 px-2 group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:px-0">
+              <Ratio className="size-4 shrink-0" />
+              <span className="font-semibold text-lg group-data-[collapsible=icon]:hidden">
+                team
+              </span>
+            </div>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>Monitoring</SidebarGroupLabel>
-          <SidebarMenu>
+          <SidebarMenu className="gap-1">
             {navItems.map((item) => (
               <SidebarMenuItem key={item.url}>
                 <SidebarMenuButton
-                  isActive={pathname.startsWith(item.url)}
+                  isActive={
+                    item.url === "/"
+                      ? pathname === "/"
+                      : pathname.startsWith(item.url)
+                  }
                   render={<Link href={item.url} />}
                   tooltip={item.title}
                 >
@@ -71,7 +78,6 @@ export function AppSidebar(props: ComponentProps<typeof Sidebar>) {
           </SidebarMenu>
         </SidebarGroup>
       </SidebarContent>
-      <SidebarRail />
     </Sidebar>
   );
 }

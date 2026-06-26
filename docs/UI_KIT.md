@@ -24,20 +24,20 @@
 
 ```
 .appshell  (grid: [sidebar][main], фон = --surface-0)
-  ├─ aside.sidebar              БЕЗ фона, на всю высоту
+  ├─ aside.sidebar              БЕЗ фона, на всю высоту — НАВИГАЦИЯ
   │     .logo (верх) · .nav-item × N · .spacer · .nav-item Настройки (низ)
   └─ .shell-main
        ├─ header.topbar-global  floor-1 (глобальный, БЕЗ фона)
-       │     .workspace · .pill-nav · уведомления/поиск · #themeToggle · .user-chip
+       │     SidebarTrigger · spacer · #themeToggle
        ├─ header.topbar-page    floor-2 (страница, БЕЗ фона)
        │     .titles (.crumb + h1 + .sub)  ·  .page-actions (фильтр · date-chip · Экспорт · Импорт)
        └─ main.canvas           прозрачный
              .dash-grid → .dash-row-4 / .dash-row-2 / .panel  (всё --surface-2)
 ```
 
-- **floor-1** — общий для всех страниц: workspace-свитчер, навигация-пилюли, поиск/уведомления, тумблер темы (☀️↔🌙), юзер-чип (аватар+имя+роль).
-- **floor-2** — контекст страницы: breadcrumb + `<h1>` + подзаголовок; справа действия страницы.
-- Активная пилюля навигации — нейтральная (`--surface-2`); «ты здесь» несёт активный пункт сайдбара (акцент).
+- **Навигация — в сайдбаре** (не pill-nav): `.nav-item`, активный = `--brand`/`--brand-fg`. Единственный «ты здесь».
+- **floor-1** — глобальный chrome: триггер сайдбара + тумблер темы (☀️↔🌙). Workspace, поиск/уведомления, user-chip — отложены до своих фаз (auth — стадия 2).
+- **floor-2** — контекст страницы: breadcrumb + `<h1>` + подзаголовок; справа действия. Компонент `PageHeader` (страница, не root layout).
 
 ---
 
@@ -66,9 +66,10 @@
 | `--primary` (асфальт) | `oklch(0.42 0.006 265)` | `oklch(0.78 0.006 270)` |
 | `--primary-fg` | `oklch(0.98 0 0)` | `oklch(0.18 0.005 270)` |
 | `--secondary` | `oklch(0.95 0.004 265)` | `oklch(0.34 0.006 270)` |
-| `--accent` (нейтр. hover-фон) | `oklch(0.94 0.005 265)` | `oklch(0.36 0.006 270)` |
+| `--accent` (нейтр. hover-фон) | `color-mix(in oklab, var(--fg) 8%, transparent)` | ← (тот же overlay) |
 | `--ring` | `var(--brand)` | `var(--brand)` |
 
+> `--accent` — **полупрозрачный** fg-overlay, не фикс-светлота: композитится поверх любой поверхности (утопленный chrome `--surface-0` и карточки `--surface-2`), иначе hover на chrome не виден. Единый источник hover для nav / ghost-кнопок / dropdown.
 > `--secondary` в dark **светлее карточки** — иначе secondary-кнопки сливаются (см. §8).
 
 ### 3.3 Семантика
