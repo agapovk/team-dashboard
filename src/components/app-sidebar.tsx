@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  ActivityIcon,
   CalendarIcon,
   GaugeIcon,
   type LucideIcon,
@@ -45,9 +46,7 @@ export function AppSidebar(props: ComponentProps<typeof Sidebar>) {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton render={<Link href="/" />} size="lg">
-              <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                <GaugeIcon className="size-4" />
-              </div>
+              <ActivityIcon className="size-5" />
               <span className="font-semibold">Team Dashboard</span>
             </SidebarMenuButton>
           </SidebarMenuItem>
