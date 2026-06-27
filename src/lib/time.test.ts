@@ -11,6 +11,10 @@ describe("clockToSeconds", () => {
     expect(clockToSeconds("1:30:00")).toBe(5400);
   });
 
+  it("parses mm:ss with minutes over 59", () => {
+    expect(clockToSeconds("93:45")).toBe(5625);
+  });
+
   it("rejects malformed input", () => {
     expect(() => clockToSeconds("90")).toThrow();
     expect(() => clockToSeconds("aa:bb")).toThrow();

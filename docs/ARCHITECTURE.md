@@ -20,9 +20,15 @@
 ## Архитектурный стиль: Modular by Feature
 
 ```
+drizzle/                 — DB-инфра (конвенция drizzle-kit, корень репо)
+  schema.ts              — Drizzle-схема
+  migrations/            — сгенерированные миграции
+  seed.ts                — MVP-seed (tsx drizzle/seed.ts)
 src/
   app/                   — только роуты и лэйауты (каждый файл < 20 строк)
-  components/ui/         — shadcn/ui компоненты
+  components/            — общие компоненты (sidebar, header, theme)
+    ui/                  — shadcn/ui компоненты (конвенция shadcn)
+  hooks/                 — generic-хуки (use-mobile; конвенция shadcn)
   features/              — модули-фичи
     auth/                — Better Auth, формы входа/регистрации
     players/             — CRUD, список, карточки игроков
@@ -54,6 +60,11 @@ src/
 2. Фичи не импортят друг друга напрямую — только через `lib/` или `types/`
 3. Если фича разрастается — выносится в отдельную директорию `packages/` (будущий monorepo)
 4. Server Components — по умолчанию. Client Components — только где нужна интерактивность
+5. Сквозная инфра — не фичи: `drizzle/` (схема/миграции/seed — конвенция drizzle-kit), `components/` +
+   `hooks/` (конвенция shadcn, прибиты к алиасам `components.json`). Их топ-левел не нарушает
+   modular-by-feature. `lib/` — единый shared-бакет (чокпойнты ниже); отдельного `shared/` нет
+   намеренно: иначе churn доков + конфликт с алиасами shadcn/drizzle. Запрет ровно один — фичи не
+   импортят друг друга (см. п. 2)
 
 ### Chokepoint'ы (единые точки — закладываются сразу)
 
