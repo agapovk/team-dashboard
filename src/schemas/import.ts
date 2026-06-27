@@ -22,6 +22,12 @@ import {
 const nonNegative = pipe(number(), minValue(0));
 const wholeNonNeg = pipe(number(), integer(), minValue(0));
 
+// RPE: целое 1–10 либо null (забытый = null, НЕ 0). Единственный источник правила —
+// переиспользуется превью-редактором импорта (валидация поля).
+export const RpeSchema = nullable(
+  pipe(number(), integer(), minValue(1), maxValue(10))
+);
+
 export const PlayerRowSchema = object({
   name: pipe(string(), trim(), nonEmpty("Пустое имя игрока")),
   starter: boolean(),
@@ -29,8 +35,7 @@ export const PlayerRowSchema = object({
   duration: wholeNonNeg,
   totalTime: wholeNonNeg,
   distance: nonNegative,
-  // RPE: целое 1–10 либо null (пробел). НЕ 0 как «забыли».
-  rpe: nullable(pipe(number(), integer(), minValue(1), maxValue(10))),
+  rpe: RpeSchema,
   maxSpeed: nonNegative,
   maxSpeedPct: nonNegative,
   maxAcc: number(),

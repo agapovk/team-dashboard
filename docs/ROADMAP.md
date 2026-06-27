@@ -60,11 +60,11 @@ UI-кит — **канон**; shadcn-имена токенов алиасим н
 
 - [x] `src/types/import.ts` — `SessionImport` / `PlayerRow` (нейтральный DTO)
 - [x] `lib/import/xlsx-adapter.ts` — `File → SessionImport[]`, чистая логика, **парсинг по заголовкам** (не индексу), юнит-тесты на **реальном `.xlsx`** в `__fixtures__/` (seed обеспечивает team-scope; игроки авто-создаются через `resolvePlayer`)
-- [ ] Страница импорта: drag'n'drop **мультифайл** (сезон = пачка файлов, каждый = сессия), SheetJS (dynamic import, только эта страница), очередь парсинга
-- [ ] Предпросмотр = **список сессий** (date/category/#players) + редактор RPE/удаление строк; Valibot-валидация (RPE 1–10); флаг «уже импортировано» по дедуп-ключу
+- [x] Страница импорта: drag'n'drop **мультифайл** (сезон = пачка файлов, каждый = сессия), SheetJS (dynamic import, только эта страница), очередь парсинга
+- [x] Предпросмотр = **список сессий** (date/category/#players) + редактор RPE (TanStack Form)/удаление строк и сессий; Valibot-валидация (RPE 1–10); флаг «уже импортировано» по дедуп-ключу
 - [x] Маппинг колонок → поля; агрегатные строки (`Team`/позиции) не сохраняются; пустой RPE → `null` (НЕ 0)
 - [x] `lib/import/persist.ts` — Server Action `SessionImport[] → DB`: Training + PlayerTraining через `upsertPlayerTraining`; дедуп `(teamId, date, category)`; игроки через `resolvePlayer`; **per-session коммит + partial-fail**
-- [ ] **UI по `docs/UI_KIT.md`:** страница импорта/предпросмотр — `.panel`, drag'n'drop зона, формы (`.input`/`.form-error`), `.alert-*`/`.toast` на результат persist, `.skeleton`/`.empty`; новые `§7`-компоненты → в `/kit`
+- [x] **UI по `docs/UI_KIT.md`:** страница импорта/предпросмотр — `card`, drag'n'drop зона, RPE-инпуты (TanStack Form + Valibot), `alert`/`sonner`-toast на результат persist, dedup-`badge`; новые компоненты → в `/kit`
 
 **Результат:** GPS-отчёты (мультифайл) → данные в БД, без дублей, источник-агностик persist.
 
