@@ -17,19 +17,42 @@
 | Dates | date-fns |
 | Target platform | **Desktop-first, tablet-tolerant** (аналитика/планирование на большом экране) |
 
-## Архитектурный стиль: Modular by Feature
+## Архитектурный стиль: Vertical Slice
+
+Верхний уровень `src/features/` — **вертикальные срезы по способностям** (import, trainings,
+players, calendar, dashboard), не горизонтальные тех-слои. Каждый срез сквозной: UI → Server
+Action → чистое ядро, и держит всё своё внутри. `app/` тонкий — только роуты/лэйауты. «Screaming
+architecture»: структура кричит *что* делает приложение, а не *из чего* состоит.
+
+**Shared kernel** (общий, но маленький — только то, что обязано быть единым): `lib/` chokepoint'ы
+(доменные инварианты: team-scope, write-path RPE `null≠0`, identity игрока, день/TZ, row→domain,
+кэш-теги), `schemas/` (Valibot-контракты клиент/сервер), `types/` (нейтральные DTO/домен-типы).
+Это легитимный общий код — доменные инварианты, не случайный DRY. `features/import` — эталон
+раскладки среза; остальные срезы строятся по нему.
 
 ```
+drizzle/                 — DB-инфра (конвенция drizzle-kit, корень репо)
+  schema.ts              — Drizzle-схема
+  migrations/            — сгенерированные миграции
+  seed.ts                — MVP-seed (tsx drizzle/seed.ts)
 src/
   app/                   — только роуты и лэйауты (каждый файл < 20 строк)
-  components/ui/         — shadcn/ui компоненты
-  features/              — модули-фичи
-    auth/                — Better Auth, формы входа/регистрации
+  components/            — общие компоненты (sidebar, header, theme)
+    ui/                  — shadcn/ui компоненты (конвенция shadcn)
+  hooks/                 — generic-хуки (use-mobile; конвенция shadcn)
+  features/              — вертикальные срезы (по способностям, не тех-слоям)
+    import/              — эталон раскладки среза:
+      index.ts           —   публичная поверхность (export { ImportWorkspace })
+      components/         —   UI: import-workspace, dropzone, session-card
+      use-import-parse.ts —   хук очереди парсинга (dynamic xlsx → SessionImport)
+      persist.ts         —   "use server" SessionImport[] → DB (источник-агностик)
+      existing.ts        —   "use server" findExistingKeys (дедуп-флаг превью)
+      core/              —   чистое ядро под Vitest: xlsx-adapter (+test), dedup-key, __fixtures__
+    auth/                — Better Auth, формы входа/регистрации (стадия 2)
     players/             — CRUD, список, карточки игроков
     trainings/           — таймлайн тренировок, таблица метрик
-    import/              — загрузка .xlsx, предпросмотр, парсинг
     calendar/            — события, игры (позже — календарная сетка)
-  lib/                   — общие утилиты
+  lib/                   — shared kernel: ТОЛЬКО сквозные chokepoint'ы + утилиты (не фичи)
     db.ts                — Drizzle клиент
     auth.ts              — Better Auth конфиг (стадия 2, не MVP)
     team.ts              — getCurrentTeamId() — единый team-scoping (MVP: seed-команда)
@@ -37,9 +60,6 @@ src/
     players.ts           — resolvePlayer(name, teamId) — единый матчинг игрока по имени
     mappers.ts           — DB-row → domain (numeric-строки → number) на границе
     cache-tags.ts        — билдеры тегов team:{id}:… для revalidateTag
-    import/              — импорт сессий (граница parse ↔ persist)
-      xlsx-adapter.ts    — File → SessionImport[] (чистый, под Vitest)
-      persist.ts         — SessionImport[] → DB (Server Action, источник-агностик)
     time.ts              — clockToSeconds / secondsToClock + граница «дня команды» (TZ)
     sports/              — чистые расчёты: sRPE, агрегаты, позже EWMA/monotony (только number, под тесты)
   schemas/               — Valibot схемы (общие между клиентом и сервером)
@@ -50,10 +70,19 @@ src/
 
 ### Правила модульности
 
-1. Каждая фича самодостаточна: содержит компоненты, Server Actions, TanStack Query hooks, Valibot схемы
-2. Фичи не импортят друг друга напрямую — только через `lib/` или `types/`
-3. Если фича разрастается — выносится в отдельную директорию `packages/` (будущий monorepo)
+1. **Срез самодостаточен и сквозной:** держит свои компоненты, Server Actions, Query-хуки,
+   чистое ядро. Раскладка (эталон `features/import`): `components/` (UI) + плоский корень
+   (хуки, акшены) + `core/` (чистая логика+тесты). Публичная поверхность — `index.ts`
+   (именованный реэкспорт; biome-override разрешает баррел только для `features/*/index.ts`).
+2. **Фичи не импортят друг друга напрямую** — только через `lib/`, `schemas/` или `types/`.
+   Соседний срез — через его `index.ts`, не во внутренности.
+3. Если срез разрастается — выносится в `packages/` (будущий monorepo)
 4. Server Components — по умолчанию. Client Components — только где нужна интерактивность
+5. Сквозная инфра — не срезы: `drizzle/` (схема/миграции/seed — конвенция drizzle-kit), `components/` +
+   `hooks/` (конвенция shadcn, прибиты к алиасам `components.json`). Их топ-левел не нарушает VSA.
+   `lib/` — shared kernel (только chokepoint'ы ниже); `schemas/`+`types/` — общие контракты.
+   Отдельного `shared/` нет намеренно: иначе churn доков + конфликт с алиасами shadcn/drizzle.
+   Запрет ровно один — срезы не импортят друг друга мимо публичной поверхности (см. п. 2)
 
 ### Chokepoint'ы (единые точки — закладываются сразу)
 
@@ -104,7 +133,7 @@ Drizzle, `persist` не знает про xlsx. Парсинг **по загол
 
 | Решение | Почему |
 |---------|--------|
-| Modular by Feature | Чистая архитектура без over-engineering, легко расширять |
+| Vertical Slice (по способностям) | Срез самодостаточен и сквозной; маленький shared kernel (chokepoint'ы); легко расширять без over-engineering |
 | Client-side XLSX | Предпросмотр и редактирование до сохранения — лучший UX |
 | DTO-граница импорта (`SessionImport`) | Один код записи под xlsx/API/ручной ввод; адаптеры меняются без трогания persist |
 | Парсинг по заголовкам | Перестановка/добавление колонок провайдером не ломает молча; неизвестный заголовок → явная ошибка |

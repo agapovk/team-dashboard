@@ -1,10 +1,20 @@
 import { notFound } from "next/navigation";
 import type { CSSProperties, ReactNode } from "react";
 import { PageHeader } from "@/components/page-header";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 // Свотч одного токена: цветной чип + имя переменной.
 function Swatch({ token, border }: { token: string; border?: boolean }) {
@@ -156,6 +166,68 @@ export default function KitPage() {
             </div>
           </Panel>
 
+          <Panel title="Badge — семантика §3.3">
+            <div className="flex flex-wrap gap-2">
+              <Badge>Default</Badge>
+              <Badge variant="secondary">Secondary</Badge>
+              <Badge variant="outline">Outline</Badge>
+              <Badge variant="brand">Brand</Badge>
+              <Badge variant="success">Success</Badge>
+              <Badge variant="warning">уже импортировано</Badge>
+              <Badge variant="info">Info</Badge>
+              <Badge variant="destructive">Destructive</Badge>
+            </div>
+          </Panel>
+
+          <Panel title="Alert — варианты">
+            <Alert>
+              <AlertTitle>Default</AlertTitle>
+              <AlertDescription>Нейтральное сообщение.</AlertDescription>
+            </Alert>
+            <Alert variant="warning">
+              <AlertTitle>Warning</AlertTitle>
+              <AlertDescription>
+                Сессия уже импортирована — будет обновлена.
+              </AlertDescription>
+            </Alert>
+            <Alert variant="destructive">
+              <AlertTitle>Destructive</AlertTitle>
+              <AlertDescription>Файл не распарсился.</AlertDescription>
+            </Alert>
+          </Panel>
+
+          <Panel title="Table — превью игроков">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Игрок</TableHead>
+                  <TableHead className="text-right">Время</TableHead>
+                  <TableHead className="text-right">RPE</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="font-medium">PLAYER 1</TableCell>
+                  <TableCell className="text-right font-mono tabular-nums">
+                    59:16
+                  </TableCell>
+                  <TableCell className="text-right font-mono tabular-nums">
+                    4
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">PLAYER 2</TableCell>
+                  <TableCell className="text-right font-mono tabular-nums">
+                    58:02
+                  </TableCell>
+                  <TableCell className="text-right font-mono text-fg-muted tabular-nums">
+                    —
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </Panel>
+
           <Panel title="Типографика §5">
             <p className="font-sans text-base">Inter — текст и заголовки.</p>
             <p className="font-data text-base">
@@ -167,8 +239,8 @@ export default function KitPage() {
             <Separator className="my-2" />
             <p className="text-fg-muted text-sm">
               Прочие установленные компоненты (avatar, breadcrumb, collapsible,
-              dropdown-menu, sheet, sidebar, tooltip) добавляются сюда по мере
-              использования.
+              dropdown-menu, sheet, sidebar, tooltip, sonner) добавляются сюда
+              по мере использования.
             </p>
           </Panel>
         </div>

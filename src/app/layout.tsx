@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Inter_Tight, JetBrains_Mono } from "next/font/google";
 import type { ReactNode } from "react";
 import { AppSidebar } from "@/components/app-sidebar";
+import { QueryProvider } from "@/components/query-provider";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/theme-toggle";
 import {
@@ -9,6 +10,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
+import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
 // §5: Inter — текст/заголовки, Inter Tight — данные/таблицы, JetBrains Mono — числа.
@@ -48,18 +50,21 @@ export default function RootLayout({
           disableTransitionOnChange
           enableSystem
         >
-          <SidebarProvider>
-            <AppSidebar />
-            <SidebarInset>
-              <header className="flex h-12 shrink-0 items-center gap-2 px-4">
-                <SidebarTrigger className="-ml-1" />
-                <div className="ml-auto">
-                  <ThemeToggle />
-                </div>
-              </header>
-              <main className="flex-1 px-6 pb-6">{children}</main>
-            </SidebarInset>
-          </SidebarProvider>
+          <QueryProvider>
+            <SidebarProvider>
+              <AppSidebar />
+              <SidebarInset>
+                <header className="flex h-12 shrink-0 items-center gap-2 px-4">
+                  <SidebarTrigger className="-ml-1" />
+                  <div className="ml-auto">
+                    <ThemeToggle />
+                  </div>
+                </header>
+                <main className="flex-1 px-6 pb-6">{children}</main>
+              </SidebarInset>
+            </SidebarProvider>
+            <Toaster />
+          </QueryProvider>
         </ThemeProvider>
       </body>
     </html>
