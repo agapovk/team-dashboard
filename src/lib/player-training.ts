@@ -1,3 +1,4 @@
+import { getTableColumns, sql } from "drizzle-orm";
 import { playerTrainings } from "@/drizzle/schema";
 import { db } from "@/lib/db";
 import { sessionLoad } from "@/lib/sports/srpe";
@@ -35,13 +36,11 @@ export interface PlayerTrainingWrite {
 // numeric-колонки Drizzle принимают строку. null остаётся null.
 const numStr = (n: number): string => String(n);
 
-// Upsert по (playerId, trainingId). sessionLoad всегда пересчитывается из rpe + duration.
-export async function upsertPlayerTraining(
-  input: PlayerTrainingWrite
-): Promise<void> {
+// PlayerTrainingWrite → row для insert. sessionLoad всегда пересчитывается из rpe + duration
+// (семантика null ≠ 0 живёт здесь). numeric → строка.
+function toRow(input: PlayerTrainingWrite) {
   const load = sessionLoad(input.rpe, input.duration);
-
-  const values = {
+  return {
     playerId: input.playerId,
     trainingId: input.trainingId,
     starter: input.starter,
@@ -66,12 +65,49 @@ export async function upsertPlayerTraining(
     distanceAccZ2plus: numStr(input.distanceAccZ2plus),
     imported: input.imported ?? true,
   };
+}
+
+// set для onConflictDoUpdate: все колонки данных → excluded.* (значения вставляемой строки).
+// Конфликт-таргет (playerId, trainingId) и id из апдейта исключены.
+const conflictUpdateSet = (() => {
+  const cols = getTableColumns(playerTrainings);
+  const skip = new Set(["id", "playerId", "trainingId"]);
+  return Object.fromEntries(
+    Object.entries(cols)
+      .filter(([key]) => !skip.has(key))
+      .map(([key, col]) => [key, sql`excluded.${sql.identifier(col.name)}`])
+  );
+})();
+
+// Upsert по (playerId, trainingId). sessionLoad всегда пересчитывается из rpe + duration.
+export async function upsertPlayerTraining(
+  input: PlayerTrainingWrite
+): Promise<void> {
+  await upsertPlayerTrainings([input]);
+}
+
+// Батч-upsert: один multi-row insert + onConflictDoUpdate вместо N запросов.
+// Дедуп по (playerId, trainingId) внутри батча (оставляем последнюю) — иначе Postgres
+// кинет «ON CONFLICT DO UPDATE cannot affect row a second time» при дубле игрока в файле.
+export async function upsertPlayerTrainings(
+  inputs: PlayerTrainingWrite[]
+): Promise<void> {
+  if (inputs.length === 0) {
+    return;
+  }
+
+  const byKey = new Map<string, PlayerTrainingWrite>();
+  for (const input of inputs) {
+    byKey.set(`${input.playerId}:${input.trainingId}`, input);
+  }
+
+  const rows = [...byKey.values()].map(toRow);
 
   await db
     .insert(playerTrainings)
-    .values(values)
+    .values(rows)
     .onConflictDoUpdate({
       target: [playerTrainings.playerId, playerTrainings.trainingId],
-      set: values,
+      set: conflictUpdateSet,
     });
 }

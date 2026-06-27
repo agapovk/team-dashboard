@@ -4,8 +4,8 @@ import { updateTag } from "next/cache";
 import { trainings } from "@/drizzle/schema";
 import { teamCacheTags } from "@/lib/cache-tags";
 import { db } from "@/lib/db";
-import { upsertPlayerTraining } from "@/lib/player-training";
-import { type PlayerCache, resolvePlayer } from "@/lib/players";
+import { upsertPlayerTrainings } from "@/lib/player-training";
+import { normalizeName, type PlayerCache, resolvePlayers } from "@/lib/players";
 import { getCurrentTeamId } from "@/lib/team";
 import type { SessionImport } from "@/types/import";
 
@@ -65,32 +65,42 @@ async function persistSession(
   cache: PlayerCache
 ): Promise<number> {
   const trainingId = await upsertTraining(session, teamId);
-  for (const p of session.players) {
-    const playerId = await resolvePlayer(p.name, teamId, cache, p.position);
-    await upsertPlayerTraining({
-      playerId,
-      trainingId,
-      starter: p.starter,
-      duration: p.duration,
-      totalTime: p.totalTime,
-      rpe: p.rpe,
-      distance: p.distance,
-      maxSpeed: p.maxSpeed,
-      maxSpeedPct: p.maxSpeedPct,
-      maxAcc: p.maxAcc,
-      maxDec: p.maxDec,
-      distanceSpeedZ2: p.distanceSpeedZ2,
-      distanceSpeedZ3: p.distanceSpeedZ3,
-      accEvents: p.accEvents,
-      decEvents: p.decEvents,
-      avgHR: p.avgHR,
-      maxHR: p.maxHR,
-      avgHRPct: p.avgHRPct,
-      maxHRPct: p.maxHRPct,
-      timeHRZ3plus: p.timeHRZ3plus,
-      distanceAccZ2plus: p.distanceAccZ2plus,
-    });
-  }
+
+  // Батч: 1 SELECT + 1 INSERT на резолв игроков, 1 multi-row upsert на строки.
+  const playerIds = await resolvePlayers(session.players, teamId, cache);
+
+  await upsertPlayerTrainings(
+    session.players.map((p) => {
+      const playerId = playerIds.get(normalizeName(p.name));
+      if (!playerId) {
+        throw new Error(`Не удалось резолвить игрока: ${p.name}`);
+      }
+      return {
+        playerId,
+        trainingId,
+        starter: p.starter,
+        duration: p.duration,
+        totalTime: p.totalTime,
+        rpe: p.rpe,
+        distance: p.distance,
+        maxSpeed: p.maxSpeed,
+        maxSpeedPct: p.maxSpeedPct,
+        maxAcc: p.maxAcc,
+        maxDec: p.maxDec,
+        distanceSpeedZ2: p.distanceSpeedZ2,
+        distanceSpeedZ3: p.distanceSpeedZ3,
+        accEvents: p.accEvents,
+        decEvents: p.decEvents,
+        avgHR: p.avgHR,
+        maxHR: p.maxHR,
+        avgHRPct: p.avgHRPct,
+        maxHRPct: p.maxHRPct,
+        timeHRZ3plus: p.timeHRZ3plus,
+        distanceAccZ2plus: p.distanceAccZ2plus,
+      };
+    })
+  );
+
   return session.players.length;
 }
 

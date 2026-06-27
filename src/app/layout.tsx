@@ -54,7 +54,7 @@ export default function RootLayout({
             <SidebarProvider>
               <AppSidebar />
               <SidebarInset>
-                <header className="flex h-12 shrink-0 items-center gap-2 px-4">
+                <header className="sticky top-0 z-10 flex h-12 shrink-0 items-center gap-2 bg-background/80 px-6 backdrop-blur">
                   <SidebarTrigger className="-ml-1" />
                   <div className="ml-auto">
                     <ThemeToggle />

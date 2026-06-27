@@ -9,7 +9,7 @@ interface PageHeaderProps {
 // floor-2 (§2): контекст страницы — заголовок + подзаголовок, справа действия.
 export function PageHeader({ title, subtitle, actions }: PageHeaderProps) {
   return (
-    <div className="flex items-start justify-between gap-4 pb-6">
+    <div className="flex items-end justify-between gap-4 pt-4">
       <div className="space-y-1">
         <h1 className="font-heading font-semibold text-2xl tracking-tight">
           {title}
