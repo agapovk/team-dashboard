@@ -3,15 +3,15 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Loader2Icon, XIcon } from "lucide-react";
 import { toast } from "sonner";
-import { Dropzone } from "@/components/import/dropzone";
-import { SessionCard } from "@/components/import/session-card";
-import { useImportParse } from "@/components/import/use-import-parse";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { sessionDedupKey } from "@/lib/import/dedup-key";
-import { findExistingKeys } from "@/lib/import/existing";
-import { persistSessions } from "@/lib/import/persist";
 import type { PlayerRow, SessionImport } from "@/types/import";
+import { sessionDedupKey } from "../core/dedup-key";
+import { findExistingKeys } from "../existing";
+import { persistSessions } from "../persist";
+import { useImportParse } from "../use-import-parse";
+import { Dropzone } from "./dropzone";
+import { SessionCard } from "./session-card";
 
 const EXISTING_KEY = ["import", "existing-keys"] as const;
 

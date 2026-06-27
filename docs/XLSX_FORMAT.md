@@ -3,8 +3,8 @@
 Файл: **GPS/tracking training session** от GPS-провайдера. Один файл = одна сессия.
 Колонки в текущем выгрузе фиксированы, **но парсим по заголовку, а не по индексу** (см. ниже).
 
-Парсер живёт в `lib/import/xlsx-adapter.ts` и отдаёт нейтральный `SessionImport[]`
-(`src/types/import.ts`) — не пишет в БД напрямую. Запись — `lib/import/persist.ts`. Граница
+Парсер живёт в `features/import/core/xlsx-adapter.ts` и отдаёт нейтральный `SessionImport[]`
+(`src/types/import.ts`) — не пишет в БД напрямую. Запись — `features/import/persist.ts`. Граница
 parse ↔ persist описана в `docs/ARCHITECTURE.md`.
 
 ## Парсинг по заголовкам (не по индексу)

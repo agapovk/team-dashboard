@@ -69,7 +69,7 @@ export function useImportParse() {
 async function parseFile(file: File): Promise<ParseResult> {
   try {
     const buf = await file.arrayBuffer();
-    const { parseSessionXlsx } = await import("@/lib/import/xlsx-adapter");
+    const { parseSessionXlsx } = await import("./core/xlsx-adapter");
     return { ok: true, session: parseSessionXlsx(buf) };
   } catch (e) {
     return { ok: false, error: (e as Error).message };

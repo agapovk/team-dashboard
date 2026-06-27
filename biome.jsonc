@@ -15,6 +15,14 @@
       // Вендоренные shadcn-компоненты — генерёные из реестра, линтер не навязываем.
       "includes": ["src/components/ui/**", "src/hooks/**"],
       "linter": { "enabled": false }
+    },
+    {
+      // Публичная поверхность вертикального среза: features/<slice>/index.ts —
+      // осознанный именованный реэкспорт (VSA-граница), не export* барахло.
+      "includes": ["src/features/*/index.ts"],
+      "linter": {
+        "rules": { "performance": { "noBarrelFile": "off" } }
+      }
     }
   ]
 }

@@ -1,5 +1,5 @@
-import { ImportWorkspace } from "@/components/import/import-workspace";
 import { PageHeader } from "@/components/page-header";
+import { ImportWorkspace } from "@/features/import";
 
 export default function ImportPage() {
   return (

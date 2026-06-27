@@ -3,8 +3,8 @@
 import { eq } from "drizzle-orm";
 import { trainings } from "@/drizzle/schema";
 import { db } from "@/lib/db";
-import { sessionDedupKey } from "@/lib/import/dedup-key";
 import { getCurrentTeamId } from "@/lib/team";
+import { sessionDedupKey } from "./core/dedup-key";
 
 // Существующие дедуп-ключи команды — для пометки «уже импортировано» в превью.
 export async function findExistingKeys(): Promise<string[]> {
