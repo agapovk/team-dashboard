@@ -59,7 +59,7 @@ UI-кит — **канон**; shadcn-имена токенов алиасим н
 один код записи под xlsx сейчас, API/ручной ввод позже. См. `docs/ARCHITECTURE.md`, `docs/XLSX_FORMAT.md`.
 
 - [ ] `src/types/import.ts` — `SessionImport` / `PlayerRow` (нейтральный DTO)
-- [ ] `lib/import/xlsx-adapter.ts` — `File → SessionImport[]`, чистая логика, **парсинг по заголовкам** (не индексу), юнит-тесты на реальном `.xlsx` (фикстура = seed)
+- [ ] `lib/import/xlsx-adapter.ts` — `File → SessionImport[]`, чистая логика, **парсинг по заголовкам** (не индексу), юнит-тесты на **реальном `.xlsx`** в `__fixtures__/` (seed обеспечивает team-scope; игроки авто-создаются через `resolvePlayer`)
 - [ ] Страница импорта: drag'n'drop **мультифайл** (сезон = пачка файлов, каждый = сессия), SheetJS (dynamic import, только эта страница), очередь парсинга
 - [ ] Предпросмотр = **список сессий** (date/category/#players) + редактор/удаление строк; Valibot-валидация (RPE 1–10, distance ≥ 0); флаг «уже импортировано» по дедуп-ключу
 - [ ] Маппинг колонок → поля; агрегатные строки (`Team`/позиции) не сохраняются; пустой RPE → `null` (НЕ 0)
