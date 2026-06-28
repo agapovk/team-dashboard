@@ -137,32 +137,32 @@ export function SessionCard({
             {secondsToClock(session.duration)}
           </span>
           <span className="text-fg-muted text-sm">{total} игроков</span>
-          <StatusBadge
-            existing={existing}
-            filled={filled}
-            importError={importError}
-            importedPlayers={importedPlayers}
-            importState={importState}
-            invalidCount={invalidCount}
-            overwrite={overwrite}
-            total={total}
-          />
         </CollapsibleTrigger>
 
+        <StatusBadge
+          existing={existing}
+          filled={filled}
+          importError={importError}
+          importedPlayers={importedPlayers}
+          importState={importState}
+          invalidCount={invalidCount}
+          overwrite={overwrite}
+          total={total}
+        />
+
         {editable && existing ? (
-          <div className="flex shrink-0 items-center gap-1.5">
+          <label
+            className="flex shrink-0 cursor-pointer items-center gap-1.5"
+            htmlFor={overwriteId}
+          >
             <Checkbox
               checked={overwrite}
+              className="cursor-pointer"
               id={overwriteId}
               onCheckedChange={onToggleOverwrite}
             />
-            <label
-              className="cursor-pointer text-fg-muted text-xs"
-              htmlFor={overwriteId}
-            >
-              перезаписать
-            </label>
-          </div>
+            <span className="text-fg-muted text-xs">перезаписать</span>
+          </label>
         ) : null}
 
         <Button
@@ -176,9 +176,9 @@ export function SessionCard({
       </div>
 
       <CollapsibleContent>
-        <div className="border-border border-t px-3 pt-3 pb-1">
+        <div className="border-border border-t px-3 pb-1">
           {editable ? (
-            <div className="mb-3 flex items-center gap-2">
+            <div className="mt-3 mb-1 flex items-center gap-2">
               <span className="text-fg-muted text-sm">RPE всем:</span>
               <Input
                 className="h-8 w-16 text-center font-mono tabular-nums"
@@ -295,7 +295,7 @@ function StatusBadge({
 }) {
   if (importState === "importing") {
     return (
-      <Badge className="ml-auto" variant="secondary">
+      <Badge variant="secondary">
         <Loader2Icon className="animate-spin" />
         импорт…
       </Badge>
@@ -303,7 +303,7 @@ function StatusBadge({
   }
   if (importState === "done") {
     return (
-      <Badge className="ml-auto" variant="success">
+      <Badge variant="success">
         <CheckIcon />
         импортировано ({importedPlayers})
       </Badge>
@@ -311,7 +311,7 @@ function StatusBadge({
   }
   if (importState === "failed") {
     return (
-      <Badge className="ml-auto" title={importError} variant="destructive">
+      <Badge title={importError} variant="destructive">
         ошибка
       </Badge>
     );
@@ -323,7 +323,7 @@ function StatusBadge({
     </Badge>
   );
   return (
-    <span className="ml-auto flex items-center gap-2">
+    <span className="flex items-center gap-2">
       {fillBadge}
       {invalidCount > 0 ? (
         <Badge variant="destructive">{invalidCount} с ошибкой RPE</Badge>
