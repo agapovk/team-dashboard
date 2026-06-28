@@ -165,7 +165,13 @@ function positionSet(dataRows: Row[], ix: HeaderIndex): Set<string> {
 export function parseSessionXlsx(
   data: ArrayBuffer | Uint8Array
 ): SessionImport {
-  const wb = read(data, { type: "array" });
+  let wb: ReturnType<typeof read>;
+  try {
+    wb = read(data, { type: "array" });
+  } catch {
+    // Сырой сбой xlsx-либы → человеческий текст (повреждён / не .xlsx).
+    throw new Error("Не удалось прочитать файл — повреждён или не .xlsx");
+  }
   const sheetName = wb.SheetNames[0];
   const sheet = sheetName ? wb.Sheets[sheetName] : undefined;
   if (!sheet) {
